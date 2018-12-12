@@ -1,0 +1,307 @@
+{
+  "galaxyName": "x3galaxy",
+  "galaxyPrefix": "x3g",
+  "description": "description",
+  "author": "celludriel",
+  "version": "1.0.0",
+  "date": "2018-12-12",
+  "save": "0",
+  "clusters": [
+    {
+      "id": "01",
+      "name": "Argon Prime",
+      "description": "Argon Prime",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 0,
+      "y": 0,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "03",
+          "connectionType": "SE"
+        },
+        {
+          "targetClusterId": "05",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id": "02",
+      "name": "The Hole",
+      "description": "The Hole",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 1,
+      "y": 0,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "03",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "name": "The Wall",
+      "description": "The Wall",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 1,
+      "y": -1,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "14",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id": "04",
+      "name": "Herron's Nebula",
+      "description": "Herron's Nebula",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 0,
+      "y": 1,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "02",
+          "connectionType": "SE"
+        },
+        {
+          "targetClusterId": "01",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id": "05",
+      "name": "Home of Light",
+      "description": "Home of Light",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 0,
+      "y": -1,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "14",
+          "connectionType": "SE"
+        },
+        {
+          "targetClusterId": "13",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id": "06",
+      "name": "Ringo Moon",
+      "description": "Ringo Moon",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": -1,
+      "y": 0,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "01",
+          "connectionType": "NE"
+        },
+        {
+          "targetClusterId": "07",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id": "07",
+      "name": "Red Light",
+      "description": "Red Light",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": -1,
+      "y": -1,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "05",
+          "connectionType": "NE"
+        },
+        {
+          "targetClusterId": "12",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id": "08",
+      "name": "Cloudbase North West",
+      "description": "Cloudbase North West",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": -1,
+      "y": 1,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "04",
+          "connectionType": "NE"
+        },
+        {
+          "targetClusterId": "06",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id": "09",
+      "name": "Three Worlds",
+      "description": "Three Worlds",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": -1,
+      "y": 2,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "10",
+          "connectionType": "NE"
+        },
+        {
+          "targetClusterId": "08",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Power Circle",
+      "description": "Power Circle",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 0,
+      "y": 2,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "11",
+          "connectionType": "SE"
+        },
+        {
+          "targetClusterId": "04",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Antigone Memorial",
+      "description": "Antigone Memorial",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 1,
+      "y": 1,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "02",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Cloudbase South West",
+      "description": "Cloudbase South West",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": -1,
+      "y": -2,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "13",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Ore Belt",
+      "description": "Ore Belt",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 0,
+      "y": -2,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "15",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "name": "President's End",
+      "description": "President's End",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 1,
+      "y": -2,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "15",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Cloudbase South East",
+      "description": "Cloudbase South East",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 1,
+      "y": -3,
+      "backdrop": "empty_space"
+    }
+  ]
+}
