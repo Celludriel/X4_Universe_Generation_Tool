@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <macros>
-  <macro name="x3g_galaxy_macro" class="galaxy">
+  <macro name="${galaxy.galaxyPrefix}_galaxy_macro" class="galaxy">
     <component ref="standardgalaxy" />
     <connections>
-<#list 1..clusters as i>
-      <connection name="x3g_cluster${i?left_pad(2, "0")}_connection" ref="clusters">
+<#list galaxy.clusters as cl>
+      <!-- cluster setup ${cl.id} -->
+      <connection name="${galaxy.galaxyPrefix}_cluster${cl.id}_connection" ref="clusters">
         <offset>
-          <position x="0" y="0" z="0" />
+          <position x="${cl.clusterX}" y="0" z="${cl.clusterZ}" />
         </offset>
-        <macro ref="x3g_cluster${i?left_pad(2, "0")}_macro" connection="galaxy" />
+        <macro ref="${galaxy.galaxyPrefix}_cluster${cl.id}_macro" connection="galaxy" />
       </connection>
+          <!-- gate connection setup ${cl.id} -->
+      <#list cl.zoneList as zone>
+        <#list zone.connections as zoneconnection>
+          <#if !zoneconnection.reverseConnection >
+          <connection name="${galaxy.galaxyPrefix}_gate_${zoneconnection.origin}_${zoneconnection.target}" ref="destination" path="../${galaxy.galaxyPrefix}_cluster${cl.id}_connection/${galaxy.galaxyPrefix}_cluster${cl.id}_sector001_connection/${galaxy.galaxyPrefix}_${zone.name}_sector001_connection/${galaxy.galaxyPrefix}_gate_${zoneconnection.origin}_${zoneconnection.target}_connection">
+            <macro connection="destination" path="../../../../../${galaxy.galaxyPrefix}_cluster${zoneconnection.targetZoneId}_connection/${galaxy.galaxyPrefix}_cluster${zoneconnection.targetZoneId}_sector001_connection/${galaxy.galaxyPrefix}_${zoneconnection.targetZoneName}_sector001_connection/${galaxy.galaxyPrefix}_gate_${zoneconnection.target}_${zoneconnection.origin}_connection" />
+          </connection>
+          </#if>
+        </#list>
+      </#list>
 </#list>
+
     </connections>
   </macro>
 </macros>
