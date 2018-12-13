@@ -59,7 +59,7 @@
         }
       ],
       "stations": [
-        {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
       ]
     },
     {
@@ -85,7 +85,7 @@
         {"type": "HELIUM"}
       ],
       "stations": [
-        {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
       ]
     },
     {
@@ -302,7 +302,7 @@
         {"type": "ICE"}
       ],
       "stations": [
-        {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
       ]
     },
     {
@@ -2068,9 +2068,7 @@
         "levelMax": "1.0",
         "tags": ["MILITARY","CARRIER"]
       },
-      "subordinates": ["argon_destroyer_escort_l"],
-      "rebuild": true,
-      "commandeerable": false
+      "subordinates": ["argon_destroyer_escort_l"]
     },
     {
       "id": "argon_destroyer_patrol_l_sector",
@@ -2103,9 +2101,7 @@
         "levelMax": "1.0",
         "tags": ["MILITARY","DESTROYER"]
       },
-      "subordinates": ["argon_frigate_escort_m"],
-      "rebuild": true,
-      "commandeerable": true
+      "subordinates": ["argon_frigate_escort_m"]
     },
     {
       "id": "argon_destroyer_patrol_l_comp",
@@ -2138,9 +2134,7 @@
         "levelMin": "0.4",
         "levelMax": "1.0",
         "tags": ["MILITARY","DESTROYER"]
-      },
-      "rebuild": true,
-      "commandeerable": true
+      }
     },
     {
       "id": "argon_frigate_patrol_m_sector_exp",
@@ -2173,9 +2167,7 @@
         "levelMax": "1.0",
         "tags": ["MILITARY","FRIGATE"]
       },
-      "subordinates": ["argon_fighter_escort_s_frigate"],
-      "rebuild": true,
-      "commandeerable": false
+      "subordinates": ["argon_fighter_escort_s_frigate"]
     },
     {
       "id": "argon_dronecarrier_patrol_m_sector",
@@ -2211,9 +2203,7 @@
         "units": [
           {"category":  "unitcategory.defence", "min": 8, "max": "12"}
         ]
-      },
-      "rebuild": true,
-      "commandeerable": true
+      }
     },
     {
       "id": "argon_fighter_patrol_s_zone",
@@ -2247,9 +2237,7 @@
         "levelMax": "1.0",
         "tags": ["HEAVY","FIGHTER"]
       },
-      "subordinates": ["argon_fighter_escort_s_patrol"],
-      "rebuild": true,
-      "commandeerable": true
+      "subordinates": ["argon_fighter_escort_s_patrol"]
     },
     {
       "id": "argon_scout_patrol_s",
@@ -2279,9 +2267,7 @@
         "levelMin": "0.7",
         "levelMax": "1.0",
         "tags": ["SCOUT"]
-      },
-      "rebuild": true,
-      "commandeerable": true
+      }
     },
     {
       "id": "argon_police_patrol_s",
@@ -2313,9 +2299,7 @@
         "levelMin": "0",
         "levelMax": "0.7",
         "tags": ["LIGHT","FIGHTER"]
-      },
-      "rebuild": true,
-      "commandeerable": false
+      }
     },
     {
       "id": "argon_destroyer_escort_l",
@@ -2344,8 +2328,6 @@
         "levelMax": "0.7",
         "tags": ["MILITARY","DESTROYER"]
       },
-      "rebuild": true,
-      "commandeerable": false,
       "subordinates": ["argon_frigate_escort_m"]
     },
     {
@@ -2375,8 +2357,6 @@
         "levelMax": "0.7",
         "tags": ["MILITARY","MEDIUM"]
       },
-      "rebuild": true,
-      "commandeerable": false,
       "subordinates": ["argon_fighter_escort_s_frigate"]
     },
     {
@@ -2405,9 +2385,7 @@
         "levelMin": "0",
         "levelMax": "0.7",
         "tags": ["MILITARY","FIGHTER","SELECTION"]
-      },
-      "rebuild": true,
-      "commandeerable": false
+      }
     },
     {
       "id": "argon_fighter_escort_s_patrol",
@@ -2435,9 +2413,7 @@
         "levelMin": "0",
         "levelMax": "0.7",
         "tags": ["MILITARY","FIGHTER","LIGHT"]
-      },
-      "rebuild": true,
-      "commandeerable": false
+      }
     },
     {
       "id": "argon_miningfleet_m_solid_small",
@@ -2939,6 +2915,1375 @@
         "tags": ["MINER", "LIQUID", "MIXED"]
       },
       "subordinates": ["argon_miningfleet_ml_liquid_large","argon_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "antigone_bio_trader_l",
+      "name": "{20204,1301}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 5,
+        "cluster": 2
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "bio",
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "antigone_bio_trader_m",
+      "name": "{20204,1401}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 18,
+        "cluster": 6,
+        "sector": 4
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "bio",
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "antigone_food_trader_s",
+      "name": "{20204,1801}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 5,
+        "cluster": 2,
+        "sector": 2
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "3"}
+        ]
+      }],
+      "basket": "food",
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "antigone_energycell_trader_l",
+      "name": "{20204,101}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 2,
+        "cluster": 1
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "energycells",
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "antigone_energycell_trader_m",
+      "name": "{20204,201}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 13,
+        "cluster": 5
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "energycells",
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "antigone_energycell_trader_s",
+      "name": "{20204,201}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 5,
+        "cluster": 1
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "energycells",
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "antigone_equipment_trader_l",
+      "name": "{20204,301}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 2,
+        "cluster": 1
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "equipment",
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "LARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "antigone_equipment_trader_m",
+      "name": "{20204,301}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "cluster": 2,
+        "sector": 3
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "equipment",
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "antigone_construction_trader_l",
+      "name": "{20204,401}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 2,
+        "cluster": 1
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "construction_stations",
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "antigone_construction_trader_m",
+      "name": "{20204,401}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 10,
+        "cluster": 3
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "construction_stations",
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "antigone_refinedgas_trader_l",
+      "name": "{20204,501}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 1,
+        "cluster": 1
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_gas",
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "antigone_refinedgas_trader_m",
+      "name": "{20204,601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 7,
+        "cluster": 2,
+        "sector": 2
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_gas",
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "antigone_refinedmineral_trader_l",
+      "name": "{20204,501}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 1,
+        "cluster": 1
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_mineral",
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "antigone_refinedmineral_trader_m",
+      "name": "{20204,601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "cluster": 3,
+        "sector": 2
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_mineral",
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "antigone_tech_trader_l",
+      "name": "{20204,301}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 1,
+        "cluster": 1
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "tech",
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "LARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "antigone_tech_trader_m",
+      "name": "{20204,401}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "cluster": 2,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "tech",
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "antigone_destroyer_patrol_l_border_sector",
+      "name": "{20204,3301}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["ANTIGONE"],
+        "macro": "Zone001_Cluster11_Sector001_macro"
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC","MILITARY", "DESTROYER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 1,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.cluster"}
+        ]
+      }],
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "LARGE",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","DESTROYER"]
+      },
+      "subordinates": ["antigone_destroyer_escort_l"]
+    },
+    {
+      "id": "antigone_destroyer_patrol_l_comp",
+      "name": "{20204,3301}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC","MILITARY", "DESTROYER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3,
+        "maxGalaxy": 12,
+        "cluster": 3
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.zone"}
+        ]
+      }],
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "LARGE",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","DESTROYER"]
+      }
+    },
+    {
+      "id": "antigone_frigate_patrol_m_sector_exp",
+      "name": "{20204,2901}",
+      "commandeerable": false,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC","MILITARY", "FRIGATE"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 44,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.sector"}
+        ]
+      }],
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","FRIGATE"]
+      },
+      "subordinates": ["antigone_fighter_escort_s_frigate"]
+    },
+    {
+      "id": "antigone_dronecarrier_patrol_m_sector",
+      "name": "{20204,5001}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC","MILITARY", "FRIGATE"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 5,
+        "maxGalaxy": 10,
+        "sector": 3
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.sector"}
+        ]
+      }],
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","FRIGATE"],
+        "units": [
+          {"category":  "unitcategory.defence", "min": 8, "max": "12"}
+        ]
+      }
+    },
+    {
+      "id": "antigone_fighter_patrol_s_zone",
+      "name": "{20204,2901}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC","MILITARY", "FIGHTER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 19,
+        "maxGalaxy": 38,
+        "zone": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value":  "class.zone"}
+        ]
+      }],
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "SMALL",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["HEAVY","FIGHTER"]
+      },
+      "subordinates": ["antigone_fighter_escort_s_patrol"]
+    },
+    {
+      "id": "antigone_scout_patrol_s",
+      "name": "{20204,2801}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FACTIONLOGIC","MILITARY", "SCOUT"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 2,
+        "maxGalaxy": 4,
+        "cluster": 2
+      },
+      "orders": [{
+        "order": "Recon"
+      }],
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "SMALL",
+        "levelMin": "0.7",
+        "levelMax": "1.0",
+        "tags": ["SCOUT"]
+      }
+    },
+    {
+      "id": "antigone_destroyer_escort_l",
+      "name": "{20204,3301}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["MILITARY", "DESTROYER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "wing": 2
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value":  "formationshape.xshapeforward"}
+        ]
+      }],
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","DESTROYER"]
+      },
+      "subordinates": ["antigone_frigate_escort_m"]
+    },
+    {
+      "id": "antigone_frigate_escort_m",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["MILITARY"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "wing": 3
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.dartvertical"}
+        ]
+      }],
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","MEDIUM"]
+      },
+      "subordinates": ["antigone_fighter_escort_s_frigate"]
+    },
+    {
+      "id": "antigone_fighter_escort_s_frigate",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["MILITARY", "FIGHTER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "wing": 2
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER","SELECTION"]
+      }
+    },
+    {
+      "id": "antigone_fighter_escort_s_patrol",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["MILITARY", "FIGHTER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "wing": 3
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER","LIGHT"]
+      }
+    },
+    {
+      "id": "antigone_miningfleet_m_solid_small",
+      "name": "{20204,5601}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"]
+      },
+      "subordinates": ["antigone_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "antigone_miningfleet_m_liquid_small",
+      "name": "{20204,5701}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID"]
+      },
+      "subordinates": ["antigone_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "antigone_miningfleet_ml_solid_large",
+      "name": "{20204,5601}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 3,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "ship": {
+        "faction": "ANTIGONE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID", "MIXED"]
+      },
+      "subordinates": ["antigone_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "antigone_miningfleet_ml_liquid_large",
+      "name": "{20204,5701}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 3,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "ship": {
+        "faction": "ANTIGONE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID", "MIXED"]
+      },
+      "subordinates": ["antigone_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "antigone_fighter_escort_s_miningfleet",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "shipSize": "SMALL",
+        "tags": ["MILITARY", "FIGHTER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 1,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value":  "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER", "SELECTION"]
+      }
+    },
+    {
+      "id": "antigone_construction_vessel_xl",
+      "name": "{20204,5101}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "shipSize": "XLARGE",
+        "tags": ["FACTIONLOGIC","BUILDER"]
+      },
+      "jobQuota": {
+        "galaxy": 5,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "FindBuildTasks",
+        "parameters": [
+          {"name": "maxjumps", "value": "6"}
+        ]
+      }],
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "XLARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["BUILDER"]
+      }
+    },
+    {
+      "id": "antigone_construction_vessel_xl_playeronly",
+      "name": "{20204,5101}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "shipSize": "XLARGE",
+        "tags": ["FACTIONLOGIC","BUILDER"]
+      },
+      "jobQuota": {
+        "galaxy": 5,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "FindBuildTasks",
+        "parameters": [
+          {"name": "maxjumps", "value": "6"},
+          {"name": "playeronly", "value": "true"}
+        ]
+      }],
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "XLARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["BUILDER"]
+      }
+    },
+    {
+      "id": "antigone_resourcescout_s_deepspace_single",
+      "name": "{20204,10049}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "shipSize": "SMALL",
+        "tags": ["SCOUT","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "deepspace", "value": "true"},
+          {"name": "resourcescout", "value": "true"}
+        ]
+      }],
+      "basket": "minerals",
+      "encounters": "resource_scout",
+      "ship": {
+        "faction": "ANTIGONE",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["SCOUT"]
+      }
+    },
+    {
+      "id": "antigone_free_miner_ml_solid_deepspace_single",
+      "name": "{20204,5601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["ANTIGONE"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "1",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "ANTIGONE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "SOLID", "MIXED"]
+      }
+    },
+    {
+      "id": "antigone_free_miner_ml_liquid_deepspace_single",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["ANTIGONE"],
+        "regionBasket": "gasses"
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "1",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "ANTIGONE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "LIQUID", "MIXED"]
+      }
+    },
+    {
+      "id": "antigone_free_miner_ml_solid_deepspace_smallgroup",
+      "name": "{20204,5601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["ANTIGONE"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "600",
+      "encounters": "mining_group_small",
+      "ship": {
+        "faction": "ANTIGONE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "SOLID", "MIXED"]
+      },
+      "subordinates": ["antigone_miningfleet_m_solid_small","antigone_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "antigone_free_miner_ml_liquid_deepspace_smallgroup",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["ANTIGONE"],
+        "regionBasket": "gasses"
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "600",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "ANTIGONE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "LIQUID", "MIXED"]
+      },
+      "subordinates": ["antigone_miningfleet_m_liquid_small","antigone_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "antigone_free_miner_l_solid_deepspace_largegroup",
+      "name": "{20204,5601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["ANTIGONE"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "shipSize": "LARGE",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "3600",
+      "encounters": "mining_group_large",
+      "ship": {
+        "faction": "ANTIGONE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "SOLID", "MIXED"]
+      },
+      "subordinates": ["antigone_miningfleet_ml_solid_large","antigone_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "antigone_free_miner_l_liquid_deepspace_largegroup",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["ANTIGONE"],
+        "regionBasket": "gasses"
+      },
+      "jobCategory": {
+        "faction": "ANTIGONE",
+        "shipSize": "LARGE",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "time": "3600",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "ANTIGONE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "LIQUID", "MIXED"]
+      },
+      "subordinates": ["antigone_miningfleet_ml_liquid_large","antigone_fighter_escort_s_miningfleet"]
     }
   ]
 }
