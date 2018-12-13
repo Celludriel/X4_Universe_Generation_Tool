@@ -28,6 +28,7 @@ public class Cluster extends AbstractJson {
     private List<Connection> connections = new ArrayList<>();
     private List<Zone> zoneList = new ArrayList<>();
     private List<Belt> belts = new ArrayList<>();
+    private List<Station> stations = new ArrayList<>();
 
     public String getId() {
         return id;
@@ -86,6 +87,10 @@ public class Cluster extends AbstractJson {
         return belts;
     }
 
+    public List<Station> getStations() {
+        return stations;
+    }
+
     public void setId(String id) {
         this.id = id;
     }
@@ -136,6 +141,10 @@ public class Cluster extends AbstractJson {
 
     public void setBelts(List<Belt> belts) {
         this.belts = belts;
+    }
+
+    public void setStations(List<Station> stations) {
+        this.stations = stations;
     }
 
     @JsonIgnore
@@ -190,6 +199,7 @@ public class Cluster extends AbstractJson {
                 .append(connections, cluster.connections)
                 .append(zoneList, cluster.zoneList)
                 .append(belts, cluster.belts)
+                .append(stations, cluster.stations)
                 .isEquals();
     }
 
@@ -210,6 +220,7 @@ public class Cluster extends AbstractJson {
                 .append(connections)
                 .append(zoneList)
                 .append(belts)
+                .append(stations)
                 .toHashCode();
     }
 }

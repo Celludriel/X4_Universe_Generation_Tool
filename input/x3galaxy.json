@@ -34,6 +34,11 @@
         {"type": "ORE"},
         {"type": "ORE"},
         {"type": "HYDROGEN"}
+      ],
+      "stations": [
+        {"type": "SHIPYARD", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"},
+        {"type": "WHARF", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"},
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
     },
     {
@@ -52,6 +57,9 @@
           "targetClusterId": "03",
           "connectionType": "S"
         }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
     },
     {
@@ -75,6 +83,9 @@
         {"type": "ORE"},
         {"type": "ORE"},
         {"type": "HELIUM"}
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
     },
     {
@@ -107,6 +118,9 @@
         {"type": "METHANE"},
         {"type": "HELIUM"},
         {"type": "HYDROGEN"}
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
     },
     {
@@ -134,6 +148,10 @@
         {"type": "ORE"},
         {"type": "ORE"},
         {"type": "HYDROGEN"}
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"},
+        {"type": "EQUIP", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
     },
     {
@@ -161,6 +179,9 @@
         {"type": "ORE"},
         {"type": "ORE"},
         {"type": "ICE"}
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
     },
     {
@@ -188,6 +209,9 @@
         {"type": "ORE"},
         {"type": "ORE"},
         {"type": "METHANE"}
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
     },
     {
@@ -215,6 +239,9 @@
         {"type": "METHANE"},
         {"type": "HELIUM"},
         {"type": "HYDROGEN"}
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
     },
     {
@@ -242,6 +269,10 @@
         {"type": "ORE"},
         {"type": "ORE"},
         {"type": "NVIDIUM"}
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"},
+        {"type": "TRADE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
     },
     {
@@ -269,6 +300,9 @@
         {"type": "ORE"},
         {"type": "ORE"},
         {"type": "ICE"}
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
     },
     {
@@ -292,6 +326,12 @@
         {"type": "ICE"},
         {"type": "ICE"},
         {"type": "ICE"}
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
+        {"type": "SHIPYARD", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
+        {"type": "WHARF", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
+        {"type": "EQUIP", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
       ]
     },
     {
@@ -315,6 +355,10 @@
         {"type": "METHANE"},
         {"type": "HELIUM"},
         {"type": "HYDROGEN"}
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"},
+        {"type": "TRADE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
     },
     {
@@ -343,6 +387,9 @@
         {"type": "ORE"},
         {"type": "ORE"},
         {"type": "ORE"}
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
     },
     {
@@ -366,6 +413,10 @@
         {"type": "ORE"},
         {"type": "ORE"},
         {"type": "NVIDIUM"}
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"},
+        {"type": "TRADE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
     },
     {
@@ -383,6 +434,9 @@
         {"type": "METHANE"},
         {"type": "HELIUM"},
         {"type": "HYDROGEN"}
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
     }
   ]
