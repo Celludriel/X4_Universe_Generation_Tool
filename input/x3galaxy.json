@@ -1069,5 +1069,1195 @@
         "economyMax": "0.25"
       }
     }
+  ],
+  "jobs": [
+    {
+      "id": "argon_bio_trader_l",
+      "name": "{20204,1301}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 8,
+        "cluster": 4
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "bio",
+      "ship": {
+        "faction": "ARGON",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "argon_bio_trader_m",
+      "name": "{20204,1401}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 30,
+        "cluster": 8,
+        "sector": 8
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "bio",
+      "ship": {
+        "faction": "ARGON",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "argon_food_trader_s",
+      "name": "{20204,1801}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 40,
+        "cluster": 10,
+        "sector": 5
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "3"}
+        ]
+      }],
+      "basket": "food",
+      "ship": {
+        "faction": "ARGON",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "argon_energycell_trader_l",
+      "name": "{20204,101}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 5,
+        "cluster": 2
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "energycells",
+      "ship": {
+        "faction": "ARGON",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "argon_energycell_trader_m",
+      "name": "{20204,201}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 25,
+        "cluster": 7,
+        "sector": 5
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "energycells",
+      "ship": {
+        "faction": "ARGON",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "argon_energycell_trader_s",
+      "name": "{20204,201}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 5,
+        "cluster": 1
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "energycells",
+      "ship": {
+        "faction": "ARGON",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "argon_equipment_trader_l",
+      "name": "{20204,301}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 2,
+        "cluster": 1
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "equipment",
+      "ship": {
+        "faction": "ARGON",
+        "size": "LARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "argon_equipment_trader_m",
+      "name": "{20204,301}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 10,
+        "cluster": 3
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "equipment",
+      "ship": {
+        "faction": "ARGON",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "argon_construction_trader_l",
+      "name": "{20204,401}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 5,
+        "cluster": 2
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "construction_stations",
+      "ship": {
+        "faction": "ARGON",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "argon_construction_trader_m",
+      "name": "{20204,401}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 18,
+        "cluster": 3
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "construction_stations",
+      "ship": {
+        "faction": "ARGON",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "argon_refinedgas_trader_l",
+      "name": "{20204,501}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 2,
+        "cluster": 1
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_gas",
+      "ship": {
+        "faction": "ARGON",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "argon_refinedgas_trader_m",
+      "name": "{20204,601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 18,
+        "cluster": 3,
+        "sector": 2
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_gas",
+      "ship": {
+        "faction": "ARGON",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "argon_refinedmineral_trader_l",
+      "name": "{20204,501}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 5,
+        "cluster": 2
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_mineral",
+      "ship": {
+        "faction": "ARGON",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "argon_refinedmineral_trader_m",
+      "name": "{20204,601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 15,
+        "cluster": 3,
+        "sector": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_mineral",
+      "ship": {
+        "faction": "ARGON",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "argon_tech_trader_l",
+      "name": "{20204,301}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 5,
+        "cluster": 2,
+        "sector": 2
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "tech",
+      "ship": {
+        "faction": "ARGON",
+        "size": "LARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "argon_tech_trader_m",
+      "name": "{20204,401}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 5,
+        "cluster": 3,
+        "sector": 2
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "tech",
+      "ship": {
+        "faction": "ARGON",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "argon_tech_trader_s",
+      "name": "{20204,401}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 10,
+        "cluster": 3,
+        "sector": 2
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "tech",
+      "ship": {
+        "faction": "ARGON",
+        "size": "SMALL",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "argon_water_trader_l",
+      "name": "{20204,1501}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3,
+        "cluster": 1
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "water",
+      "ship": {
+        "faction": "ARGON",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "argon_water_trader_m",
+      "name": "{20204,1601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 10,
+        "cluster": 4,
+        "sector": 2
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "water",
+      "ship": {
+        "faction": "ARGON",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "argon_free_miner_l_liquid",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"],
+        "regionBasket": "gases"
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 2
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "ship": {
+        "faction": "ARGON",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "argon_free_miner_m_liquid",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"],
+        "regionBasket": "gases"
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 8
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "ship": {
+        "faction": "ARGON",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "argon_free_miner_l_mineral",
+      "name": "{20204,5601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 8
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "ship": {
+        "faction": "ARGON",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "argon_free_miner_m_mineral",
+      "name": "{20204,5601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 17
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "ship": {
+        "faction": "ARGON",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "argon_free_miner_s_mineral",
+      "name": "{20204,5601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"],
+        "regionBasket": "gases"
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 7
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "1"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "ship": {
+        "faction": "ARGON",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "argon_free_miner_l_ice",
+      "name": "{20204,2001}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"],
+        "regionBasket": "ice"
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "ice",
+      "ship": {
+        "faction": "ARGON",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "argon_free_miner_m_ice",
+      "name": "{20204,2001}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"],
+        "regionBasket": "ice"
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 7
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "ice",
+      "ship": {
+        "faction": "ARGON",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "argon_carrier_patrol_xl_center_galaxy",
+      "name": "{20204,3201}",
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["ARGON"],
+        "macro": "Zone001_Cluster01_Sector001_macro"
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["MILITARY", "CARRIER"],
+        "shipSize": "XLARGE"
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.zone"}
+        ]
+      }],
+      "ship": {
+        "faction": "ARGON",
+        "size": "XLARGE",
+        "levelMin": "0.7",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","CARRIER"]
+      },
+      "subordinates": ["argon_destroyer_escort_l"],
+      "rebuild": true,
+      "commandeerable": false
+    },
+    {
+      "id": "argon_destroyer_patrol_l_sector",
+      "name": "{20204,3301}",
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC","MILITARY", "DESTROYER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.cluster"}
+        ]
+      }],
+      "ship": {
+        "faction": "ARGON",
+        "size": "LARGE",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","DESTROYER"]
+      },
+      "subordinates": ["argon_frigate_escort_m"],
+      "rebuild": true,
+      "commandeerable": true
+    },
+    {
+      "id": "argon_destroyer_patrol_l_comp",
+      "name": "{20204,3301}",
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC","MILITARY", "DESTROYER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3,
+        "maxGalaxy": 12,
+        "cluster": 3
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.zone"}
+        ]
+      }],
+      "ship": {
+        "faction": "ARGON",
+        "size": "LARGE",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","DESTROYER"]
+      },
+      "rebuild": true,
+      "commandeerable": true
+    },
+    {
+      "id": "argon_frigate_patrol_m_sector_exp",
+      "name": "{20204,2901}",
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC","MILITARY", "FRIGATE"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 44,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.sector"}
+        ]
+      }],
+      "ship": {
+        "faction": "ARGON",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","FRIGATE"]
+      },
+      "subordinates": ["argon_fighter_escort_s_frigate"],
+      "rebuild": true,
+      "commandeerable": false
+    },
+    {
+      "id": "argon_dronecarrier_patrol_m_sector",
+      "name": "{20204,5001}",
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC","MILITARY", "FRIGATE"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 12,
+        "maxGalaxy": 24,
+        "sector": 3
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.sector"}
+        ]
+      }],
+      "ship": {
+        "faction": "ARGON",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","FRIGATE"],
+        "units": [
+          {"category":  "unitcategory.defence", "min": 8, "max": "12"}
+        ]
+      },
+      "rebuild": true,
+      "commandeerable": true
+    },
+    {
+      "id": "argon_fighter_patrol_s_zone",
+      "name": "{20204,2901}",
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC","MILITARY", "FIGHTER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 25,
+        "maxGalaxy": 50,
+        "zone": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value":  "class.zone"}
+        ]
+      }],
+      "ship": {
+        "faction": "ARGON",
+        "size": "SMALL",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["HEAVY","FIGHTER"]
+      },
+      "subordinates": ["argon_fighter_escort_s_patrol"],
+      "rebuild": true,
+      "commandeerable": true
+    },
+    {
+      "id": "argon_scout_patrol_s",
+      "name": "{20204,2801}",
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC","MILITARY", "SCOUT"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 12,
+        "maxGalaxy": 24,
+        "cluster": 2
+      },
+      "orders": [{
+        "order": "Recon"
+      }],
+      "ship": {
+        "faction": "ARGON",
+        "size": "SMALL",
+        "levelMin": "0.7",
+        "levelMax": "1.0",
+        "tags": ["SCOUT","FIGHTER"]
+      },
+      "rebuild": true,
+      "commandeerable": true
+    },
+    {
+      "id": "argon_police_patrol_s",
+      "name": "{20204,6101}",
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["ARGON", "ANTIGONE"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FACTIONLOGIC","MILITARY", "POLICE"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 60,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "Recon",
+        "parameters": [
+          {"name": "police", "value":  "true"}
+        ]
+      }],
+      "ship": {
+        "faction": "ARGON",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["LIGHT","FIGHTER"]
+      },
+      "rebuild": true,
+      "commandeerable": false
+    }
   ]
 }

@@ -20,6 +20,7 @@ public class Galaxy extends AbstractJson {
     private String starterZoneName;
     private List<Cluster> clusters = new ArrayList<>();
     private List<Product> products = new ArrayList<>();
+    private List<Job> jobs = new ArrayList<>();
 
     public String getGalaxyName() {
         return galaxyName;
@@ -66,6 +67,10 @@ public class Galaxy extends AbstractJson {
         return products;
     }
 
+    public List<Job> getJobs() {
+        return jobs;
+    }
+
     public void setGalaxyName(String galaxyName) {
         this.galaxyName = galaxyName;
     }
@@ -110,6 +115,10 @@ public class Galaxy extends AbstractJson {
         this.products = products;
     }
 
+    public void setJobs(List<Job> jobs) {
+        this.jobs = jobs;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -130,6 +139,7 @@ public class Galaxy extends AbstractJson {
                 .append(starterZoneName, galaxy.starterZoneName)
                 .append(clusters, galaxy.clusters)
                 .append(products, galaxy.products)
+                .append(jobs, galaxy.jobs)
                 .isEquals();
     }
 
@@ -147,6 +157,7 @@ public class Galaxy extends AbstractJson {
                 .append(starterZoneName)
                 .append(clusters)
                 .append(products)
+                .append(jobs)
                 .toHashCode();
     }
 }
