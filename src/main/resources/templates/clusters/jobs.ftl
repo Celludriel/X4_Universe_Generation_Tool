@@ -4,7 +4,62 @@
   <replace sel="/jobs">
     <jobs>
       <#list galaxy.jobs as job>
-      <job id="${job.id}" name="${job.name}">
+      <job id="${job.id}" name="${job.name}" <#if job.startActive??>startactive="${job.startActive?c}"</#if>>
+        <modifiers rebuild="${job.rebuild?c}" commandeerable="${job.commandeerable?c}"  subordinate="${job.subordinate?c}" />
+        <orders>
+        <#list job.orders as order>
+            <order order="${order.order}" default="${order.defaultOrder?c}">
+            <#list order.parameters as param>
+                <param name="${param.name}" value="${param.value}"/>
+            </#list>
+            </order>
+        </#list>
+        </orders>
+        <#if job.basket??>
+        <basket basket="${job.basket}" />
+        </#if>
+        <#if job.jobCategory??>
+        <category faction="${job.jobCategory.faction.getName()}" tags="${job.jobCategory.getTagsPrint()}" <#if job.jobCategory.shipSize??>size="${job.jobCategory.shipSize.getName()}"</#if> />
+        </#if>
+        <quota <#if job.jobQuota.galaxy??>galaxy="${job.jobQuota.galaxy}"</#if> <#if job.jobQuota.maxGalaxy??>maxGalaxy="${job.jobQuota.maxGalaxy}"</#if> <#if job.jobQuota.cluster??>cluster="${job.jobQuota.cluster}"</#if> <#if job.jobQuota.sector??>sector="${job.jobQuota.sector}"</#if> <#if job.jobQuota.zone??>zone="${job.jobQuota.zone}"</#if> <#if job.jobQuota.wing??>wing="${job.jobQuota.wing}"</#if> <#if job.jobQuota.variation??>variation="${job.jobQuota.variation}"</#if> <#if job.jobQuota.station??>station="${job.jobQuota.station}"</#if> />
+        <location class="${job.jobLocation.locationClass}" <#if job.jobLocation.macro??>macro="${job.jobLocation.macro}"</#if> <#if job.jobLocation.relation??>relation="${job.jobLocation.relation}"</#if> <#if job.jobLocation.comparison??>comparison="${job.jobLocation.comparison}"</#if> <#if job.jobLocation.regionBasket??>regionBasket="${job.jobLocation.regionBasket}"</#if> <#if job.jobLocation.factions?size != 0>faction="${job.jobLocation.getPrintFactions()}"</#if> />
+        <environment buildatshipyard="${job.buildatshipyard?c}"/>
+        <#if job.ship??>
+        <ship>
+          <select faction="${job.ship.faction.getName()}" tags="[${job.ship.getTagPrint()}]" <#if job.ship.size??>size="${job.ship.size}"</#if> />
+          <loadout>
+            <level min="${job.ship.levelMin}" max="${job.ship.levelMax}"/>
+          </loadout>
+          <owner exact="${job.ship.faction.getName()}" overridenpc="${job.ship.overridenpc?c}"/>
+          <#if job.ship.cargo??>
+          <cargo>
+            <wares multiple="${job.ship.cargo.multiple?c}">
+              <fillpercent min="${job.ship.cargo.min?c}" max="${job.ship.cargo.max?c}" profile="${job.ship.cargo.profile}"/>
+            </wares>
+          </cargo>
+          </#if>
+          <#if job.ship.units??>
+          <units>
+            <#list job.ship.units as unit>
+            <unit category="${unit.category}" min="${unit.min?c}" max="${unit.max}?c" />
+            </#list>
+          </units>
+          </#if>
+        </ship>
+        </#if>
+        <#if job.subordinates??>
+        <subordinates>
+          <#list job.subordinates as subordinate>
+          <subordinate job="${subordinate}" />
+          </#list>
+        </subordinates>
+        </#if>
+        <#if job.encounters??>
+        <encounters id="${job.encounters}"/>
+        </#if>
+        <#if job.time??>
+        <time interval="${job.time}"/>
+        </#if>
       </job>
       </#list>
 

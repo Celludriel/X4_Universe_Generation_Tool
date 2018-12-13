@@ -1,8 +1,11 @@
 package be.celludriel.universegenerator.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class JobCategory extends AbstractJson {
@@ -32,6 +35,15 @@ public class JobCategory extends AbstractJson {
 
     public void setShipSize(ShipSize shipSize) {
         this.shipSize = shipSize;
+    }
+
+    @JsonIgnore
+    public String getTagsPrint(){
+        List<String> stringValues = new ArrayList<>();
+        for (Tag tag : tags) {
+            stringValues.add(tag.getName());
+        }
+        return StringUtils.join(stringValues, ",");
     }
 
     @Override

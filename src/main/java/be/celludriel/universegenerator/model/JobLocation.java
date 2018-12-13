@@ -1,8 +1,11 @@
 package be.celludriel.universegenerator.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class JobLocation extends AbstractJson {
@@ -12,7 +15,7 @@ public class JobLocation extends AbstractJson {
     private String relation;
     private String macro;
     private String regionBasket;
-    private List<Faction> factions;
+    private List<Faction> factions = new ArrayList<>();
 
     public String getLocationClass() {
         return locationClass;
@@ -60,6 +63,19 @@ public class JobLocation extends AbstractJson {
 
     public void setFactions(List<Faction> factions) {
         this.factions = factions;
+    }
+
+    @JsonIgnore
+    public String getPrintFactions(){
+        if(factions.size() == 1){
+            return factions.get(0).getName();
+        }
+
+        List<String> stringValues = new ArrayList<>();
+        for (Faction faction : factions) {
+            stringValues.add(faction.getName());
+        }
+        return "[" + StringUtils.join(stringValues, ",") + "]";
     }
 
     @Override

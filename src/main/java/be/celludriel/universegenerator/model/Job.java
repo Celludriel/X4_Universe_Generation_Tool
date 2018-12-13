@@ -1,7 +1,5 @@
 package be.celludriel.universegenerator.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
@@ -12,6 +10,7 @@ public class Job extends AbstractJson {
 
     private String id;
     private String name;
+    private Boolean startActive;
     private boolean rebuild = false;
     private boolean commandeerable = true;
     private boolean subordinate = false;
@@ -21,6 +20,8 @@ public class Job extends AbstractJson {
     private JobQuota jobQuota;
     private List<Order> orders = new ArrayList<>();
     private String basket;
+    private String encounters;
+    private String time;
     private Ship ship;
     private List<String> subordinates = new ArrayList<>();
 
@@ -30,6 +31,10 @@ public class Job extends AbstractJson {
 
     public String getName() {
         return name;
+    }
+
+    public Boolean getStartActive() {
+        return startActive;
     }
 
     public boolean isRebuild() {
@@ -68,6 +73,14 @@ public class Job extends AbstractJson {
         return basket;
     }
 
+    public String getEncounters() {
+        return encounters;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
     public Ship getShip() {
         return ship;
     }
@@ -82,6 +95,10 @@ public class Job extends AbstractJson {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setStartActive(Boolean startActive) {
+        this.startActive = startActive;
     }
 
     public void setRebuild(boolean rebuild) {
@@ -120,6 +137,14 @@ public class Job extends AbstractJson {
         this.basket = basket;
     }
 
+    public void setEncounters(String encounters) {
+        this.encounters = encounters;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
     public void setShip(Ship ship) {
         this.ship = ship;
     }
@@ -143,11 +168,14 @@ public class Job extends AbstractJson {
                 .append(buildatshipyard, job.buildatshipyard)
                 .append(id, job.id)
                 .append(name, job.name)
+                .append(startActive, job.startActive)
                 .append(jobLocation, job.jobLocation)
                 .append(jobCategory, job.jobCategory)
                 .append(jobQuota, job.jobQuota)
                 .append(orders, job.orders)
                 .append(basket, job.basket)
+                .append(encounters, job.encounters)
+                .append(time, job.time)
                 .append(ship, job.ship)
                 .append(subordinates, job.subordinates)
                 .isEquals();
@@ -158,6 +186,7 @@ public class Job extends AbstractJson {
         return new HashCodeBuilder(17, 37)
                 .append(id)
                 .append(name)
+                .append(startActive)
                 .append(rebuild)
                 .append(commandeerable)
                 .append(subordinate)
@@ -167,6 +196,8 @@ public class Job extends AbstractJson {
                 .append(jobQuota)
                 .append(orders)
                 .append(basket)
+                .append(encounters)
+                .append(time)
                 .append(ship)
                 .append(subordinates)
                 .toHashCode();

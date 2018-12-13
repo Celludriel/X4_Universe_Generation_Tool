@@ -2258,6 +2258,625 @@
       },
       "rebuild": true,
       "commandeerable": false
+    },
+    {
+      "id": "argon_destroyer_escort_l",
+      "name": "{20204,3301}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["MILITARY", "DESTROYER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "wing": 2
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value":  "formationshape.invvshape"}
+        ]
+      }],
+      "ship": {
+        "faction": "ARGON",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","DESTROYER"]
+      },
+      "rebuild": true,
+      "commandeerable": false,
+      "subordinates": ["argon_frigate_escort_m"]
+    },
+    {
+      "id": "argon_frigate_escort_m",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["MILITARY"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "wing": 3
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.dartvertical"}
+        ]
+      }],
+      "ship": {
+        "faction": "ARGON",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","MEDIUM"]
+      },
+      "rebuild": true,
+      "commandeerable": false,
+      "subordinates": ["argon_fighter_escort_s_frigate"]
+    },
+    {
+      "id": "argon_fighter_escort_s_frigate",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["MILITARY", "FIGHTER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "wing": 4
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "faction": "ARGON",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER","SELECTION"]
+      },
+      "rebuild": true,
+      "commandeerable": false
+    },
+    {
+      "id": "argon_fighter_escort_s_patrol",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["MILITARY", "FIGHTER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "wing": 3
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "faction": "ARGON",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER","LIGHT"]
+      },
+      "rebuild": true,
+      "commandeerable": false
+    },
+    {
+      "id": "argon_miningfleet_m_solid_small",
+      "name": "{20204,5601}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "ship": {
+        "faction": "ARGON",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"]
+      },
+      "subordinates": ["argon_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "argon_miningfleet_m_liquid_small",
+      "name": "{20204,5701}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "ship": {
+        "faction": "ARGON",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID"]
+      },
+      "subordinates": ["argon_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "argon_miningfleet_ml_solid_large",
+      "name": "{20204,5601}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 3,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "ship": {
+        "faction": "ARGON",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID", "MIXED"]
+      },
+      "subordinates": ["argon_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "argon_miningfleet_ml_liquid_large",
+      "name": "{20204,5701}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 3,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "ship": {
+        "faction": "ARGON",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID", "MIXED"]
+      },
+      "subordinates": ["argon_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "argon_fighter_escort_s_miningfleet",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "ARGON",
+        "shipSize": "SMALL",
+        "tags": ["MILITARY", "FIGHTER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 1,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value":  "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "faction": "ARGON",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER", "SELECTION"]
+      }
+    },
+    {
+      "id": "argon_construction_vessel_xl",
+      "name": "{20204,5101}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "shipSize": "XLARGE",
+        "tags": ["FACTIONLOGIC","BUILDER"]
+      },
+      "jobQuota": {
+        "galaxy": 10,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "FindBuildTasks",
+        "parameters": [
+          {"name": "maxjumps", "value": "6"}
+        ]
+      }],
+      "ship": {
+        "faction": "ARGON",
+        "size": "XLARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["BUILDER"]
+      }
+    },
+    {
+      "id": "argon_construction_vessel_xl_playeronly",
+      "name": "{20204,5101}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "shipSize": "XLARGE",
+        "tags": ["FACTIONLOGIC","BUILDER"]
+      },
+      "jobQuota": {
+        "galaxy": 10,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "FindBuildTasks",
+        "parameters": [
+          {"name": "maxjumps", "value": "6"},
+          {"name": "playeronly", "value": "true"}
+        ]
+      }],
+      "ship": {
+        "faction": "ARGON",
+        "size": "XLARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["BUILDER"]
+      }
+    },
+    {
+      "id": "argon_resupplier_xl",
+      "name": "{20204,5501}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "neutral",
+        "factions": ["ARGON"]
+      },
+      "jobQuota": {
+        "galaxy": 10,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.zone"}
+        ]
+      }],
+      "ship": {
+        "faction": "ARGON",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["RESUPPLIER"]
+      }
+    },
+    {
+      "id": "argon_resourcescout_s_deepspace_single",
+      "name": "{20204,10049}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["ARGON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "shipSize": "SMALL",
+        "tags": ["SCOUT","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 3,
+        "cluster": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "deepspace", "value": "true"},
+          {"name": "resourcescout", "value": "true"}
+        ]
+      }],
+      "basket": "minerals",
+      "encounters": "resource_scout",
+      "ship": {
+        "faction": "ARGON",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["SCOUT"]
+      }
+    },
+    {
+      "id": "argon_free_miner_ml_solid_deepspace_single",
+      "name": "{20204,5601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["ARGON"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "1",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "ARGON",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "SOLID", "MIXED"]
+      }
+    },
+    {
+      "id": "argon_free_miner_ml_liquid_deepspace_single",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["ARGON"],
+        "regionBasket": "gasses"
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "1",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "ARGON",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "LIQUID", "MIXED"]
+      }
+    },
+    {
+      "id": "argon_free_miner_ml_solid_deepspace_smallgroup",
+      "name": "{20204,5601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["ARGON"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "600",
+      "encounters": "mining_group_small",
+      "ship": {
+        "faction": "ARGON",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "SOLID", "MIXED"]
+      },
+      "subordinates": ["argon_miningfleet_m_solid_small","argon_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "argon_free_miner_ml_liquid_deepspace_smallgroup",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["ARGON"],
+        "regionBasket": "gasses"
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "600",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "ARGON",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "LIQUID", "MIXED"]
+      },
+      "subordinates": ["argon_miningfleet_m_liquid_small","argon_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "argon_free_miner_l_solid_deepspace_largegroup",
+      "name": "{20204,5601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["ARGON"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "3600",
+      "encounters": "mining_group_large",
+      "ship": {
+        "faction": "ARGON",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "SOLID", "MIXED"]
+      },
+      "subordinates": ["argon_miningfleet_ml_solid_large","argon_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "argon_free_miner_l_liquid_deepspace_largegroup",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["ARGON"],
+        "regionBasket": "gasses"
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "3600",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "ARGON",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "LIQUID", "MIXED"]
+      },
+      "subordinates": ["argon_miningfleet_ml_liquid_large","argon_fighter_escort_s_miningfleet"]
     }
   ]
 }
