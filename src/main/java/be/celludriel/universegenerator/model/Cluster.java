@@ -24,8 +24,10 @@ public class Cluster extends AbstractJson {
     private int x;
     private int y;
     private String backdrop;
+    private boolean gamestart = false;
     private List<Connection> connections = new ArrayList<>();
     private List<Zone> zoneList = new ArrayList<>();
+    private List<Belt> belts = new ArrayList<>();
 
     public String getId() {
         return id;
@@ -67,6 +69,10 @@ public class Cluster extends AbstractJson {
         return backdrop;
     }
 
+    public boolean isGamestart() {
+        return gamestart;
+    }
+
     public List<Connection> getConnections() {
         return connections;
     }
@@ -74,6 +80,10 @@ public class Cluster extends AbstractJson {
     @JsonIgnore
     public List<Zone> getZoneList() {
         return zoneList;
+    }
+
+    public List<Belt> getBelts() {
+        return belts;
     }
 
     public void setId(String id) {
@@ -116,8 +126,16 @@ public class Cluster extends AbstractJson {
         this.backdrop = backdrop;
     }
 
+    public void setGamestart(boolean gamestart) {
+        this.gamestart = gamestart;
+    }
+
     public void setConnections(List<Connection> connections) {
         this.connections = connections;
+    }
+
+    public void setBelts(List<Belt> belts) {
+        this.belts = belts;
     }
 
     @JsonIgnore
@@ -160,6 +178,7 @@ public class Cluster extends AbstractJson {
         return new EqualsBuilder()
                 .append(x, cluster.x)
                 .append(y, cluster.y)
+                .append(gamestart, cluster.gamestart)
                 .append(id, cluster.id)
                 .append(name, cluster.name)
                 .append(description, cluster.description)
@@ -170,6 +189,7 @@ public class Cluster extends AbstractJson {
                 .append(backdrop, cluster.backdrop)
                 .append(connections, cluster.connections)
                 .append(zoneList, cluster.zoneList)
+                .append(belts, cluster.belts)
                 .isEquals();
     }
 
@@ -186,8 +206,10 @@ public class Cluster extends AbstractJson {
                 .append(x)
                 .append(y)
                 .append(backdrop)
+                .append(gamestart)
                 .append(connections)
                 .append(zoneList)
+                .append(belts)
                 .toHashCode();
     }
 }

@@ -21,7 +21,7 @@ public class ZoneConnectionProcessor {
         for (Cluster cluster : clusters) {
 
             if(cluster.getZoneList().size() == 0){
-                addDefaultZone(cluster);
+                addDefaultZone(cluster, galaxy);
             }
 
             //add connection zones
@@ -32,10 +32,13 @@ public class ZoneConnectionProcessor {
         }
     }
 
-    private void addDefaultZone(Cluster cluster) {
+    private void addDefaultZone(Cluster cluster, Galaxy galaxy) {
         //add default zone
         Zone zone = new Zone();
         zone.setName(DEFAULT_CLUSTER_PREFIX + cluster.getId());
+        if(cluster.isGamestart()){
+            galaxy.setStarterZoneName(zone.getName());
+        }
         cluster.addToZoneList(zone);
     }
 
@@ -46,7 +49,7 @@ public class ZoneConnectionProcessor {
         String originConnectionID = CLUSTER_PREFIX + origin.getId() + SECTOR_001 + ZONE_PREFIX + newOriginZoneId;
 
         if(target.getZoneList().size() == 0){
-            addDefaultZone(target);
+            addDefaultZone(target, galaxy);
         }
 
         int targetNextId = target.getZoneList().size() + 1;

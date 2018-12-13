@@ -1,5 +1,6 @@
 package be.celludriel.universegenerator.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
@@ -10,11 +11,13 @@ public class Galaxy extends AbstractJson {
 
     private String galaxyName;
     private String galaxyPrefix;
+    private String gamestartName;
     private String description;
     private String author;
     private String version;
     private String date;
     private String save;
+    private String starterZoneName;
     private List<Cluster> clusters = new ArrayList<>();
 
     public String getGalaxyName() {
@@ -23,6 +26,10 @@ public class Galaxy extends AbstractJson {
 
     public String getGalaxyPrefix() {
         return galaxyPrefix;
+    }
+
+    public String getGamestartName() {
+        return gamestartName;
     }
 
     public String getDescription() {
@@ -45,6 +52,11 @@ public class Galaxy extends AbstractJson {
         return save;
     }
 
+    @JsonIgnore
+    public String getStarterZoneName() {
+        return starterZoneName;
+    }
+
     public List<Cluster> getClusters() {
         return clusters;
     }
@@ -55,6 +67,10 @@ public class Galaxy extends AbstractJson {
 
     public void setGalaxyPrefix(String galaxyPrefix) {
         this.galaxyPrefix = galaxyPrefix;
+    }
+
+    public void setGamestartName(String gamestartName) {
+        this.gamestartName = gamestartName;
     }
 
     public void setDescription(String description) {
@@ -77,6 +93,10 @@ public class Galaxy extends AbstractJson {
         this.save = save;
     }
 
+    public void setStarterZoneName(String starterZoneName) {
+        this.starterZoneName = starterZoneName;
+    }
+
     public void setClusters(List<Cluster> clusters) {
         this.clusters = clusters;
     }
@@ -92,11 +112,13 @@ public class Galaxy extends AbstractJson {
         return new EqualsBuilder()
                 .append(galaxyName, galaxy.galaxyName)
                 .append(galaxyPrefix, galaxy.galaxyPrefix)
+                .append(gamestartName, galaxy.gamestartName)
                 .append(description, galaxy.description)
                 .append(author, galaxy.author)
                 .append(version, galaxy.version)
                 .append(date, galaxy.date)
                 .append(save, galaxy.save)
+                .append(starterZoneName, galaxy.starterZoneName)
                 .append(clusters, galaxy.clusters)
                 .isEquals();
     }
@@ -106,11 +128,13 @@ public class Galaxy extends AbstractJson {
         return new HashCodeBuilder(17, 37)
                 .append(galaxyName)
                 .append(galaxyPrefix)
+                .append(gamestartName)
                 .append(description)
                 .append(author)
                 .append(version)
                 .append(date)
                 .append(save)
+                .append(starterZoneName)
                 .append(clusters)
                 .toHashCode();
     }

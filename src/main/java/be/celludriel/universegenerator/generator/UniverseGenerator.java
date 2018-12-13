@@ -15,14 +15,17 @@ public class UniverseGenerator {
     public static final String CLUSTERS = "clusters";
     private final FreemarkerConfiguration freemarkerConfiguration;
     private final ZoneConnectionProcessor zoneConnectionProcessor;
+    private final BeltProcessor beltProcessor;
 
     public UniverseGenerator() {
         freemarkerConfiguration = new FreemarkerConfiguration();
         zoneConnectionProcessor = new ZoneConnectionProcessor();
+        beltProcessor = new BeltProcessor();
     }
 
     public void generateUniverse(Galaxy galaxy) throws IOException, TemplateException {
         zoneConnectionProcessor.processConnections(galaxy);
+        beltProcessor.processBelts(galaxy);
 
         generateOutput(galaxy);
     }
@@ -41,6 +44,14 @@ public class UniverseGenerator {
         generateContent(cfg, root, CLUSTERS);
         generateGod(cfg, root, CLUSTERS);
         generateJobs(cfg, root, CLUSTERS);
+        generateGameStart(cfg, root, CLUSTERS);
+    }
+
+    private void generateGameStart(Configuration cfg, Map<String, Object> root, String type) throws IOException, TemplateException {
+        Template temp = cfg.getTemplate(type + "/gamestarts.ftl");
+        Galaxy galaxy = (Galaxy) root.get("galaxy");
+        String path = "output/" + galaxy.getGalaxyName() + "/libraries/gamestarts.xml";
+        writeToFile(root, temp, path);
     }
 
     private void generateZones(Configuration cfg, Map<String, Object> root, String type) throws IOException, TemplateException {

@@ -1,7 +1,8 @@
 {
   "galaxyName": "x3galaxy",
   "galaxyPrefix": "x3g",
-  "description": "description",
+  "gamestartName": "The X3 Galaxy",
+  "description": "Original X3 galaxy",
   "author": "celludriel",
   "version": "1.0.0",
   "date": "2018-12-12",
@@ -18,6 +19,7 @@
       "x": 0,
       "y": 0,
       "backdrop": "empty_space",
+      "gamestart": true,
       "connections": [
         {
           "targetClusterId": "03",
@@ -27,6 +29,11 @@
           "targetClusterId": "05",
           "connectionType": "S"
         }
+      ],
+      "belts": [
+        {"type": "ORE"},
+        {"type": "ORE"},
+        {"type": "HYDROGEN"}
       ]
     },
     {
@@ -63,6 +70,11 @@
           "targetClusterId": "14",
           "connectionType": "S"
         }
+      ],
+      "belts": [
+        {"type": "ORE"},
+        {"type": "ORE"},
+        {"type": "HELIUM"}
       ]
     },
     {
@@ -85,6 +97,16 @@
           "targetClusterId": "01",
           "connectionType": "S"
         }
+      ],
+      "belts": [
+        {"type": "ORE"},
+        {"type": "ORE"},
+        {"type": "ICE"},
+        {"type": "ORE"},
+        {"type": "ORE"},
+        {"type": "METHANE"},
+        {"type": "HELIUM"},
+        {"type": "HYDROGEN"}
       ]
     },
     {
@@ -107,6 +129,11 @@
           "targetClusterId": "13",
           "connectionType": "S"
         }
+      ],
+      "belts": [
+        {"type": "ORE"},
+        {"type": "ORE"},
+        {"type": "HYDROGEN"}
       ]
     },
     {
@@ -129,6 +156,11 @@
           "targetClusterId": "07",
           "connectionType": "S"
         }
+      ],
+      "belts": [
+        {"type": "ORE"},
+        {"type": "ORE"},
+        {"type": "ICE"}
       ]
     },
     {
@@ -151,6 +183,11 @@
           "targetClusterId": "12",
           "connectionType": "S"
         }
+      ],
+      "belts": [
+        {"type": "ORE"},
+        {"type": "ORE"},
+        {"type": "METHANE"}
       ]
     },
     {
@@ -173,6 +210,11 @@
           "targetClusterId": "06",
           "connectionType": "S"
         }
+      ],
+      "belts": [
+        {"type": "METHANE"},
+        {"type": "HELIUM"},
+        {"type": "HYDROGEN"}
       ]
     },
     {
@@ -195,6 +237,11 @@
           "targetClusterId": "08",
           "connectionType": "S"
         }
+      ],
+      "belts": [
+        {"type": "ORE"},
+        {"type": "ORE"},
+        {"type": "NVIDIUM"}
       ]
     },
     {
@@ -217,6 +264,11 @@
           "targetClusterId": "04",
           "connectionType": "S"
         }
+      ],
+      "belts": [
+        {"type": "ORE"},
+        {"type": "ORE"},
+        {"type": "ICE"}
       ]
     },
     {
@@ -235,6 +287,11 @@
           "targetClusterId": "02",
           "connectionType": "S"
         }
+      ],
+      "belts": [
+        {"type": "ICE"},
+        {"type": "ICE"},
+        {"type": "ICE"}
       ]
     },
     {
@@ -253,6 +310,11 @@
           "targetClusterId": "13",
           "connectionType": "NE"
         }
+      ],
+      "belts": [
+        {"type": "METHANE"},
+        {"type": "HELIUM"},
+        {"type": "HYDROGEN"}
       ]
     },
     {
@@ -271,6 +333,16 @@
           "targetClusterId": "15",
           "connectionType": "SE"
         }
+      ],
+      "belts": [
+        {"type": "ORE"},
+        {"type": "ORE"},
+        {"type": "ORE"},
+        {"type": "ORE"},
+        {"type": "ORE"},
+        {"type": "ORE"},
+        {"type": "ORE"},
+        {"type": "ORE"}
       ]
     },
     {
@@ -289,6 +361,11 @@
           "targetClusterId": "15",
           "connectionType": "S"
         }
+      ],
+      "belts": [
+        {"type": "ORE"},
+        {"type": "ORE"},
+        {"type": "NVIDIUM"}
       ]
     },
     {
@@ -301,7 +378,12 @@
       "security": "0.25",
       "x": 1,
       "y": -3,
-      "backdrop": "empty_space"
+      "backdrop": "empty_space",
+      "belts": [
+        {"type": "METHANE"},
+        {"type": "HELIUM"},
+        {"type": "HYDROGEN"}
+      ]
     }
   ]
 }
