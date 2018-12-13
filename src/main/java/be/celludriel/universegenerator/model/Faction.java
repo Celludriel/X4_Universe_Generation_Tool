@@ -4,7 +4,8 @@ public enum Faction {
     PLAYER("faction.player"), ARGON("argon"), ANTIGONE("antigone"),
     HATIKVAH("hatikvah"), PARANID("paranid"), HOLYORDER("holyorder"),
     ALLIANCE("alliance"), TELADI("teladi"), MINISTERY("minestery"),
-    SCALEPLATE("scaleplate"), XENON("xenon"), PLAYEROWNER("player");
+    SCALEPLATE("scaleplate"), XENON("xenon"), PLAYEROWNER("player"),
+    OWNERLERSS("ownerless");
 
     private String name;
 

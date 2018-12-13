@@ -439,5 +439,635 @@
         {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
     }
+  ],
+  "products": [
+    {
+      "id": "arg_advancedcomposites",
+      "ware": "advancedcomposites",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "arg_advancedelectronics",
+      "ware": "advancedelectronics",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "arg_antimattercells",
+      "ware": "antimattercells",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "wares": ["hydrogen"]
+      }
+    },
+    {
+      "id": "arg_antimatterconverters",
+      "ware": "antimatterconverters",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "arg_claytronics",
+      "ware": "claytronics",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 6,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "arg_dronecomponents",
+      "ware": "dronecomponents",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "arg_energycells",
+      "ware": "energycells",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.75",
+        "sunlightMin": "1",
+        "sunlightMax": "3"
+      }
+    },
+    {
+      "id": "arg_engineparts",
+      "ware": "engineparts",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "arg_fieldcoils",
+      "ware": "fieldcoils",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "arg_foodrations",
+      "ware": "foodrations",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 8,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "arg_graphene",
+      "ware": "graphene",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 6,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "wares": ["methane"]
+      }
+    },
+    {
+      "id": "arg_hullparts",
+      "ware": "hullparts",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 16,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "arg_meat",
+      "ware": "meat",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.25"
+      }
+    },
+    {
+      "id": "arg_medicalsupplies",
+      "ware": "medicalsupplies",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 18,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "arg_microchips",
+      "ware": "microchips",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 8,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "arg_missilecomponents",
+      "ware": "missilecomponents",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "arg_plasmaconductors",
+      "ware": "plasmaconductors",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.5"
+      }
+    },
+    {
+      "id": "arg_quantumtubes",
+      "ware": "quantumtubes",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.5"
+      }
+    },
+    {
+      "id": "arg_refinedmetals",
+      "ware": "refinedmetals",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 6,
+      "sectorQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.5",
+        "wares": ["ore"]
+      }
+    },
+    {
+      "id": "arg_scanningarrays",
+      "ware": "scanningarrays",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.5"
+      }
+    },
+    {
+      "id": "arg_shieldcomponents",
+      "ware": "shieldcomponents",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota":2,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "arg_siliconwafers",
+      "ware": "siliconwafers",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 6,
+      "sectorQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.5",
+        "wares": ["silicon"]
+      }
+    },
+    {
+      "id": "arg_spacefuel",
+      "ware": "spacefuel",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.5"
+      }
+    },
+    {
+      "id": "pir_spacefuel",
+      "ware": "spacefuel",
+      "race": "ARGON",
+      "owner": "HATIKVAH",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["OWNERLERSS"],
+        "solitary": true
+      }
+    },
+    {
+      "id": "arg_spices",
+      "ware": "spices",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 6,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.25"
+      }
+    },
+    {
+      "id": "arg_superfluidcoolant",
+      "ware": "superfluidcoolant",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "wares": ["helium"]
+      }
+    },
+    {
+      "id": "arg_turretcomponents",
+      "ware": "turretcomponents",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "arg_water",
+      "ware": "water",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "wares": ["ice"]
+      }
+    },
+    {
+      "id": "arg_weaponcomponents",
+      "ware": "weaponcomponents",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "arg_wheat",
+      "ware": "wheat",
+      "race": "ARGON",
+      "owner": "ARGON",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ARGON","HATIKVAH"],
+        "economyMax": "0.25"
+      }
+    },
+    {
+      "id": "ant_advancedcomposites",
+      "ware": "advancedcomposites",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "ant_advancedelectronics",
+      "ware": "advancedelectronics",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "ant_antimatterconverters",
+      "ware": "antimatterconverters",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "ant_claytronics",
+      "ware": "claytronics",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "ant_energycells",
+      "ware": "energycells",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 8,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.6",
+        "sunlightMin": "1",
+        "sunlightMax": "3"
+      }
+    },
+    {
+      "id": "ant_engineparts",
+      "ware": "engineparts",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "ant_foodrations",
+      "ware": "foodrations",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 8,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "ant_graphene",
+      "ware": "graphene",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "wares": ["methane"]
+      }
+    },
+    {
+      "id": "ant_hullparts",
+      "ware": "hullparts",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 12,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "ant_meat",
+      "ware": "meat",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.25"
+      }
+    },
+    {
+      "id": "ant_medicalsupplies",
+      "ware": "medicalsupplies",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 16,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "ant_microchips",
+      "ware": "microchips",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 6,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "ant_missilecomponents",
+      "ware": "missilecomponents",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "ant_plasmaconductors",
+      "ware": "plasmaconductors",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.5"
+      }
+    },
+    {
+      "id": "ant_quantumtubes",
+      "ware": "quantumtubes",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.5"
+      }
+    },
+    {
+      "id": "ant_refinedmetals",
+      "ware": "refinedmetals",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 6,
+      "sectorQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.5",
+        "wares": ["ore"]
+      }
+    },
+    {
+      "id": "ant_scanningarrays",
+      "ware": "scanningarrays",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.5"
+      }
+    },
+    {
+      "id": "ant_siliconwafers",
+      "ware": "siliconwafers",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 4,
+      "sectorQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.5",
+        "wares": ["silicon"]
+      }
+    },
+    {
+      "id": "ant_smartchips",
+      "ware": "smartchips",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "ant_spacefuel",
+      "ware": "spacefuel",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 6,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE","HATIKVAH"],
+        "economyMax": "0.5"
+      }
+    },
+    {
+      "id": "ant_spices",
+      "ware": "spices",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 6,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.25"
+      }
+    },
+    {
+      "id": "ant_superfluidcoolant",
+      "ware": "superfluidcoolant",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "wares": ["helium"]
+      }
+    },
+    {
+      "id": "ant_turretcomponents",
+      "ware": "turretcomponents",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "ant_water",
+      "ware": "water",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "wares": ["ice"]
+      }
+    },
+    {
+      "id": "ant_weaponcomponents",
+      "ware": "weaponcomponents",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "ant_wheat",
+      "ware": "wheat",
+      "race": "ARGON",
+      "owner": "ANTIGONE",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["ANTIGONE"],
+        "economyMax": "0.25"
+      }
+    }
   ]
 }
