@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<regions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="region_definitions.xsd">
+  <!--
+  The following definitions can be referenced by their name in region macros in the map, but if you follow a naming scheme the game will also dynamically place regions.
+  If you use the name "globalregion_<cluster_macro_name>", a region will be placed in the middle of the cluster.
+  If you use the name "globalregion_<sector_macro_name>", a region will be placed in the middle of the sector.
+  If you define a cluster-wide region it's recommended to omit the <boundary> node, making the region effectively infinite in size.
+  If you define a sector-wide region it's recommended to use this boundary:
+    <boundary class="sphere">
+      <size r="1000000" />
+    </boundary>
+  This should be large enough for practical purposes, but not overlap any other sectors in the same cluster.
+  -->
+  <region name="x3g_ore_belt" density="1.5" rotation="0" noisescale="1000" seed="32" minnoisevalue="0.05" maxnoisevalue="1">
+	<boundary class="splinetube">
+	  <size r="4000"/>
+	  <splineposition x="-37500.0" y="0.0" z="0.0" tx="0.3" ty="0.0" tz="1.0" inlength="990.0" outlength="11708.4" />
+	  <splineposition x="0.0" y="0.0" z="20000.0" tx="1.0" ty="0.0" tz="0.0" inlength="18370.2" outlength="18370.2" />
+	  <splineposition x="37500.0" y="0.0" z="0.0" tx="0.3" ty="0.0" tz="-1.0" inlength="11717.1" outlength="1000.0" />
+	</boundary>
+    <falloff>
+      <lateral>
+        <step position="0.0" value="0.0" />
+        <step position="0.1" value="1.6" />
+        <step position="0.2" value="1.8" />
+        <step position="0.5" value="1.0" />
+        <step position="0.6" value="1.8" />
+        <step position="0.8" value="1.7" />
+        <step position="0.9" value="1.6" />
+        <step position="1.0" value="0.0" />
+      </lateral>
+      <radial>
+        <step position="0.0" value="1.0" />
+        <step position="0.51" value="1.0" />
+        <step position="0.65" value="0.85" />
+        <step position="1.0" value="0.0" />
+      </radial>
+    </falloff>
+    <fields>
+      <positional ref="fog_outside_set1_blue_macro" lodrule="nebulafar" densityfactor="0.70" rotation="360" rotationvariation="0.5" noisescale="1000" seed="3214" minnoisevalue="0.0" maxnoisevalue="1.0" distancefactor="0.3"/>
+      <debris groupref="env_debris_station_l_05" densityfactor="0.051" rotation="360" rotationvariation="0" noisescale="1000" seed="32" minnoisevalue="0.5" maxnoisevalue="1"/>
+      <debris ref="env_debris_station_l_06_macro" densityfactor="0.051" rotation="360" rotationvariation="0" noisescale="1000" seed="32" minnoisevalue="0.5" maxnoisevalue="1"/>
+      <asteroid groupref="asteroid_highyield_v1" lodrule="asteroidxl" densityfactor="2.0" rotation="360" rotationvariation="4" noisescale="4000" seed="1309" minnoisevalue="0.0" maxnoisevalue="1"/>
+      <asteroid groupref="asteroid_ore_l" densityfactor="2.0" rotation="360" rotationvariation="4" noisescale="1000" seed="32" minnoisevalue="0.5" maxnoisevalue="1" />
+      <asteroid groupref="asteroid_silicon_l" densityfactor="1.0" rotation="360" rotationvariation="4" noisescale="1000" seed="32" minnoisevalue="0.8" maxnoisevalue="1"/>
+      <asteroid groupref="asteroid_ore_m" densityfactor="4" rotation="360" rotationvariation="8" noisescale="1000" seed="32" minnoisevalue="0.1" maxnoisevalue="0.8"/>
+      <asteroid groupref="asteroid_silicon_m" densityfactor="2" rotation="360" rotationvariation="8" noisescale="1000" seed="32" minnoisevalue="0.1" maxnoisevalue="0.8"/>
+      <asteroid groupref="asteroid_ore_s" densityfactor="6" rotation="360" rotationvariation="16" noisescale="1000" seed="32" minnoisevalue="0.01" maxnoisevalue="0.8"/>
+      <asteroid groupref="asteroid_silicon_s" densityfactor="3" rotation="360" rotationvariation="16" noisescale="1000" seed="32" minnoisevalue="0.01" maxnoisevalue="0.8"/>
+      <asteroid groupref="asteroid_ore_xs" densityfactor="8" rotation="360" rotationvariation="32" noisescale="1000" seed="32" minnoisevalue="0.01" maxnoisevalue="0.5"/>
+      <asteroid groupref="asteroid_silicon_xs" densityfactor="4" rotation="360" rotationvariation="32" noisescale="1000" seed="32" minnoisevalue="0.01" maxnoisevalue="0.5"/>
+    </fields>
+    <resources>
+      <resource ware="ore" yield="medium" />
+      <resource ware="silicon" yield="medium" />
+    </resources>
+  </region>
+  <region name="x3g_ice_belt" density="1.5" rotation="0" noisescale="1000" seed="32" minnoisevalue="0.05" maxnoisevalue="1">
+	<boundary class="splinetube">
+	  <size r="4000"/>
+	  <splineposition x="-37500.0" y="0.0" z="0.0" tx="0.3" ty="0.0" tz="1.0" inlength="990.0" outlength="11708.4" />
+	  <splineposition x="0.0" y="0.0" z="20000.0" tx="1.0" ty="0.0" tz="0.0" inlength="18370.2" outlength="18370.2" />
+	  <splineposition x="37500.0" y="0.0" z="0.0" tx="0.3" ty="0.0" tz="-1.0" inlength="11717.1" outlength="1000.0" />
+	</boundary>
+    <falloff>
+      <lateral>
+        <step position="0.0" value="0.0" />
+        <step position="0.1" value="1.6" />
+        <step position="0.2" value="1.8" />
+        <step position="0.5" value="1.0" />
+        <step position="0.6" value="1.8" />
+        <step position="0.8" value="1.7" />
+        <step position="0.9" value="1.6" />
+        <step position="1.0" value="0.0" />
+      </lateral>
+      <radial>
+        <step position="0.0" value="1.0" />
+        <step position="0.51" value="1.0" />
+        <step position="0.65" value="0.85" />
+        <step position="1.0" value="0.0" />
+      </radial>
+    </falloff>
+    <fields>
+      <asteroid groupref="asteroid_ice_l" densityfactor="3" rotation="0" rotationvariation="8" noisescale="5000" seed="26041984" minnoisevalue="0.75" maxnoisevalue="1"/>
+      <asteroid groupref="asteroid_ice_m" densityfactor="18" rotation="0" rotationvariation="16" noisescale="5000" seed="26041984" minnoisevalue="0.75" maxnoisevalue="1"/>
+      <asteroid groupref="asteroid_ice_s" densityfactor="24" rotation="0" rotationvariation="32" noisescale="5000" seed="26041984" minnoisevalue="0.75" maxnoisevalue="1"/>
+      <asteroid groupref="asteroid_ice_xs" densityfactor="30" rotation="0" rotationvariation="64" noisescale="5000" seed="26041984" minnoisevalue="0.75" maxnoisevalue="1"/>
+    </fields>
+    <resources>
+      <resource ware="ice" yield="medium" />
+    </resources>
+  </region>  
+  <region name="x3g_hydrogen_belt" density="1.5" rotation="0" noisescale="1000" seed="32" minnoisevalue="0.05" maxnoisevalue="1">
+	<boundary class="splinetube">
+	  <size r="4000"/>
+	  <splineposition x="-37500.0" y="0.0" z="0.0" tx="0.3" ty="0.0" tz="1.0" inlength="990.0" outlength="11708.4" />
+	  <splineposition x="0.0" y="0.0" z="20000.0" tx="1.0" ty="0.0" tz="0.0" inlength="18370.2" outlength="18370.2" />
+	  <splineposition x="37500.0" y="0.0" z="0.0" tx="0.3" ty="0.0" tz="-1.0" inlength="11717.1" outlength="1000.0" />
+	</boundary>
+    <falloff>
+      <lateral>
+        <step position="0.0" value="0.0" />
+        <step position="0.1" value="1.6" />
+        <step position="0.2" value="1.8" />
+        <step position="0.5" value="1.0" />
+        <step position="0.6" value="1.8" />
+        <step position="0.8" value="1.7" />
+        <step position="0.9" value="1.6" />
+        <step position="1.0" value="0.0" />
+      </lateral>
+      <radial>
+        <step position="0.0" value="1.0" />
+        <step position="0.51" value="1.0" />
+        <step position="0.65" value="0.85" />
+        <step position="1.0" value="0.0" />
+      </radial>
+    </falloff>
+    <fields>
+      <positional ref="fog_outside_set1_blue_macro" densityfactor="0.50" rotationvariation="0.5" noisescale="1000" seed="32" minnoisevalue="0.30" maxnoisevalue="1" distancefactor="0.5"/>
+      <nebula ref="fogvolume_small_macro" localred="100" localgreen="100" localblue="100" localdensity="0.8" uniformred="49" uniformgreen="49" uniformblue="49" uniformdensity="0.2" backgroundfog="true" resources="hydrogen" />
+    </fields>
+    <resources>
+      <resource ware="hydrogen" yield="medium" />
+    </resources>
+  </region>    
+  <region name="x3g_helium_belt" density="1.5" rotation="0" noisescale="1000" seed="32" minnoisevalue="0.05" maxnoisevalue="1">
+	<boundary class="splinetube">
+	  <size r="4000"/>
+	  <splineposition x="-37500.0" y="0.0" z="0.0" tx="0.3" ty="0.0" tz="1.0" inlength="990.0" outlength="11708.4" />
+	  <splineposition x="0.0" y="0.0" z="20000.0" tx="1.0" ty="0.0" tz="0.0" inlength="18370.2" outlength="18370.2" />
+	  <splineposition x="37500.0" y="0.0" z="0.0" tx="0.3" ty="0.0" tz="-1.0" inlength="11717.1" outlength="1000.0" />
+	</boundary>
+    <falloff>
+      <lateral>
+        <step position="0.0" value="0.0" />
+        <step position="0.1" value="1.6" />
+        <step position="0.2" value="1.8" />
+        <step position="0.5" value="1.0" />
+        <step position="0.6" value="1.8" />
+        <step position="0.8" value="1.7" />
+        <step position="0.9" value="1.6" />
+        <step position="1.0" value="0.0" />
+      </lateral>
+      <radial>
+        <step position="0.0" value="1.0" />
+        <step position="0.51" value="1.0" />
+        <step position="0.65" value="0.85" />
+        <step position="1.0" value="0.0" />
+      </radial>
+    </falloff>
+    <fields>
+      <positional ref="fog_outside_set1_blue_macro" densityfactor="1.0" rotationvariation="0.5" noisescale="1000" seed="32" minnoisevalue="0.30" maxnoisevalue="1" distancefactor="0.5"/>
+      <nebula ref="fogvolume_small_macro" localred="100" localgreen="100" localblue="100" localdensity="0.8" uniformred="49" uniformgreen="49" uniformblue="49" uniformdensity="0.2" backgroundfog="true" resources="helium" />
+    </fields>
+    <resources>
+      <resource ware="helium" yield="medium" />
+    </resources>
+  </region>   
+  <region name="x3g_methane_belt" density="1.5" rotation="0" noisescale="1000" seed="32" minnoisevalue="0.05" maxnoisevalue="1">
+	<boundary class="splinetube">
+	  <size r="4000"/>
+	  <splineposition x="-37500.0" y="0.0" z="0.0" tx="0.3" ty="0.0" tz="1.0" inlength="990.0" outlength="11708.4" />
+	  <splineposition x="0.0" y="0.0" z="20000.0" tx="1.0" ty="0.0" tz="0.0" inlength="18370.2" outlength="18370.2" />
+	  <splineposition x="37500.0" y="0.0" z="0.0" tx="0.3" ty="0.0" tz="-1.0" inlength="11717.1" outlength="1000.0" />
+	</boundary>
+    <falloff>
+      <lateral>
+        <step position="0.0" value="0.0" />
+        <step position="0.1" value="1.6" />
+        <step position="0.2" value="1.8" />
+        <step position="0.5" value="1.0" />
+        <step position="0.6" value="1.8" />
+        <step position="0.8" value="1.7" />
+        <step position="0.9" value="1.6" />
+        <step position="1.0" value="0.0" />
+      </lateral>
+      <radial>
+        <step position="0.0" value="1.0" />
+        <step position="0.51" value="1.0" />
+        <step position="0.65" value="0.85" />
+        <step position="1.0" value="0.0" />
+      </radial>
+    </falloff>
+    <fields>
+      <positional ref="fog_outside_set1_blue_macro" densityfactor="1.0" rotationvariation="0.5" noisescale="1000" seed="32" minnoisevalue="0.30" maxnoisevalue="1" distancefactor="0.5"/>
+      <nebula ref="fogvolume_small_macro" localred="100" localgreen="100" localblue="100" localdensity="0.8" uniformred="49" uniformgreen="49" uniformblue="49" uniformdensity="0.2" backgroundfog="true" resources="methane" />
+    </fields>
+    <resources>
+      <resource ware="methane" yield="medium" />
+    </resources>
+  </region>    
+  <region name="x3g_nvidium_belt" density="1.5" rotation="0" noisescale="1000" seed="32" minnoisevalue="0.05" maxnoisevalue="1">
+	<boundary class="splinetube">
+	  <size r="4000"/>
+	  <splineposition x="-37500.0" y="0.0" z="0.0" tx="0.3" ty="0.0" tz="1.0" inlength="990.0" outlength="11708.4" />
+	  <splineposition x="0.0" y="0.0" z="20000.0" tx="1.0" ty="0.0" tz="0.0" inlength="18370.2" outlength="18370.2" />
+	  <splineposition x="37500.0" y="0.0" z="0.0" tx="0.3" ty="0.0" tz="-1.0" inlength="11717.1" outlength="1000.0" />
+	</boundary>
+    <falloff>
+      <lateral>
+        <step position="0.0" value="0.0" />
+        <step position="0.1" value="1.6" />
+        <step position="0.2" value="1.8" />
+        <step position="0.5" value="1.0" />
+        <step position="0.6" value="1.8" />
+        <step position="0.8" value="1.7" />
+        <step position="0.9" value="1.6" />
+        <step position="1.0" value="0.0" />
+      </lateral>
+      <radial>
+        <step position="0.0" value="1.0" />
+        <step position="0.51" value="1.0" />
+        <step position="0.65" value="0.85" />
+        <step position="1.0" value="0.0" />
+      </radial>
+    </falloff>
+    <fields>
+      <positional ref="fog_outside_set1_dust_macro" lodrule="nebula" densityfactor="2.0" rotation="0" rotationvariation="0.0" noisescale="4000" seed="1309" minnoisevalue="0.0" maxnoisevalue="1.0" distancefactor="0.5"/>
+      <asteroid groupref="asteroid_nividium_l" densityfactor="0.00625" rotation="360" rotationvariation="4" noisescale="12000" seed="26041984" minnoisevalue="0.8" maxnoisevalue="1"/>
+    </fields>
+    <resources>
+      <resource ware="nividium" yield="medium" />
+    </resources>  
+  </region>  
+</regions>

@@ -45,6 +45,18 @@ public class UniverseGenerator {
         generateGod(cfg, root, CLUSTERS);
         generateJobs(cfg, root, CLUSTERS);
         generateGameStart(cfg, root, CLUSTERS);
+        copyCoreResources(root);
+    }
+
+    private void copyCoreResources(Map<String, Object> root) throws IOException {
+        Galaxy galaxy = (Galaxy) root.get("galaxy");
+        String path = "output/" + galaxy.getGalaxyName();
+
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        File original = new File(classLoader.getResource("core/region_definitions.xml").getFile());
+
+        File copied = new File(path+"/libraries/region_definitions.xml");
+        FileUtils.copyFile(original, copied);
     }
 
     private void generateGameStart(Configuration cfg, Map<String, Object> root, String type) throws IOException, TemplateException {
