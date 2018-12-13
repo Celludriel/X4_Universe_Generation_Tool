@@ -5,7 +5,9 @@
     <jobs>
       <#list galaxy.jobs as job>
       <job id="${job.id}" name="${job.name}" <#if job.startActive??>startactive="${job.startActive?c}"</#if>>
-        <modifiers rebuild="${job.rebuild?c}" commandeerable="${job.commandeerable?c}"  subordinate="${job.subordinate?c}" />
+        <#if job.hasModifiers()>
+        <modifiers <#if job.rebuild??>rebuild="${job.rebuild?c}"</#if> <#if job.commandeerable??>commandeerable="${job.commandeerable?c}"</#if> <#if job.subordinate??>subordinate="${job.subordinate?c}"</#if> />
+        </#if>
         <orders>
         <#list job.orders as order>
             <order order="${order.order}" default="${order.defaultOrder?c}">
@@ -19,14 +21,14 @@
         <basket basket="${job.basket}" />
         </#if>
         <#if job.jobCategory??>
-        <category faction="${job.jobCategory.faction.getName()}" tags="${job.jobCategory.getTagsPrint()}" <#if job.jobCategory.shipSize??>size="${job.jobCategory.shipSize.getName()}"</#if> />
+        <category faction="${job.jobCategory.faction.getName()}" tags="[${job.jobCategory.getTagsPrint()}]" <#if job.jobCategory.shipSize??>size="${job.jobCategory.shipSize.getName()}"</#if> />
         </#if>
-        <quota <#if job.jobQuota.galaxy??>galaxy="${job.jobQuota.galaxy}"</#if> <#if job.jobQuota.maxGalaxy??>maxGalaxy="${job.jobQuota.maxGalaxy}"</#if> <#if job.jobQuota.cluster??>cluster="${job.jobQuota.cluster}"</#if> <#if job.jobQuota.sector??>sector="${job.jobQuota.sector}"</#if> <#if job.jobQuota.zone??>zone="${job.jobQuota.zone}"</#if> <#if job.jobQuota.wing??>wing="${job.jobQuota.wing}"</#if> <#if job.jobQuota.variation??>variation="${job.jobQuota.variation}"</#if> <#if job.jobQuota.station??>station="${job.jobQuota.station}"</#if> />
-        <location class="${job.jobLocation.locationClass}" <#if job.jobLocation.macro??>macro="${job.jobLocation.macro}"</#if> <#if job.jobLocation.relation??>relation="${job.jobLocation.relation}"</#if> <#if job.jobLocation.comparison??>comparison="${job.jobLocation.comparison}"</#if> <#if job.jobLocation.regionBasket??>regionbasket="${job.jobLocation.regionBasket}"</#if> <#if job.jobLocation.factions?size != 0>faction="${job.jobLocation.getPrintFactions()}"</#if> />
+        <quota <#if job.jobQuota.galaxy??>galaxy="${job.jobQuota.galaxy}"</#if> <#if job.jobQuota.maxGalaxy??>maxgalaxy="${job.jobQuota.maxGalaxy}"</#if> <#if job.jobQuota.cluster??>cluster="${job.jobQuota.cluster}"</#if> <#if job.jobQuota.sector??>sector="${job.jobQuota.sector}"</#if> <#if job.jobQuota.zone??>zone="${job.jobQuota.zone}"</#if> <#if job.jobQuota.wing??>wing="${job.jobQuota.wing}"</#if> <#if job.jobQuota.variation??>variation="${job.jobQuota.variation}"</#if> <#if job.jobQuota.station??>station="${job.jobQuota.station}"</#if> />
+        <location class="${job.jobLocation.locationClass}" <#if job.jobLocation.macro??>macro="${job.jobLocation.macro}"<#else>macro="${galaxy.galaxyPrefix}_galaxy_macro"</#if> <#if job.jobLocation.relation??>relation="${job.jobLocation.relation}"</#if> <#if job.jobLocation.comparison??>comparison="${job.jobLocation.comparison}"</#if> <#if job.jobLocation.regionBasket??>regionbasket="${job.jobLocation.regionBasket}"</#if> <#if job.jobLocation.factions?size != 0>faction="${job.jobLocation.getPrintFactions()}"</#if> />
         <environment buildatshipyard="${job.buildatshipyard?c}"/>
         <#if job.ship??>
         <ship>
-          <select faction="${job.ship.faction.getName()}" tags="[${job.ship.getTagPrint()}]" <#if job.ship.size??>size="${job.ship.size}"</#if> />
+          <select faction="${job.ship.faction.getName()}" tags="[${job.ship.getTagPrint()}]" <#if job.ship.size??>size="${job.ship.size.getName()}"</#if> />
           <loadout>
             <level min="${job.ship.levelMin}" max="${job.ship.levelMax}"/>
           </loadout>
@@ -38,10 +40,10 @@
             </wares>
           </cargo>
           </#if>
-          <#if job.ship.units??>
+          <#if job.ship.units?size != 0>
           <units>
             <#list job.ship.units as unit>
-            <unit category="${unit.category}" min="${unit.min?c}" max="${unit.max}?c" />
+            <unit category="${unit.category}" min="${unit.min?c}" max="${unit.max?c}" />
             </#list>
           </units>
           </#if>

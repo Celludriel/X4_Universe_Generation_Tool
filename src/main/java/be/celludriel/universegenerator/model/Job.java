@@ -11,9 +11,9 @@ public class Job extends AbstractJson {
     private String id;
     private String name;
     private Boolean startActive;
-    private boolean rebuild = false;
-    private boolean commandeerable = true;
-    private boolean subordinate = false;
+    private Boolean rebuild;
+    private Boolean commandeerable;
+    private Boolean subordinate;
     private boolean buildatshipyard = true;
     private JobLocation jobLocation;
     private JobCategory jobCategory;
@@ -151,6 +151,10 @@ public class Job extends AbstractJson {
 
     public void setSubordinates(List<String> subordinates) {
         this.subordinates = subordinates;
+    }
+
+    public boolean hasModifiers(){
+        return this.rebuild != null && this.commandeerable != null && this.subordinate != null;
     }
 
     @Override

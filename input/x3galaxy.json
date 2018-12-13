@@ -1074,6 +1074,8 @@
     {
       "id": "argon_bio_trader_l",
       "name": "{20204,1301}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1109,6 +1111,8 @@
     {
       "id": "argon_bio_trader_m",
       "name": "{20204,1401}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1142,6 +1146,8 @@
     {
       "id": "argon_food_trader_s",
       "name": "{20204,1801}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1175,6 +1181,8 @@
     {
       "id": "argon_energycell_trader_l",
       "name": "{20204,101}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1210,6 +1218,8 @@
     {
       "id": "argon_energycell_trader_m",
       "name": "{20204,201}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1246,6 +1256,8 @@
     {
       "id": "argon_energycell_trader_s",
       "name": "{20204,201}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1278,6 +1290,8 @@
     {
       "id": "argon_equipment_trader_l",
       "name": "{20204,301}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1313,6 +1327,8 @@
     {
       "id": "argon_equipment_trader_m",
       "name": "{20204,301}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1345,6 +1361,8 @@
     {
       "id": "argon_construction_trader_l",
       "name": "{20204,401}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1380,6 +1398,8 @@
     {
       "id": "argon_construction_trader_m",
       "name": "{20204,401}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1412,6 +1432,8 @@
     {
       "id": "argon_refinedgas_trader_l",
       "name": "{20204,501}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1447,6 +1469,8 @@
     {
       "id": "argon_refinedgas_trader_m",
       "name": "{20204,601}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1483,6 +1507,8 @@
     {
       "id": "argon_refinedmineral_trader_l",
       "name": "{20204,501}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1518,6 +1544,8 @@
     {
       "id": "argon_refinedmineral_trader_m",
       "name": "{20204,601}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1554,6 +1582,8 @@
     {
       "id": "argon_tech_trader_l",
       "name": "{20204,301}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1590,6 +1620,8 @@
     {
       "id": "argon_tech_trader_m",
       "name": "{20204,401}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1623,6 +1655,8 @@
     {
       "id": "argon_tech_trader_s",
       "name": "{20204,401}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1656,6 +1690,8 @@
     {
       "id": "argon_water_trader_l",
       "name": "{20204,1501}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1691,6 +1727,8 @@
     {
       "id": "argon_water_trader_m",
       "name": "{20204,1601}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1724,6 +1762,8 @@
     {
       "id": "argon_free_miner_l_liquid",
       "name": "{20204,5701}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1800,6 +1840,8 @@
     {
       "id": "argon_free_miner_l_mineral",
       "name": "{20204,5601}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1838,6 +1880,8 @@
     {
       "id": "argon_free_miner_m_mineral",
       "name": "{20204,5601}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1876,6 +1920,8 @@
     {
       "id": "argon_free_miner_s_mineral",
       "name": "{20204,5601}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1914,6 +1960,8 @@
     {
       "id": "argon_free_miner_l_ice",
       "name": "{20204,2001}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1952,6 +2000,8 @@
     {
       "id": "argon_free_miner_m_ice",
       "name": "{20204,2001}",
+      "rebuild": false,
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -1990,6 +2040,7 @@
     {
       "id": "argon_carrier_patrol_xl_center_galaxy",
       "name": "{20204,3201}",
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "exact",
         "relation": "self",
@@ -2024,6 +2075,7 @@
     {
       "id": "argon_destroyer_patrol_l_sector",
       "name": "{20204,3301}",
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "exact",
         "relation": "self",
@@ -2058,6 +2110,7 @@
     {
       "id": "argon_destroyer_patrol_l_comp",
       "name": "{20204,3301}",
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "exact",
         "relation": "self",
@@ -2092,6 +2145,7 @@
     {
       "id": "argon_frigate_patrol_m_sector_exp",
       "name": "{20204,2901}",
+      "commandeerable": false,
       "jobLocation": {
         "comparison": "exact",
         "relation": "self",
@@ -2126,6 +2180,7 @@
     {
       "id": "argon_dronecarrier_patrol_m_sector",
       "name": "{20204,5001}",
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "exact",
         "relation": "self",
@@ -2163,6 +2218,7 @@
     {
       "id": "argon_fighter_patrol_s_zone",
       "name": "{20204,2901}",
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "exact",
         "relation": "self",
@@ -2198,6 +2254,7 @@
     {
       "id": "argon_scout_patrol_s",
       "name": "{20204,2801}",
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "exact",
         "relation": "self",
@@ -2221,7 +2278,7 @@
         "size": "SMALL",
         "levelMin": "0.7",
         "levelMax": "1.0",
-        "tags": ["SCOUT","FIGHTER"]
+        "tags": ["SCOUT"]
       },
       "rebuild": true,
       "commandeerable": true
@@ -2229,6 +2286,7 @@
     {
       "id": "argon_police_patrol_s",
       "name": "{20204,6101}",
+      "commandeerable": false,
       "jobLocation": {
         "comparison": "exact",
         "relation": "self",
@@ -2545,6 +2603,7 @@
     {
       "id": "argon_construction_vessel_xl",
       "name": "{20204,5101}",
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -2576,6 +2635,7 @@
     {
       "id": "argon_construction_vessel_xl_playeronly",
       "name": "{20204,5101}",
+      "commandeerable": true,
       "jobLocation": {
         "comparison": "ge",
         "relation": "member",
@@ -2817,6 +2877,7 @@
       },
       "jobCategory": {
         "faction": "ARGON",
+        "shipSize": "LARGE",
         "tags": ["FREIGHTER","MINER","DEEPSPACE"]
       },
       "jobQuota": {
@@ -2853,6 +2914,7 @@
       },
       "jobCategory": {
         "faction": "ARGON",
+        "shipSize": "LARGE",
         "tags": ["FREIGHTER","MINER","DEEPSPACE"]
       },
       "jobQuota": {
@@ -2867,7 +2929,7 @@
           {"name": "maxsell", "value":  "5"}
         ]
       }],
-      "basket": "minerals",
+      "basket": "gases",
       "time": "3600",
       "encounters": "lone_miner",
       "ship": {
