@@ -10,6 +10,7 @@ public class Product extends AbstractJson {
     private Integer galaxyQuota;
     private Integer zoneQuota;
     private Integer sectorQuota;
+    private Integer clusterQuota;
     private Race race;
     private Faction owner;
     private ProductLocation locationInfo;
@@ -32,6 +33,10 @@ public class Product extends AbstractJson {
 
     public Integer getSectorQuota() {
         return sectorQuota;
+    }
+
+    public Integer getClusterQuota() {
+        return clusterQuota;
     }
 
     public Race getRace() {
@@ -66,6 +71,10 @@ public class Product extends AbstractJson {
         this.sectorQuota = sectorQuota;
     }
 
+    public void setClusterQuota(Integer clusterQuota) {
+        this.clusterQuota = clusterQuota;
+    }
+
     public void setRace(Race race) {
         this.race = race;
     }
@@ -92,6 +101,7 @@ public class Product extends AbstractJson {
                 .append(galaxyQuota, product.galaxyQuota)
                 .append(zoneQuota, product.zoneQuota)
                 .append(sectorQuota, product.sectorQuota)
+                .append(clusterQuota, product.clusterQuota)
                 .append(race, product.race)
                 .append(owner, product.owner)
                 .append(locationInfo, product.locationInfo)
@@ -106,6 +116,7 @@ public class Product extends AbstractJson {
                 .append(galaxyQuota)
                 .append(zoneQuota)
                 .append(sectorQuota)
+                .append(clusterQuota)
                 .append(race)
                 .append(owner)
                 .append(locationInfo)

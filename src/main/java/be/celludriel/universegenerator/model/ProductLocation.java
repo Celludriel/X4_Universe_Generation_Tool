@@ -17,6 +17,7 @@ public class ProductLocation extends AbstractJson {
     private boolean maxBound = false;
     private String sunlightMin = null;
     private String sunlightMax = null;
+    private String securityMin = null;
     private boolean solitary = false;
 
     public List<Faction> getSpawnLocations() {
@@ -41,6 +42,10 @@ public class ProductLocation extends AbstractJson {
 
     public String getSunlightMax() {
         return sunlightMax;
+    }
+
+    public String getSecurityMin() {
+        return securityMin;
     }
 
     public boolean isSolitary() {
@@ -69,6 +74,10 @@ public class ProductLocation extends AbstractJson {
 
     public void setSunlightMax(String sunlightMax) {
         this.sunlightMax = sunlightMax;
+    }
+
+    public void setSecurityMin(String securityMin) {
+        this.securityMin = securityMin;
     }
 
     public void setSolitary(boolean solitary) {
@@ -100,6 +109,7 @@ public class ProductLocation extends AbstractJson {
                 .append(economyMax, that.economyMax)
                 .append(sunlightMin, that.sunlightMin)
                 .append(sunlightMax, that.sunlightMax)
+                .append(securityMin, that.securityMin)
                 .isEquals();
     }
 
@@ -112,6 +122,7 @@ public class ProductLocation extends AbstractJson {
                 .append(maxBound)
                 .append(sunlightMin)
                 .append(sunlightMax)
+                .append(securityMin)
                 .append(solitary)
                 .toHashCode();
     }

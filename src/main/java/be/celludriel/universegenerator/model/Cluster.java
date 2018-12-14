@@ -154,13 +154,13 @@ public class Cluster extends AbstractJson {
 
     @JsonIgnore
     public String getClusterZ() {
-        if(x < 0 && y == 0){
+        if(x % 2 < 0 && y == 0){
             return Long.toString(y - SEMI_Y_MOVEMENT);
-        } else if(x > 0 && y == 0){
+        } else if(x % 2 > 0 && y == 0){
             return Long.toString(y + SEMI_Y_MOVEMENT);
-        } else if (x == 0 && y > 0){
+        } else if (x % 2 == 0 && y > 0){
             return Long.toString(y * FULL_Y_MOVEMENT);
-        } else if (x == 0 && y < 0){
+        } else if (x % 2 == 0 && y < 0){
             return Long.toString(y * FULL_Y_MOVEMENT);
         } else if(y < 0) {
             int offset = x > 0 ? SEMI_Y_MOVEMENT : -SEMI_Y_MOVEMENT;

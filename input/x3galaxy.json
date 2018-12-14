@@ -59,7 +59,7 @@
         }
       ],
       "stations": [
-        {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
     },
     {
@@ -85,7 +85,7 @@
         {"type": "HELIUM"}
       ],
       "stations": [
-        {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
     },
     {
@@ -328,10 +328,7 @@
         {"type": "ICE"}
       ],
       "stations": [
-        {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
-        {"type": "SHIPYARD", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
-        {"type": "WHARF", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
-        {"type": "EQUIP", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
       ]
     },
     {
@@ -349,6 +346,10 @@
         {
           "targetClusterId": "13",
           "connectionType": "NE"
+        },
+        {
+          "targetClusterId": "36",
+          "connectionType": "S"
         }
       ],
       "belts": [
@@ -437,6 +438,1181 @@
       ],
       "stations": [
         {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
+      ]
+    },
+    {
+      "id": "16",
+      "name": "Kingdom End",
+      "description": "Kingdom End",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": -1,
+      "y": 3,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "09",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "17",
+          "connectionType": "SE"
+        }
+      ],
+      "stations": [
+        {"type": "SHIPYARD", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
+        {"type": "WHARF", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
+      ]
+    },
+    {
+      "id": "17",
+      "name": "Rolk's Drift",
+      "description": "Rolk's Drift",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 0,
+      "y": 3,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "18",
+          "connectionType": "NE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
+      ]
+    },
+    {
+      "id": "18",
+      "name": "Queen's Space",
+      "description": "Queen's Space",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 1,
+      "y": 2,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "19",
+          "connectionType": "SE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
+      ]
+    },
+    {
+      "id": "19",
+      "name": "Menalaus' Frontier",
+      "description": "Menalaus' Frontier",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 2,
+      "y": 3,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "20",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "40",
+          "connectionType": "SE"
+        }
+      ],
+      "stations": [
+        {"type": "SHIPYARD", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
+        {"type": "WHARF", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
+        {"type": "DEFENCE", "race":  "XENON", "owner": "XENON", "faction": "XENON"}
+      ]
+    },
+    {
+      "id": "20",
+      "name": "Rolk's Fate",
+      "description": "Rolk's Fate",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 2,
+      "y": 2,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "21",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "name": "Atreus' Clouds",
+      "description": "Atreus' Clouds",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 2,
+      "y": 1,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "22",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "name": "Farnham's Legend",
+      "description": "Farnham's Legend",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 2,
+      "y": 0,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "23",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "43",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "name": "Elena's Fortune",
+      "description": "Elena's Fortune",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 2,
+      "y": -1,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "24",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "name": "Split Fire",
+      "description": "Split Fire",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 2,
+      "y": -2,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "25",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "45",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "name": "Priest's Pity",
+      "description": "Priest's Pity",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 2,
+      "y": -3,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "26",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id": "26",
+      "name": "Emperor's Ridge",
+      "description": "Emperor's Ridge",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 2,
+      "y": -4,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "27",
+          "connectionType": "S"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"}
+      ]
+    },
+    {
+      "id": "27",
+      "name": "Pontiflex' Realm",
+      "description": "",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 2,
+      "y": -5,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "28",
+          "connectionType": "S"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"}
+      ]
+    },
+    {
+      "id": "28",
+      "name": "Trinity Sanctum",
+      "description": "Trinity Sanctum",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 2,
+      "y": -6,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "48",
+          "connectionType": "SE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"}
+      ]
+    },
+    {
+      "id": "29",
+      "name": "Priest Rings",
+      "description": "Priest Rings",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 1,
+      "y": -4,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "30",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "25",
+          "connectionType": "NE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"}
+      ]
+    },
+    {
+      "id": "30",
+      "name": "Duke's Domain",
+      "description": "Duke's Domain",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 1,
+      "y": -5,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "26",
+          "connectionType": "NE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"}
+      ]
+    },
+    {
+      "id": "31",
+      "name": "Emperor's Wisdom",
+      "description": "Emperor's Wisdom",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 1,
+      "y": -7,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "28",
+          "connectionType": "NE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"}
+      ]
+    },
+    {
+      "id": "32",
+      "name": "Paranid Prime",
+      "description": "Paranid Prime",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 0,
+      "y": -3,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "33",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "29",
+          "connectionType": "SE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"}
+      ]
+    },
+    {
+      "id": "33",
+      "name": "Empire's Edge",
+      "description": "Empire's Edge",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 0,
+      "y": -4,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "34",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "30",
+          "connectionType": "SE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"}
+      ]
+    },
+    {
+      "id": "34",
+      "name": "Preacher's Void",
+      "description": "Preacher's Void",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 0,
+      "y": -5,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "35",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id": "35",
+      "name": "Duke's Vision",
+      "description": "Duke's Vision",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 0,
+      "y": -6,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "31",
+          "connectionType": "SE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"}
+      ]
+    },
+    {
+      "id": "36",
+      "name": "Emperor Mines",
+      "description": "Emperor Mines",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": -1,
+      "y": -3,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "32",
+          "connectionType": "NE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"}
+      ]
+    },
+    {
+      "id": "37",
+      "name": "Savage Spur",
+      "description": "Savage Spur",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": -1,
+      "y": -4,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "38",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "33",
+          "connectionType": "NE"
+        }
+      ],
+      "stations": [
+        {"type": "SHIPYARD", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
+        {"type": "WHARF", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
+        {"type": "DEFENCE", "race":  "XENON", "owner": "XENON", "faction": "XENON"}
+      ]
+    },
+    {
+      "id": "38",
+      "name": "Ocracoke's Storm",
+      "description": "Ocracoke's Storm",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": -1,
+      "y": -5,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "39",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id": "39",
+      "name": "Senator's Badlands",
+      "description": "Senator's Badlands",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": -1,
+      "y": -6,
+      "backdrop": "empty_space"
+    },
+    {
+      "id": "40",
+      "name": "Ceo's Buckzoid",
+      "description": "Ceo's Buckzoid",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 3,
+      "y": 2,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "41",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "49",
+          "connectionType": "NE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "TELADI", "faction": "TELADI"}
+      ]
+    },
+    {
+      "id": "41",
+      "name": "Profit Share",
+      "description": "Profit Share",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 3,
+      "y": 1,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "42",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "50",
+          "connectionType": "NE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "TELADI", "faction": "TELADI"}
+      ]
+    },
+    {
+      "id": "42",
+      "name": "Spaceweed Drift",
+      "description": "Spaceweed Drift",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 3,
+      "y": 0,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "51",
+          "connectionType": "NE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "TELADI", "faction": "TELADI"}
+      ]
+    },
+    {
+      "id": "43",
+      "name": "Bala Gil's Joy",
+      "description": "Bala Gil's Joy",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 3,
+      "y": -1,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "44",
+          "connectionType": "S"
+        }
+      ],
+      "stations": [
+        {"type": "PIRATEBASE", "race":  "ARGON", "owner": "HATIKVAH", "faction": "HATIKVAH"},
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "HATIKVAH", "faction": "HATIKVAH"}
+      ]
+    },
+    {
+      "id": "44",
+      "name": "Olmancketslat's Treaty",
+      "description": "Olmancketslat's Treaty",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 3,
+      "y": -2,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "45",
+          "connectionType": "S"
+        }
+      ],
+      "stations": [
+        {"type": "PIRATEBASE", "race":  "TELADI", "owner": "SCALEPLATE", "faction": "SCALEPLATE"},
+        {"type": "PIRATEDOCK", "race":  "TELADI", "owner": "SCALEPLATE", "faction": "SCALEPLATE"},
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "SCALEPLATE", "faction": "SCALEPLATE"}
+      ]
+    },
+    {
+      "id": "45",
+      "name": "Brennan's Triumph",
+      "description": "Brennan's Triumph",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 3,
+      "y": -3,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "46",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "54",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id": "46",
+      "name": "Danna's Chance",
+      "description": "Danna's Chance",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 3,
+      "y": -4,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "47",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "55",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id": "47",
+      "name": "Freedom's Reach",
+      "description": "Freedom's Reach",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 3,
+      "y": -5,
+      "backdrop": "empty_space",
+      "stations": [
+        {"type": "PIRATEBASE", "race":  "ARGON", "owner": "HATIKVAH", "faction": "HATIKVAH"},
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "HATIKVAH", "faction": "HATIKVAH"}
+      ]
+    },
+    {
+      "id": "48",
+      "name": "Preacher's Refuge",
+      "description": "Preacher's Refuge",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 3,
+      "y": -7,
+      "backdrop": "empty_space",
+      "stations": [
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"}
+      ]
+    },
+    {
+      "id": "49",
+      "name": "Teladi Gain",
+      "description": "Teladi Gain",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 4,
+      "y": 3,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "50",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "57",
+          "connectionType": "SE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "TELADI", "faction": "TELADI"}
+      ]
+    },
+    {
+      "id": "50",
+      "name": "Seizewell",
+      "description": "Seizewell",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 4,
+      "y": 2,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "51",
+          "connectionType": "S"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "TELADI", "faction": "TELADI"}
+      ]
+    },
+    {
+      "id": "51",
+      "name": "Greater Profit",
+      "description": "Greater Profit",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 4,
+      "y": 1,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "52",
+          "connectionType": "S"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "TELADI", "faction": "TELADI"}
+      ]
+    },
+    {
+      "id": "52",
+      "name": "Blue Profit",
+      "description": "Blue Profit",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 4,
+      "y": 0,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "53",
+          "connectionType": "S"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "TELADI", "faction": "TELADI"}
+      ]
+    },
+    {
+      "id": "53",
+      "name": "Ceo's Sprite",
+      "description": "Ceo's Sprite",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 4,
+      "y": -1,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "54",
+          "connectionType": "S"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "TELADI", "faction": "TELADI"}
+      ]
+    },
+    {
+      "id": "54",
+      "name": "Company Pride",
+      "description": "Company Pride",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 4,
+      "y": -2,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "62",
+          "connectionType": "SE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "TELADI", "faction": "TELADI"}
+      ]
+    },
+    {
+      "id": "55",
+      "name": "Nopileos' Memorial",
+      "description": "Nopileos' Memorial",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 4,
+      "y": -3,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "56",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "63",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id": "56",
+      "name": "Xenon Sector 101",
+      "description": "Xenon Sector 101",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 4,
+      "y": -4,
+      "backdrop": "empty_space",
+      "stations": [
+        {"type": "SHIPYARD", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
+        {"type": "WHARF", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
+        {"type": "DEFENCE", "race":  "XENON", "owner": "XENON", "faction": "XENON"}
+      ]
+    },
+    {
+      "id": "57",
+      "name": "Family Whi",
+      "description": "Family Whi",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 5,
+      "y": 2,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "58",
+          "connectionType": "S"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "MINISTRY", "faction": "MINISTRY"}
+      ]
+    },
+    {
+      "id": "58",
+      "name": "Family Zein",
+      "description": "Family Zein",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 5,
+      "y": 1,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "59",
+          "connectionType": "S"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "MINISTRY", "faction": "MINISTRY"}
+      ]
+    },
+    {
+      "id": "59",
+      "name": "Thuurk's Pride",
+      "description": "Thuurk's Pride",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 5,
+      "y": 0,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "60",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "64",
+          "connectionType": "NE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "MINISTRY", "faction": "MINISTRY"}
+      ]
+    },
+    {
+      "id": "60",
+      "name": "Rhonkar's Fire",
+      "description": "Rhonkar's Fire",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 5,
+      "y": -1,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "61",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "65",
+          "connectionType": "NE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "HOLYORDER", "faction": "HOLYORDER"}
+      ]
+    },
+    {
+      "id": "61",
+      "name": "Family Rhonkar",
+      "description": "Family Rhonkar",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 5,
+      "y": -2,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "62",
+          "connectionType": "S"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "HOLYORDER", "faction": "HOLYORDER"}
+      ]
+    },
+    {
+      "id": "62",
+      "name": "Thuruk's Beard",
+      "description": "Thuruk's Beard",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 5,
+      "y": -3,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "63",
+          "connectionType": "S"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "HOLYORDER", "faction": "HOLYORDER"}
+      ]
+    },
+    {
+      "id": "63",
+      "name": "Hatikvah's Faith",
+      "description": "Hatikvah's Faith",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 5,
+      "y": -4,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "48",
+          "connectionType": "SW"
+        }
+      ],
+      "stations": [
+        {"type": "PIRATEBASE", "race":  "TELADI", "owner": "SCALEPLATE", "faction": "SCALEPLATE"},
+        {"type": "PIRATEDOCK", "race":  "TELADI", "owner": "SCALEPLATE", "faction": "SCALEPLATE"},
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "SCALEPLATE", "faction": "SCALEPLATE"}
+      ]
+    },
+    {
+      "id": "64",
+      "name": "Family Pride",
+      "description": "Family Pride",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 6,
+      "y": 1,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "65",
+          "connectionType": "S"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "MINISTRY", "faction": "MINISTRY"}
+      ]
+    },
+    {
+      "id": "65",
+      "name": "Rhonkar's Clouds",
+      "description": "Rhonkar's Clouds",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 6,
+      "y": 0,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "67",
+          "connectionType": "SE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "HOLYORDER", "faction": "HOLYORDER"}
+      ]
+    },
+    {
+      "id": "66",
+      "name": "Rhonkar's Might",
+      "description": "Rhonkar's Might",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 7,
+      "y": 0,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "68",
+          "connectionType": "NE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "MINISTRY", "faction": "MINISTRY"}
+      ]
+    },
+    {
+      "id": "67",
+      "name": "Tharka's Sun",
+      "description": "Tharka's Sun",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 7,
+      "y": -1,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "69",
+          "connectionType": "NE"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "HOLYORDER", "faction": "HOLYORDER"}
+      ]
+    },
+    {
+      "id": "68",
+      "name": "Patriarch's Retreat",
+      "description": "Patriarch's Retreat",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 8,
+      "y": 1,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "69",
+          "connectionType": "S"
+        }
+      ],
+      "stations": [
+        {"type": "SHIPYARD", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
+        {"type": "WHARF", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
+        {"type": "DEFENCE", "race":  "XENON", "owner": "XENON", "faction": "XENON"}
+      ]
+    },
+    {
+      "id": "69",
+      "name": "Cho's Defeat",
+      "description": "Cho's Defeat",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 8,
+      "y": 0,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "70",
+          "connectionType": "S"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "HOLYORDER", "faction": "HOLYORDER"}
+      ]
+    },
+    {
+      "id": "70",
+      "name": "Patriarch's Keep",
+      "description": "Patriarch's Keep",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 8,
+      "y": -1,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "63",
+          "connectionType": "SW"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "HOLYORDER", "faction": "HOLYORDER"}
       ]
     }
   ],
@@ -707,7 +1883,7 @@
       "owner": "HATIKVAH",
       "galaxyQuota": 2,
       "locationInfo": {
-        "spawnLocations": ["OWNERLERSS"],
+        "spawnLocations": ["OWNERLESS"],
         "solitary": true
       }
     },
@@ -1067,6 +2243,962 @@
       "locationInfo": {
         "spawnLocations": ["ANTIGONE"],
         "economyMax": "0.25"
+      }
+    },
+    {
+      "id": "par_advancedcomposites",
+      "ware": "advancedcomposites",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "hol_advancedcomposites",
+      "ware": "advancedcomposites",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_advancedelectronics",
+      "ware": "advancedelectronics",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "hol_advancedelectronics",
+      "ware": "advancedelectronics",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_antimattercells",
+      "ware": "antimattercells",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"],
+        "wares": ["hydrogen"]
+      }
+    },
+    {
+      "id": "hol_antimattercells",
+      "ware": "antimattercells",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"],
+        "wares": ["hydrogen"]
+      }
+    },
+    {
+      "id": "par_antimatterconverters",
+      "ware": "antimatterconverters",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "hol_antimatterconverters",
+      "ware": "antimatterconverters",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_claytronics",
+      "ware": "claytronics",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 6,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "hol_claytronics",
+      "ware": "claytronics",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 6,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_dronecomponents",
+      "ware": "dronecomponents",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "hol_dronecomponents",
+      "ware": "dronecomponents",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_energycells",
+      "ware": "energycells",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"],
+        "sunlightMin": "1",
+        "sunlightMax": "3"
+      }
+    },
+    {
+      "id": "hol_energycells",
+      "ware": "energycells",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"],
+        "sunlightMin": "1",
+        "sunlightMax": "3"
+      }
+    },
+    {
+      "id": "par_engineparts",
+      "ware": "engineparts",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "hol_engineparts",
+      "ware": "engineparts",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_fieldcoils",
+      "ware": "fieldcoils",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "hol_fieldcoils",
+      "ware": "fieldcoils",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_graphene",
+      "ware": "graphene",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 6,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"],
+        "wares": ["methane"]
+      }
+    },
+    {
+      "id": "hol_graphene",
+      "ware": "graphene",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 6,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"],
+        "wares": ["methane"]
+      }
+    },
+    {
+      "id": "par_hullparts",
+      "ware": "hullparts",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 16,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "hol_hullparts",
+      "ware": "hullparts",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 16,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "sca_majadust",
+      "ware": "majadust",
+      "race": "PARANID",
+      "owner": "SCALEPLATE",
+      "galaxyQuota": 20,
+      "locationInfo": {
+        "spawnLocations": ["OWNERLESS","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_majasnails",
+      "ware": "majasnails",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 6,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "hol_majasnails",
+      "ware": "majasnails",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_medicalsupplies",
+      "ware": "medicalsupplies",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 20,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_medicalsupplies",
+      "ware": "medicalsupplies",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 18,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_microchips",
+      "ware": "microchips",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 8,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_microchips",
+      "ware": "microchips",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 6,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_missilecomponents",
+      "ware": "missilecomponents",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "hol_missilecomponents",
+      "ware": "missilecomponents",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_plasmaconductors",
+      "ware": "plasmaconductors",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "hol_plasmaconductors",
+      "ware": "plasmaconductors",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_quantumtubes",
+      "ware": "quantumtubes",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_quantumtubes",
+      "ware": "quantumtubes",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_refinedmetals",
+      "ware": "refinedmetals",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 8,
+      "sectorQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"],
+        "wares": ["ore"]
+      }
+    },
+    {
+      "id": "hol_refinedmetals",
+      "ware": "refinedmetals",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 6,
+      "sectorQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"],
+        "wares": ["ore"]
+      }
+    },
+    {
+      "id": "par_scanningarrays",
+      "ware": "scanningarrays",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "hol_scanningarrays",
+      "ware": "scanningarrays",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "hol_shieldcomponents",
+      "ware": "shieldcomponents",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota":2,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_siliconwafers",
+      "ware": "siliconwafers",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 6,
+      "sectorQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"],
+        "wares": ["silicon"]
+      }
+    },
+    {
+      "id": "hol_siliconwafers",
+      "ware": "siliconwafers",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 4,
+      "sectorQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"],
+        "wares": ["silicon"]
+      }
+    },
+    {
+      "id": "par_smartchips",
+      "ware": "smartchips",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_smartchips",
+      "ware": "smartchips",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_sojabeans",
+      "ware": "sojabeans",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "hol_sojabeans",
+      "ware": "sojabeans",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_sojahusk",
+      "ware": "sojahusk",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 8,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "hol_sojahusk",
+      "ware": "sojahusk",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 6,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_spices",
+      "ware": "spices",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 6,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "hol_spices",
+      "ware": "spices",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_superfluidcoolant",
+      "ware": "superfluidcoolant",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"],
+        "wares": ["helium"]
+      }
+    },
+    {
+      "id": "hol_superfluidcoolant",
+      "ware": "superfluidcoolant",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"],
+        "wares": ["helium"]
+      }
+    },
+    {
+      "id": "par_turretcomponents",
+      "ware": "turretcomponents",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "hol_turretcomponents",
+      "ware": "turretcomponents",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "par_water",
+      "ware": "water",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"],
+        "wares": ["ice"]
+      }
+    },
+    {
+      "id": "hol_water",
+      "ware": "water",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"],
+        "wares": ["ice"]
+      }
+    },
+    {
+      "id": "par_weaponcomponents",
+      "ware": "weaponcomponents",
+      "race": "PARANID",
+      "owner": "PARANID",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["PARANID","ALLIANCE"]
+      }
+    },
+    {
+      "id": "hol_weaponcomponents",
+      "ware": "weaponcomponents",
+      "race": "PARANID",
+      "owner": "HOLYORDER",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["HOLYORDER","ALLIANCE"]
+      }
+    },
+    {
+      "id": "tel_advancedcomposites",
+      "ware": "advancedcomposites",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "tel_advancedelectronics",
+      "ware": "advancedelectronics",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "tel_antimattercells",
+      "ware": "antimattercells",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "wares": ["hydrogen"]
+      }
+    },
+    {
+      "id": "tel_antimatterconverters",
+      "ware": "antimatterconverters",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "tel_claytronics",
+      "ware": "claytronics",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 8,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "tel_dronecomponents",
+      "ware": "dronecomponents",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "tel_energycells",
+      "ware": "energycells",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 18,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.75",
+        "sunlightMin": "1",
+        "sunlightMax": "3"
+      }
+    },
+    {
+      "id": "tel_engineparts",
+      "ware": "engineparts",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "tel_fieldcoils",
+      "ware": "fieldcoils",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 2,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "tel_graphene",
+      "ware": "graphene",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 10,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "wares": ["methane"]
+      }
+    },
+    {
+      "id": "tel_hullparts",
+      "ware": "hullparts",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 28,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "tel_medicalsupplies",
+      "ware": "medicalsupplies",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 32,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "tel_microchips",
+      "ware": "microchips",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 14,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "tel_missilecomponents",
+      "ware": "missilecomponents",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "tel_nostropoil",
+      "ware": "nostropoil",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 10,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "tel_plasmaconductors",
+      "ware": "plasmaconductors",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 8,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.5"
+      }
+    },
+    {
+      "id": "tel_quantumtubes",
+      "ware": "quantumtubes",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 8,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.5"
+      }
+    },
+    {
+      "id": "tel_scanningarrays",
+      "ware": "scanningarrays",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.5"
+      }
+    },
+    {
+      "id": "tel_shieldcomponents",
+      "ware": "shieldcomponents",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota":2,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "tel_siliconwafers",
+      "ware": "siliconwafers",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 10,
+      "sectorQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.5",
+        "wares": ["silicon"]
+      }
+    },
+    {
+      "id": "tel_smartchips",
+      "ware": "smartchips",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 7,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "tel_spaceweed",
+      "ware": "spaceweed",
+      "race": "TELADI",
+      "owner": "SCALEPLATE",
+      "galaxyQuota": 8,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.25"
+      }
+    },
+    {
+      "id": "pir_spaceweed",
+      "ware": "spaceweed",
+      "race": "TELADI",
+      "owner": "SCALEPLATE",
+      "galaxyQuota": 8,
+      "locationInfo": {
+        "spawnLocations": ["OWNERLESS"],
+        "solitary": true
+      }
+    },
+    {
+      "id": "tel_spices",
+      "ware": "spices",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 6,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.25"
+      }
+    },
+    {
+      "id": "tel_sunriseflowers",
+      "ware": "sunriseflowers",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 8,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.25"
+      }
+    },
+    {
+      "id": "tel_superfluidcoolant",
+      "ware": "superfluidcoolant",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "wares": ["helium"]
+      }
+    },
+    {
+      "id": "tel_teladianium",
+      "ware": "teladianium",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 10,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "wares": ["ore"]
+      }
+    },
+    {
+      "id": "tel_swampplant",
+      "ware": "swampplant",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 6,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"]
+      }
+    },
+    {
+      "id": "tel_turretcomponents",
+      "ware": "turretcomponents",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "tel_water",
+      "ware": "water",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 10,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "wares": ["ice"]
+      }
+    },
+    {
+      "id": "tel_weaponcomponents",
+      "ware": "weaponcomponents",
+      "race": "TELADI",
+      "owner": "TELADI",
+      "galaxyQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["TELADI","SCALEPLATE"],
+        "economyMax": "0.75"
+      }
+    },
+    {
+      "id": "xen_energycells",
+      "ware": "energycells",
+      "race": "XENON",
+      "owner": "XENON",
+      "galaxyQuota": 32,
+      "clusterQuota": 4,
+      "locationInfo": {
+        "spawnLocations": ["XENON"],
+        "economyMax": "0.75"
       }
     }
   ],
