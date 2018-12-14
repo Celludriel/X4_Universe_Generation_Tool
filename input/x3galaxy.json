@@ -6406,6 +6406,1055 @@
         "tags": ["MINER", "LIQUID", "MIXED"]
       },
       "subordinates": ["antigone_miningfleet_ml_liquid_large","antigone_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "paranid_bio_trader_l",
+      "name": "{20204,1301}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "bio",
+      "ship": {
+        "faction": "PARANID",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "paranid_bio_trader_m",
+      "name": "{20204,1401}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 15,
+        "cluster": 10,
+        "sector": 5
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "bio",
+      "ship": {
+        "faction": "PARANID",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "paranid_food_trader_s",
+      "name": "{20204,1801}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 35,
+        "cluster": 10,
+        "sector": 5
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "3"}
+        ]
+      }],
+      "basket": "food",
+      "ship": {
+        "faction": "PARANID",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "paranid_energycell_trader_l",
+      "name": "{20204,101}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "energycells",
+      "ship": {
+        "faction": "PARANID",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "paranid_energycell_trader_m",
+      "name": "{20204,201}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 15,
+        "cluster": 8,
+        "sector": 4
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "energycells",
+      "ship": {
+        "faction": "PARANID",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "paranid_energycell_trader_s",
+      "name": "{20204,201}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 5,
+        "cluster": 1
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "energycells",
+      "ship": {
+        "faction": "PARANID",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "paranid_equipment_trader_l",
+      "name": "{20204,301}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "equipment",
+      "ship": {
+        "faction": "PARANID",
+        "size": "LARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "paranid_equipment_trader_m",
+      "name": "{20204,301}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 10,
+        "cluster": 10,
+        "sector": 5
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "equipment",
+      "ship": {
+        "faction": "PARANID",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "paranid_construction_trader_l",
+      "name": "{20204,401}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "construction_stations",
+      "ship": {
+        "faction": "PARANID",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "paranid_construction_trader_m",
+      "name": "{20204,401}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 15,
+        "cluster": 5
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "construction_stations",
+      "ship": {
+        "faction": "PARANID",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "paranid_refinedgas_trader_l",
+      "name": "{20204,501}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_gas",
+      "ship": {
+        "faction": "PARANID",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "paranid_refinedgas_trader_m",
+      "name": "{20204,601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 15,
+        "cluster": 10,
+        "sector": 5
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_gas",
+      "ship": {
+        "faction": "PARANID",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "paranid_refinedmineral_trader_l",
+      "name": "{20204,501}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_mineral",
+      "ship": {
+        "faction": "PARANID",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "paranid_refinedmineral_trader_m",
+      "name": "{20204,601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 15,
+        "cluster": 10,
+        "sector": 5
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_mineral",
+      "ship": {
+        "faction": "PARANID",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "paranid_tech_trader_l",
+      "name": "{20204,301}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "cluster": 6,
+        "sector": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "tech",
+      "ship": {
+        "faction": "PARANID",
+        "size": "LARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "paranid_tech_trader_m",
+      "name": "{20204,401}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 5,
+        "cluster": 5,
+        "sector": 2
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "tech",
+      "ship": {
+        "faction": "PARANID",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "paranid_tech_trader_s",
+      "name": "{20204,401}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 10,
+        "cluster": 10,
+        "sector": 5
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "tech",
+      "ship": {
+        "faction": "PARANID",
+        "size": "SMALL",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "paranid_water_trader_l",
+      "name": "{20204,1501}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "water",
+      "ship": {
+        "faction": "PARANID",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "paranid_water_trader_m",
+      "name": "{20204,1601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 10,
+        "cluster": 10,
+        "sector": 10
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "water",
+      "ship": {
+        "faction": "PARANID",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "paranid_free_miner_l_liquid",
+      "name": "{20204,5701}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"],
+        "regionBasket": "gases"
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "ship": {
+        "faction": "PARANID",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "paranid_free_miner_m_liquid",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"],
+        "regionBasket": "gases"
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 4
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "ship": {
+        "faction": "PARANID",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "paranid_free_miner_l_mineral",
+      "name": "{20204,5601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 5
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "ship": {
+        "faction": "PARANID",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "paranid_free_miner_m_mineral",
+      "name": "{20204,5601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 9
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "ship": {
+        "faction": "PARANID",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "paranid_free_miner_s_mineral",
+      "name": "{20204,5601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"],
+        "regionBasket": "gases"
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 5
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "1"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "ship": {
+        "faction": "PARANID",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "paranid_free_miner_l_ice",
+      "name": "{20204,2001}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"],
+        "regionBasket": "ice"
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 2
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "ice",
+      "ship": {
+        "faction": "PARANID",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "paranid_free_miner_m_ice",
+      "name": "{20204,2001}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"],
+        "regionBasket": "ice"
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 4
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "ice",
+      "ship": {
+        "faction": "PARANID",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "paranid_construction_vessel_xl",
+      "name": "{20204,5101}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "shipSize": "XLARGE",
+        "tags": ["FACTIONLOGIC","BUILDER"]
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "FindBuildTasks",
+        "parameters": [
+          {"name": "maxjumps", "value": "6"}
+        ]
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "size": "XLARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["BUILDER"]
+      }
+    },
+    {
+      "id": "paranid_construction_vessel_xl_playeronly",
+      "name": "{20204,5101}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "shipSize": "XLARGE",
+        "tags": ["FACTIONLOGIC","BUILDER"]
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "FindBuildTasks",
+        "parameters": [
+          {"name": "maxjumps", "value": "6"},
+          {"name": "playeronly", "value": "true"}
+        ]
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "size": "XLARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["BUILDER"]
+      }
+    },
+    {
+      "id": "paranid_resupplier_xl",
+      "name": "{20204,5501}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "neutral",
+        "factions": ["PARANID"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.zone"}
+        ]
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["RESUPPLIER"]
+      }
     }
   ]
 }
