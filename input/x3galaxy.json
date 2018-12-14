@@ -2412,16 +2412,6 @@
       }
     },
     {
-      "id": "par_fieldcoils",
-      "ware": "fieldcoils",
-      "race": "PARANID",
-      "owner": "PARANID",
-      "galaxyQuota": 2,
-      "locationInfo": {
-        "spawnLocations": ["PARANID","ALLIANCE"]
-      }
-    },
-    {
       "id": "hol_fieldcoils",
       "ware": "fieldcoils",
       "race": "PARANID",
@@ -2514,7 +2504,7 @@
       }
     },
     {
-      "id": "par_medicalsupplies",
+      "id": "hol_medicalsupplies",
       "ware": "medicalsupplies",
       "race": "PARANID",
       "owner": "HOLYORDER",
@@ -2534,7 +2524,7 @@
       }
     },
     {
-      "id": "par_microchips",
+      "id": "hol_microchips",
       "ware": "microchips",
       "race": "PARANID",
       "owner": "HOLYORDER",
@@ -2594,7 +2584,7 @@
       }
     },
     {
-      "id": "par_quantumtubes",
+      "id": "hol_quantumtubes",
       "ware": "quantumtubes",
       "race": "PARANID",
       "owner": "HOLYORDER",
@@ -2692,7 +2682,7 @@
       }
     },
     {
-      "id": "par_smartchips",
+      "id": "hol_smartchips",
       "ware": "smartchips",
       "race": "PARANID",
       "owner": "HOLYORDER",
