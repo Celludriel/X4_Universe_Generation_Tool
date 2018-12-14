@@ -4323,7 +4323,7 @@
         "levelMax": "1.0",
         "tags": ["MILITARY","FRIGATE"],
         "units": [
-          {"category":  "unitcategory.defence", "min": 8, "max": "12"}
+          {"category":  "unitcategory.defence", "min": 8, "max": 12}
         ]
       }
     },
@@ -4366,7 +4366,7 @@
       "name": "{20204,2801}",
       "commandeerable": true,
       "jobLocation": {
-        "comparison": "exact",
+        "comparison": "lt",
         "relation": "self",
         "factions": ["ARGON"]
       },
@@ -5750,7 +5750,7 @@
         "levelMax": "1.0",
         "tags": ["MILITARY","FRIGATE"],
         "units": [
-          {"category":  "unitcategory.defence", "min": 8, "max": "12"}
+          {"category":  "unitcategory.defence", "min": 8, "max": 12}
         ]
       }
     },
@@ -5793,7 +5793,7 @@
       "name": "{20204,2801}",
       "commandeerable": true,
       "jobLocation": {
-        "comparison": "exact",
+        "comparison": "lt",
         "relation": "self",
         "factions": ["ANTIGONE"]
       },
@@ -7454,6 +7454,4535 @@
         "levelMin": "0.4",
         "levelMax": "0.7",
         "tags": ["RESUPPLIER"]
+      }
+    },
+    {
+      "id": "paranid_carrier_patrol_xl_cluster",
+      "name": "{20204,3201}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "shipSize": "XLARGE",
+        "tags": ["FACTIONLOGIC","MILITARY","CARRIER"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.zone"}
+        ]
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "size": "XLARGE",
+        "levelMin": "0.7",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","CARRIER"]
+      },
+      "subordinates": ["paranid_destroyer_escort_l"]
+    },
+    {
+      "id": "paranid_destroyer_patrol_l_sector_exp",
+      "name": "{20204,3301}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["PARANID"]
+      },
+      "jobQuota": {
+        "galaxy": 14,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.cluster"}
+        ]
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "size": "LARGE",
+        "tags": ["MILITARY","DESTROYER"]
+      },
+      "subordinates": ["paranid_frigate_escort_m"]
+    },
+    {
+      "id": "paranid_destroyer_patrol_l_comp",
+      "name": "{20204,3301}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "shipSize": "LARGE",
+        "tags": ["FACTIONLOGIC","MILITARY","DESTROYER"]
+      },
+      "jobQuota": {
+        "galaxy": 3,
+        "maxGalaxy": 12,
+        "cluster": 3
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.zone"}
+        ]
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "size": "LARGE",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","DESTROYER"]
+      }
+    },
+    {
+      "id": "paranid_fighter_patrol_s_zone",
+      "name": "{20204,2901}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "shipSize": "SMALL",
+        "tags": ["FACTIONLOGIC","MILITARY","FIGHTER"]
+      },
+      "jobQuota": {
+        "galaxy": 27,
+        "maxGalaxy": 54,
+        "zone": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.sector"}
+        ]
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "size": "SMALL",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["FIGHTER","HEAVY"]
+      },
+      "subordinates": ["paranid_fighter_escort_s_patrol"]
+    },
+    {
+      "id": "paranid_dronecarrier_patrol_m_sector",
+      "name": "{20204,2901}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "shipSize": "MEDIUM",
+        "tags": ["FACTIONLOGIC","MILITARY","FRIGATE"]
+      },
+      "jobQuota": {
+        "galaxy": 7,
+        "maxGalaxy": 14,
+        "sector": 3
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.sector"}
+        ]
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","FRIGATE"],
+        "units": [
+          {"category":  "unitcategory.defence", "min": 5, "max": 8}
+        ]
+      },
+      "subordinates": ["paranid_fighter_escort_s_patrol"]
+    },
+    {
+      "id": "paranid_corvette_patrol_m_sector",
+      "name": "{20204,2901}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "shipSize": "MEDIUM",
+        "tags": ["FACTIONLOGIC","MILITARY","CORVETTE"]
+      },
+      "jobQuota": {
+        "galaxy": 7,
+        "sector": 3
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.sector"}
+        ]
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","CORVETTE"]
+      }
+    },
+    {
+      "id": "paranid_scout_patrol_s",
+      "name": "{20204,2801}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "lt",
+        "relation": "self",
+        "factions": ["PARANID"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "shipSize": "SMALL",
+        "tags": ["FACTIONLOGIC","MILITARY","SCOUT"]
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "maxGalaxy": 12,
+        "cluster": 2
+      },
+      "orders": [{
+        "order": "Recon"
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "levelMin": "0.7",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","SCOUT"]
+      }
+    },
+    {
+      "id": "paranid_police_patrol_s",
+      "name": "{20204,2901}",
+      "commandeerable": false,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["PARANID","ALLIANCE"]
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "shipSize": "SMALL",
+        "tags": ["FACTIONLOGIC","POLICE"]
+      },
+      "jobQuota": {
+        "galaxy": 60,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "Recon",
+        "parameters": [
+          {"name": "police", "value": "true"}
+        ]
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["FIGHTER","LIGHT"]
+      }
+    },
+    {
+      "id": "paranid_destroyer_escort_l",
+      "name": "{20204,3301}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "PARANID",
+        "shipSize": "LARGE",
+        "tags": ["MILITARY","DESTROYER"]
+      },
+      "jobQuota": {
+        "wing": 6
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","DESTROYER"]
+      }
+    },
+    {
+      "id": "paranid_frigate_escort_m",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "PARANID",
+        "shipSize": "MEDIUM",
+        "tags": ["MILITARY"]
+      },
+      "jobQuota": {
+        "wing": 1
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.dartvertical"},
+          {"name": "formationparam", "value": "2500m"}
+        ]
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","MEDIUM"]
+      },
+      "subordinates": ["paranid_fighter_escort_s_frigate"]
+    },
+    {
+      "id": "paranid_fighter_escort_s_frigate",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "PARANID",
+        "shipSize": "SMALL",
+        "tags": ["MILITARY", "FIGHTER"]
+      },
+      "jobQuota": {
+        "wing": 2
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER", "SELECTION"]
+      }
+    },
+    {
+      "id": "paranid_fighter_escort_s_patrol",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "PARANID",
+        "shipSize": "SMALL",
+        "tags": ["MILITARY", "FIGHTER"]
+      },
+      "jobQuota": {
+        "wing": 2
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER", "LIGHT"]
+      }
+    },
+    {
+      "id": "paranid_miningfleet_m_solid_small",
+      "name": "{20204,5601}",
+      "startActive": false,
+      "subordinate": true,
+      "basket": "minerals",
+      "jobCategory": {
+        "faction": "PARANID",
+        "shipSize": "MEDIUM",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"]
+      },
+      "subordinates": ["paranid_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "paranid_miningfleet_m_liquid_small",
+      "name": "{20204,5701}",
+      "startActive": false,
+      "subordinate": true,
+      "basket": "gases",
+      "jobCategory": {
+        "faction": "PARANID",
+        "shipSize": "MEDIUM",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID"]
+      },
+      "subordinates": ["paranid_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "paranid_miningfleet_ml_solid_large",
+      "name": "{20204,5601}",
+      "startActive": false,
+      "subordinate": true,
+      "basket": "minerals",
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 3,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID","MIXED"]
+      },
+      "subordinates": ["paranid_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "paranid_miningfleet_ml_liquid_large",
+      "name": "{20204,5701}",
+      "startActive": false,
+      "subordinate": true,
+      "basket": "gases",
+      "jobCategory": {
+        "faction": "PARANID",
+        "shipSize": "MEDIUM",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID","MIXED"]
+      },
+      "subordinates": ["paranid_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "paranid_fighter_escort_s_miningfleet",
+      "name": "{20204,2601}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "PARANID",
+        "shipSize": "SMALL",
+        "tags": ["MILITARY", "FIGHTER"]
+      },
+      "jobQuota": {
+        "wing": 1,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "faction": "PARANID",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER","SELECTION"]
+      }
+    },
+    {
+      "id": "paranid_free_miner_ml_solid_deepspace_single",
+      "name": "{20204,5601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["PARANID"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "1",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "PARANID",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "SOLID", "MIXED"]
+      }
+    },
+    {
+      "id": "paranid_free_miner_ml_liquid_deepspace_single",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["PARANID"],
+        "regionBasket": "gasses"
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "1",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "PARANID",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "LIQUID", "MIXED"]
+      }
+    },
+    {
+      "id": "paranid_free_miner_ml_solid_deepspace_smallgroup",
+      "name": "{20204,5601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["PARANID"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "600",
+      "encounters": "mining_group_small",
+      "ship": {
+        "faction": "PARANID",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "SOLID", "MIXED"]
+      },
+      "subordinates": ["paranid_miningfleet_m_solid_small","paranid_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "paranid_free_miner_ml_liquid_deepspace_smallgroup",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["PARANID"],
+        "regionBasket": "gasses"
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "600",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "PARANID",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "LIQUID", "MIXED"]
+      },
+      "subordinates": ["paranid_miningfleet_m_liquid_small","paranid_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "paranid_free_miner_l_solid_deepspace_largegroup",
+      "name": "{20204,5601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["PARANID"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "shipSize": "LARGE",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "3600",
+      "encounters": "mining_group_large",
+      "ship": {
+        "faction": "PARANID",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "SOLID", "MIXED"]
+      },
+      "subordinates": ["paranid_miningfleet_ml_solid_large","paranid_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "paranid_free_miner_l_liquid_deepspace_largegroup",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["PARANID"],
+        "regionBasket": "gasses"
+      },
+      "jobCategory": {
+        "faction": "PARANID",
+        "shipSize": "LARGE",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "time": "3600",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "PARANID",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "LIQUID", "MIXED"]
+      },
+      "subordinates": ["paranid_miningfleet_ml_liquid_large","paranid_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "holyorder_bio_trader_l",
+      "name": "{20204,1301}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "bio",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "holyorder_bio_trader_m",
+      "name": "{20204,1401}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 15,
+        "cluster": 10,
+        "sector": 5
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "bio",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "holyorder_food_trader_s",
+      "name": "{20204,1801}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 35,
+        "cluster": 10,
+        "sector": 5
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "3"}
+        ]
+      }],
+      "basket": "food",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "holyorder_energycell_trader_l",
+      "name": "{20204,101}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "energycells",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "holyorder_energycell_trader_m",
+      "name": "{20204,201}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 15,
+        "cluster": 8,
+        "sector": 4
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "energycells",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "holyorder_energycell_trader_s",
+      "name": "{20204,201}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 5,
+        "cluster": 1
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "energycells",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "holyorder_equipment_trader_l",
+      "name": "{20204,301}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "equipment",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "LARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "holyorder_equipment_trader_m",
+      "name": "{20204,301}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 10,
+        "cluster": 10,
+        "sector": 5
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "equipment",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "holyorder_construction_trader_l",
+      "name": "{20204,401}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "construction_stations",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "holyorder_construction_trader_m",
+      "name": "{20204,401}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 15,
+        "cluster": 5
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "construction_stations",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "holyorder_refinedgas_trader_l",
+      "name": "{20204,501}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_gas",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "holyorder_refinedgas_trader_m",
+      "name": "{20204,601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 15,
+        "cluster": 10,
+        "sector": 5
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_gas",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "holyorder_refinedmineral_trader_l",
+      "name": "{20204,501}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_mineral",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "holyorder_refinedmineral_trader_m",
+      "name": "{20204,601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 15,
+        "cluster": 10,
+        "sector": 5
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_mineral",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "holyorder_tech_trader_l",
+      "name": "{20204,301}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "cluster": 6,
+        "sector": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "tech",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "LARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "holyorder_tech_trader_m",
+      "name": "{20204,401}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 5,
+        "cluster": 5,
+        "sector": 2
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "tech",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "holyorder_tech_trader_s",
+      "name": "{20204,401}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 10,
+        "cluster": 10,
+        "sector": 5
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "tech",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "SMALL",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "holyorder_water_trader_l",
+      "name": "{20204,1501}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "water",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "holyorder_water_trader_m",
+      "name": "{20204,1601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 10,
+        "cluster": 10,
+        "sector": 10
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "water",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "holyorder_free_miner_l_liquid",
+      "name": "{20204,5701}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"],
+        "regionBasket": "gases"
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "holyorder_free_miner_m_liquid",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"],
+        "regionBasket": "gases"
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 4
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "holyorder_free_miner_l_mineral",
+      "name": "{20204,5601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 5
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "holyorder_free_miner_m_mineral",
+      "name": "{20204,5601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 9
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "holyorder_free_miner_s_mineral",
+      "name": "{20204,5601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"],
+        "regionBasket": "gases"
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 5
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "1"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "holyorder_free_miner_l_ice",
+      "name": "{20204,2001}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"],
+        "regionBasket": "ice"
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 2
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "ice",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "holyorder_free_miner_m_ice",
+      "name": "{20204,2001}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"],
+        "regionBasket": "ice"
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 4
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "ice",
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "holyorder_construction_vessel_xl",
+      "name": "{20204,5101}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "shipSize": "XLARGE",
+        "tags": ["FACTIONLOGIC","BUILDER"]
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "FindBuildTasks",
+        "parameters": [
+          {"name": "maxjumps", "value": "6"}
+        ]
+      }],
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "XLARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["BUILDER"]
+      }
+    },
+    {
+      "id": "holyorder_construction_vessel_xl_playeronly",
+      "name": "{20204,5101}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "shipSize": "XLARGE",
+        "tags": ["FACTIONLOGIC","BUILDER"]
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "FindBuildTasks",
+        "parameters": [
+          {"name": "maxjumps", "value": "6"},
+          {"name": "playeronly", "value": "true"}
+        ]
+      }],
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "XLARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["BUILDER"]
+      }
+    },
+    {
+      "id": "holyorder_destroyer_patrol_l_cluster_exp",
+      "name": "{20204,3301}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["HOLYORDER"]
+      },
+      "jobQuota": {
+        "galaxy": 13,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.cluster"}
+        ]
+      }],
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "LARGE",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","DESTROYER"]
+      },
+      "subordinates": ["holyorder_destroyer_escort_l","holyorder_frigate_escort_m"]
+    },
+    {
+      "id": "holyorder_destroyer_patrol_l_comp",
+      "name": "{20204,3301}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "shipSize": "LARGE",
+        "tags": ["FACTIONLOGIC","MILITARY","DESTROYER"]
+      },
+      "jobQuota": {
+        "galaxy": 3,
+        "maxGalaxy": 12,
+        "cluster": 3
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.zone"}
+        ]
+      }],
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "LARGE",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","DESTROYER"]
+      }
+    },
+    {
+      "id": "holyorder_fighter_patrol_s_zone",
+      "name": "{20204,2901}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "shipSize": "SMALL",
+        "tags": ["FACTIONLOGIC","MILITARY","FIGHTER"]
+      },
+      "jobQuota": {
+        "galaxy": 40,
+        "maxGalaxy": 80,
+        "zone": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.sector"}
+        ]
+      }],
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "SMALL",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["FIGHTER","HEAVY"]
+      },
+      "subordinates": ["holyorder_fighter_escort_s_patrol"]
+    },
+    {
+      "id": "holyorder_dronecarrier_patrol_m_sector",
+      "name": "{20204,2901}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "shipSize": "MEDIUM",
+        "tags": ["FACTIONLOGIC","MILITARY","FRIGATE"]
+      },
+      "jobQuota": {
+        "galaxy": 10,
+        "maxGalaxy": 20,
+        "sector": 3
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.sector"}
+        ]
+      }],
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","FRIGATE"],
+        "units": [
+          {"category":  "unitcategory.defence", "min": 5, "max": 8}
+        ]
+      }
+    },
+    {
+      "id": "holyorder_corvette_patrol_m_sector",
+      "name": "{20204,2901}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "shipSize": "MEDIUM",
+        "tags": ["FACTIONLOGIC","MILITARY","CORVETTE"]
+      },
+      "jobQuota": {
+        "galaxy": 5,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.sector"}
+        ]
+      }],
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","CORVETTE"]
+      },
+      "subordinates": ["holyorder_corvette_escort_m"]
+    },
+    {
+      "id": "holyorder_scout_patrol_s",
+      "name": "{20204,2801}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "lt",
+        "relation": "self",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "shipSize": "SMALL",
+        "tags": ["FACTIONLOGIC","MILITARY","SCOUT"]
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "maxGalaxy": 12,
+        "cluster": 2
+      },
+      "orders": [{
+        "order": "Recon"
+      }],
+      "ship": {
+        "faction": "HOLYORDER",
+        "levelMin": "0.7",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","SCOUT"]
+      }
+    },
+    {
+      "id": "holyorder_police_patrol_s",
+      "name": "{20204,2901}",
+      "commandeerable": false,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["HOLYORDER"]
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "shipSize": "SMALL",
+        "tags": ["FACTIONLOGIC","POLICE"]
+      },
+      "jobQuota": {
+        "galaxy": 60,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "Recon",
+        "parameters": [
+          {"name": "police", "value": "true"}
+        ]
+      }],
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["FIGHTER","LIGHT"]
+      }
+    },
+    {
+      "id": "holyorder_destroyer_escort_l",
+      "name": "{20204,3301}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "shipSize": "LARGE",
+        "tags": ["MILITARY","DESTROYER"]
+      },
+      "jobQuota": {
+        "wing": 6
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","DESTROYER"]
+      },
+      "subordinates": ["holyorder_frigate_escort_m"]
+    },
+    {
+      "id": "holyorder_frigate_escort_m",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "shipSize": "MEDIUM",
+        "tags": ["MILITARY"]
+      },
+      "jobQuota": {
+        "wing": 1
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.dartvertical"},
+          {"name": "formationparam", "value": "2500m"}
+        ]
+      }],
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","MEDIUM"]
+      },
+      "subordinates": ["holyorder_fighter_escort_s_frigate"]
+    },
+    {
+      "id": "holyorder_corvette_escort_m",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "shipSize": "MEDIUM",
+        "tags": ["MILITARY"]
+      },
+      "jobQuota": {
+        "wing": 2
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.dartvertical"},
+          {"name": "formationparam", "value": "2500m"}
+        ]
+      }],
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","MEDIUM", "CORVETTE"]
+      },
+      "subordinates": ["holyorder_fighter_escort_s_frigate"]
+    },
+    {
+      "id": "holyorder_fighter_escort_s_frigate",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "shipSize": "SMALL",
+        "tags": ["MILITARY", "FIGHTER"]
+      },
+      "jobQuota": {
+        "wing": 2
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER", "SELECTION"]
+      }
+    },
+    {
+      "id": "holyorder_fighter_escort_s_patrol",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "shipSize": "SMALL",
+        "tags": ["MILITARY", "FIGHTER"]
+      },
+      "jobQuota": {
+        "wing": 2
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER", "LIGHT"]
+      }
+    },
+    {
+      "id": "holyorder_miningfleet_m_solid_small",
+      "name": "{20204,5601}",
+      "startActive": false,
+      "subordinate": true,
+      "basket": "minerals",
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "shipSize": "MEDIUM",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"]
+      },
+      "subordinates": ["holyorder_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "holyorder_miningfleet_m_liquid_small",
+      "name": "{20204,5701}",
+      "startActive": false,
+      "subordinate": true,
+      "basket": "gases",
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "shipSize": "MEDIUM",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID"]
+      },
+      "subordinates": ["holyorder_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "holyorder_miningfleet_ml_solid_large",
+      "name": "{20204,5601}",
+      "startActive": false,
+      "subordinate": true,
+      "basket": "minerals",
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 3,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID","MIXED"]
+      },
+      "subordinates": ["holyorder_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "holyorder_miningfleet_ml_liquid_large",
+      "name": "{20204,5701}",
+      "startActive": false,
+      "subordinate": true,
+      "basket": "gases",
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "shipSize": "MEDIUM",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID","MIXED"]
+      },
+      "subordinates": ["holyorder_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "holyorder_fighter_escort_s_miningfleet",
+      "name": "{20204,2601}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "shipSize": "SMALL",
+        "tags": ["MILITARY", "FIGHTER"]
+      },
+      "jobQuota": {
+        "wing": 1,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "faction": "HOLYORDER",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER","SELECTION"]
+      }
+    },
+    {
+      "id": "holyorder_free_miner_ml_solid_deepspace_single",
+      "name": "{20204,5601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["HOLYORDER"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "1",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "HOLYORDER",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "SOLID", "MIXED"]
+      }
+    },
+    {
+      "id": "holyorder_free_miner_ml_liquid_deepspace_single",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["HOLYORDER"],
+        "regionBasket": "gasses"
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "1",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "HOLYORDER",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "LIQUID", "MIXED"]
+      }
+    },
+    {
+      "id": "holyorder_free_miner_ml_solid_deepspace_smallgroup",
+      "name": "{20204,5601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["HOLYORDER"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "600",
+      "encounters": "mining_group_small",
+      "ship": {
+        "faction": "HOLYORDER",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "SOLID", "MIXED"]
+      },
+      "subordinates": ["holyorder_miningfleet_m_solid_small","holyorder_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "holyorder_free_miner_ml_liquid_deepspace_smallgroup",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["HOLYORDER"],
+        "regionBasket": "gasses"
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "600",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "HOLYORDER",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "LIQUID", "MIXED"]
+      },
+      "subordinates": ["holyorder_miningfleet_m_liquid_small","holyorder_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "holyorder_free_miner_l_solid_deepspace_largegroup",
+      "name": "{20204,5601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["HOLYORDER"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "shipSize": "LARGE",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "3600",
+      "encounters": "mining_group_large",
+      "ship": {
+        "faction": "HOLYORDER",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "SOLID", "MIXED"]
+      },
+      "subordinates": ["holyorder_miningfleet_ml_solid_large","holyorder_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "holyorder_free_miner_l_liquid_deepspace_largegroup",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["HOLYORDER"],
+        "regionBasket": "gasses"
+      },
+      "jobCategory": {
+        "faction": "HOLYORDER",
+        "shipSize": "LARGE",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "time": "3600",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "HOLYORDER",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "LIQUID", "MIXED"]
+      },
+      "subordinates": ["holyorder_miningfleet_ml_liquid_large","holyorder_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "teladi_bio_trader_l",
+      "name": "{20204,1301}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "cluster": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "bio",
+      "ship": {
+        "faction": "TELADI",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "teladi_bio_trader_m",
+      "name": "{20204,1401}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 30,
+        "cluster": 15,
+        "sector": 10
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "bio",
+      "ship": {
+        "faction": "TELADI",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "teladi_food_trader_s",
+      "name": "{20204,1801}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 70,
+        "cluster": 25,
+        "sector": 10
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "3"}
+        ]
+      }],
+      "basket": "food",
+      "ship": {
+        "faction": "TELADI",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "teladi_energycell_trader_l",
+      "name": "{20204,101}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "cluster": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "energycells",
+      "ship": {
+        "faction": "TELADI",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "teladi_energycell_trader_m",
+      "name": "{20204,201}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 40,
+        "cluster": 8,
+        "sector": 6
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "energycells",
+      "ship": {
+        "faction": "TELADI",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "teladi_energycell_trader_s",
+      "name": "{20204,201}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 8,
+        "cluster": 1
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "energycells",
+      "ship": {
+        "faction": "TELADI",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "teladi_equipment_trader_l",
+      "name": "{20204,301}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3,
+        "cluster": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "equipment",
+      "ship": {
+        "faction": "TELADI",
+        "size": "LARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "teladi_equipment_trader_m",
+      "name": "{20204,301}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 15,
+        "cluster": 3,
+        "sector": 3
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "equipment",
+      "ship": {
+        "faction": "TELADI",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "teladi_construction_trader_l",
+      "name": "{20204,401}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3,
+        "cluster": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "construction_stations",
+      "ship": {
+        "faction": "TELADI",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "teladi_construction_trader_m",
+      "name": "{20204,401}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 30,
+        "cluster": 5
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "construction_stations",
+      "ship": {
+        "faction": "TELADI",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "teladi_refinedgas_trader_l",
+      "name": "{20204,501}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "cluster": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_gas",
+      "ship": {
+        "faction": "TELADI",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "teladi_refinedgas_trader_m",
+      "name": "{20204,601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 15,
+        "cluster": 5,
+        "sector": 5
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_gas",
+      "ship": {
+        "faction": "TELADI",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "teladi_refinedmineral_trader_l",
+      "name": "{20204,501}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "cluster": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_mineral",
+      "ship": {
+        "faction": "TELADI",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "teladi_refinedmineral_trader_m",
+      "name": "{20204,601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 15,
+        "cluster": 5,
+        "sector": 5
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "refined_mineral",
+      "ship": {
+        "faction": "TELADI",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "teladi_tech_trader_l",
+      "name": "{20204,301}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "cluster": 3,
+        "sector": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "tech",
+      "ship": {
+        "faction": "TELADI",
+        "size": "LARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "teladi_tech_trader_m",
+      "name": "{20204,401}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 8,
+        "cluster": 3,
+        "sector": 3
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "tech",
+      "ship": {
+        "faction": "TELADI",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "teladi_tech_trader_s",
+      "name": "{20204,401}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 15,
+        "cluster": 5,
+        "sector": 5
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "tech",
+      "ship": {
+        "faction": "TELADI",
+        "size": "SMALL",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "teladi_water_trader_l",
+      "name": "{20204,1501}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "cluster": 3
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "water",
+      "ship": {
+        "faction": "TELADI",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "teladi_water_trader_m",
+      "name": "{20204,1601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 50,
+        "cluster": 10,
+        "sector": 10
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "water",
+      "ship": {
+        "faction": "TELADI",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "teladi_free_miner_l_liquid",
+      "name": "{20204,5701}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"],
+        "regionBasket": "gases"
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 2
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "ship": {
+        "faction": "TELADI",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "teladi_free_miner_m_liquid",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"],
+        "regionBasket": "gases"
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 8
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "ship": {
+        "faction": "TELADI",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "teladi_free_miner_l_mineral",
+      "name": "{20204,5601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 12
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "ship": {
+        "faction": "TELADI",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "teladi_free_miner_m_mineral",
+      "name": "{20204,5601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 17
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "ship": {
+        "faction": "TELADI",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "teladi_free_miner_s_mineral",
+      "name": "{20204,5601}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"],
+        "regionBasket": "gases"
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 7
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "1"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "ship": {
+        "faction": "TELADI",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "teladi_free_miner_l_ice",
+      "name": "{20204,2001}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"],
+        "regionBasket": "ice"
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 3
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "ice",
+      "ship": {
+        "faction": "TELADI",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "teladi_free_miner_m_ice",
+      "name": "{20204,2001}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"],
+        "regionBasket": "ice"
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "MINER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 7
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "ice",
+      "ship": {
+        "faction": "TELADI",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "teladi_construction_vessel_xl",
+      "name": "{20204,5101}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "shipSize": "XLARGE",
+        "tags": ["FACTIONLOGIC","BUILDER"]
+      },
+      "jobQuota": {
+        "galaxy": 10,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "FindBuildTasks",
+        "parameters": [
+          {"name": "maxjumps", "value": "6"}
+        ]
+      }],
+      "ship": {
+        "faction": "TELADI",
+        "size": "XLARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["BUILDER"]
+      }
+    },
+    {
+      "id": "teladi_construction_vessel_xl_playeronly",
+      "name": "{20204,5101}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "shipSize": "XLARGE",
+        "tags": ["FACTIONLOGIC","BUILDER"]
+      },
+      "jobQuota": {
+        "galaxy": 10,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "FindBuildTasks",
+        "parameters": [
+          {"name": "maxjumps", "value": "6"},
+          {"name": "playeronly", "value": "true"}
+        ]
+      }],
+      "ship": {
+        "faction": "TELADI",
+        "size": "XLARGE",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["BUILDER"]
+      }
+    },
+    {
+      "id": "teladi_resupplier_xl",
+      "name": "{20204,5501}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "neutral",
+        "factions": ["TELADI"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.zone"}
+        ]
+      }],
+      "ship": {
+        "faction": "TELADI",
+        "levelMin": "0.4",
+        "levelMax": "0.7",
+        "tags": ["RESUPPLIER"]
+      }
+    },
+    {
+      "id": "teladi_carrier_patrol_xl_cluster",
+      "name": "{20204,3201}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "shipSize": "XLARGE",
+        "tags": ["FACTIONLOGIC","MILITARY","CARRIER"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.zone"}
+        ]
+      }],
+      "ship": {
+        "faction": "TELADI",
+        "size": "XLARGE",
+        "levelMin": "0.7",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","CARRIER"]
+      },
+      "subordinates": ["teladi_destroyer_escort_l"]
+    },
+    {
+      "id": "teladi_destroyer_patrol_l_border_cluster",
+      "name": "{20204,3301}",
+      "commandeerable": true,
+      "jobCategory": {
+        "faction": "TELADI",
+        "shipSize": "LARGE",
+        "tags": ["FACTIONLOGIC","MILITARY","DESTROYER"]
+      },
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["TELADI","MINISTRY"]
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.cluster"}
+        ]
+      }],
+      "ship": {
+        "faction": "TELADI",
+        "size": "LARGE",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","DESTROYER"]
+      },
+      "subordinates": ["teladi_destroyer_escort_l"]
+    },
+    {
+      "id": "teladi_fighter_patrol_s_zone_exp",
+      "name": "{20204,2901}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["TELADI","MINISTRY"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "shipSize": "SMALL",
+        "tags": ["FACTIONLOGIC","MILITARY","FIGHTER"]
+      },
+      "jobQuota": {
+        "galaxy": 50,
+        "maxGalaxy": 100,
+        "zone": 3
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.sector"}
+        ]
+      }],
+      "ship": {
+        "faction": "TELADI",
+        "size": "SMALL",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["FIGHTER","HEAVY"]
+      },
+      "subordinates": ["teladi_fighter_escort_s_patrol"]
+    },
+    {
+      "id": "teladi_scout_patrol_s",
+      "name": "{20204,2801}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "lt",
+        "relation": "self",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "shipSize": "SMALL",
+        "tags": ["FACTIONLOGIC","MILITARY","SCOUT"]
+      },
+      "jobQuota": {
+        "galaxy": 12,
+        "maxGalaxy": 24,
+        "cluster": 2
+      },
+      "orders": [{
+        "order": "Recon"
+      }],
+      "ship": {
+        "faction": "TELADI",
+        "levelMin": "0.7",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","SCOUT"]
+      }
+    },
+    {
+      "id": "teladi_destroyer_escort_l",
+      "name": "{20204,3301}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "TELADI",
+        "shipSize": "LARGE",
+        "tags": ["MILITARY","DESTROYER"]
+      },
+      "jobQuota": {
+        "wing": 3,
+        "variation": 2
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "faction": "TELADI",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","DESTROYER"]
+      },
+      "subordinates": ["teladi_frigate_escort_m"]
+    },
+    {
+      "id": "teladi_frigate_escort_m",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "TELADI",
+        "shipSize": "MEDIUM",
+        "tags": ["MILITARY"]
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.dartvertical"},
+          {"name": "formationparam", "value": "2500m"}
+        ]
+      }],
+      "ship": {
+        "faction": "TELADI",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","MEDIUM"]
+      },
+      "subordinates": ["teladi_fighter_escort_s_frigate"]
+    },
+    {
+      "id": "teladi_fighter_escort_s_frigate",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "TELADI",
+        "shipSize": "SMALL",
+        "tags": ["MILITARY", "FIGHTER"]
+      },
+      "jobQuota": {
+        "wing": 4,
+        "variation": 4
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER", "SELECTION"],
+        "factions": ["TELADI", "MINISTRY", "ANTIGONE"]
+      }
+    },
+    {
+      "id": "teladi_fighter_escort_s_patrol",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "TELADI",
+        "shipSize": "SMALL",
+        "tags": ["MILITARY", "FIGHTER"]
+      },
+      "jobQuota": {
+        "wing": 3,
+        "variation": 3
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "factions": ["TELADI", "MINISTRY", "ANTIGONE"],
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER", "LIGHT"]
+      }
+    },
+    {
+      "id": "teladi_miningfleet_m_solid_small",
+      "name": "{20204,5601}",
+      "startActive": false,
+      "subordinate": true,
+      "basket": "minerals",
+      "jobCategory": {
+        "faction": "TELADI",
+        "shipSize": "MEDIUM",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "ship": {
+        "faction": "TELADI",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"]
+      },
+      "subordinates": ["teladi_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "teladi_miningfleet_m_liquid_small",
+      "name": "{20204,5701}",
+      "startActive": false,
+      "subordinate": true,
+      "basket": "gases",
+      "jobCategory": {
+        "faction": "TELADI",
+        "shipSize": "MEDIUM",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "ship": {
+        "faction": "TELADI",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID"]
+      },
+      "subordinates": ["teladi_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "teladi_miningfleet_ml_solid_large",
+      "name": "{20204,5601}",
+      "startActive": false,
+      "subordinate": true,
+      "basket": "minerals",
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 3,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "ship": {
+        "faction": "TELADI",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID","MIXED"]
+      },
+      "subordinates": ["teladi_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "teladi_miningfleet_ml_liquid_large",
+      "name": "{20204,5701}",
+      "startActive": false,
+      "subordinate": true,
+      "basket": "gases",
+      "jobCategory": {
+        "faction": "TELADI",
+        "shipSize": "MEDIUM",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "ship": {
+        "faction": "TELADI",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID","MIXED"]
+      },
+      "subordinates": ["teladi_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "teladi_fighter_escort_s_miningfleet",
+      "name": "{20204,2601}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "TELADI",
+        "shipSize": "SMALL",
+        "tags": ["MILITARY", "FIGHTER"]
+      },
+      "jobQuota": {
+        "wing": 1,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "faction": "TELADI",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER","SELECTION"]
+      }
+    },
+    {
+      "id": "teladi_resourcescout_s_deepspace_single",
+      "name": "{20204,10049}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "neutral",
+        "factions": ["TELADI"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["SCOUT"]
+      },
+      "jobQuota": {
+        "galaxy": 6,
+        "cluster": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "deepspace", "value":  "true"},
+          {"name": "resourcescout", "value":  "true"}
+        ]
+      }],
+      "basket": "minerals",
+      "encounters": "resource_scout",
+      "ship": {
+        "faction": "TELADI",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["SCOUT"]
+      }
+    },
+    {
+      "id": "teladi_free_miner_ml_solid_deepspace_single",
+      "name": "{20204,5601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["TELADI"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "1",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "TELADI",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "SOLID", "MIXED"]
+      }
+    },
+    {
+      "id": "teladi_free_miner_ml_liquid_deepspace_single",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["TELADI"],
+        "regionBasket": "gasses"
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "1",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "TELADI",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "LIQUID", "MIXED"]
+      }
+    },
+    {
+      "id": "teladi_free_miner_ml_solid_deepspace_smallgroup",
+      "name": "{20204,5601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["TELADI"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "600",
+      "encounters": "mining_group_small",
+      "ship": {
+        "faction": "TELADI",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "SOLID", "MIXED"]
+      },
+      "subordinates": ["teladi_miningfleet_m_solid_small","teladi_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "teladi_free_miner_ml_liquid_deepspace_smallgroup",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["TELADI"],
+        "regionBasket": "gasses"
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "600",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "TELADI",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "LIQUID", "MIXED"]
+      },
+      "subordinates": ["teladi_miningfleet_m_liquid_small","teladi_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "teladi_free_miner_l_solid_deepspace_largegroup",
+      "name": "{20204,5601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["TELADI"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "shipSize": "LARGE",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "time": "3600",
+      "encounters": "mining_group_large",
+      "ship": {
+        "faction": "TELADI",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "SOLID", "MIXED"]
+      },
+      "subordinates": ["teladi_miningfleet_ml_solid_large","teladi_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "teladi_free_miner_l_liquid_deepspace_largegroup",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["TELADI"],
+        "regionBasket": "gasses"
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "shipSize": "LARGE",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "time": "3600",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "TELADI",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "LIQUID", "MIXED"]
+      },
+      "subordinates": ["teladi_miningfleet_ml_liquid_large","teladi_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "ministry_food_trader_s",
+      "name": "{20204,1801}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["MINISTRY"]
+      },
+      "jobCategory": {
+        "faction": "TELADI",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "SMALL"
+      },
+      "jobQuota": {
+        "galaxy": 70,
+        "cluster": 25,
+        "sector": 10
+      },
+      "orders": [{
+        "order": "Middleman",
+        "parameters": [
+          {"name": "range", "value":  "5"}
+        ]
+      }],
+      "basket": "food",
+      "ship": {
+        "faction": "MINISTRY",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["TRADER","CONTAINER"]
+      }
+    },
+    {
+      "id": "ministry_destroyer_patrol_l_comp",
+      "name": "{20204,3301}",
+      "commandeerable": true,
+      "jobCategory": {
+        "faction": "MINISTRY",
+        "shipSize": "LARGE",
+        "tags": ["FACTIONLOGIC","MILITARY","DESTROYER"]
+      },
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI","MINISTRY"]
+      },
+      "jobQuota": {
+        "galaxy": 3,
+        "maxGalaxy": 12,
+        "cluster": 3
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.cluster"}
+        ]
+      }],
+      "ship": {
+        "faction": "MINISTRY",
+        "size": "LARGE",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","DESTROYER"]
+      }
+    },
+    {
+      "id": "ministry_frigate_police_patrol_m",
+      "name": "{20204,2901}",
+      "commandeerable": false,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI","MINISTRY"]
+      },
+      "jobCategory": {
+        "faction": "MINISTRY",
+        "shipSize": "MEDIUM",
+        "tags": ["FACTIONLOGIC","MILITARY","FRIGATE"]
+      },
+      "jobQuota": {
+        "galaxy": 60,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "Recon",
+        "parameters": [
+          {"name": "police", "value": "true"}
+        ]
+      }],
+      "ship": {
+        "faction": "MINISTRY",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","FRIGATE"]
+      },
+      "subordinates": ["ministry_fighter_escort_s_patrol"]
+    },
+    {
+      "id": "ministry_dronecarrier_patrol_m_sector",
+      "name": "{20204,2901}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI","MINISTRY"]
+      },
+      "jobCategory": {
+        "faction": "MINISTRY",
+        "shipSize": "MEDIUM",
+        "tags": ["FACTIONLOGIC","MILITARY","FRIGATE"]
+      },
+      "jobQuota": {
+        "galaxy": 16,
+        "maxGalaxy": 32,
+        "sector": 3
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.sector"}
+        ]
+      }],
+      "ship": {
+        "faction": "MINISTRY",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","FRIGATE"],
+        "units": [
+          {"category":  "unitcategory.defence", "min": 11, "max": 17}
+        ]
+      }
+    },
+    {
+      "id": "ministry_destroyer_escort_l",
+      "name": "{20204,3301}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "MINISTRY",
+        "shipSize": "LARGE",
+        "tags": ["MILITARY","DESTROYER"]
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "faction": "MINISTRY",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","DESTROYER"]
+      },
+      "subordinates": ["ministry_frigate_escort_m"]
+    },
+    {
+      "id": "ministry_frigate_escort_m",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "MINISTRY",
+        "shipSize": "MEDIUM",
+        "tags": ["MILITARY"]
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.dartvertical"},
+          {"name": "formationparam", "value": "2500m"}
+        ]
+      }],
+      "ship": {
+        "faction": "MINISTRY",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","MEDIUM"]
+      },
+      "subordinates": ["ministry_fighter_escort_s_frigate"]
+    },
+    {
+      "id": "ministry_fighter_escort_s_frigate",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "MINISTRY",
+        "shipSize": "SMALL",
+        "tags": ["MILITARY", "FIGHTER"]
+      },
+      "jobQuota": {
+        "wing": 5,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER", "SELECTION"],
+        "factions": ["MINISTRY"]
+      }
+    },
+    {
+      "id": "ministry_fighter_escort_s_patrol",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "MINISTRY",
+        "shipSize": "SMALL",
+        "tags": ["MILITARY", "FIGHTER"]
+      },
+      "jobQuota": {
+        "wing": 3,
+        "variation": 3
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "factions": ["MINISTRY"],
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER", "LIGHT"]
+      }
+    },
+    {
+      "id": "ministry_construction_vessel_xl",
+      "name": "{20204,5101}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "MINISTRY",
+        "shipSize": "XLARGE",
+        "tags": ["FACTIONLOGIC","BUILDER"]
+      },
+      "jobQuota": {
+        "galaxy": 5,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "FindBuildTasks",
+        "parameters": [
+          {"name": "maxjumps", "value": "6"}
+        ]
+      }],
+      "ship": {
+        "faction": "MINISTRY",
+        "size": "XLARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["BUILDER"]
+      }
+    },
+    {
+      "id": "ministry_construction_vessel_xl_playeronly",
+      "name": "{20204,5101}",
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["TELADI"]
+      },
+      "jobCategory": {
+        "faction": "MINISTRY",
+        "shipSize": "XLARGE",
+        "tags": ["FACTIONLOGIC","BUILDER"]
+      },
+      "jobQuota": {
+        "galaxy": 10,
+        "sector": 1
+      },
+      "orders": [{
+        "order": "FindBuildTasks",
+        "parameters": [
+          {"name": "maxjumps", "value": "6"},
+          {"name": "playeronly", "value": "true"}
+        ]
+      }],
+      "ship": {
+        "faction": "MINISTRY",
+        "size": "XLARGE",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["BUILDER"]
       }
     }
   ]

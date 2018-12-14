@@ -11,6 +11,7 @@ import java.util.List;
 public class Ship extends AbstractJson {
     private Faction faction;
     private List<Tag> tags = new ArrayList<>();
+    private List<Faction> factions = new ArrayList<>();
     private ShipSize size;
     private String levelMin;
     private String levelMax;
@@ -24,6 +25,10 @@ public class Ship extends AbstractJson {
 
     public List<Tag> getTags() {
         return tags;
+    }
+
+    public List<Faction> getFactions() {
+        return factions;
     }
 
     public ShipSize getSize() {
@@ -56,6 +61,10 @@ public class Ship extends AbstractJson {
 
     public void setTags(List<Tag> tags) {
         this.tags = tags;
+    }
+
+    public void setFactions(List<Faction> factions) {
+        this.factions = factions;
     }
 
     public void setSize(ShipSize size) {
@@ -91,6 +100,32 @@ public class Ship extends AbstractJson {
         return StringUtils.join(stringValues, ",");
     }
 
+    @JsonIgnore
+    public String getFactionPrint(){
+        if(faction != null){
+            return faction.getName();
+        }
+
+        if(factions.size() == 1){
+            return factions.get(0).getName();
+        }
+
+        List<String> stringValues = new ArrayList<>();
+        for (Faction faction : factions) {
+            stringValues.add(faction.getName());
+        }
+        return "[" + StringUtils.join(stringValues, ",") + "]";
+    }
+
+    @JsonIgnore
+    public String getOwner(){
+        if(faction != null){
+            return faction.getName();
+        }
+
+        return factions.get(0).getName();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -103,6 +138,7 @@ public class Ship extends AbstractJson {
                 .append(overridenpc, ship.overridenpc)
                 .append(faction, ship.faction)
                 .append(tags, ship.tags)
+                .append(factions, ship.factions)
                 .append(size, ship.size)
                 .append(levelMin, ship.levelMin)
                 .append(levelMax, ship.levelMax)
@@ -116,6 +152,7 @@ public class Ship extends AbstractJson {
         return new HashCodeBuilder(17, 37)
                 .append(faction)
                 .append(tags)
+                .append(factions)
                 .append(size)
                 .append(levelMin)
                 .append(levelMax)
