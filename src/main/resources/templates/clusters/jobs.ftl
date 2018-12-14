@@ -4,7 +4,7 @@
   <replace sel="/jobs">
     <jobs>
       <#list galaxy.jobs as job>
-      <job id="${job.id}" name="${job.name}" <#if job.startActive??>startactive="${job.startActive?c}"</#if>>
+      <job id="${job.id}" name="${job.name}" <#if job.startActive??>startactive="${job.startActive?c}"</#if> <#if job.disabled??>disabled="${job.disabled?c}"</#if>>
         <#if job.hasModifiers()>
         <modifiers <#if job.rebuild??>rebuild="${job.rebuild?c}"</#if> <#if job.commandeerable??>commandeerable="${job.commandeerable?c}"</#if> <#if job.subordinate??>subordinate="${job.subordinate?c}"</#if> />
         </#if>

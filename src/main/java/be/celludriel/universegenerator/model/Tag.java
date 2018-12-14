@@ -7,7 +7,8 @@ public enum Tag {
     MILITARY("military"), CARRIER("carrier"), DESTROYER("destroyer"), FRIGATE("frigate"),
     FIGHTER("fighter"), HEAVY("heavy"), SCOUT("scout"), POLICE("police"), LIGHT("light"),
     MEDIUM("medium"), SELECTION("selection"), DEEPSPACE("deepspace"),BUILDER("builder"),
-    RESUPPLIER("resupplier"), MIXED("mixed"), CORVETTE("corvette");
+    RESUPPLIER("resupplier"), MIXED("mixed"), CORVETTE("corvette"), PLUNDERER("plunderer"),
+    ESCORT("escort");
 
     private String name;
 

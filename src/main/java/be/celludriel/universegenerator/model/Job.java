@@ -11,6 +11,7 @@ public class Job extends AbstractJson {
     private String id;
     private String name;
     private Boolean startActive;
+    private Boolean disabled;
     private Boolean rebuild;
     private Boolean commandeerable;
     private Boolean subordinate;
@@ -35,6 +36,10 @@ public class Job extends AbstractJson {
 
     public Boolean getStartActive() {
         return startActive;
+    }
+
+    public Boolean getDisabled() {
+        return disabled;
     }
 
     public boolean isRebuild() {
@@ -99,6 +104,10 @@ public class Job extends AbstractJson {
 
     public void setStartActive(Boolean startActive) {
         this.startActive = startActive;
+    }
+
+    public void setDisabled(Boolean disabled) {
+        this.disabled = disabled;
     }
 
     public void setRebuild(boolean rebuild) {
@@ -166,13 +175,14 @@ public class Job extends AbstractJson {
         Job job = (Job) o;
 
         return new EqualsBuilder()
-                .append(rebuild, job.rebuild)
-                .append(commandeerable, job.commandeerable)
-                .append(subordinate, job.subordinate)
                 .append(buildatshipyard, job.buildatshipyard)
                 .append(id, job.id)
                 .append(name, job.name)
                 .append(startActive, job.startActive)
+                .append(disabled, job.disabled)
+                .append(rebuild, job.rebuild)
+                .append(commandeerable, job.commandeerable)
+                .append(subordinate, job.subordinate)
                 .append(jobLocation, job.jobLocation)
                 .append(jobCategory, job.jobCategory)
                 .append(jobQuota, job.jobQuota)
@@ -191,6 +201,7 @@ public class Job extends AbstractJson {
                 .append(id)
                 .append(name)
                 .append(startActive)
+                .append(disabled)
                 .append(rebuild)
                 .append(commandeerable)
                 .append(subordinate)

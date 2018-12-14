@@ -11984,6 +11984,1025 @@
         "levelMax": "0.4",
         "tags": ["BUILDER"]
       }
+    },
+    {
+      "id": "xenon_free_miner_m_mineral",
+      "name": "{20204,1901}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["XENON"],
+        "regionBasket": "minerals_xenon"
+      },
+      "jobCategory": {
+        "faction": "XENON",
+        "tags": ["FACTIONLOGIC", "MINER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 42,
+        "cluster": 6
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "2"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "2"}
+        ]
+      }],
+      "basket": "minerals_xenon",
+      "ship": {
+        "faction": "ARGON",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"],
+        "cargo": {
+          "profile": "inversebell"
+        }
+      }
+    },
+    {
+      "id": "xenon_free_trader_m_energy",
+      "name": "{20204,4801}",
+      "rebuild": false,
+      "commandeerable": true,
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "member",
+        "factions": ["XENON"]
+      },
+      "jobCategory": {
+        "faction": "XENON",
+        "tags": ["FACTIONLOGIC", "FREIGHTER", "TRADER"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "galaxy": 120,
+        "cluster": 15
+      },
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "2"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "2"}
+        ]
+      }],
+      "basket": "energycells",
+      "ship": {
+        "faction": "XENON",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER","SOLID"]
+      }
+    },
+    {
+      "id": "xenon_carrier_patrol_xl_border_cluster",
+      "name": "{20204,3801}",
+      "commandeerable": true,
+      "disabled": false,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["XENON"]
+      },
+      "jobCategory": {
+        "faction": "XENON",
+        "shipSize": "XLARGE",
+        "tags": ["FACTIONLOGIC","MILITARY","CARRIER"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.cluster"}
+        ]
+      }],
+      "ship": {
+        "faction": "XENON",
+        "size": "XLARGE",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","CARRIER"]
+      },
+      "subordinates": ["xenon_destroyer_escort_xl"]
+    },
+    {
+      "id": "xenon_destroyer_patrol_xl_cluster",
+      "name": "{20204,3801}",
+      "commandeerable": true,
+      "disabled": false,
+      "jobCategory": {
+        "faction": "XENON",
+        "shipSize": "XLARGE",
+        "tags": ["FACTIONLOGIC","MILITARY","DESTROYER"]
+      },
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["XENON"]
+      },
+      "jobQuota": {
+        "galaxy": 14,
+        "cluster": 3
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.sector"}
+        ]
+      }],
+      "ship": {
+        "faction": "XENON",
+        "size": "XLARGE",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","DESTROYER"]
+      },
+      "subordinates": ["xenon_frigate_escort_m"]
+    },
+    {
+      "id": "xenon_destroyer_patrol_xl_comp",
+      "name": "{20204,3801}",
+      "commandeerable": true,
+      "disabled": false,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["XENON"]
+      },
+      "jobCategory": {
+        "faction": "XENON",
+        "shipSize": "XLARGE",
+        "tags": ["FACTIONLOGIC","MILITARY","DESTROYER"]
+      },
+      "jobQuota": {
+        "galaxy": 3,
+        "maxGalaxy": 12,
+        "cluster": 3
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.zone"}
+        ]
+      }],
+      "ship": {
+        "faction": "XENON",
+        "size": "XLARGE",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","DESTROYER"]
+      }
+    },
+    {
+      "id": "xenon_fighter_patrol_s_zone",
+      "name": "{20204,3401}",
+      "commandeerable": true,
+      "disabled": false,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["XENON"]
+      },
+      "jobCategory": {
+        "faction": "XENON",
+        "shipSize": "SMALL",
+        "tags": ["FACTIONLOGIC","MILITARY","FIGHTER"]
+      },
+      "jobQuota": {
+        "galaxy": 47,
+        "maxGalaxy": 94,
+        "zone": 1
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.zone"}
+        ]
+      }],
+      "ship": {
+        "faction": "XENON",
+        "size": "SMALL",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["FIGHTER","HEAVY"]
+      },
+      "subordinates": ["xenon_fighter_escort_s_patrol"]
+    },
+    {
+      "id": "xenon_frigate_patrol_m_zone_everywhereelse",
+      "name": "{20204,3401}",
+      "commandeerable": true,
+      "disabled": false,
+      "jobLocation": {
+        "comparison": "not",
+        "relation": "self",
+        "factions": ["XENON"]
+      },
+      "jobCategory": {
+        "faction": "XENON",
+        "shipSize": "MEDIUM",
+        "tags": ["FACTIONLOGIC","MILITARY","FRIGATE"]
+      },
+      "jobQuota": {
+        "galaxy": 41,
+        "sector": 3
+      },
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.zone"},
+          {"name": "includeroute", "value": "true"}
+        ]
+      }],
+      "ship": {
+        "faction": "XENON",
+        "size": "MEDIUM",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["MILITARY","MEDIUM"]
+      },
+      "subordinates": ["xenon_fighter_escort_s_patrol"]
+    },
+    {
+      "id": "xenon_scout_patrol_s",
+      "name": "{20204,2801}",
+      "commandeerable": true,
+      "disabled": false,
+      "jobLocation": {
+        "comparison": "lt",
+        "relation": "self",
+        "factions": ["XENON"]
+      },
+      "jobCategory": {
+        "faction": "XENON",
+        "shipSize": "SMALL",
+        "tags": ["FACTIONLOGIC","MILITARY","SCOUT"]
+      },
+      "jobQuota": {
+        "galaxy": 8,
+        "maxGalaxy": 16,
+        "cluster": 2
+      },
+      "orders": [{
+        "order": "Recon"
+      }],
+      "ship": {
+        "faction": "XENON",
+        "size": "SMALL",
+        "levelMin": "0.7",
+        "levelMax": "1.0",
+        "tags": ["SCOUT"]
+      },
+      "subordinates": ["xenon_fighter_escort_s_patrol"]
+    },
+    {
+      "id": "xenon_fighter_s_deepspace_single",
+      "name": "{20204,3401}",
+      "commandeerable": false,
+      "disabled": false,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["XENON"]
+      },
+      "jobCategory": {
+        "faction": "XENON",
+        "shipSize": "SMALL",
+        "tags": ["MILITARY","FIGHTER"]
+      },
+      "jobQuota": {
+        "galaxy": 15
+      },
+      "encounters": "xenon_s_lone",
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.zone"}
+        ]
+      }],
+      "ship": {
+        "faction": "XENON",
+        "size": "SMALL",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["FIGHTER", "HEAVY"]
+      }
+    },
+    {
+      "id": "xenon_fighter_s_deepspace_group",
+      "name": "{20204,3401}",
+      "commandeerable": false,
+      "disabled": false,
+      "jobLocation": {
+        "comparison": "exact",
+        "relation": "self",
+        "factions": ["XENON"]
+      },
+      "jobCategory": {
+        "faction": "XENON",
+        "shipSize": "SMALL",
+        "tags": ["MILITARY","FIGHTER"]
+      },
+      "jobQuota": {
+        "galaxy": 7
+      },
+      "encounters": "xenon_s_group",
+      "orders": [{
+        "order": "Patrol",
+        "parameters": [
+          {"name": "range", "value": "class.zone"}
+        ]
+      }],
+      "ship": {
+        "faction": "XENON",
+        "size": "SMALL",
+        "levelMin": "0.4",
+        "levelMax": "1.0",
+        "tags": ["FIGHTER", "HEAVY"]
+      },
+      "subordinates": ["xenon_fighter_escort_s_patrol"]
+    },
+    {
+      "id": "xenon_frigate_escort_m",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "XENON",
+        "shipSize": "MEDIUM",
+        "tags": ["MILITARY"]
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.dartvertical"},
+          {"name": "formationparam", "value": "2500m"}
+        ]
+      }],
+      "ship": {
+        "faction": "XENON",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","MEDIUM"]
+      },
+      "subordinates": ["xenon_fighter_escort_s_frigate"]
+    },
+    {
+      "id": "xenon_destroyer_escort_xl",
+      "name": "{20204,3801}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "XENON",
+        "shipSize": "XLARGE",
+        "tags": ["MILITARY"]
+      },
+      "jobQuota": {
+        "wing": 2
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.invvshape"}
+        ]
+      }],
+      "ship": {
+        "faction": "XENON",
+        "size": "XLARGE",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","DESTROYER"]
+      },
+      "subordinates": ["xenon_frigate_escort_m_2"]
+    },
+    {
+      "id": "xenon_frigate_escort_m_2",
+      "name": "{20204,3401}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "XENON",
+        "shipSize": "MEDIUM",
+        "tags": ["MILITARY"]
+      },
+      "jobQuota": {
+        "wing": 3
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.dartvertical"},
+          {"name": "formationparam", "value": "2500m"}
+        ]
+      }],
+      "ship": {
+        "faction": "XENON",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","MEDIUM"]
+      },
+      "subordinates": ["xenon_fighter_escort_s_frigate"]
+    },
+    {
+      "id": "xenon_fighter_escort_s_frigate",
+      "name": "{20204,3401}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "XENON",
+        "shipSize": "SMALL",
+        "tags": ["MILITARY", "FIGHTER"]
+      },
+      "jobQuota": {
+        "wing": 4
+      },
+      "orders": [{
+        "order": "Escort"
+      }],
+      "ship": {
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER", "SELECTION"],
+        "factions": ["XENON"]
+      }
+    },
+    {
+      "id": "xenon_fighter_escort_s_patrol",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "XENON",
+        "shipSize": "SMALL",
+        "tags": ["MILITARY", "FIGHTER"]
+      },
+      "jobQuota": {
+        "wing": 2
+      },
+      "orders": [{
+        "order": "Escort"
+      }],
+      "ship": {
+        "factions": ["XENON"],
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER", "LIGHT"]
+      }
+    },
+    {
+      "id": "hatikvah_plunderer_l_cluster",
+      "name": "{20204,4101}",
+      "commandeerable": true,
+      "disabled": false,
+      "jobLocation": {
+        "comparison": "lt",
+        "relation": "self",
+        "factions": ["XENON"]
+      },
+      "jobCategory": {
+        "faction": "HATIKVAH",
+        "shipSize": "LARGE",
+        "tags": ["PLUNDERER"]
+      },
+      "jobQuota": {
+        "galaxy": 2,
+        "sector": 1
+      },
+      "basket": "pirate_container",
+      "orders": [{
+        "order": "Plunder",
+        "parameters": [
+          {"name": "range_internal", "value": "'cluster'"},
+          {"name": "plundermode", "value": "0"}
+        ]
+      }],
+      "ship": {
+        "faction": "HATIKVAH",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "1.0",
+        "tags": ["PLUNDERER"]
+      }
+    },
+    {
+      "id": "hatikvah_scavenger_m_cluster",
+      "name": "{20204,4301}",
+      "commandeerable": true,
+      "disabled": false,
+      "jobLocation": {
+        "comparison": "lt",
+        "relation": "self",
+        "factions": ["XENON"]
+      },
+      "jobCategory": {
+        "faction": "HATIKVAH",
+        "shipSize": "MEDIUM",
+        "tags": ["PLUNDERER"]
+      },
+      "jobQuota": {
+        "galaxy": 15,
+        "sector": 1
+      },
+      "basket": "pirate_container",
+      "orders": [{
+        "order": "Plunder",
+        "parameters": [
+          {"name": "range_internal", "value": "'cluster'"},
+          {"name": "plundermode", "value": "0"}
+        ]
+      }],
+      "ship": {
+        "faction": "HATIKVAH",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "1.0",
+        "tags": ["PLUNDERER"]
+      }
+    },
+    {
+      "id": "hatikvah_miningfleet_m_solid_small",
+      "name": "{20204,5601}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "HATIKVAH",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "ship": {
+        "faction": "HATIKVAH",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID"]
+      },
+      "subordinates": ["hatikvah_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "hatikvah_miningfleet_m_liquid_small",
+      "name": "{20204,5701}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "HATIKVAH",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"],
+        "shipSize": "MEDIUM"
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "ship": {
+        "faction": "HATIKVAH",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID"]
+      },
+      "subordinates": ["hatikvah_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "hatikvah_miningfleet_ml_solid_large",
+      "name": "{20204,5601}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "HATIKVAH",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 3,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "ship": {
+        "faction": "HATIKVAH",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","SOLID", "MIXED"]
+      },
+      "subordinates": ["hatikvah_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "hatikvah_miningfleet_ml_liquid_large",
+      "name": "{20204,5701}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "HATIKVAH",
+        "tags": ["FREIGHTER", "MINER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 3,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "ship": {
+        "faction": "HATIKVAH",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER","LIQUID", "MIXED"]
+      },
+      "subordinates": ["hatikvah_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "hatikvah_fighter_escort_s_miningfleet",
+      "name": "{20204,2901}",
+      "startActive": false,
+      "subordinate": true,
+      "jobLocation": {},
+      "jobCategory": {
+        "faction": "HATIKVAH",
+        "shipSize": "SMALL",
+        "tags": ["MILITARY", "FIGHTER", "DEEPSPACE"]
+      },
+      "jobQuota": {
+        "wing": 1,
+        "variation": 1
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value":  "formationshape.pointguard"}
+        ]
+      }],
+      "ship": {
+        "faction": "HATIKVAH",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MILITARY","FIGHTER", "SELECTION"]
+      }
+    },
+    {
+      "id": "hatikvah_resourcescout_sm_deepspace_single",
+      "name": "{20204,10049}",
+      "jobLocation": {
+        "comparison": "lt",
+        "relation": "self",
+        "factions": ["XENON"]
+      },
+      "jobCategory": {
+        "faction": "HATIKVAH",
+        "tags": ["SCOUT"]
+      },
+      "jobQuota": {
+        "galaxy": 4,
+        "cluster": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "deepspace", "value": "true"},
+          {"name": "resourcescout", "value": "true"}
+        ]
+      }],
+      "basket": "minerals",
+      "encounters": "resource_scout",
+      "ship": {
+        "faction": "HATIKVAH",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["PLUNDERER", "MIXED"]
+      }
+    },
+    {
+      "id": "hatikvah_free_miner_ml_liquid_deepspace_single",
+      "name": "{20204,5701}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["HATIKVAH"],
+        "regionBasket": "gases"
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "gases",
+      "encounters": "lone_miner",
+      "ship": {
+        "faction": "HATIKVAH",
+        "levelMin": "0",
+        "levelMax": "0.4",
+        "tags": ["MINER", "LIQUID", "MIXED"]
+      }
+    },
+    {
+      "id": "hatikvah_scavenger_sm_deepspace_single",
+      "name": "{20204,4201}",
+      "jobLocation": {
+        "comparison": "lt",
+        "relation": "self",
+        "factions": ["XENON"]
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"]
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "Plunder",
+        "parameters": [
+          {"name": "range_internal", "value":  "'cluster'"},
+          {"name": "plundermode", "value":  "0"},
+          {"name": "deepspace", "value":  "true"}
+        ]
+      }],
+      "basket": "pirate_container",
+      "encounters": "lone_plunderer",
+      "ship": {
+        "faction": "HATIKVAH",
+        "levelMin": "0",
+        "levelMax": "1.0",
+        "tags": ["PLUNDERER", "MIXED"]
+      }
+    },
+    {
+      "id": "hatikvah_free_miner_l_solid_deepspace_largegroup",
+      "name": "{20204,5601}",
+      "jobLocation": {
+        "comparison": "ge",
+        "relation": "friend",
+        "factions": ["HATIKVAH"],
+        "regionBasket": "minerals"
+      },
+      "jobCategory": {
+        "faction": "ARGON",
+        "tags": ["FREIGHTER","MINER","DEEPSPACE"],
+        "shipSize": "LARGE"
+      },
+      "jobQuota": {
+        "galaxy": 1
+      },
+      "orders": [{
+        "order": "MiningRoutine",
+        "parameters": [
+          {"name": "minbuy", "value":  "0"},
+          {"name": "maxbuy", "value":  "5"},
+          {"name": "minsell", "value":  "0"},
+          {"name": "maxsell", "value":  "5"}
+        ]
+      }],
+      "basket": "minerals",
+      "encounters": "mining_group_large",
+      "ship": {
+        "size": "LARGE",
+        "faction": "HATIKVAH",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["MINER", "SOLID", "HEAVY"]
+      },
+      "subordinates": ["hatikvah_miningfleet_ml_solid_large","hatikvah_fighter_escort_s_miningfleet"]
+    },
+    {
+      "id": "scaleplate_plunderer_l_cluster",
+      "name": "{20204,4101}",
+      "commandeerable": true,
+      "disabled": false,
+      "jobLocation": {
+        "comparison": "lt",
+        "relation": "self",
+        "factions": ["XENON"]
+      },
+      "jobCategory": {
+        "faction": "SCALEPLATE",
+        "shipSize": "LARGE",
+        "tags": ["PLUNDERER"]
+      },
+      "jobQuota": {
+        "galaxy": 7,
+        "sector": 1
+      },
+      "basket": "pirate_container",
+      "orders": [{
+        "order": "Plunder",
+        "parameters": [
+          {"name": "range_internal", "value": "'cluster'"},
+          {"name": "plundermode", "value": "1"}
+        ]
+      }],
+      "ship": {
+        "faction": "SCALEPLATE",
+        "size": "LARGE",
+        "levelMin": "0",
+        "levelMax": "1.0",
+        "tags": ["PLUNDERER"]
+      }
+    },
+    {
+      "id": "scaleplate_scavenger_m_cluster",
+      "name": "{20204,4301}",
+      "commandeerable": true,
+      "disabled": false,
+      "jobLocation": {
+        "comparison": "lt",
+        "relation": "self",
+        "factions": ["XENON"]
+      },
+      "jobCategory": {
+        "faction": "SCALEPLATE",
+        "shipSize": "MEDIUM",
+        "tags": ["PLUNDERER"]
+      },
+      "jobQuota": {
+        "galaxy": 24,
+        "sector": 1
+      },
+      "basket": "pirate_container",
+      "orders": [{
+        "order": "Plunder",
+        "parameters": [
+          {"name": "range_internal", "value": "'cluster'"},
+          {"name": "plundermode", "value": "0"}
+        ]
+      }],
+      "ship": {
+        "faction": "SCALEPLATE",
+        "size": "MEDIUM",
+        "levelMin": "0",
+        "levelMax": "1.0",
+        "tags": ["PLUNDERER"]
+      }
+    },
+    {
+      "id": "scaleplate_smuggler_s",
+      "name": "{20204,10009}",
+      "commandeerable": true,
+      "disabled": false,
+      "jobLocation": {
+        "comparison": "lt",
+        "relation": "self",
+        "factions": ["XENON"]
+      },
+      "jobCategory": {
+        "faction": "SCALEPLATE",
+        "shipSize": "SMALL",
+        "tags": ["TRADER"]
+      },
+      "jobQuota": {
+        "galaxy": 30,
+        "sector": 1
+      },
+      "basket": "global_illegal",
+      "orders": [{
+        "order": "TradeRoutine",
+        "parameters": [
+          {"name": "maxbuy", "value": "30"},
+          {"name": "maxsell", "value": "30"},
+          {"name": "usecover", "value": "true"}
+        ]
+      }],
+      "ship": {
+        "faction": "SCALEPLATE",
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "1.0",
+        "tags": ["TRADER"]
+      }
+    },
+    {
+      "id": "scaleplate_scavenger_sm_deepspace",
+      "name": "{20204,4301}",
+      "commandeerable": false,
+      "disabled": false,
+      "jobLocation": {
+        "comparison": "lt",
+        "relation": "self",
+        "factions": ["XENON"]
+      },
+      "jobCategory": {
+        "faction": "SCALEPLATE",
+        "tags": ["PLUNDERER"]
+      },
+      "jobQuota": {
+        "galaxy": 18,
+        "sector": 1
+      },
+      "basket": "pirate_container",
+      "encounters": "lone_plunderer",
+      "orders": [{
+        "order": "Plunder",
+        "parameters": [
+          {"name": "range_internal", "value": "'cluster'"},
+          {"name": "plundermode", "value": "0"},
+          {"name": "deepspace", "value": "true"}
+        ]
+      }],
+      "ship": {
+        "faction": "SCALEPLATE",
+        "levelMin": "0",
+        "levelMax": "1.0",
+        "tags": ["PLUNDERER"]
+      },
+      "subordinates": ["scaleplate_fighter_escort_s"]
+    },
+    {
+      "id": "scaleplate_fighter_escort_s",
+      "name": "{20204,3501}",
+      "startActive": false,
+      "subordinate": true,
+      "jobCategory": {
+        "faction": "SCALEPLATE",
+        "shipSize": "SMALL",
+        "tags": ["PLUNDERER", "LIGHT"]
+      },
+      "jobQuota": {
+        "wing": 2,
+        "variation": 2
+      },
+      "orders": [{
+        "order": "Escort",
+        "parameters": [
+          {"name": "formation", "value": "formationshape.xshapeback"}
+        ]
+      }],
+      "ship": {
+        "factions": ["SCALEPLATE"],
+        "size": "SMALL",
+        "levelMin": "0",
+        "levelMax": "0.7",
+        "tags": ["ESCORT", "LIGHT"]
+      }
     }
   ]
 }
