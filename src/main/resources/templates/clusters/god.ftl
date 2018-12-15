@@ -18,7 +18,13 @@
 		<#list galaxy.clusters as cl>
 		    <#list cl.stations as station>
 		    <#assign count = count + 1>
+		    <#if station.type == "DEFENCE" && station.owner = "XENON">
+		<station id="station_${count}" race="${station.race.getName()}" owner="${station.owner.getName()}" type="defence">
+		    <#elseif station.type == "TRADE">
+		<station id="station_${count}" race="${station.race.getName()}" owner="${station.owner.getName()}" type="tradingstation">
+		    <#else>
 		<station id="station_${count}" race="${station.race.getName()}" owner="${station.owner.getName()}" type="factory">
+		    </#if>
 		  <quotas>
 			<quota galaxy="1" zone="1" />
 		  </quotas>

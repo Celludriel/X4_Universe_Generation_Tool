@@ -61,9 +61,19 @@ public class UniverseGenerator {
         String path = "output/" + galaxy.getGalaxyName();
 
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        File original = new File(classLoader.getResource("core/region_definitions.xml").getFile());
+        String source = "core/region_definitions.xml";
+        File original = new File(classLoader.getResource(source).getFile());
+        String target = path + "/libraries/region_definitions.xml";
 
-        File copied = new File(path+"/libraries/region_definitions.xml");
+        source = "core/X4Ep1_Mentor_Subscription.xml";
+        original = new File(classLoader.getResource(source).getFile());
+        target = path + "/md/X4Ep1_Mentor_Subscription.xml";
+
+        copyToOutputDir(original, target);
+    }
+
+    private void copyToOutputDir(File original, String target) throws IOException {
+        File copied = new File(target);
         FileUtils.copyFile(original, copied);
     }
 
@@ -145,6 +155,10 @@ public class UniverseGenerator {
 
         temp = cfg.getTemplate(type + "/drainStations.ftl");
         path = "output/" + galaxy.getGalaxyName() + "/md/Drain_Stations.xml";
+        writeToFile(root, temp, path);
+
+        temp = cfg.getTemplate(type + "/customGameStart.ftl");
+        path = "output/" + galaxy.getGalaxyName() + "/md/CustomGameStart.xml";
         writeToFile(root, temp, path);
     }
 
