@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Galaxy extends AbstractJson {
 
+    private long seed;
     private String galaxyName;
     private String galaxyPrefix;
     private String gamestartName;
@@ -18,9 +19,16 @@ public class Galaxy extends AbstractJson {
     private String date;
     private String save;
     private String starterZoneName;
+    private int minRandomBelts;
+    private int maxRandomBelts;
     private List<Cluster> clusters = new ArrayList<>();
+    private List<FactionHqLocation> factionHqLocations = new ArrayList<>();
     private List<Product> products = new ArrayList<>();
     private List<Job> jobs = new ArrayList<>();
+
+    public long getSeed() {
+        return seed;
+    }
 
     public String getGalaxyName() {
         return galaxyName;
@@ -59,8 +67,21 @@ public class Galaxy extends AbstractJson {
         return starterZoneName;
     }
 
+    public int getMinRandomBelts() {
+        return minRandomBelts;
+    }
+
+    public int getMaxRandomBelts() {
+        return maxRandomBelts;
+    }
+
     public List<Cluster> getClusters() {
         return clusters;
+    }
+
+    @JsonIgnore
+    public List<FactionHqLocation> getFactionHqLocations() {
+        return factionHqLocations;
     }
 
     public List<Product> getProducts() {
@@ -69,6 +90,10 @@ public class Galaxy extends AbstractJson {
 
     public List<Job> getJobs() {
         return jobs;
+    }
+
+    public void setSeed(long seed) {
+        this.seed = seed;
     }
 
     public void setGalaxyName(String galaxyName) {
@@ -107,6 +132,14 @@ public class Galaxy extends AbstractJson {
         this.starterZoneName = starterZoneName;
     }
 
+    public void setMinRandomBelts(int minRandomBelts) {
+        this.minRandomBelts = minRandomBelts;
+    }
+
+    public void setMaxRandomBelts(int maxRandomBelts) {
+        this.maxRandomBelts = maxRandomBelts;
+    }
+
     public void setClusters(List<Cluster> clusters) {
         this.clusters = clusters;
     }
@@ -119,6 +152,10 @@ public class Galaxy extends AbstractJson {
         this.jobs = jobs;
     }
 
+    public void addFactionHqLocation(FactionHqLocation factionHqLocation){
+        this.factionHqLocations.add(factionHqLocation);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -128,6 +165,9 @@ public class Galaxy extends AbstractJson {
         Galaxy galaxy = (Galaxy) o;
 
         return new EqualsBuilder()
+                .append(seed, galaxy.seed)
+                .append(minRandomBelts, galaxy.minRandomBelts)
+                .append(maxRandomBelts, galaxy.maxRandomBelts)
                 .append(galaxyName, galaxy.galaxyName)
                 .append(galaxyPrefix, galaxy.galaxyPrefix)
                 .append(gamestartName, galaxy.gamestartName)
@@ -138,6 +178,7 @@ public class Galaxy extends AbstractJson {
                 .append(save, galaxy.save)
                 .append(starterZoneName, galaxy.starterZoneName)
                 .append(clusters, galaxy.clusters)
+                .append(factionHqLocations, galaxy.factionHqLocations)
                 .append(products, galaxy.products)
                 .append(jobs, galaxy.jobs)
                 .isEquals();
@@ -146,6 +187,7 @@ public class Galaxy extends AbstractJson {
     @Override
     public int hashCode() {
         return new HashCodeBuilder(17, 37)
+                .append(seed)
                 .append(galaxyName)
                 .append(galaxyPrefix)
                 .append(gamestartName)
@@ -155,7 +197,10 @@ public class Galaxy extends AbstractJson {
                 .append(date)
                 .append(save)
                 .append(starterZoneName)
+                .append(minRandomBelts)
+                .append(maxRandomBelts)
                 .append(clusters)
+                .append(factionHqLocations)
                 .append(products)
                 .append(jobs)
                 .toHashCode();

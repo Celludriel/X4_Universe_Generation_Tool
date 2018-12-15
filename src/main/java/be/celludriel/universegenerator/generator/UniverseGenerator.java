@@ -6,7 +6,9 @@ import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import org.apache.commons.io.FileUtils;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,16 +18,21 @@ public class UniverseGenerator {
     private final FreemarkerConfiguration freemarkerConfiguration;
     private final ZoneConnectionProcessor zoneConnectionProcessor;
     private final BeltProcessor beltProcessor;
+    private final FactionLogicProcessor factionLogicProcessor;
+    private final Randomizer randomizer;
 
-    public UniverseGenerator() {
+    public UniverseGenerator(Galaxy galaxy) {
+        randomizer = new Randomizer(galaxy.getSeed());
         freemarkerConfiguration = new FreemarkerConfiguration();
         zoneConnectionProcessor = new ZoneConnectionProcessor();
-        beltProcessor = new BeltProcessor();
+        beltProcessor = new BeltProcessor(randomizer);
+        factionLogicProcessor = new FactionLogicProcessor();
     }
 
     public void generateUniverse(Galaxy galaxy) throws IOException, TemplateException {
         zoneConnectionProcessor.processConnections(galaxy);
         beltProcessor.processBelts(galaxy);
+        factionLogicProcessor.processFactionLogicData(galaxy);
 
         generateOutput(galaxy);
     }
@@ -45,6 +52,7 @@ public class UniverseGenerator {
         generateGod(cfg, root, CLUSTERS);
         generateJobs(cfg, root, CLUSTERS);
         generateGameStart(cfg, root, CLUSTERS);
+        generateMdFixFiles(cfg, root, CLUSTERS);
         copyCoreResources(root);
     }
 
@@ -126,6 +134,17 @@ public class UniverseGenerator {
         Template temp = cfg.getTemplate(type + "/jobs.ftl");
         Galaxy galaxy = (Galaxy) root.get("galaxy");
         String path = "output/" + galaxy.getGalaxyName() + "/libraries/jobs.xml";
+        writeToFile(root, temp, path);
+    }
+
+    private void generateMdFixFiles(Configuration cfg, Map<String, Object> root, String type) throws IOException, TemplateException {
+        Template temp = cfg.getTemplate(type + "/factionLogic.ftl");
+        Galaxy galaxy = (Galaxy) root.get("galaxy");
+        String path = "output/" + galaxy.getGalaxyName() + "/md/FactionLogic.xml";
+        writeToFile(root, temp, path);
+
+        temp = cfg.getTemplate(type + "/drainStations.ftl");
+        path = "output/" + galaxy.getGalaxyName() + "/md/Drain_Stations.xml";
         writeToFile(root, temp, path);
     }
 

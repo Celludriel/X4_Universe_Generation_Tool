@@ -7,6 +7,9 @@
   "version": "1.0.0",
   "date": "2018-12-12",
   "save": "0",
+  "seed": "20051028",
+  "minRandomBelts": 3,
+  "maxRandomBelts" : 5,
   "clusters": [
     {
       "id": "01",
@@ -20,6 +23,7 @@
       "y": 0,
       "backdrop": "empty_space",
       "gamestart": true,
+      "factionHq": "ARGON",
       "connections": [
         {
           "targetClusterId": "03",
@@ -29,11 +33,6 @@
           "targetClusterId": "05",
           "connectionType": "S"
         }
-      ],
-      "belts": [
-        {"type": "ORE"},
-        {"type": "ORE"},
-        {"type": "HYDROGEN"}
       ],
       "stations": [
         {"type": "SHIPYARD", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"},
@@ -79,11 +78,6 @@
           "connectionType": "S"
         }
       ],
-      "belts": [
-        {"type": "ORE"},
-        {"type": "ORE"},
-        {"type": "HELIUM"}
-      ],
       "stations": [
         {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
@@ -109,16 +103,6 @@
           "connectionType": "S"
         }
       ],
-      "belts": [
-        {"type": "ORE"},
-        {"type": "ORE"},
-        {"type": "ICE"},
-        {"type": "ORE"},
-        {"type": "ORE"},
-        {"type": "METHANE"},
-        {"type": "HELIUM"},
-        {"type": "HYDROGEN"}
-      ],
       "stations": [
         {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
@@ -143,11 +127,6 @@
           "targetClusterId": "13",
           "connectionType": "S"
         }
-      ],
-      "belts": [
-        {"type": "ORE"},
-        {"type": "ORE"},
-        {"type": "HYDROGEN"}
       ],
       "stations": [
         {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"},
@@ -175,11 +154,6 @@
           "connectionType": "S"
         }
       ],
-      "belts": [
-        {"type": "ORE"},
-        {"type": "ORE"},
-        {"type": "ICE"}
-      ],
       "stations": [
         {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
@@ -204,11 +178,6 @@
           "targetClusterId": "12",
           "connectionType": "S"
         }
-      ],
-      "belts": [
-        {"type": "ORE"},
-        {"type": "ORE"},
-        {"type": "METHANE"}
       ],
       "stations": [
         {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
@@ -235,11 +204,6 @@
           "connectionType": "S"
         }
       ],
-      "belts": [
-        {"type": "METHANE"},
-        {"type": "HELIUM"},
-        {"type": "HYDROGEN"}
-      ],
       "stations": [
         {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
@@ -264,11 +228,6 @@
           "targetClusterId": "08",
           "connectionType": "S"
         }
-      ],
-      "belts": [
-        {"type": "ORE"},
-        {"type": "ORE"},
-        {"type": "NVIDIUM"}
       ],
       "stations": [
         {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"},
@@ -296,11 +255,6 @@
           "connectionType": "S"
         }
       ],
-      "belts": [
-        {"type": "ORE"},
-        {"type": "ORE"},
-        {"type": "ICE"}
-      ],
       "stations": [
         {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
       ]
@@ -321,11 +275,6 @@
           "targetClusterId": "02",
           "connectionType": "S"
         }
-      ],
-      "belts": [
-        {"type": "ICE"},
-        {"type": "ICE"},
-        {"type": "ICE"}
       ],
       "stations": [
         {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
@@ -352,11 +301,6 @@
           "connectionType": "S"
         }
       ],
-      "belts": [
-        {"type": "METHANE"},
-        {"type": "HELIUM"},
-        {"type": "HYDROGEN"}
-      ],
       "stations": [
         {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"},
         {"type": "TRADE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
@@ -379,16 +323,6 @@
           "connectionType": "SE"
         }
       ],
-      "belts": [
-        {"type": "ORE"},
-        {"type": "ORE"},
-        {"type": "ORE"},
-        {"type": "ORE"},
-        {"type": "ORE"},
-        {"type": "ORE"},
-        {"type": "ORE"},
-        {"type": "ORE"}
-      ],
       "stations": [
         {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
@@ -410,11 +344,6 @@
           "connectionType": "S"
         }
       ],
-      "belts": [
-        {"type": "ORE"},
-        {"type": "ORE"},
-        {"type": "NVIDIUM"}
-      ],
       "stations": [
         {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"},
         {"type": "TRADE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
@@ -431,11 +360,6 @@
       "x": 1,
       "y": -3,
       "backdrop": "empty_space",
-      "belts": [
-        {"type": "METHANE"},
-        {"type": "HELIUM"},
-        {"type": "HYDROGEN"}
-      ],
       "stations": [
         {"type": "DEFENCE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
       ]
@@ -451,6 +375,7 @@
       "x": -1,
       "y": 3,
       "backdrop": "empty_space",
+      "factionHq": "ANTIGONE",
       "connections": [
         {
           "targetClusterId": "09",
@@ -485,7 +410,8 @@
         }
       ],
       "stations": [
-        {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
+        {"type": "EQUIP", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
       ]
     },
     {
@@ -772,6 +698,7 @@
       "x": 1,
       "y": -7,
       "backdrop": "empty_space",
+      "factionHq": "ALLIANCE",
       "connections": [
         {
           "targetClusterId": "28",
@@ -779,6 +706,8 @@
         }
       ],
       "stations": [
+        {"type": "SHIPYARD", "race":  "PARANID", "owner": "ALLIANCE", "faction": "ALLIANCE"},
+        {"type": "WHARF", "race":  "PARANID", "owner": "ALLIANCE", "faction": "ALLIANCE"},
         {"type": "DEFENCE", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"}
       ]
     },
@@ -793,6 +722,7 @@
       "x": 0,
       "y": -3,
       "backdrop": "empty_space",
+      "factionHq": "PARANID",
       "connections": [
         {
           "targetClusterId": "33",
@@ -804,6 +734,8 @@
         }
       ],
       "stations": [
+        {"type": "SHIPYARD", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"},
+        {"type": "WHARF", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"},
         {"type": "DEFENCE", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"}
       ]
     },
@@ -829,6 +761,7 @@
         }
       ],
       "stations": [
+        {"type": "EQUIP", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"},
         {"type": "DEFENCE", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"}
       ]
     },
@@ -848,6 +781,9 @@
           "targetClusterId": "35",
           "connectionType": "S"
         }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"}
       ]
     },
     {
@@ -985,6 +921,7 @@
       "x": 3,
       "y": 1,
       "backdrop": "empty_space",
+      "factionHq": "TELADI",
       "connections": [
         {
           "targetClusterId": "42",
@@ -996,6 +933,8 @@
         }
       ],
       "stations": [
+        {"type": "SHIPYARD", "race":  "TELADI", "owner": "TELADI", "faction": "TELADI"},
+        {"type": "WHARF", "race":  "TELADI", "owner": "TELADI", "faction": "TELADI"},
         {"type": "DEFENCE", "race":  "TELADI", "owner": "TELADI", "faction": "TELADI"}
       ]
     },
@@ -1031,6 +970,7 @@
       "x": 3,
       "y": -1,
       "backdrop": "empty_space",
+      "factionHq": "HATIKVAH",
       "connections": [
         {
           "targetClusterId": "44",
@@ -1038,6 +978,7 @@
         }
       ],
       "stations": [
+        {"type": "TRADE", "race":  "ARGON", "owner": "HATIKVAH", "faction": "HATIKVAH"},
         {"type": "PIRATEBASE", "race":  "ARGON", "owner": "HATIKVAH", "faction": "HATIKVAH"},
         {"type": "DEFENCE", "race":  "ARGON", "owner": "HATIKVAH", "faction": "HATIKVAH"}
       ]
@@ -1053,6 +994,7 @@
       "x": 3,
       "y": -2,
       "backdrop": "empty_space",
+      "factionHq": "SCALEPLATE",
       "connections": [
         {
           "targetClusterId": "45",
@@ -1183,6 +1125,7 @@
         }
       ],
       "stations": [
+        {"type": "EQUIP", "race":  "TELADI", "owner": "TELADI", "faction": "TELADI"},
         {"type": "DEFENCE", "race":  "TELADI", "owner": "TELADI", "faction": "TELADI"}
       ]
     },
@@ -1320,6 +1263,7 @@
       "x": 5,
       "y": 2,
       "backdrop": "empty_space",
+      "factionHq": "MINISTRY",
       "connections": [
         {
           "targetClusterId": "58",
@@ -1327,7 +1271,10 @@
         }
       ],
       "stations": [
-        {"type": "DEFENCE", "race":  "TELADI", "owner": "MINISTRY", "faction": "MINISTRY"}
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "TELADI", "faction": "TELADI"},
+        {"type": "SHIPYARD", "race":  "TELADI", "owner": "MINISTRY", "faction": "MINISTRY"},
+        {"type": "WHARF", "race":  "TELADI", "owner": "MINISTRY", "faction": "MINISTRY"},
+        {"type": "EQUIP", "race":  "TELADI", "owner": "MINISTRY", "faction": "MINISTRY"}
       ]
     },
     {
@@ -1348,7 +1295,7 @@
         }
       ],
       "stations": [
-        {"type": "DEFENCE", "race":  "TELADI", "owner": "MINISTRY", "faction": "MINISTRY"}
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "TELADI", "faction": "TELADI"}
       ]
     },
     {
@@ -1373,7 +1320,7 @@
         }
       ],
       "stations": [
-        {"type": "DEFENCE", "race":  "TELADI", "owner": "MINISTRY", "faction": "MINISTRY"}
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "TELADI", "faction": "TELADI"}
       ]
     },
     {
@@ -1484,7 +1431,7 @@
         }
       ],
       "stations": [
-        {"type": "DEFENCE", "race":  "TELADI", "owner": "MINISTRY", "faction": "MINISTRY"}
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "HOLYORDER", "faction": "HOLYORDER"}
       ]
     },
     {
@@ -1526,7 +1473,8 @@
         }
       ],
       "stations": [
-        {"type": "DEFENCE", "race":  "TELADI", "owner": "MINISTRY", "faction": "MINISTRY"}
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "HOLYORDER", "faction": "HOLYORDER"},
+        {"type": "EQUIP", "race":  "PARANID", "owner": "HOLYORDER", "faction": "HOLYORDER"}
       ]
     },
     {
@@ -1540,6 +1488,7 @@
       "x": 7,
       "y": -1,
       "backdrop": "empty_space",
+      "factionHq": "HOLYORDER",
       "connections": [
         {
           "targetClusterId": "69",
@@ -1547,7 +1496,9 @@
         }
       ],
       "stations": [
-        {"type": "DEFENCE", "race":  "PARANID", "owner": "HOLYORDER", "faction": "HOLYORDER"}
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "HOLYORDER", "faction": "HOLYORDER"},
+        {"type": "WHARF", "race":  "PARANID", "owner": "HOLYORDER", "faction": "HOLYORDER"},
+        {"type": "SHIPYARD", "race":  "PARANID", "owner": "HOLYORDER", "faction": "HOLYORDER"}
       ]
     },
     {

@@ -20,7 +20,7 @@ public class UniverseGeneratorMain {
         ObjectMapper objectMapper = new ObjectMapper();
         Galaxy galaxy = objectMapper.readValue(new File(jsonFile), Galaxy.class);
 
-        UniverseGenerator universeGenerator = new UniverseGenerator();
+        UniverseGenerator universeGenerator = new UniverseGenerator(galaxy);
         universeGenerator.generateUniverse(galaxy);
     }
 }
