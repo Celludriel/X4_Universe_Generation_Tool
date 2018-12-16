@@ -1,0 +1,95 @@
+{
+  "galaxyName": "x3galaxy",
+  "galaxyPrefix": "x3g",
+  "description": "description",
+  "author": "celludriel",
+  "version": "1.0.0",
+  "date": "2018-12-12",
+  "save": "0",
+  "clusters": [
+    {
+      "id": "01",
+      "name": "Test Cluster One",
+      "description": "description one",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 0,
+      "y": 0,
+      "backdrop": "empty_space"
+    },
+    {
+      "id": "02",
+      "name": "Test Cluster two",
+      "description": "description two",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 1,
+      "y": 1,
+      "backdrop": "empty_space"
+    },
+    {
+      "id": "03",
+      "name": "Test Cluster three",
+      "description": "description three",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 1,
+      "y": -1,
+      "backdrop": "empty_space"
+    },
+    {
+      "id": "04",
+      "name": "Test Cluster four",
+      "description": "description four",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 0,
+      "y": 1,
+      "backdrop": "empty_space"
+    },
+    {
+      "id": "05",
+      "name": "Test Cluster five",
+      "description": "description five",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": 0,
+      "y": -1,
+      "backdrop": "empty_space"
+    },
+    {
+      "id": "06",
+      "name": "Test Cluster six",
+      "description": "description six",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": -1,
+      "y": 1,
+      "backdrop": "empty_space"
+    },
+    {
+      "id": "07",
+      "name": "Test Cluster seven",
+      "description": "description seven",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.25",
+      "x": -1,
+      "y": -1,
+      "backdrop": "empty_space"
+    }
+  ]
+}
