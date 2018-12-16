@@ -9,6 +9,10 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -60,21 +64,18 @@ public class UniverseGenerator {
         Galaxy galaxy = (Galaxy) root.get("galaxy");
         String path = "output/" + galaxy.getGalaxyName();
 
-        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        String source = "core/region_definitions.xml";
-        File original = new File(classLoader.getResource(source).getFile());
+        String source = "/core/region_definitions.xml";
         String target = path + "/libraries/region_definitions.xml";
+        copyToOutputDir(source, target);
 
-        source = "core/X4Ep1_Mentor_Subscription.xml";
-        original = new File(classLoader.getResource(source).getFile());
+        source = "/core/X4Ep1_Mentor_Subscription.xml";
         target = path + "/md/X4Ep1_Mentor_Subscription.xml";
-
-        copyToOutputDir(original, target);
+        copyToOutputDir(source, target);
     }
 
-    private void copyToOutputDir(File original, String target) throws IOException {
-        File copied = new File(target);
-        FileUtils.copyFile(original, copied);
+    private void copyToOutputDir(String source, String target) throws IOException {
+        InputStream src = getClass().getResourceAsStream(source);
+        Files.copy(src, Paths.get(target), StandardCopyOption.REPLACE_EXISTING);
     }
 
     private void generateGameStart(Configuration cfg, Map<String, Object> root, String type) throws IOException, TemplateException {
