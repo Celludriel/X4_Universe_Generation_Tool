@@ -436,7 +436,7 @@
       ],
       "stations": [
         {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
-        {"type": "TRADE", "race":  "ARGON", "owner": "ARGON", "faction": "ARGON"}
+        {"type": "TRADE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
       ]
     },
     {
