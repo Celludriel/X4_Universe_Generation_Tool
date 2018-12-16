@@ -2,8 +2,8 @@
 <diff>
   <remove sel="/gamestarts"/>
   <add sel="/">
-<gamestarts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="gamestarts.xsd">
-    <gamestart id="${galaxy.galaxyPrefix}_galaxy_main" name="${galaxy.gamestartName}" image="gamestart_1">
+    <gamestarts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="gamestarts.xsd">
+      <gamestart id="${galaxy.galaxyPrefix}_galaxy_main" name="${galaxy.gamestartName}" image="gamestart_1">
         <location galaxy="${galaxy.galaxyPrefix}_galaxy_macro" zone="${galaxy.galaxyPrefix}_${galaxy.starterZoneName}_sector001_macro">
           <position x="1000" y="0" z="1000"/>
           <rotation yaw="0" pitch="0" roll="0"/>
@@ -81,6 +81,6 @@
           <theme paint="painttheme_player_01" />
         </player>
       </gamestart>
-      </gamestarts>
+    </gamestarts>
   </add>
 </diff>
