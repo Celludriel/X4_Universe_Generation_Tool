@@ -56,21 +56,53 @@ public class ZoneConnectionProcessor {
 
         //create new origin zone with connections
         Zone originZone = new Zone();
-        originZone.setX(connection.getConnectionType().getX());
-        originZone.setY(connection.getConnectionType().getY());
+        originZone.setX(getOriginX(connection));
+        originZone.setY(getOriginY(connection));
         originZone.setName(zoneName);
-        originZone.getConnections().add(new ZoneConnection(originConnectionID,targetConnectionID, target.getId(),
-                targetZoneName, connection.getConnectionType().getRotation()));
+        ZoneConnection originZoneConnection = new ZoneConnection(connection.getConnectionType(), originConnectionID, targetConnectionID, target.getId(),
+                targetZoneName, connection.getConnectionType().getRotation());
+        originZoneConnection.setParameters(connection.getParameters());
+        originZone.getConnections().add(originZoneConnection);
         origin.addToZoneList(originZone);
 
         //create new target zone with connections
         Zone targetZone = new Zone();
-        targetZone.setX(connection.getConnectionType().opposite().getX());
-        targetZone.setY(connection.getConnectionType().opposite().getY());
+        targetZone.setX(getTargetX(connection));
+        targetZone.setY(getTargetY(connection));
         targetZone.setName(targetZoneName);
-        targetZone.getConnections().add(new ZoneConnection(targetConnectionID, originConnectionID, origin.getId(),
-                zoneName, connection.getConnectionType().opposite().getRotation(), true));
+        ZoneConnection targetZoneConnection = new ZoneConnection(connection.getConnectionType(), targetConnectionID, originConnectionID, origin.getId(),
+                zoneName, connection.getConnectionType().opposite().getRotation(), true);
+        targetZoneConnection.setParameters(connection.getParameters());
+        targetZone.getConnections().add(targetZoneConnection);
         target.addToZoneList(targetZone);
+    }
+
+    private int getTargetY(Connection connection) {
+        if(connection.getConnectionType() == ConnectionType.CUSTOM){
+            return connection.getParameters().getEndPositionY();
+        }
+        return connection.getConnectionType().opposite().getY();
+    }
+
+    private int getTargetX(Connection connection) {
+        if(connection.getConnectionType() == ConnectionType.CUSTOM){
+            return connection.getParameters().getEndPositionX();
+        }
+        return connection.getConnectionType().opposite().getX();
+    }
+
+    private int getOriginY(Connection connection) {
+        if(connection.getConnectionType() == ConnectionType.CUSTOM){
+            return connection.getParameters().getStartPositionY();
+        }
+        return connection.getConnectionType().getY();
+    }
+
+    private int getOriginX(Connection connection) {
+        if(connection.getConnectionType() == ConnectionType.CUSTOM){
+            return connection.getParameters().getStartPositionX();
+        }
+        return connection.getConnectionType().getX();
     }
 
     private Cluster getTargetCluster(List<Cluster> clusters, String targetClusterId) {

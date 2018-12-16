@@ -5,15 +5,18 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 public class ZoneConnection {
 
+    private final ConnectionType connectionType;
     private final String origin;
     private final String target;
     private final String targetZoneId;
     private final String targetZoneName;
     private final int rotation;
     private final boolean reverseConnection;
+    private CustomConnectionParameters parameters;
 
-    public ZoneConnection(String origin, String target, String targetZoneId, String targetZoneName, int rotation,
+    public ZoneConnection(ConnectionType connectionType, String origin, String target, String targetZoneId, String targetZoneName, int rotation,
                           boolean reverseConnection) {
+        this.connectionType = connectionType;
         this.origin = origin;
         this.target = target;
         this.targetZoneId = targetZoneId;
@@ -22,13 +25,18 @@ public class ZoneConnection {
         this.reverseConnection = reverseConnection;
     }
 
-    public ZoneConnection(String origin, String target, String targetZoneId, String targetZoneName, int rotation) {
+    public ZoneConnection(ConnectionType connectionType, String origin, String target, String targetZoneId, String targetZoneName, int rotation) {
+        this.connectionType = connectionType;
         this.origin = origin;
         this.target = target;
         this.targetZoneId = targetZoneId;
         this.targetZoneName = targetZoneName;
         this.rotation = rotation;
         this.reverseConnection = false;
+    }
+
+    public ConnectionType getConnectionType() {
+        return connectionType;
     }
 
     public String getOrigin() {
@@ -53,6 +61,14 @@ public class ZoneConnection {
 
     public boolean isReverseConnection() {
         return reverseConnection;
+    }
+
+    public CustomConnectionParameters getParameters() {
+        return parameters;
+    }
+
+    public void setParameters(CustomConnectionParameters parameters) {
+        this.parameters = parameters;
     }
 
     @Override

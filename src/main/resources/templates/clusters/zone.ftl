@@ -10,7 +10,15 @@
           <connection name="${galaxy.galaxyPrefix}_gate_${zoneconnection.origin}_${zoneconnection.target}_connection" ref="gates">
             <offset>
               <position x="0" y="500" z="0" />
+              <#if zoneconnection.connectionType == "CUSTOM">
+              <#if !zoneconnection.reverseConnection>
+              <rotation yaw="${zoneconnection.parameters.startRotation}" pitch="0" roll="0" />
+              <#else>
+              <rotation yaw="${zoneconnection.parameters.endRotation}" pitch="0" roll="0" />
+              </#if>
+		      <#else>
 		      <rotation yaw="${zoneconnection.rotation}" pitch="0" roll="0" />
+		      </#if>
             </offset>
             <macro ref="props_gates_orb_accelerator_01_macro" connection="space" />
           </connection>

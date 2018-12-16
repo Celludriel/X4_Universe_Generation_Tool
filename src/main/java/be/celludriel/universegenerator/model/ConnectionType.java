@@ -3,7 +3,8 @@ package be.celludriel.universegenerator.model;
 public enum ConnectionType {
     N(180, 0, 100000), NE(225,100000, 100000),
     SE(315,100000, -100000), S(360,  0, -100000),
-    SW(45, -100000, -100000), NW(135,-100000, 100000);
+    SW(45, -100000, -100000), NW(135,-100000, 100000),
+    CUSTOM(0,0,0);
 
     static {
         N.opposite = S;
@@ -12,6 +13,7 @@ public enum ConnectionType {
         SW.opposite = NE;
         SE.opposite = NW;
         NW.opposite = SE;
+        CUSTOM.opposite = CUSTOM;
     }
 
     private int rotation;

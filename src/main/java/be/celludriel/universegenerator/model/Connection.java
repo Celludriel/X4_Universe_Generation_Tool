@@ -1,20 +1,24 @@
 package be.celludriel.universegenerator.model;
 
-import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 public class Connection extends AbstractJson {
 
     private String targetClusterId;
-    private ConnectionType ConnectionType;
+    private ConnectionType connectionType;
+    private CustomConnectionParameters parameters;
 
     public String getTargetClusterId() {
         return targetClusterId;
     }
 
     public ConnectionType getConnectionType() {
-        return ConnectionType;
+        return connectionType;
+    }
+
+    public CustomConnectionParameters getParameters() {
+        return parameters;
     }
 
     public void setTargetClusterId(String targetClusterId) {
@@ -22,7 +26,11 @@ public class Connection extends AbstractJson {
     }
 
     public void setConnectionType(ConnectionType connectionType) {
-        ConnectionType = connectionType;
+        this.connectionType = connectionType;
+    }
+
+    public void setParameters(CustomConnectionParameters parameters) {
+        this.parameters = parameters;
     }
 
     @Override
@@ -35,7 +43,8 @@ public class Connection extends AbstractJson {
 
         return new EqualsBuilder()
                 .append(targetClusterId, that.targetClusterId)
-                .append(ConnectionType, that.ConnectionType)
+                .append(connectionType, that.connectionType)
+                .append(parameters, that.parameters)
                 .isEquals();
     }
 
@@ -43,7 +52,8 @@ public class Connection extends AbstractJson {
     public int hashCode() {
         return new HashCodeBuilder(17, 37)
                 .append(targetClusterId)
-                .append(ConnectionType)
+                .append(connectionType)
+                .append(parameters)
                 .toHashCode();
     }
 }
