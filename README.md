@@ -4,4 +4,4 @@ This tool is meant to generate an entire galaxy from a describing json input
 
 TODO
 - Generate PlacedObjects.xml with custom placable objects
-- Add support for <<objects>> in the god generation
+- Add support for &lt;objects&gt; in the god generation
