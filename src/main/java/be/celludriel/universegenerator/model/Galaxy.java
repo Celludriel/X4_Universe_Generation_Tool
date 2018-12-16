@@ -88,6 +88,7 @@ public class Galaxy extends AbstractJson {
         return jobs;
     }
 
+    @JsonIgnore
     public List<FactionStart> getFactionStarts() {
         return factionStarts;
     }
