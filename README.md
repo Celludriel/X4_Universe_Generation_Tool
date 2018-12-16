@@ -10,7 +10,7 @@ Usage
 - download the latest jar from the releases and put it in a folder of your choosing
 - create an input json use x3galaxy.json as an example
 - navigate to the folder with the jar inside and copy your json file into it
-- java -jar universe-generator-1.0.0-jar-with-dependencies.jar "yourfile.json"
+- java -jar universe-generator-1.0.0.jar "yourfile.json"
 - an output folder is now created in your folder containing the mod for the galaxy
 
 TODO
