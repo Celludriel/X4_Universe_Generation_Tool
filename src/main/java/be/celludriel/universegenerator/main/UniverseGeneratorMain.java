@@ -27,7 +27,7 @@ public class UniverseGeneratorMain {
         UniverseGenerator universeGenerator = new UniverseGenerator(galaxy);
         universeGenerator.generateUniverse(galaxy);
 
-        if(args[1].equalsIgnoreCase("generateSchema")){
+        if(args.length > 1 && args[1].equalsIgnoreCase("generateSchema")){
             generateSchema(objectMapper);
         }
     }
