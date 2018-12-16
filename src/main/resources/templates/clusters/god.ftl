@@ -8,7 +8,7 @@
     <objects></objects>
     <stations>
 		<defaults>
-		  <location newzonechance="0.25" coreboundaryzoneheight="40000">
+		  <location newzonechance="0.25" coreboundaryzoneheight="20000">
 			<corerange max="1.3"/>
 		  </location>
 		  <modules production="5" storage="10" />

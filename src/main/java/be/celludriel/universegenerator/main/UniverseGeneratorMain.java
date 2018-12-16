@@ -2,7 +2,11 @@ package be.celludriel.universegenerator.main;
 
 import be.celludriel.universegenerator.generator.UniverseGenerator;
 import be.celludriel.universegenerator.model.Galaxy;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
+import com.fasterxml.jackson.module.jsonSchema.factories.SchemaFactoryWrapper;
 import freemarker.template.TemplateException;
 
 import java.io.File;
@@ -22,5 +26,16 @@ public class UniverseGeneratorMain {
 
         UniverseGenerator universeGenerator = new UniverseGenerator(galaxy);
         universeGenerator.generateUniverse(galaxy);
+
+        if(args[1].equalsIgnoreCase("generateSchema")){
+            generateSchema(objectMapper);
+        }
+    }
+
+    private static void generateSchema(ObjectMapper mapper) throws JsonProcessingException {
+        SchemaFactoryWrapper visitor = new SchemaFactoryWrapper();
+        mapper.acceptJsonFormatVisitor(Galaxy.class, visitor);
+        JsonSchema schema = visitor.finalSchema();
+        System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(schema));
     }
 }
