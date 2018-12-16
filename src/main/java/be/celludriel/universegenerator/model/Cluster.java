@@ -24,9 +24,9 @@ public class Cluster extends AbstractJson {
     private int x;
     private int y;
     private String backdrop;
-    private boolean gamestart = false;
     private boolean noBelts = false;
     private Faction factionHq;
+    private FactionStart factionStart;
     private List<Connection> connections = new ArrayList<>();
     private List<Zone> zoneList = new ArrayList<>();
     private List<Belt> belts = new ArrayList<>();
@@ -72,10 +72,6 @@ public class Cluster extends AbstractJson {
         return backdrop;
     }
 
-    public boolean isGamestart() {
-        return gamestart;
-    }
-
     public boolean isNoBelts() {
         return noBelts;
     }
@@ -86,6 +82,10 @@ public class Cluster extends AbstractJson {
 
     public List<Connection> getConnections() {
         return connections;
+    }
+
+    public FactionStart getFactionStart() {
+        return factionStart;
     }
 
     @JsonIgnore
@@ -141,16 +141,16 @@ public class Cluster extends AbstractJson {
         this.backdrop = backdrop;
     }
 
-    public void setGamestart(boolean gamestart) {
-        this.gamestart = gamestart;
-    }
-
     public void setNoBelts(boolean noBelts) {
         this.noBelts = noBelts;
     }
 
     public void setFactionHq(Faction factionHq) {
         this.factionHq = factionHq;
+    }
+
+    public void setFactionStart(FactionStart factionStart) {
+        this.factionStart = factionStart;
     }
 
     public void setConnections(List<Connection> connections) {
@@ -209,7 +209,6 @@ public class Cluster extends AbstractJson {
         return new EqualsBuilder()
                 .append(x, cluster.x)
                 .append(y, cluster.y)
-                .append(gamestart, cluster.gamestart)
                 .append(noBelts, cluster.noBelts)
                 .append(id, cluster.id)
                 .append(name, cluster.name)
@@ -220,6 +219,7 @@ public class Cluster extends AbstractJson {
                 .append(security, cluster.security)
                 .append(backdrop, cluster.backdrop)
                 .append(factionHq, cluster.factionHq)
+                .append(factionStart, cluster.factionStart)
                 .append(connections, cluster.connections)
                 .append(zoneList, cluster.zoneList)
                 .append(belts, cluster.belts)
@@ -240,9 +240,9 @@ public class Cluster extends AbstractJson {
                 .append(x)
                 .append(y)
                 .append(backdrop)
-                .append(gamestart)
                 .append(noBelts)
                 .append(factionHq)
+                .append(factionStart)
                 .append(connections)
                 .append(zoneList)
                 .append(belts)

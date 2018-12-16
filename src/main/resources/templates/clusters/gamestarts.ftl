@@ -3,18 +3,19 @@
   <remove sel="/gamestarts"/>
   <add sel="/">
     <gamestarts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="gamestarts.xsd">
-      <gamestart id="${galaxy.galaxyPrefix}_galaxy_main" name="${galaxy.gamestartName}" image="gamestart_1">
-        <location galaxy="${galaxy.galaxyPrefix}_galaxy_macro" zone="${galaxy.galaxyPrefix}_${galaxy.starterZoneName}_sector001_macro">
+      <#list galaxy.factionStarts as factionStart>
+      <gamestart id="${galaxy.galaxyPrefix}_galaxy_main_${factionStart?index}" name="${factionStart.name}" image="gamestart_1">
+        <location galaxy="${galaxy.galaxyPrefix}_galaxy_macro" zone="${galaxy.galaxyPrefix}_zone001_cluster${factionStart.clusterId}_sector001_macro">
           <position x="1000" y="0" z="1000"/>
           <rotation yaw="0" pitch="0" roll="0"/>
         </location>
-        <player macro="character_player_fight_macro" money="10000" name="{1021,302}">
-          <ship macro="ship_arg_s_fighter_02_a_macro">
+        <player macro="character_player_fight_macro" money="10000" name="${factionStart.playerName}">
+          <ship macro="ship_${factionStart.faction.getRaceAbbreviation()}_s_fighter_01_a_macro">
             <loadout>
               <macros>
-                <engine macro="engine_arg_s_allround_01_mk1_macro" path="../con_engine_01" />
+                <engine macro="engine_${factionStart.faction.getRaceAbbreviation()}_s_allround_01_mk1_macro" path="../con_engine_01" />
                 <weapon macro="weapon_gen_s_laser_01_mk1_macro" path="../con_weapon_01" optional="1" />
-                <shield macro="shield_arg_s_standard_01_mk1_macro" path="../con_shield_01" optional="1" />
+                <shield macro="shield_${factionStart.faction.getRaceAbbreviation()}_s_standard_01_mk1_macro" path="../con_shield_01" optional="1" />
               </macros>
               <ammunition>
                 <ammunition macro="eq_arg_satellite_01_macro" exact="5" optional="true"/>
@@ -38,13 +39,13 @@
             <ware ware="clothingmod_0001" />
             <ware ware="clothingmod_0002" />
             <ware ware="module_arg_dock_m_01_lowtech" />
-            <ware ware="module_arg_pier_l_01" />
-            <ware ware="module_arg_stor_container_s_01" />
-            <ware ware="module_arg_conn_base_01" />
-            <ware ware="module_arg_conn_cross_01" />
-            <ware ware="module_arg_conn_vertical_01" />
+            <ware ware="module_${factionStart.faction.getRaceAbbreviation()}_pier_l_01" />
+            <ware ware="module_${factionStart.faction.getRaceAbbreviation()}_stor_container_s_01" />
+            <ware ware="module_${factionStart.faction.getRaceAbbreviation()}_conn_base_01" />
+            <ware ware="module_${factionStart.faction.getRaceAbbreviation()}_conn_cross_01" />
+            <ware ware="module_${factionStart.faction.getRaceAbbreviation()}_conn_vertical_01" />
             <ware ware="module_gen_prod_energycells_01" />
-            <ware ware="module_arg_prod_meat_01" />
+            <ware ware="module_gen_prod_water_01" />
             <ware ware="paintmod_0006"/>
             <ware ware="paintmod_0048"/>
             <ware ware="paintmod_0049"/>
@@ -81,6 +82,7 @@
           <theme paint="painttheme_player_01" />
         </player>
       </gamestart>
+      </#list>
     </gamestarts>
   </add>
 </diff>

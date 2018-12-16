@@ -36,9 +36,6 @@ public class ZoneConnectionProcessor {
         //add default zone
         Zone zone = new Zone();
         zone.setName(DEFAULT_CLUSTER_PREFIX + cluster.getId());
-        if(cluster.isGamestart()){
-            galaxy.setStarterZoneName(zone.getName());
-        }
         cluster.addToZoneList(zone);
     }
 

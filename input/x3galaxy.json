@@ -1,7 +1,6 @@
 {
   "galaxyName": "x3galaxy",
   "galaxyPrefix": "x3g",
-  "gamestartName": "The X3 Galaxy",
   "description": "Original X3 galaxy",
   "author": "celludriel",
   "version": "1.0.0",
@@ -22,8 +21,13 @@
       "x": 0,
       "y": 0,
       "backdrop": "empty_space",
-      "gamestart": true,
       "factionHq": "ARGON",
+      "factionStart": {
+        "faction": "ARGON",
+        "name": "The Argon Saga",
+        "playerName": "Vel Driar",
+        "description": ""
+      },
       "connections": [
         {
           "targetClusterId": "03",
@@ -723,6 +727,12 @@
       "y": -3,
       "backdrop": "empty_space",
       "factionHq": "PARANID",
+      "factionStart": {
+        "faction": "PARANID",
+        "name": "The Paranid Supremacy",
+        "playerName": "Kal Dago",
+        "description": ""
+      },
       "connections": [
         {
           "targetClusterId": "33",
@@ -924,6 +934,12 @@
       "y": 1,
       "backdrop": "empty_space",
       "factionHq": "TELADI",
+      "factionStart": {
+        "faction": "TELADI",
+        "name": "The Teladi Mercantile",
+        "playerName": "Ol Manck",
+        "description": ""
+      },
       "connections": [
         {
           "targetClusterId": "42",
@@ -1495,6 +1511,12 @@
       "y": -1,
       "backdrop": "empty_space",
       "factionHq": "HOLYORDER",
+      "factionStart": {
+        "faction": "PARANID",
+        "name": "The Holy Crusade",
+        "playerName": "Jol Dalmar",
+        "description": ""
+      },
       "connections": [
         {
           "targetClusterId": "69",

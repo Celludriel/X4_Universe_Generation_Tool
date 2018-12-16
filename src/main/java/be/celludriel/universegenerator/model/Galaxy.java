@@ -12,7 +12,6 @@ public class Galaxy extends AbstractJson {
     private long seed;
     private String galaxyName;
     private String galaxyPrefix;
-    private String gamestartName;
     private String description;
     private String author;
     private String version;
@@ -25,6 +24,7 @@ public class Galaxy extends AbstractJson {
     private List<FactionHqLocation> factionHqLocations = new ArrayList<>();
     private List<Product> products = new ArrayList<>();
     private List<Job> jobs = new ArrayList<>();
+    private List<FactionStart> factionStarts = new ArrayList<>();
 
     public long getSeed() {
         return seed;
@@ -36,10 +36,6 @@ public class Galaxy extends AbstractJson {
 
     public String getGalaxyPrefix() {
         return galaxyPrefix;
-    }
-
-    public String getGamestartName() {
-        return gamestartName;
     }
 
     public String getDescription() {
@@ -92,6 +88,10 @@ public class Galaxy extends AbstractJson {
         return jobs;
     }
 
+    public List<FactionStart> getFactionStarts() {
+        return factionStarts;
+    }
+
     public void setSeed(long seed) {
         this.seed = seed;
     }
@@ -102,10 +102,6 @@ public class Galaxy extends AbstractJson {
 
     public void setGalaxyPrefix(String galaxyPrefix) {
         this.galaxyPrefix = galaxyPrefix;
-    }
-
-    public void setGamestartName(String gamestartName) {
-        this.gamestartName = gamestartName;
     }
 
     public void setDescription(String description) {
@@ -156,6 +152,10 @@ public class Galaxy extends AbstractJson {
         this.factionHqLocations.add(factionHqLocation);
     }
 
+    public void addFactionStart(FactionStart factionStart){
+        this.factionStarts.add(factionStart);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -170,7 +170,6 @@ public class Galaxy extends AbstractJson {
                 .append(maxRandomBelts, galaxy.maxRandomBelts)
                 .append(galaxyName, galaxy.galaxyName)
                 .append(galaxyPrefix, galaxy.galaxyPrefix)
-                .append(gamestartName, galaxy.gamestartName)
                 .append(description, galaxy.description)
                 .append(author, galaxy.author)
                 .append(version, galaxy.version)
@@ -181,6 +180,7 @@ public class Galaxy extends AbstractJson {
                 .append(factionHqLocations, galaxy.factionHqLocations)
                 .append(products, galaxy.products)
                 .append(jobs, galaxy.jobs)
+                .append(factionStarts, galaxy.factionStarts)
                 .isEquals();
     }
 
@@ -190,7 +190,6 @@ public class Galaxy extends AbstractJson {
                 .append(seed)
                 .append(galaxyName)
                 .append(galaxyPrefix)
-                .append(gamestartName)
                 .append(description)
                 .append(author)
                 .append(version)
@@ -203,6 +202,7 @@ public class Galaxy extends AbstractJson {
                 .append(factionHqLocations)
                 .append(products)
                 .append(jobs)
+                .append(factionStarts)
                 .toHashCode();
     }
 }
