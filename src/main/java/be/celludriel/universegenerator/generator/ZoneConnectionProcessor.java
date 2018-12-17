@@ -16,19 +16,16 @@ public class ZoneConnectionProcessor {
     public static final String CLUSTER_PREFIX = "c";
     public static final String ZONE_PREFIX = "z";
 
-    public void processConnections(Galaxy galaxy){
+    public void processConnections(Galaxy galaxy, Cluster cluster){
         List<Cluster> clusters = galaxy.getClusters();
-        for (Cluster cluster : clusters) {
+        if(cluster.getZoneList().size() == 0){
+            addDefaultZone(cluster, galaxy);
+        }
 
-            if(cluster.getZoneList().size() == 0){
-                addDefaultZone(cluster, galaxy);
-            }
-
-            //add connection zones
-            for (Connection connection : cluster.getConnections()) {
-                Cluster targetCluster = getTargetCluster(clusters, connection.getTargetClusterId());
-                addConnectionZone(galaxy, cluster, targetCluster, connection);
-            }
+        //add connection zones
+        for (Connection connection : cluster.getConnections()) {
+            Cluster targetCluster = getTargetCluster(clusters, connection.getTargetClusterId());
+            addConnectionZone(galaxy, cluster, targetCluster, connection);
         }
     }
 

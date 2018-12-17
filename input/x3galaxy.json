@@ -9,6 +9,9 @@
   "seed": "20051028",
   "minRandomBelts": 3,
   "maxRandomBelts" : 5,
+  "galaxyOptions": {
+    "addDoubleTravelSpeed": true
+  },
   "clusters": [
     {
       "id": "01",
@@ -26,7 +29,7 @@
         "faction": "ARGON",
         "name": "The Argon Saga",
         "playerName": "Vel Driar",
-        "description": ""
+        "description": "The Argon Federation is a proud place to call home: the center of culture, science and learning in the universe. This pride is born of a long and storied history; of a bold and daring risk to lure the greatest threat the universe has known away from Earth and a sacrifice to save a home they would never return to. The Argon people were forced to began anew in a place unfamiliar to them and have thrived since. Do you have what it takes to continue this saga?"
       },
       "connections": [
         {
@@ -540,6 +543,9 @@
           "targetClusterId": "24",
           "connectionType": "S"
         }
+      ],
+      "spaceObjects": [
+        {"type":  "CLAIM", "shipMacro": "ship_arg_m_miner_solid_01_a_macro", "yaw": 20, "pitch": 35, "roll": 50}
       ]
     },
     {
@@ -938,7 +944,7 @@
         "faction": "TELADI",
         "name": "The Teladi Mercantile",
         "playerName": "Ol Manck",
-        "description": ""
+        "description": "Ever since you hatched from your egg you have been enamored with value and money, in fact they were your most spoken words during your adolescent 'eggspeak' \nWhen your eyes started to change from the pale yellow that marks Teladi youth to the deep red of a mature citizen in the great trade empire the others looked at you with a sense you should leave the planetside and seek out the life of a true Teladi.\nWith that you gather your belongings and sell them all, buying a modest ship to begin your great search for the universes greatest profitssss!"
       },
       "connections": [
         {
