@@ -55,9 +55,7 @@ public class UniverseGenerator {
         Configuration cfg = freemarkerConfiguration.configure();
         Map<String, Object> root = new HashMap<>();
         root.put("galaxy", galaxy);
-
-        String path = "output/" + galaxy.getGalaxyName();
-        FileUtils.cleanDirectory(new File(path));
+        String path = cleanOutputDirectory(galaxy);
 
         generateZones(cfg, root, CLUSTERS);
         generateSectors(cfg, root, CLUSTERS);
@@ -72,6 +70,15 @@ public class UniverseGenerator {
         generateMdFixFiles(cfg, root, CLUSTERS);
         generatePlacedObjects(cfg, root, CLUSTERS);
         copyCoreResources(root, path, galaxy);
+    }
+
+    private String cleanOutputDirectory(Galaxy galaxy) throws IOException {
+        String path = "output/" + galaxy.getGalaxyName();
+        File directory = new File(path);
+        if(directory.exists()){
+            FileUtils.cleanDirectory(directory);
+        }
+        return path;
     }
 
     private void copyCoreResources(Map<String, Object> root, String path, Galaxy galaxy) throws IOException, URISyntaxException {
