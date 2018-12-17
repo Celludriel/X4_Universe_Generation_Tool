@@ -1,5 +1,6 @@
 package be.celludriel.universegenerator.generator;
 
+import be.celludriel.universegenerator.model.Cluster;
 import be.celludriel.universegenerator.model.Galaxy;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -9,23 +10,20 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URI;
 import java.net.URISyntaxException;
-import java.nio.file.*;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class UniverseGenerator {
 
     public static final String CLUSTERS = "clusters";
     private final FreemarkerConfiguration freemarkerConfiguration;
+
     private final ZoneConnectionProcessor zoneConnectionProcessor;
     private final BeltProcessor beltProcessor;
     private final FactionLogicProcessor factionLogicProcessor;
+    private final SpaceObjectProcessor spaceObjectProcessor;
+
     private final Randomizer randomizer;
     private final CopyUtils copyUtils;
 
@@ -35,22 +33,29 @@ public class UniverseGenerator {
         zoneConnectionProcessor = new ZoneConnectionProcessor();
         beltProcessor = new BeltProcessor(randomizer);
         factionLogicProcessor = new FactionLogicProcessor();
+        this.spaceObjectProcessor = new SpaceObjectProcessor(randomizer);
         this.copyUtils = new CopyUtils();
     }
 
     public void generateUniverse(Galaxy galaxy) throws IOException, TemplateException, URISyntaxException {
-        zoneConnectionProcessor.processConnections(galaxy);
-        beltProcessor.processBelts(galaxy);
-        factionLogicProcessor.processFactionLogicData(galaxy);
-
+        runProcessors(galaxy);
         generateOutput(galaxy);
+    }
+
+    private void runProcessors(Galaxy galaxy) {
+        for (Cluster cluster : galaxy.getClusters()) {
+            zoneConnectionProcessor.processConnections(galaxy, cluster);
+            beltProcessor.processBelts(galaxy, cluster);
+            factionLogicProcessor.processFactionLogicData(galaxy, cluster);
+            spaceObjectProcessor.processSpaceObjects(galaxy, cluster);
+        }
     }
 
     private void generateOutput(Galaxy galaxy) throws IOException, TemplateException, URISyntaxException {
         Configuration cfg = freemarkerConfiguration.configure();
         Map<String, Object> root = new HashMap<>();
         root.put("galaxy", galaxy);
-        
+
         String path = "output/" + galaxy.getGalaxyName();
         FileUtils.cleanDirectory(new File(path));
 
@@ -65,11 +70,11 @@ public class UniverseGenerator {
         generateJobs(cfg, root, CLUSTERS);
         generateGameStart(cfg, root, CLUSTERS);
         generateMdFixFiles(cfg, root, CLUSTERS);
+        generatePlacedObjects(cfg, root, CLUSTERS);
         copyCoreResources(root, path, galaxy);
     }
 
     private void copyCoreResources(Map<String, Object> root, String path, Galaxy galaxy) throws IOException, URISyntaxException {
-
         String source = "/core/region_definitions.xml";
         String target = path + "/libraries/region_definitions.xml";
         copyUtils.copyToOutputDir(source, target);
@@ -82,7 +87,7 @@ public class UniverseGenerator {
         target = path + "/libraries/defaults.xml";
         copyUtils.copyToOutputDir(source, target);
 
-        if(galaxy.getGalaxyOptions().isAddDoubleTravelSpeed()){
+        if (galaxy.getGalaxyOptions().isAddDoubleTravelSpeed()) {
             addDoubleTravelSpeedToOutput(path);
         }
     }
@@ -175,6 +180,13 @@ public class UniverseGenerator {
 
         temp = cfg.getTemplate(type + "/customGameStart.ftl");
         path = "output/" + galaxy.getGalaxyName() + "/md/CustomGameStart.xml";
+        writeToFile(root, temp, path);
+    }
+
+    private void generatePlacedObjects(Configuration cfg, Map<String, Object> root, String type) throws IOException, TemplateException {
+        Template temp = cfg.getTemplate(type + "/placedObjects.ftl");
+        Galaxy galaxy = (Galaxy) root.get("galaxy");
+        String path = "output/" + galaxy.getGalaxyName() + "/md/PlacedObjects.xml";
         writeToFile(root, temp, path);
     }
 

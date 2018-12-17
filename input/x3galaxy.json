@@ -29,7 +29,7 @@
         "faction": "ARGON",
         "name": "The Argon Saga",
         "playerName": "Vel Driar",
-        "description": ""
+        "description": "The Argon Federation is a proud place to call home: the center of culture, science and learning in the universe. This pride is born of a long and storied history; of a bold and daring risk to lure the greatest threat the universe has known away from Earth and a sacrifice to save a home they would never return to. The Argon people were forced to began anew in a place unfamiliar to them and have thrived since. Do you have what it takes to continue this saga?"
       },
       "connections": [
         {
@@ -543,6 +543,9 @@
           "targetClusterId": "24",
           "connectionType": "S"
         }
+      ],
+      "spaceObjects": [
+        {"type":  "CLAIM", "shipMacro": "ship_arg_m_miner_solid_01_a_macro", "yaw": 20, "pitch": 35, "roll": 50}
       ]
     },
     {

@@ -12,6 +12,7 @@ public class Galaxy extends AbstractJson {
     private long seed;
     private String galaxyName;
     private String galaxyPrefix;
+    private GalaxyOptions galaxyOptions;
     private String description;
     private String author;
     private String version;
@@ -25,7 +26,7 @@ public class Galaxy extends AbstractJson {
     private List<Product> products = new ArrayList<>();
     private List<Job> jobs = new ArrayList<>();
     private List<FactionStart> factionStarts = new ArrayList<>();
-    private GalaxyOptions galaxyOptions;
+    private List<SpaceObject> spaceObjects = new ArrayList<>();
 
     public long getSeed() {
         return seed;
@@ -92,6 +93,11 @@ public class Galaxy extends AbstractJson {
     @JsonIgnore
     public List<FactionStart> getFactionStarts() {
         return factionStarts;
+    }
+
+    @JsonIgnore
+    public List<SpaceObject> getSpaceObjects() {
+        return spaceObjects;
     }
 
     public GalaxyOptions getGalaxyOptions() {
@@ -166,6 +172,19 @@ public class Galaxy extends AbstractJson {
         this.factionStarts.add(factionStart);
     }
 
+    public void addSpaceObject(SpaceObject spaceObject) {
+        this.spaceObjects.add(spaceObject);
+    }
+
+    public boolean containsClaimableShips(){
+        for (SpaceObject spaceObject : spaceObjects) {
+            if(spaceObject.getType() == SpaceObjectType.CLAIM){
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -180,6 +199,7 @@ public class Galaxy extends AbstractJson {
                 .append(maxRandomBelts, galaxy.maxRandomBelts)
                 .append(galaxyName, galaxy.galaxyName)
                 .append(galaxyPrefix, galaxy.galaxyPrefix)
+                .append(galaxyOptions, galaxy.galaxyOptions)
                 .append(description, galaxy.description)
                 .append(author, galaxy.author)
                 .append(version, galaxy.version)
@@ -191,7 +211,7 @@ public class Galaxy extends AbstractJson {
                 .append(products, galaxy.products)
                 .append(jobs, galaxy.jobs)
                 .append(factionStarts, galaxy.factionStarts)
-                .append(galaxyOptions, galaxy.galaxyOptions)
+                .append(spaceObjects, galaxy.spaceObjects)
                 .isEquals();
     }
 
@@ -201,6 +221,7 @@ public class Galaxy extends AbstractJson {
                 .append(seed)
                 .append(galaxyName)
                 .append(galaxyPrefix)
+                .append(galaxyOptions)
                 .append(description)
                 .append(author)
                 .append(version)
@@ -214,7 +235,7 @@ public class Galaxy extends AbstractJson {
                 .append(products)
                 .append(jobs)
                 .append(factionStarts)
-                .append(galaxyOptions)
+                .append(spaceObjects)
                 .toHashCode();
     }
 }

@@ -31,6 +31,7 @@ public class Cluster extends AbstractJson {
     private List<Zone> zoneList = new ArrayList<>();
     private List<Belt> belts = new ArrayList<>();
     private List<Station> stations = new ArrayList<>();
+    private List<SpaceObject> spaceObjects = new ArrayList<>();
 
     public String getId() {
         return id;
@@ -101,6 +102,10 @@ public class Cluster extends AbstractJson {
         return stations;
     }
 
+    public List<SpaceObject> getSpaceObjects() {
+        return spaceObjects;
+    }
+
     public void setId(String id) {
         this.id = id;
     }
@@ -165,6 +170,10 @@ public class Cluster extends AbstractJson {
         this.stations = stations;
     }
 
+    public void setSpaceObjects(List<SpaceObject> spaceObjects) {
+        this.spaceObjects = spaceObjects;
+    }
+
     @JsonIgnore
     public String getClusterX(){
         return Long.toString(x * SEMI_X_MOVEMENT);
@@ -224,6 +233,7 @@ public class Cluster extends AbstractJson {
                 .append(zoneList, cluster.zoneList)
                 .append(belts, cluster.belts)
                 .append(stations, cluster.stations)
+                .append(spaceObjects, cluster.spaceObjects)
                 .isEquals();
     }
 
@@ -247,6 +257,7 @@ public class Cluster extends AbstractJson {
                 .append(zoneList)
                 .append(belts)
                 .append(stations)
+                .append(spaceObjects)
                 .toHashCode();
     }
 }

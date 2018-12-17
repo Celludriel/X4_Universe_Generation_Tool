@@ -16,18 +16,16 @@ public class BeltProcessor {
         this.randomizer = randomizer;
     }
 
-    public void processBelts(Galaxy galaxy){
-        for (Cluster cluster : galaxy.getClusters()) {
-            if(cluster.isNoBelts()){
-                return;
-            }
-            
-            List<Belt> belts = cluster.getBelts();
-            if(belts.size() > 0){
-                addManualSelectedBelts(belts);
-            }else{
-                generateRandomBelts(galaxy.getMinRandomBelts(), galaxy.getMaxRandomBelts(), cluster);
-            }
+    public void processBelts(Galaxy galaxy, Cluster cluster){
+        if(cluster.isNoBelts()){
+            return;
+        }
+
+        List<Belt> belts = cluster.getBelts();
+        if(belts.size() > 0){
+            addManualSelectedBelts(belts);
+        }else{
+            generateRandomBelts(galaxy.getMinRandomBelts(), galaxy.getMaxRandomBelts(), cluster);
         }
     }
 
