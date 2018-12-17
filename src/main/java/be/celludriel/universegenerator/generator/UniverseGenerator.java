@@ -94,7 +94,7 @@ public class UniverseGenerator {
 
         for (Path file : files) {
             String fileName = file.getFileName().toString();
-            source = originFolder + fileName;
+            source = "/" + originFolder + "/" + fileName;
             target = targetFolder + fileName;
             copyToOutputDir(source, target);
         }
