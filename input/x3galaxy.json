@@ -9,6 +9,9 @@
   "seed": "20051028",
   "minRandomBelts": 3,
   "maxRandomBelts" : 5,
+  "galaxyOptions": {
+    "addDoubleTravelSpeed": true
+  },
   "clusters": [
     {
       "id": "01",

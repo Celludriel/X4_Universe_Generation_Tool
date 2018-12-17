@@ -25,6 +25,7 @@ public class Galaxy extends AbstractJson {
     private List<Product> products = new ArrayList<>();
     private List<Job> jobs = new ArrayList<>();
     private List<FactionStart> factionStarts = new ArrayList<>();
+    private GalaxyOptions galaxyOptions;
 
     public long getSeed() {
         return seed;
@@ -93,6 +94,10 @@ public class Galaxy extends AbstractJson {
         return factionStarts;
     }
 
+    public GalaxyOptions getGalaxyOptions() {
+        return galaxyOptions;
+    }
+
     public void setSeed(long seed) {
         this.seed = seed;
     }
@@ -149,6 +154,10 @@ public class Galaxy extends AbstractJson {
         this.jobs = jobs;
     }
 
+    public void setGalaxyOptions(GalaxyOptions galaxyOptions) {
+        this.galaxyOptions = galaxyOptions;
+    }
+
     public void addFactionHqLocation(FactionHqLocation factionHqLocation){
         this.factionHqLocations.add(factionHqLocation);
     }
@@ -182,6 +191,7 @@ public class Galaxy extends AbstractJson {
                 .append(products, galaxy.products)
                 .append(jobs, galaxy.jobs)
                 .append(factionStarts, galaxy.factionStarts)
+                .append(galaxyOptions, galaxy.galaxyOptions)
                 .isEquals();
     }
 
@@ -204,6 +214,7 @@ public class Galaxy extends AbstractJson {
                 .append(products)
                 .append(jobs)
                 .append(factionStarts)
+                .append(galaxyOptions)
                 .toHashCode();
     }
 }

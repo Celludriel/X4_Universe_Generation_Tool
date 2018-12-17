@@ -27,6 +27,7 @@ public class UniverseGenerator {
     private final BeltProcessor beltProcessor;
     private final FactionLogicProcessor factionLogicProcessor;
     private final Randomizer randomizer;
+    private final CopyUtils copyUtils;
 
     public UniverseGenerator(Galaxy galaxy) {
         randomizer = new Randomizer(galaxy.getSeed());
@@ -34,6 +35,7 @@ public class UniverseGenerator {
         zoneConnectionProcessor = new ZoneConnectionProcessor();
         beltProcessor = new BeltProcessor(randomizer);
         factionLogicProcessor = new FactionLogicProcessor();
+        this.copyUtils = new CopyUtils();
     }
 
     public void generateUniverse(Galaxy galaxy) throws IOException, TemplateException, URISyntaxException {
@@ -48,6 +50,9 @@ public class UniverseGenerator {
         Configuration cfg = freemarkerConfiguration.configure();
         Map<String, Object> root = new HashMap<>();
         root.put("galaxy", galaxy);
+        
+        String path = "output/" + galaxy.getGalaxyName();
+        FileUtils.cleanDirectory(new File(path));
 
         generateZones(cfg, root, CLUSTERS);
         generateSectors(cfg, root, CLUSTERS);
@@ -60,60 +65,32 @@ public class UniverseGenerator {
         generateJobs(cfg, root, CLUSTERS);
         generateGameStart(cfg, root, CLUSTERS);
         generateMdFixFiles(cfg, root, CLUSTERS);
-        copyCoreResources(root);
+        copyCoreResources(root, path, galaxy);
     }
 
-    private void copyCoreResources(Map<String, Object> root) throws IOException, URISyntaxException {
-        Galaxy galaxy = (Galaxy) root.get("galaxy");
-        String path = "output/" + galaxy.getGalaxyName();
+    private void copyCoreResources(Map<String, Object> root, String path, Galaxy galaxy) throws IOException, URISyntaxException {
 
         String source = "/core/region_definitions.xml";
         String target = path + "/libraries/region_definitions.xml";
-        copyToOutputDir(source, target);
+        copyUtils.copyToOutputDir(source, target);
 
         source = "/core/X4Ep1_Mentor_Subscription.xml";
         target = path + "/md/X4Ep1_Mentor_Subscription.xml";
-        copyToOutputDir(source, target);
+        copyUtils.copyToOutputDir(source, target);
 
         source = "/core/defaults.xml";
         target = path + "/libraries/defaults.xml";
-        copyToOutputDir(source, target);
+        copyUtils.copyToOutputDir(source, target);
 
+        if(galaxy.getGalaxyOptions().isAddDoubleTravelSpeed()){
+            addDoubleTravelSpeedToOutput(path);
+        }
+    }
+
+    private void addDoubleTravelSpeedToOutput(String path) throws URISyntaxException, IOException {
         String originFolder = "core/engines";
         String targetFolder = path + "/assets/props/Engines/macros/";
-        copyDirectoryToOutputDir(originFolder, targetFolder);
-    }
-
-    private void copyDirectoryToOutputDir(String originFolder, String targetFolder) throws URISyntaxException, IOException {
-        String source;
-        String target;
-        Path folderPath = getFolderPath(originFolder);
-        List<Path> files = Files.list(folderPath)
-                .filter(Files::isRegularFile)
-                .collect(Collectors.toList());
-
-        for (Path file : files) {
-            String fileName = file.getFileName().toString();
-            source = "/" + originFolder + "/" + fileName;
-            target = targetFolder + fileName;
-            copyToOutputDir(source, target);
-        }
-    }
-
-    private Path getFolderPath(String resourceFolder) throws URISyntaxException, IOException {
-        URI uri = getClass().getClassLoader().getResource(resourceFolder).toURI();
-        if ("jar".equals(uri.getScheme())) {
-            FileSystem fileSystem = FileSystems.newFileSystem(uri, Collections.emptyMap(), null);
-            return fileSystem.getPath(resourceFolder);
-        } else {
-            return Paths.get(uri);
-        }
-    }
-
-    private void copyToOutputDir(String source, String target) throws IOException {
-        FileUtils.touch(new File(target));
-        InputStream src = getClass().getResourceAsStream(source);
-        Files.copy(src, Paths.get(target), StandardCopyOption.REPLACE_EXISTING);
+        copyUtils.copyDirectoryToOutputDir(originFolder, targetFolder);
     }
 
     private void generateGameStart(Configuration cfg, Map<String, Object> root, String type) throws IOException, TemplateException {
