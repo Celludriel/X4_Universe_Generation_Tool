@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+    <replace sel="//dataset[@class='ship_s']/properties/statistics/max/engine">
+        <engine forward="1004.476440" acceleration="571.953308" boost="10806.780273" travel="45012,671876" yaw="2.989562" pitch="4.267040" roll="4.978214"/>
+    </replace>
+    <replace sel="//dataset[@class='ship_m']/properties/statistics/max/engine">
+        <engine forward="971.057251" acceleration="225.775909" boost="10447.234375" travel="28986,664062" yaw="2.113728" pitch="3.020615" roll="3.522105"/>
+    </replace>
+    <replace sel="//dataset[@class='ship_l']/properties/statistics/max/engine">
+        <engine forward="592.268066" acceleration="163.657333" boost="1592.996704" travel="39773,792968" yaw="0.552475" pitch="0.400311" roll="0.430744"/>
+    </replace>
+    <replace sel="//dataset[@class='ship_xl']/properties/statistics/max/engine">
+        <engine forward="406.217072" acceleration="139.539764" boost="1092.583740" travel="27276,664062" yaw="0.150934" pitch="0.109363" roll="0.117678"/>
+    </replace>
+</diff>

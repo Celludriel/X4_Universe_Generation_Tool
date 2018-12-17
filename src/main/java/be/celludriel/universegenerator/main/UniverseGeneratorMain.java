@@ -11,10 +11,11 @@ import freemarker.template.TemplateException;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 public class UniverseGeneratorMain {
 
-    public static void main(String[] args) throws IOException, TemplateException {
+    public static void main(String[] args) throws IOException, TemplateException, URISyntaxException {
 
         if(args.length == 0){
             throw new RuntimeException("You need to pass a galaxy model file");
