@@ -1,10 +1,10 @@
 {
-  "galaxyName": "x3galaxy",
-  "galaxyPrefix": "x3g",
-  "description": "Original X3 galaxy",
+  "galaxyName": "x3galaxyFull",
+  "galaxyPrefix": "x3gf",
+  "description": "Complete original X3 galaxy",
   "author": "celludriel",
   "version": "1.0.0",
-  "date": "2018-12-12",
+  "date": "2018-12-18",
   "save": "0",
   "seed": "20051028",
   "minRandomBelts": 3,
@@ -649,6 +649,12 @@
       ],
       "stations": [
         {"type": "DEFENCE", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"}
+      ],
+      "connections": [
+        {
+          "targetClusterId": "83",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -900,7 +906,13 @@
       "security": "0.25",
       "x": -1,
       "y": -6,
-      "backdrop": "empty_space"
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "71",
+          "connectionType": "S"
+        }
+      ]
     },
     {
       "id": "40",
@@ -1294,6 +1306,10 @@
         {
           "targetClusterId": "58",
           "connectionType": "S"
+        },
+        {
+          "targetClusterId": "164",
+          "connectionType": "SE"
         }
       ],
       "stations": [
@@ -1638,6 +1654,12 @@
           "owner":"TELADI",
           "faction":"TELADI"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "74",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -1657,6 +1679,12 @@
           "race":"PARANID",
           "owner":"PARANID",
           "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "77",
+          "connectionType": "NE"
         }
       ]
     },
@@ -1678,6 +1706,16 @@
           "owner":"TELADI",
           "faction":"TELADI"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "75",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "79",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -1697,6 +1735,16 @@
           "race":"TELADI",
           "owner":"TELADI",
           "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "76",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "80",
+          "connectionType": "NE"
         }
       ]
     },
@@ -1738,6 +1786,16 @@
           "owner":"PARANID",
           "faction":"PARANID"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "78",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "84",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -1758,6 +1816,16 @@
           "owner":"PARANID",
           "faction":"PARANID"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "79",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "85",
+          "connectionType": "SE"
+        }
       ]
     },
     {
@@ -1777,6 +1845,12 @@
           "race":"TELADI",
           "owner":"TELADI",
           "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "86",
+          "connectionType": "SE"
         }
       ]
     },
@@ -1817,6 +1891,16 @@
           "race":"TELADI",
           "owner":"TELADI",
           "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "82",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "87",
+          "connectionType": "NE"
         }
       ]
     },
@@ -1898,6 +1982,12 @@
           "owner":"PARANID",
           "faction":"PARANID"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "89",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -1958,6 +2048,12 @@
           "owner":"PARANID",
           "faction":"PARANID"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "89",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -1977,6 +2073,12 @@
           "race":"PARANID",
           "owner":"PARANID",
           "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "93",
+          "connectionType": "SE"
         }
       ]
     },
@@ -1998,6 +2100,12 @@
           "owner":"TELADI",
           "faction":"TELADI"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "91",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -2017,6 +2125,16 @@
           "race":"TELADI",
           "owner":"TELADI",
           "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "92",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "95",
+          "connectionType": "NE"
         }
       ]
     },
@@ -2062,7 +2180,7 @@
     },
     {
       "id":"94",
-      "name":"Unkown Sector Gamma",
+      "name":"Unknown Sector Gamma",
       "description":"5",
       "music":"music_cluster_02",
       "sunlight":"1",
@@ -2077,6 +2195,16 @@
           "race":"XENON",
           "owner":"XENON",
           "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "95",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "99",
+          "connectionType": "SE"
         }
       ]
     },
@@ -2098,6 +2226,12 @@
           "owner":"TELADI",
           "faction":"TELADI"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "100",
+          "connectionType": "SE"
+        }
       ]
     },
     {
@@ -2117,6 +2251,12 @@
           "race":"PARANID",
           "owner":"PARANID",
           "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "102",
+          "connectionType": "SE"
         }
       ]
     },
@@ -2138,6 +2278,16 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "98",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "108",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -2157,6 +2307,12 @@
           "race":"ARGON",
           "owner":"ARGON",
           "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "99",
+          "connectionType": "S"
         }
       ]
     },
@@ -2178,6 +2334,16 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "100",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "110",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -2197,6 +2363,16 @@
           "race":"TELADI",
           "owner":"TELADI",
           "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "101",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "111",
+          "connectionType": "NE"
         }
       ]
     },
@@ -2218,6 +2394,12 @@
           "owner":"XENON",
           "faction":"XENON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "102",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -2237,6 +2419,16 @@
           "race":"PARANID",
           "owner":"PARANID",
           "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "103",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "113",
+          "connectionType": "NE"
         }
       ]
     },
@@ -2278,6 +2470,12 @@
           "owner":"XENON",
           "faction":"XENON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "115",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -2297,6 +2495,12 @@
           "race":"PARANID",
           "owner":"PARANID",
           "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "116",
+          "connectionType": "NE"
         }
       ]
     },
@@ -2318,6 +2522,16 @@
           "owner":"PARANID",
           "faction":"PARANID"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "107",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "117",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -2337,6 +2551,12 @@
           "race":"PARANID",
           "owner":"PARANID",
           "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "118",
+          "connectionType": "NE"
         }
       ]
     },
@@ -2378,6 +2598,12 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "121",
+          "connectionType": "SE"
+        }
       ]
     },
     {
@@ -2417,6 +2643,16 @@
           "race":"TELADI",
           "owner":"TELADI",
           "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "112",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "123",
+          "connectionType": "SE"
         }
       ]
     },
@@ -2458,6 +2694,12 @@
           "owner":"PARANID",
           "faction":"PARANID"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "114",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -2477,6 +2719,16 @@
           "race":"XENON",
           "owner":"XENON",
           "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "115",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "126",
+          "connectionType": "SE"
         }
       ]
     },
@@ -2498,6 +2750,16 @@
           "owner":"PARANID",
           "faction":"PARANID"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "116",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "127",
+          "connectionType": "SE"
+        }
       ]
     },
     {
@@ -2517,6 +2779,16 @@
           "race":"PARANID",
           "owner":"PARANID",
           "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "117",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "128",
+          "connectionType": "SE"
         }
       ]
     },
@@ -2538,11 +2810,17 @@
           "owner":"PARANID",
           "faction":"PARANID"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "129",
+          "connectionType": "SE"
+        }
       ]
     },
     {
       "id":"118",
-      "name":"Unkown Sector Kappa",
+      "name":"Unknown Sector Kappa",
       "description":"7",
       "music":"music_cluster_02",
       "sunlight":"1",
@@ -2578,6 +2856,12 @@
           "owner":"TELADI",
           "faction":"TELADI"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "131",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -2597,6 +2881,12 @@
           "race":"XENON",
           "owner":"XENON",
           "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "121",
+          "connectionType": "S"
         }
       ]
     },
@@ -2618,6 +2908,16 @@
           "owner":"XENON",
           "faction":"XENON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "122",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "133",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -2637,6 +2937,16 @@
           "race":"TELADI",
           "owner":"TELADI",
           "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "123",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "134",
+          "connectionType": "NE"
         }
       ]
     },
@@ -2658,6 +2968,12 @@
           "owner":"TELADI",
           "faction":"TELADI"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "124",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -2678,6 +2994,16 @@
           "owner":"XENON",
           "faction":"XENON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "125",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "136",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -2697,6 +3023,16 @@
           "race":"XENON",
           "owner":"XENON",
           "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "126",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "137",
+          "connectionType": "NE"
         }
       ]
     },
@@ -2738,6 +3074,12 @@
           "owner":"PARANID",
           "faction":"PARANID"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "128",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -2757,6 +3099,16 @@
           "race":"PARANID",
           "owner":"PARANID",
           "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "129",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "140",
+          "connectionType": "NE"
         }
       ]
     },
@@ -2798,6 +3150,12 @@
           "owner":"TELADI",
           "faction":"TELADI"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "131",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -2817,6 +3175,12 @@
           "race":"TELADI",
           "owner":"TELADI",
           "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "144",
+          "connectionType": "SE"
         }
       ]
     },
@@ -2838,6 +3202,12 @@
           "owner":"XENON",
           "faction":"XENON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "133",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -2858,6 +3228,16 @@
           "owner":"TELADI",
           "faction":"TELADI"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "134",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "146",
+          "connectionType": "SE"
+        }
       ]
     },
     {
@@ -2877,6 +3257,16 @@
           "race":"TELADI",
           "owner":"TELADI",
           "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "135",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "147",
+          "connectionType": "SE"
         }
       ]
     },
@@ -2918,6 +3308,12 @@
           "owner":"XENON",
           "faction":"XENON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "149",
+          "connectionType": "SE"
+        }
       ]
     },
     {
@@ -2937,6 +3333,12 @@
           "race":"ARGON",
           "owner":"ARGON",
           "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "150",
+          "connectionType": "SE"
         }
       ]
     },
@@ -2958,6 +3360,12 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "151",
+          "connectionType": "SE"
+        }
       ]
     },
     {
@@ -2977,6 +3385,12 @@
           "race":"PARANID",
           "owner":"PARANID",
           "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "140",
+          "connectionType": "S"
         }
       ]
     },
@@ -2998,6 +3412,16 @@
           "owner":"PARANID",
           "faction":"PARANID"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "141",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "152",
+          "connectionType": "SE"
+        }
       ]
     },
     {
@@ -3017,6 +3441,16 @@
           "race":"PARANID",
           "owner":"PARANID",
           "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "142",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "153",
+          "connectionType": "SE"
         }
       ]
     },
@@ -3058,6 +3492,12 @@
           "owner":"XENON",
           "faction":"XENON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "144",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -3078,6 +3518,16 @@
           "owner":"TELADI",
           "faction":"TELADI"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "145",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "154",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -3097,6 +3547,16 @@
           "race":"TELADI",
           "owner":"TELADI",
           "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "146",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "155",
+          "connectionType": "NE"
         }
       ]
     },
@@ -3138,6 +3598,16 @@
           "owner":"TELADI",
           "faction":"TELADI"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "148",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "157",
+          "connectionType": "SE"
+        }
       ]
     },
     {
@@ -3157,6 +3627,12 @@
           "race":"XENON",
           "owner":"XENON",
           "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "149",
+          "connectionType": "S"
         }
       ]
     },
@@ -3198,6 +3674,12 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "159",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -3217,6 +3699,12 @@
           "race":"ARGON",
           "owner":"ARGON",
           "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "160",
+          "connectionType": "NE"
         }
       ]
     },
@@ -3238,6 +3726,12 @@
           "owner":"PARANID",
           "faction":"PARANID"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "161",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -3257,6 +3751,12 @@
           "race":"ARGON",
           "owner":"ARGON",
           "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "162",
+          "connectionType": "NE"
         }
       ]
     },
@@ -3297,6 +3797,16 @@
           "race":"ARGON",
           "owner":"ARGON",
           "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "156",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "167",
+          "connectionType": "SE"
         }
       ]
     },
@@ -3358,6 +3868,16 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "159",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "170",
+          "connectionType": "SE"
+        }
       ]
     },
     {
@@ -3378,11 +3898,17 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "171",
+          "connectionType": "SE"
+        }
       ]
     },
     {
       "id":"160",
-      "name":"Saturn  ",
+      "name":"Saturn",
       "description":"11",
       "music":"music_cluster_02",
       "sunlight":"1",
@@ -3397,6 +3923,12 @@
           "race":"ARGON",
           "owner":"ARGON",
           "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "172",
+          "connectionType": "SE"
         }
       ]
     },
@@ -3418,6 +3950,12 @@
           "owner":"PARANID",
           "faction":"PARANID"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "162",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -3437,6 +3975,12 @@
           "race":"ARGON",
           "owner":"ARGON",
           "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "175",
+          "connectionType": "SE"
         }
       ]
     },
@@ -3458,6 +4002,12 @@
           "owner":"TELADI",
           "faction":"TELADI"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "164",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -3477,6 +4027,12 @@
           "race":"TELADI",
           "owner":"TELADI",
           "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "176",
+          "connectionType": "NE"
         }
       ]
     },
@@ -3498,6 +4054,12 @@
           "owner":"XENON",
           "faction":"XENON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "179",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -3518,6 +4080,12 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "167",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -3537,6 +4105,12 @@
           "race":"ARGON",
           "owner":"ARGON",
           "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "181",
+          "connectionType": "NE"
         }
       ]
     },
@@ -3578,6 +4152,16 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "170",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "184",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -3618,6 +4202,12 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "185",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -3637,6 +4227,12 @@
           "race":"ARGON",
           "owner":"ARGON",
           "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "173",
+          "connectionType": "S"
         }
       ]
     },
@@ -3658,6 +4254,16 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "174",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "186",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -3677,6 +4283,12 @@
           "race":"ARGON",
           "owner":"ARGON",
           "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "175",
+          "connectionType": "S"
         }
       ]
     },
@@ -3698,6 +4310,12 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "187",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -3717,6 +4335,12 @@
           "race":"TELADI",
           "owner":"TELADI",
           "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "177",
+          "connectionType": "S"
         }
       ]
     },
@@ -3738,6 +4362,12 @@
           "owner":"TELADI",
           "faction":"TELADI"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "178",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -3757,6 +4387,12 @@
           "race":"PARANID",
           "owner":"PARANID",
           "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "188",
+          "connectionType": "SE"
         }
       ]
     },
@@ -3778,6 +4414,12 @@
           "owner":"XENON",
           "faction":"XENON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "180",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -3797,6 +4439,12 @@
           "race":"XENON",
           "owner":"XENON",
           "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "181",
+          "connectionType": "S"
         }
       ]
     },
@@ -3818,6 +4466,12 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "190",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -3837,6 +4491,16 @@
           "race":"ARGON",
           "owner":"ARGON",
           "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "183",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "191",
+          "connectionType": "SE"
         }
       ]
     },
@@ -3858,6 +4522,12 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "184",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -3877,6 +4547,12 @@
           "race":"ARGON",
           "owner":"ARGON",
           "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "192",
+          "connectionType": "SE"
         }
       ]
     },
@@ -3898,6 +4574,12 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "194",
+          "connectionType": "SE"
+        }
       ]
     },
     {
@@ -3918,6 +4600,12 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "195",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -3937,6 +4625,12 @@
           "race":"PARANID",
           "owner":"PARANID",
           "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "196",
+          "connectionType": "SE"
         }
       ]
     },
@@ -3978,6 +4672,12 @@
           "owner":"XENON",
           "faction":"XENON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "201",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -3997,6 +4697,12 @@
           "race":"ARGON",
           "owner":"ARGON",
           "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "191",
+          "connectionType": "S"
         }
       ]
     },
@@ -4018,6 +4724,12 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "203",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -4038,6 +4750,16 @@
           "owner":"XENON",
           "faction":"XENON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "193",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "205",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -4057,6 +4779,12 @@
           "race":"XENON",
           "owner":"XENON",
           "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "206",
+          "connectionType": "NE"
         }
       ]
     },
@@ -4098,6 +4826,12 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "208",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -4117,6 +4851,16 @@
           "race":"PARANID",
           "owner":"PARANID",
           "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "197",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "209",
+          "connectionType": "NE"
         }
       ]
     },
@@ -4142,7 +4886,7 @@
     },
     {
       "id":"198",
-      "name":"Unkown Sector Alpha",
+      "name":"Unknown Sector Alpha",
       "description":"15",
       "music":"music_cluster_02",
       "sunlight":"1",
@@ -4157,6 +4901,12 @@
           "race":"XENON",
           "owner":"XENON",
           "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "211",
+          "connectionType": "SE"
         }
       ]
     },
@@ -4178,11 +4928,17 @@
           "owner":"PARANID",
           "faction":"PARANID"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "213",
+          "connectionType": "SE"
+        }
       ]
     },
     {
       "id":"200",
-      "name":"Gamily Niy",
+      "name":"Family Niy",
       "description":"15",
       "music":"music_cluster_02",
       "sunlight":"1",
@@ -4197,6 +4953,16 @@
           "race":"PARANID",
           "owner":"PARANID",
           "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "214",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "178",
+          "connectionType": "SE"
         }
       ]
     },
@@ -4238,6 +5004,12 @@
           "owner":"XENON",
           "faction":"XENON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "216",
+          "connectionType": "SE"
+        }
       ]
     },
     {
@@ -4257,6 +5029,12 @@
           "race":"ARGON",
           "owner":"ARGON",
           "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "217",
+          "connectionType": "SE"
         }
       ]
     },
@@ -4278,6 +5056,12 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "205",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -4297,6 +5081,12 @@
           "race":"XENON",
           "owner":"XENON",
           "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "218",
+          "connectionType": "SE"
         }
       ]
     },
@@ -4338,6 +5128,16 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "208",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "220",
+          "connectionType": "SE"
+        }
       ]
     },
     {
@@ -4377,6 +5177,16 @@
           "race":"TELADI",
           "owner":"TELADI",
           "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "210",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "223",
+          "connectionType": "SE"
         }
       ]
     },
@@ -4418,6 +5228,12 @@
           "owner":"XENON",
           "faction":"XENON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "212",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -4437,6 +5253,12 @@
           "race":"ARGON",
           "owner":"ARGON",
           "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "224",
+          "connectionType": "NE"
         }
       ]
     },
@@ -4458,6 +5280,12 @@
           "owner":"TELADI",
           "faction":"TELADI"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "226",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -4477,6 +5305,16 @@
           "race":"PARANID",
           "owner":"PARANID",
           "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "215",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "227",
+          "connectionType": "NE"
         }
       ]
     },
@@ -4498,6 +5336,12 @@
           "owner":"XENON",
           "faction":"XENON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "216",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -4517,6 +5361,12 @@
           "race":"XENON",
           "owner":"XENON",
           "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "229",
+          "connectionType": "SE"
         }
       ]
     },
@@ -4538,6 +5388,12 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "230",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -4557,6 +5413,12 @@
           "race":"XENON",
           "owner":"XENON",
           "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "231",
+          "connectionType": "NE"
         }
       ]
     },
@@ -4578,6 +5440,16 @@
           "owner":"ARGON",
           "faction":"ARGON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "220",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "233",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -4597,6 +5469,12 @@
           "race":"ARGON",
           "owner":"ARGON",
           "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "234",
+          "connectionType": "NE"
         }
       ]
     },
@@ -4618,6 +5496,16 @@
           "owner":"TELADI",
           "faction":"TELADI"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "222",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "235",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -4637,6 +5525,16 @@
           "race":"TELADI",
           "owner":"TELADI",
           "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "223",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "236",
+          "connectionType": "NE"
         }
       ]
     },
@@ -4658,6 +5556,12 @@
           "owner":"TELADI",
           "faction":"TELADI"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "237",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -4678,6 +5582,16 @@
           "owner":"TELADI",
           "faction":"TELADI"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "225",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "240",
+          "connectionType": "SE"
+        }
       ]
     },
     {
@@ -4697,6 +5611,12 @@
           "race":"TELADI",
           "owner":"TELADI",
           "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "226",
+          "connectionType": "S"
         }
       ]
     },
@@ -4738,6 +5658,12 @@
           "owner":"PARANID",
           "faction":"PARANID"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "228",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -4757,6 +5683,12 @@
           "race":"PARANID",
           "owner":"PARANID",
           "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "241",
+          "connectionType": "SE"
         }
       ]
     },
@@ -4778,6 +5710,12 @@
           "owner":"XENON",
           "faction":"XENON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "230",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -4789,7 +5727,7 @@
       "economy":"0.5",
       "security":"0.5",
       "x":17,
-      "y":-5,
+      "y":-4,
       "backdrop":"empty_space",
       "stations":[
         {
@@ -4797,6 +5735,12 @@
           "race":"ARGON",
           "owner":"ARGON",
           "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "243",
+          "connectionType": "NE"
         }
       ]
     },
@@ -4818,6 +5762,12 @@
           "owner":"XENON",
           "faction":"XENON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "245",
+          "connectionType": "SE"
+        }
       ]
     },
     {
@@ -4838,11 +5788,17 @@
           "owner":"XENON",
           "faction":"XENON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "233",
+          "connectionType": "S"
+        }
       ]
     },
     {
       "id":"233",
-      "name":"Unkown Sector Delta",
+      "name":"Unknown Sector Delta",
       "description":"17",
       "music":"music_cluster_02",
       "sunlight":"1",
@@ -4857,6 +5813,16 @@
           "race":"XENON",
           "owner":"XENON",
           "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "234",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "246",
+          "connectionType": "SE"
         }
       ]
     },
@@ -4878,11 +5844,17 @@
           "owner":"TELADI",
           "faction":"TELADI"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "235",
+          "connectionType": "S"
+        }
       ]
     },
     {
       "id":"235",
-      "name":"Company Strength",
+      "name":"Company of Strength",
       "description":"17",
       "music":"music_cluster_02",
       "sunlight":"1",
@@ -4897,6 +5869,12 @@
           "race":"TELADI",
           "owner":"TELADI",
           "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "247",
+          "connectionType": "S"
         }
       ]
     },
@@ -4918,6 +5896,12 @@
           "owner":"TELADI",
           "faction":"TELADI"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "248",
+          "connectionType": "SE"
+        }
       ]
     },
     {
@@ -4937,6 +5921,12 @@
           "race":"TELADI",
           "owner":"TELADI",
           "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "238",
+          "connectionType": "S"
         }
       ]
     },
@@ -4978,6 +5968,12 @@
           "owner":"XENON",
           "faction":"XENON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "240",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -5018,6 +6014,16 @@
           "owner":"PARANID",
           "faction":"PARANID"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "242",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "249",
+          "connectionType": "SE"
+        }
       ]
     },
     {
@@ -5037,6 +6043,16 @@
           "race":"XENON",
           "owner":"XENON",
           "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "243",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "250",
+          "connectionType": "NE"
         }
       ]
     },
@@ -5058,6 +6074,16 @@
           "owner":"TELADI",
           "faction":"TELADI"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "244",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "251",
+          "connectionType": "NE"
+        }
       ]
     },
     {
@@ -5077,6 +6103,12 @@
           "race":"TELADI",
           "owner":"TELADI",
           "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "245",
+          "connectionType": "S"
         }
       ]
     },
@@ -5117,6 +6149,12 @@
           "race":"XENON",
           "owner":"XENON",
           "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "252",
+          "connectionType": "NE"
         }
       ]
     },
@@ -5198,6 +6236,12 @@
           "owner":"XENON",
           "faction":"XENON"
         }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "254",
+          "connectionType": "SE"
+        }
       ]
     },
     {
@@ -5257,6 +6301,12 @@
           "race":"XENON",
           "owner":"XENON",
           "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "254",
+          "connectionType": "S"
         }
       ]
     },
