@@ -93,6 +93,10 @@ public class UniverseGenerator {
         target = path + "/md/X4Ep1_Mentor_Subscription.xml";
         copyUtils.copyToOutputDir(source, target);
 
+        source = "/core/Notifications.xml";
+        target = path + "/md/Notifications.xml";
+        copyUtils.copyToOutputDir(source, target);
+
         source = "/core/defaults.xml";
         target = path + "/libraries/defaults.xml";
         copyUtils.copyToOutputDir(source, target);
