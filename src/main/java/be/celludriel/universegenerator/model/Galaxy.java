@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +28,7 @@ public class Galaxy extends AbstractJson {
     private List<Job> jobs = new ArrayList<>();
     private List<FactionStart> factionStarts = new ArrayList<>();
     private List<SpaceObject> spaceObjects = new ArrayList<>();
+    private List<DataVault> dataVaults = new ArrayList<>();
 
     public long getSeed() {
         return seed;
@@ -104,6 +106,11 @@ public class Galaxy extends AbstractJson {
         return galaxyOptions;
     }
 
+    @JsonIgnore
+    public List<DataVault> getDataVaults() {
+        return dataVaults;
+    }
+
     public void setSeed(long seed) {
         this.seed = seed;
     }
@@ -176,6 +183,10 @@ public class Galaxy extends AbstractJson {
         this.spaceObjects.add(spaceObject);
     }
 
+    public void addDataVault(DataVault dataVault) {
+        this.dataVaults.add(dataVault);
+    }
+
     public boolean containsClaimableShips(){
         for (SpaceObject spaceObject : spaceObjects) {
             if(spaceObject.getType() == SpaceObjectType.CLAIM){
@@ -212,6 +223,7 @@ public class Galaxy extends AbstractJson {
                 .append(jobs, galaxy.jobs)
                 .append(factionStarts, galaxy.factionStarts)
                 .append(spaceObjects, galaxy.spaceObjects)
+                .append(dataVaults, galaxy.dataVaults)
                 .isEquals();
     }
 
@@ -236,6 +248,7 @@ public class Galaxy extends AbstractJson {
                 .append(jobs)
                 .append(factionStarts)
                 .append(spaceObjects)
+                .append(dataVaults)
                 .toHashCode();
     }
 }

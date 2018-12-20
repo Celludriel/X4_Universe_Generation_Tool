@@ -23,6 +23,7 @@ public class UniverseGenerator {
     private final BeltProcessor beltProcessor;
     private final FactionLogicProcessor factionLogicProcessor;
     private final SpaceObjectProcessor spaceObjectProcessor;
+    private final DataVaultProcessor dataVaultProcessor;
 
     private final Randomizer randomizer;
     private final CopyUtils copyUtils;
@@ -34,6 +35,7 @@ public class UniverseGenerator {
         beltProcessor = new BeltProcessor(randomizer);
         factionLogicProcessor = new FactionLogicProcessor();
         this.spaceObjectProcessor = new SpaceObjectProcessor(randomizer);
+        this.dataVaultProcessor = new DataVaultProcessor(randomizer);
         this.copyUtils = new CopyUtils();
     }
 
@@ -49,6 +51,7 @@ public class UniverseGenerator {
             factionLogicProcessor.processFactionLogicData(galaxy, cluster);
             spaceObjectProcessor.processSpaceObjects(galaxy, cluster);
         }
+        dataVaultProcessor.generateDataVaultData(galaxy);
     }
 
     private void generateOutput(Galaxy galaxy) throws IOException, TemplateException, URISyntaxException {
@@ -88,6 +91,10 @@ public class UniverseGenerator {
 
         source = "/core/X4Ep1_Mentor_Subscription.xml";
         target = path + "/md/X4Ep1_Mentor_Subscription.xml";
+        copyUtils.copyToOutputDir(source, target);
+
+        source = "/core/Notifications.xml";
+        target = path + "/md/Notifications.xml";
         copyUtils.copyToOutputDir(source, target);
 
         source = "/core/defaults.xml";

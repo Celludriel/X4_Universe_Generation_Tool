@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+    <replace sel="//cue[@name='ChangedSpace']">
+        <cue name="ChangedSpace" instantiate="true" namespace="this">
+            <conditions>
+                <event_object_changed_sector object="player.entity" />
+                <check_value value="event.param != null" />
+                <set_value name="$lastchange" exact="player.age" comment="Stored in static cue!" />
+            </conditions>
+            <delay exact="2s"/>
+            <actions>
+                <do_if value="@md.$SuppressChangedSpace or not event.param.exists">
+                    <cancel_cue cue="this"/>
+                </do_if>
+                <do_else>
+                    <set_value name="$newsector" exact="event.param"/>
+                    <set_value name="$oldsector" exact="event.param2"/>
+
+                    <!-- If $oldsector != null (i.e. we did not just fly through a superhighway), the clusters do not match and the system IDs do not match, then we have changed star systems -->
+                    <do_if value="$oldsector != null and $newsector.cluster != $oldsector.cluster and ($newsector.cluster.systemid == 0 or $newsector.cluster.systemid != $oldsector.cluster.systemid)">
+                        <!-- star system has changed -->
+                        <show_help custom="'Entering: ' + $newsector.cluster.knownname"/>
+                    </do_if>
+                    <!-- Otherwise we have just changed stellar region (effectively) -->
+                    <do_else>
+                        <!-- sector within a cluster or cluster within a system has changed -->
+                        <show_help custom="'Entering: ' + $newsector.knownname"/>
+                    </do_else>
+
+                    <cancel_cue cue="this"/>
+                </do_else>
+            </actions>
+            <cues>
+                <cue name="ChangedSpaceCancel">
+                    <conditions>
+                        <event_object_changed_sector object="player.entity"/>
+                    </conditions>
+                    <actions>
+                        <cancel_cue cue="ChangedSpace"/>
+                    </actions>
+                </cue>
+            </cues>
+        </cue>
+    </replace>
+</diff>

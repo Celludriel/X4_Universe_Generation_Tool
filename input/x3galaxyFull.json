@@ -1,10 +1,10 @@
 {
-  "galaxyName": "x3galaxy",
-  "galaxyPrefix": "x3g",
-  "description": "Original X3 galaxy",
+  "galaxyName": "x3galaxyFull",
+  "galaxyPrefix": "x3gf",
+  "description": "Complete original X3 galaxy",
   "author": "celludriel",
   "version": "1.0.0",
-  "date": "2018-12-12",
+  "date": "2018-12-18",
   "save": "0",
   "seed": "20051028",
   "minRandomBelts": 3,
@@ -394,7 +394,7 @@
       ],
       "stations": [
         {"type": "SHIPYARD", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
-        {"type": "EQUIP", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
+        {"type": "WHARF", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
         {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
       ]
     },
@@ -416,8 +416,8 @@
         }
       ],
       "stations": [
-        {"type": "WHARF", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
-        {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
+        {"type": "EQUIP", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
       ]
     },
     {
@@ -462,6 +462,11 @@
           "targetClusterId": "40",
           "connectionType": "SE"
         }
+      ],
+      "stations": [
+        {"type": "SHIPYARD", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
+        {"type": "WHARF", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
+        {"type": "DEFENCE", "race":  "XENON", "owner": "XENON", "faction": "XENON"}
       ]
     },
     {
@@ -644,6 +649,12 @@
       ],
       "stations": [
         {"type": "DEFENCE", "race":  "PARANID", "owner": "PARANID", "faction": "PARANID"}
+      ],
+      "connections": [
+        {
+          "targetClusterId": "83",
+          "connectionType": "S"
+        }
       ]
     },
     {
@@ -895,7 +906,13 @@
       "security": "0.25",
       "x": -1,
       "y": -6,
-      "backdrop": "empty_space"
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "71",
+          "connectionType": "S"
+        }
+      ]
     },
     {
       "id": "40",
@@ -1068,11 +1085,6 @@
           "targetClusterId": "55",
           "connectionType": "NE"
         }
-      ],
-      "stations": [
-        {"type": "PIRATEBASE", "race":  "TELADI", "owner": "SCALEPLATE", "faction": "SCALEPLATE"},
-        {"type": "PIRATEDOCK", "race":  "TELADI", "owner": "SCALEPLATE", "faction": "SCALEPLATE"},
-        {"type": "DEFENCE", "race":  "TELADI", "owner": "SCALEPLATE", "faction": "SCALEPLATE"}
       ]
     },
     {
@@ -1252,6 +1264,10 @@
       "backdrop": "empty_space",
       "connections": [
         {
+          "targetClusterId": "56",
+          "connectionType": "S"
+        },
+        {
           "targetClusterId": "63",
           "connectionType": "SE"
         }
@@ -1265,20 +1281,12 @@
       "sunlight": "1",
       "economy": "0.75",
       "security": "0.75",
-      "x": -2,
-      "y": 1,
+      "x": 4,
+      "y": -4,
       "backdrop": "empty_space",
-      "connections": [
-        {
-          "targetClusterId": "71",
-          "connectionType": "S"
-        },
-        {
-          "targetClusterId": "08",
-          "connectionType": "SE"
-        }
-      ],
       "stations": [
+        {"type": "SHIPYARD", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
+        {"type": "WHARF", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
         {"type": "DEFENCE", "race":  "XENON", "owner": "XENON", "faction": "XENON"}
       ]
     },
@@ -1298,6 +1306,10 @@
         {
           "targetClusterId": "58",
           "connectionType": "S"
+        },
+        {
+          "targetClusterId": "164",
+          "connectionType": "SE"
         }
       ],
       "stations": [
@@ -1439,7 +1451,9 @@
         }
       ],
       "stations": [
-        {"type": "DEFENCE", "race":  "PARANID", "owner": "HOLYORDER", "faction": "HOLYORDER"}
+        {"type": "PIRATEBASE", "race":  "TELADI", "owner": "SCALEPLATE", "faction": "SCALEPLATE"},
+        {"type": "PIRATEDOCK", "race":  "TELADI", "owner": "SCALEPLATE", "faction": "SCALEPLATE"},
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "SCALEPLATE", "faction": "SCALEPLATE"}
       ]
     },
     {
@@ -1603,41 +1617,4717 @@
       ]
     },
     {
-      "id": "71",
-      "name": "Xenon Sector 102",
-      "description": "Xenon Sector 102",
-      "music": "music_cluster_02",
-      "sunlight": "1",
-      "economy": "0.5",
-      "security": "0.5",
-      "x": -2,
-      "y": 0,
-      "backdrop": "empty_space",
-      "connections": [
+      "id":"71",
+      "name":"Weaver's Tempest",
+      "description":"-1",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":-1,
+      "y":-7,
+      "backdrop":"empty_space",
+      "stations":[
         {
-          "targetClusterId": "72",
-          "connectionType": "S"
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
         }
-      ],
-      "stations": [
-        {"type": "DEFENCE", "race":  "XENON", "owner": "XENON", "faction": "XENON"}
       ]
     },
     {
-      "id": "72",
-      "name": "Xenon Sector 103",
-      "description": "Xenon Sector 103",
-      "music": "music_cluster_02",
-      "sunlight": "1",
-      "economy": "0.5",
-      "security": "0.5",
-      "x": -2,
-      "y": -1,
-      "backdrop": "empty_space",
-      "stations": [
-        {"type": "SHIPYARD", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
-        {"type": "WHARF", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
-        {"type": "DEFENCE", "race":  "XENON", "owner": "XENON", "faction": "XENON"}
+      "id":"72",
+      "name":"Depths of Silence",
+      "description":"-1",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":-1,
+      "y":-10,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "74",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"73",
+      "name":"Rhy's Crusade",
+      "description":"0",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":0,
+      "y":-8,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "77",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"74",
+      "name":"Dark Waters",
+      "description":"0",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":0,
+      "y":-10,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "75",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "79",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"75",
+      "name":"Shining Currents",
+      "description":"0",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":0,
+      "y":-11,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "76",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "80",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"76",
+      "name":"Ashley's Paradise",
+      "description":"0",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":0,
+      "y":-12,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ]
+    },
+    {
+      "id":"77",
+      "name":"Rhy's Desire",
+      "description":"1",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":1,
+      "y":-8,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "78",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "84",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"78",
+      "name":"Family Rhy",
+      "description":"1",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":1,
+      "y":-9,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "79",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "85",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"79",
+      "name":"Reservoir of Tranquility",
+      "description":"1",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":1,
+      "y":-10,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "86",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"80",
+      "name":"Great Reef",
+      "description":"1",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":1,
+      "y":-11,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ]
+    },
+    {
+      "id":"81",
+      "name":"Mists of Elysium",
+      "description":"1",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":1,
+      "y":-12,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "82",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "87",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"82",
+      "name":"Prophecy Fulfilled",
+      "description":"1",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":1,
+      "y":-13,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ]
+    },
+    {
+      "id":"83",
+      "name":"Bad Dept",
+      "description":"2",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":2,
+      "y":-7,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ]
+    },
+    {
+      "id":"84",
+      "name":"Ministry of Finance",
+      "description":"2",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":2,
+      "y":-8,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ]
+    },
+    {
+      "id":"85",
+      "name":"Wretched Skies",
+      "description":"2",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":2,
+      "y":-9,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "89",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"86",
+      "name":"Barren Shores",
+      "description":"2",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":2,
+      "y":-10,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ]
+    },
+    {
+      "id":"87",
+      "name":"Unknown Sector Nu",
+      "description":"2",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":2,
+      "y":-12,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ]
+    },
+    {
+      "id":"88",
+      "name":"Rhonkar's Trial",
+      "description":"3",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":3,
+      "y":-8,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "89",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"89",
+      "name":"The Shallows",
+      "description":"3",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":3,
+      "y":-9,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "93",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"90",
+      "name":"Light Water",
+      "description":"4",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":4,
+      "y":-5,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "91",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"91",
+      "name":"Shore of Infinity",
+      "description":"4",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":4,
+      "y":-6,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "92",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "95",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"92",
+      "name":"Blue Storm",
+      "description":"4",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":4,
+      "y":-7,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ]
+    },
+    {
+      "id":"93",
+      "name":"Overmasters",
+      "description":"4",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":4,
+      "y":-9,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ]
+    },
+    {
+      "id":"94",
+      "name":"Unknown Sector Gamma",
+      "description":"5",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":5,
+      "y":-5,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "95",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "99",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"95",
+      "name":"Lucky Planets",
+      "description":"5",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":5,
+      "y":-6,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "100",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"96",
+      "name":"Clarity's End",
+      "description":"5",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":5,
+      "y":-8,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "102",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"97",
+      "name":"Aladna Hill",
+      "description":"6",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":6,
+      "y":-3,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "98",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "108",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"98",
+      "name":"Light of Heart",
+      "description":"6",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":6,
+      "y":-4,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "99",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"99",
+      "name":"Montelaar",
+      "description":"6",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":6,
+      "y":-5,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "100",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "110",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"100",
+      "name":"Rolk's Legacy",
+      "description":"6",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":6,
+      "y":-6,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "101",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "111",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"101",
+      "name":"Gunne's Crusade",
+      "description":"6",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":6,
+      "y":-7,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "102",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"102",
+      "name":"Third Redemption",
+      "description":"6",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":6,
+      "y":-8,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "103",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "113",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"103",
+      "name":"Leap of Faith",
+      "description":"6",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":6,
+      "y":-9,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ]
+    },
+    {
+      "id":"104",
+      "name":"Tortuga's Retreat",
+      "description":"6",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":6,
+      "y":-10,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "115",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"105",
+      "name":"Scion Fire",
+      "description":"6",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":6,
+      "y":-11,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "116",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"106",
+      "name":"Emperor's Pride",
+      "description":"6",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":6,
+      "y":-12,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "107",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "117",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"107",
+      "name":"Unseen Domain",
+      "description":"6",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":6,
+      "y":-13,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "118",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"108",
+      "name":"Akeela's Beacon",
+      "description":"7",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":7,
+      "y":-3,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ]
+    },
+    {
+      "id":"109",
+      "name":"Legend's Home",
+      "description":"7",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":7,
+      "y":-4,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "121",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"110",
+      "name":"Unkown Sector Epsilon",
+      "description":"7",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":7,
+      "y":-5,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ]
+    },
+    {
+      "id":"111",
+      "name":"Great Trench",
+      "description":"7",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":7,
+      "y":-6,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "112",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "123",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"112",
+      "name":"Z Alpha",
+      "description":"7",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":7,
+      "y":-7,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ]
+    },
+    {
+      "id":"113",
+      "name":"Peredition's End",
+      "description":"7",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":7,
+      "y":-8,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "114",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"114",
+      "name":"Desecrated Skies",
+      "description":"7",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":7,
+      "y":-9,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "115",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "126",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"115",
+      "name":"Priest Refuge",
+      "description":"7",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":7,
+      "y":-10,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "116",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "127",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"116",
+      "name":"Spring of Belief",
+      "description":"7",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":7,
+      "y":-11,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "117",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "128",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"117",
+      "name":"Unholy Descent",
+      "description":"7",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":7,
+      "y":-12,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "129",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"118",
+      "name":"Unknown Sector Kappa",
+      "description":"7",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":7,
+      "y":-13,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ]
+    },
+    {
+      "id":"119",
+      "name":"Creditiana",
+      "description":"8",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":8,
+      "y":-2,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "131",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"120",
+      "name":"Y Alpha",
+      "description":"8",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":8,
+      "y":-3,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "121",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"121",
+      "name":"Unkown Sector Beta",
+      "description":"8",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":8,
+      "y":-4,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "122",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "133",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"122",
+      "name":"New Income",
+      "description":"8",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":8,
+      "y":-5,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "123",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "134",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"123",
+      "name":"Ceo's Doubt",
+      "description":"8",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":8,
+      "y":-6,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "124",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"124",
+      "name":"LooManckStrat's Legacy",
+      "description":"8",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":8,
+      "y":-7,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "125",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "136",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"125",
+      "name":"Mi Ton's Refuge",
+      "description":"8",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":8,
+      "y":-8,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "126",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "137",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"126",
+      "name":"Moo-kye's Revenge",
+      "description":"8",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":8,
+      "y":-9,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ]
+    },
+    {
+      "id":"127",
+      "name":"Cardinal's Domain",
+      "description":"8",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":8,
+      "y":-10,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "128",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"128",
+      "name":"Friar's Retreat",
+      "description":"8",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":8,
+      "y":-11,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "129",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "140",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"129",
+      "name":"Consecrated Fire",
+      "description":"8",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":8,
+      "y":-12,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ]
+    },
+    {
+      "id":"130",
+      "name":"Two Grand",
+      "description":"9",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":9,
+      "y":-1,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "131",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"131",
+      "name":"Profit Center Alpha",
+      "description":"9",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":9,
+      "y":-2,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "144",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"132",
+      "name":"Y Beta",
+      "description":"9",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":9,
+      "y":-3,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "133",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"133",
+      "name":"Eighteen Billion",
+      "description":"9",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":9,
+      "y":-4,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "134",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "146",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"134",
+      "name":"Ianamus Zura",
+      "description":"9",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":9,
+      "y":-5,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "135",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "147",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"135",
+      "name":"Y Gamma",
+      "description":"9",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":9,
+      "y":-6,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ]
+    },
+    {
+      "id":"136",
+      "name":"Magrathea",
+      "description":"9",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":9,
+      "y":-7,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "149",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"137",
+      "name":"Jupiter 3",
+      "description":"9",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":9,
+      "y":-8,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "150",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"138",
+      "name":"Saturn 3",
+      "description":"9",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":9,
+      "y":-9,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "151",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"139",
+      "name":"Sacred Relic",
+      "description":"9",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":9,
+      "y":-10,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "140",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"140",
+      "name":"Pontiflex' Seclusion",
+      "description":"9",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":9,
+      "y":-11,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "141",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "152",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"141",
+      "name":"Heaven's Assertion",
+      "description":"9",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":9,
+      "y":-12,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "142",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "153",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"142",
+      "name":"Lasting Vengeance",
+      "description":"9",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":9,
+      "y":-13,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ]
+    },
+    {
+      "id":"143",
+      "name":"V Alpha",
+      "description":"10",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":10,
+      "y":-1,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "144",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"144",
+      "name":"PTNI Headquarters",
+      "description":"10",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":10,
+      "y":-2,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "145",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "154",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"145",
+      "name":"Scale Plate Green",
+      "description":"10",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":10,
+      "y":-3,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "146",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "155",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"146",
+      "name":"Xenon Sector 347",
+      "description":"10",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":10,
+      "y":-4,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ]
+    },
+    {
+      "id":"147",
+      "name":"Homily of Perpetuity",
+      "description":"10",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":10,
+      "y":-5,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "148",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "157",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"148",
+      "name":"Aquisition Repository",
+      "description":"10",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":10,
+      "y":-6,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "149",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"149",
+      "name":"Spaceweed Grove",
+      "description":"10",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":10,
+      "y":-7,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ]
+    },
+    {
+      "id":"150",
+      "name":"Jupiter 2",
+      "description":"10",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":10,
+      "y":-8,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "159",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"151",
+      "name":"Saturn 2",
+      "description":"10",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":10,
+      "y":-9,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "160",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"152",
+      "name":"Duke's Citadel",
+      "description":"10",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":10,
+      "y":-11,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "161",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"153",
+      "name":"Terran D",
+      "description":"10",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":10,
+      "y":-12,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "162",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"154",
+      "name":"Void of Opportunity",
+      "description":"11",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":11,
+      "y":-2,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ]
+    },
+    {
+      "id":"155",
+      "name":"Nyana's Hideout",
+      "description":"11",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":11,
+      "y":-3,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "156",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "167",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"156",
+      "name":"V Beta",
+      "description":"11",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":11,
+      "y":-4,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ]
+    },
+    {
+      "id":"157",
+      "name":"V Delta",
+      "description":"11",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":11,
+      "y":-5,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ]
+    },
+    {
+      "id":"158",
+      "name":"Asteroid Belt",
+      "description":"11",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":11,
+      "y":-7,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "159",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "170",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"159",
+      "name":"Jupiter  ",
+      "description":"11",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":11,
+      "y":-8,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "171",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"160",
+      "name":"Saturn",
+      "description":"11",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":11,
+      "y":-9,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "172",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"161",
+      "name":"Perpetual Sin",
+      "description":"11",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":11,
+      "y":-11,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "162",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"162",
+      "name":"Terran C",
+      "description":"11",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":11,
+      "y":-12,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "175",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"163",
+      "name":"The Vault",
+      "description":"12",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":12,
+      "y":3,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "164",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"164",
+      "name":"Shareholder's Fortune",
+      "description":"12",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":12,
+      "y":2,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "176",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"165",
+      "name":"Sanctuary of Darkness",
+      "description":"12",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":12,
+      "y":-1,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "179",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"166",
+      "name":"Circle of Labour",
+      "description":"12",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":12,
+      "y":-2,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "167",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"167",
+      "name":"Omicron Lyrae",
+      "description":"12",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":12,
+      "y":-3,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "181",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"168",
+      "name":"V Gamma",
+      "description":"12",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":12,
+      "y":-4,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ]
+    },
+    {
+      "id":"169",
+      "name":"Mercury",
+      "description":"12",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":12,
+      "y":-6,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "170",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "184",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"170",
+      "name":"Mars",
+      "description":"12",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":12,
+      "y":-7,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ]
+    },
+    {
+      "id":"171",
+      "name":"Venus",
+      "description":"12",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":12,
+      "y":-8,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "185",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"172",
+      "name":"Titan",
+      "description":"12",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":12,
+      "y":-9,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "173",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"173",
+      "name":"Uranus",
+      "description":"12",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":12,
+      "y":-10,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "174",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "186",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"174",
+      "name":"Terran A",
+      "description":"12",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":12,
+      "y":-11,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "175",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"175",
+      "name":"Terran B",
+      "description":"12",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":12,
+      "y":-12,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "187",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"176",
+      "name":"Mines of Fortune",
+      "description":"13",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":13,
+      "y":2,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "177",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"177",
+      "name":"Home of Opportunity",
+      "description":"13",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":13,
+      "y":1,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "178",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"178",
+      "name":"Family Tkr",
+      "description":"13",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":13,
+      "y":0,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "188",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"179",
+      "name":"Guiding Star",
+      "description":"13",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":13,
+      "y":-1,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "180",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"180",
+      "name":"Elysium of Light",
+      "description":"13",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":13,
+      "y":-2,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "181",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"181",
+      "name":"Treasure Chest",
+      "description":"13",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":13,
+      "y":-3,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "190",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"182",
+      "name":"Far Point",
+      "description":"13",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":13,
+      "y":-4,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "183",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "191",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"183",
+      "name":"Argon Sector M148",
+      "description":"13",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":13,
+      "y":-5,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "184",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"184",
+      "name":"Heretic's End",
+      "description":"13",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":13,
+      "y":-6,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "192",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"185",
+      "name":"The Moon",
+      "description":"13",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":13,
+      "y":-8,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "194",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"186",
+      "name":"Uranus 2",
+      "description":"13",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":13,
+      "y":-10,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "195",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"187",
+      "name":"Patriarch's Conclusion",
+      "description":"13",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":13,
+      "y":-12,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "196",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"188",
+      "name":"Tkr's Deprivation",
+      "description":"14",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":14,
+      "y":0,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ]
+    },
+    {
+      "id":"189",
+      "name":"Xenon Sector 472",
+      "description":"14",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":14,
+      "y":-2,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "201",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"190",
+      "name":"Black Hole Sun",
+      "description":"14",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":14,
+      "y":-3,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "191",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"191",
+      "name":"Nathan's Voyage",
+      "description":"14",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":14,
+      "y":-4,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "203",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"192",
+      "name":"Spires of Elusion",
+      "description":"14",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":14,
+      "y":-6,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "193",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "205",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"193",
+      "name":"Megnir",
+      "description":"14",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":14,
+      "y":-7,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "206",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"194",
+      "name":"Earth",
+      "description":"14",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":14,
+      "y":-8,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ]
+    },
+    {
+      "id":"195",
+      "name":"Uranus 3",
+      "description":"14",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":14,
+      "y":-10,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "208",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"196",
+      "name":"Contorted Dominion",
+      "description":"14",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":14,
+      "y":-12,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "197",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "209",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"197",
+      "name":"Thyn's Excavation",
+      "description":"14",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":14,
+      "y":-13,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ]
+    },
+    {
+      "id":"198",
+      "name":"Unknown Sector Alpha",
+      "description":"15",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":15,
+      "y":3,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "211",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"199",
+      "name":"Ghinn's Escape",
+      "description":"15",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":15,
+      "y":0,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "213",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"200",
+      "name":"Family Niy",
+      "description":"15",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":15,
+      "y":-1,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "214",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "178",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"201",
+      "name":"Thyn's Abyss",
+      "description":"15",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":15,
+      "y":-2,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ]
+    },
+    {
+      "id":"202",
+      "name":"Albion Alpha",
+      "description":"15",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":15,
+      "y":-3,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "216",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"203",
+      "name":"Wastelands",
+      "description":"15",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":15,
+      "y":-4,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "217",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"204",
+      "name":"Interworlds",
+      "description":"15",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":15,
+      "y":-5,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "205",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"205",
+      "name":"Twisted Skies",
+      "description":"15",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":15,
+      "y":-6,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "218",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"206",
+      "name":"Segaris",
+      "description":"15",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":15,
+      "y":-7,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ]
+    },
+    {
+      "id":"207",
+      "name":"Neptune",
+      "description":"15",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":15,
+      "y":-9,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "208",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "220",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"208",
+      "name":"Pluto",
+      "description":"15",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":15,
+      "y":-10,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ]
+    },
+    {
+      "id":"209",
+      "name":"Faded Dreams",
+      "description":"15",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":15,
+      "y":-12,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "210",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "223",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"210",
+      "name":"Veil of Delusion",
+      "description":"15",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":15,
+      "y":-13,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ]
+    },
+    {
+      "id":"211",
+      "name":"Xenon Sector 534",
+      "description":"16",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":16,
+      "y":3,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "212",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"212",
+      "name":"Getsu Fune",
+      "description":"16",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":16,
+      "y":2,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "224",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"213",
+      "name":"Hila's Joy",
+      "description":"16",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":16,
+      "y":0,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "226",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"214",
+      "name":"Niy's Deception",
+      "description":"16",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":16,
+      "y":-1,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "215",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "227",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"215",
+      "name":"Albion Delta",
+      "description":"16",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":16,
+      "y":-2,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "216",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"216",
+      "name":"Albion Beta",
+      "description":"16",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":16,
+      "y":-3,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "229",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"217",
+      "name":"Midnight Star",
+      "description":"16",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":16,
+      "y":-4,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "230",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"218",
+      "name":"Gaian Star",
+      "description":"16",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":16,
+      "y":-6,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "231",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"219",
+      "name":"Oort Cloud",
+      "description":"16",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":16,
+      "y":-8,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "220",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "233",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"220",
+      "name":"Kuiper Belt",
+      "description":"16",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":16,
+      "y":-9,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "234",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"221",
+      "name":"Sanctity of Corruption",
+      "description":"16",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":16,
+      "y":-10,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "222",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "235",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"222",
+      "name":"Queen's Retribution",
+      "description":"16",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":16,
+      "y":-11,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "223",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "236",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"223",
+      "name":"Queen's Harbour",
+      "description":"16",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":16,
+      "y":-12,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "237",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"224",
+      "name":"Menaleus' Paradise",
+      "description":"17",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":17,
+      "y":2,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "225",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "240",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"225",
+      "name":"Blusish Snout",
+      "description":"17",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":17,
+      "y":1,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "226",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"226",
+      "name":"Ocean of Fantasy",
+      "description":"17",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":17,
+      "y":0,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ]
+    },
+    {
+      "id":"227",
+      "name":"Family Ryk",
+      "description":"17",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":17,
+      "y":-1,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "228",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"228",
+      "name":"Family Zyarth",
+      "description":"17",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":17,
+      "y":-2,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "241",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"229",
+      "name":"Albion Gamma",
+      "description":"17",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":17,
+      "y":-3,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "230",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"230",
+      "name":"Belt of Anguilar",
+      "description":"17",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":17,
+      "y":-4,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"ARGON",
+          "owner":"ARGON",
+          "faction":"ARGON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "243",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"231",
+      "name":"Mercenarie's Rift",
+      "description":"17",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":17,
+      "y":-6,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "245",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"232",
+      "name":"Lost Order",
+      "description":"17",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":17,
+      "y":-7,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "233",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"233",
+      "name":"Unknown Sector Delta",
+      "description":"17",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":17,
+      "y":-8,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "234",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "246",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"234",
+      "name":"Bright Profit",
+      "description":"17",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":17,
+      "y":-9,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "235",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"235",
+      "name":"Company of Strength",
+      "description":"17",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":17,
+      "y":-10,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "247",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"236",
+      "name":"Hollow Infinity",
+      "description":"17",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":17,
+      "y":-11,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "248",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"237",
+      "name":"Menaleu's Oasis",
+      "description":"17",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":17,
+      "y":-12,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "238",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"238",
+      "name":"Distant Clouds",
+      "description":"17",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":17,
+      "y":-13,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ]
+    },
+    {
+      "id":"239",
+      "name":"Xenon Sector 596",
+      "description":"18",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":18,
+      "y":3,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "240",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"240",
+      "name":"Xenon Sector 597",
+      "description":"18",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":18,
+      "y":2,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ]
+    },
+    {
+      "id":"241",
+      "name":"Zyarth's Dominion",
+      "description":"18",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":18,
+      "y":-2,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "242",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "249",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"242",
+      "name":"Xenon Sector 598",
+      "description":"18",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":18,
+      "y":-3,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "243",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "250",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"243",
+      "name":"Grand Exchange",
+      "description":"18",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":18,
+      "y":-4,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "244",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "251",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"244",
+      "name":"Merchant Haven",
+      "description":"18",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":18,
+      "y":-5,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "245",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"245",
+      "name":"Maelstrom",
+      "description":"18",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":18,
+      "y":-6,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ]
+    },
+    {
+      "id":"246",
+      "name":"Xenon Sector 7",
+      "description":"18",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":18,
+      "y":-8,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "252",
+          "connectionType": "NE"
+        }
+      ]
+    },
+    {
+      "id":"247",
+      "name":"Talon Fire",
+      "description":"18",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":18,
+      "y":-10,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ]
+    },
+    {
+      "id":"248",
+      "name":"Quit Tides",
+      "description":"18",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":18,
+      "y":-11,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ]
+    },
+    {
+      "id":"249",
+      "name":"Zyarth's Stand",
+      "description":"19",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":19,
+      "y":-2,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"PARANID",
+          "owner":"PARANID",
+          "faction":"PARANID"
+        }
+      ]
+    },
+    {
+      "id":"250",
+      "name":"Xenon Sector 627",
+      "description":"19",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":19,
+      "y":-3,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "254",
+          "connectionType": "SE"
+        }
+      ]
+    },
+    {
+      "id":"251",
+      "name":"Tears of Greed",
+      "description":"19",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":19,
+      "y":-4,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"TELADI",
+          "owner":"TELADI",
+          "faction":"TELADI"
+        }
+      ]
+    },
+    {
+      "id":"252",
+      "name":"Xenon Sector 9",
+      "description":"19",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":19,
+      "y":-8,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ]
+    },
+    {
+      "id":"253",
+      "name":"Xenon Sector 695",
+      "description":"19",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":19,
+      "y":-2,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
+      ],
+      "connections": [
+        {
+          "targetClusterId": "254",
+          "connectionType": "S"
+        }
+      ]
+    },
+    {
+      "id":"254",
+      "name":"Xenon Core 023",
+      "description":"19",
+      "music":"music_cluster_02",
+      "sunlight":"1",
+      "economy":"0.5",
+      "security":"0.5",
+      "x":19,
+      "y":-3,
+      "backdrop":"empty_space",
+      "stations":[
+        {
+          "type":"DEFENCE",
+          "race":"XENON",
+          "owner":"XENON",
+          "faction":"XENON"
+        }
       ]
     }
   ],
