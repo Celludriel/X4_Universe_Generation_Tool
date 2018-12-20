@@ -394,7 +394,7 @@
       ],
       "stations": [
         {"type": "SHIPYARD", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
-        {"type": "WHARF", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
+        {"type": "EQUIP", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
         {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
       ]
     },
@@ -416,8 +416,8 @@
         }
       ],
       "stations": [
-        {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
-        {"type": "EQUIP", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
+        {"type": "WHARF", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"},
+        {"type": "DEFENCE", "race":  "ARGON", "owner": "ANTIGONE", "faction": "ANTIGONE"}
       ]
     },
     {
@@ -462,11 +462,6 @@
           "targetClusterId": "40",
           "connectionType": "SE"
         }
-      ],
-      "stations": [
-        {"type": "SHIPYARD", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
-        {"type": "WHARF", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
-        {"type": "DEFENCE", "race":  "XENON", "owner": "XENON", "faction": "XENON"}
       ]
     },
     {
@@ -1073,6 +1068,11 @@
           "targetClusterId": "55",
           "connectionType": "NE"
         }
+      ],
+      "stations": [
+        {"type": "PIRATEBASE", "race":  "TELADI", "owner": "SCALEPLATE", "faction": "SCALEPLATE"},
+        {"type": "PIRATEDOCK", "race":  "TELADI", "owner": "SCALEPLATE", "faction": "SCALEPLATE"},
+        {"type": "DEFENCE", "race":  "TELADI", "owner": "SCALEPLATE", "faction": "SCALEPLATE"}
       ]
     },
     {
@@ -1252,10 +1252,6 @@
       "backdrop": "empty_space",
       "connections": [
         {
-          "targetClusterId": "56",
-          "connectionType": "S"
-        },
-        {
           "targetClusterId": "63",
           "connectionType": "SE"
         }
@@ -1269,12 +1265,20 @@
       "sunlight": "1",
       "economy": "0.75",
       "security": "0.75",
-      "x": 4,
-      "y": -4,
+      "x": -2,
+      "y": 1,
       "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "71",
+          "connectionType": "S"
+        },
+        {
+          "targetClusterId": "08",
+          "connectionType": "SE"
+        }
+      ],
       "stations": [
-        {"type": "SHIPYARD", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
-        {"type": "WHARF", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
         {"type": "DEFENCE", "race":  "XENON", "owner": "XENON", "faction": "XENON"}
       ]
     },
@@ -1435,9 +1439,7 @@
         }
       ],
       "stations": [
-        {"type": "PIRATEBASE", "race":  "TELADI", "owner": "SCALEPLATE", "faction": "SCALEPLATE"},
-        {"type": "PIRATEDOCK", "race":  "TELADI", "owner": "SCALEPLATE", "faction": "SCALEPLATE"},
-        {"type": "DEFENCE", "race":  "TELADI", "owner": "SCALEPLATE", "faction": "SCALEPLATE"}
+        {"type": "DEFENCE", "race":  "PARANID", "owner": "HOLYORDER", "faction": "HOLYORDER"}
       ]
     },
     {
@@ -1598,6 +1600,44 @@
       ],
       "stations": [
         {"type": "DEFENCE", "race":  "PARANID", "owner": "HOLYORDER", "faction": "HOLYORDER"}
+      ]
+    },
+    {
+      "id": "71",
+      "name": "Xenon Sector 102",
+      "description": "Xenon Sector 102",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.5",
+      "x": -2,
+      "y": 0,
+      "backdrop": "empty_space",
+      "connections": [
+        {
+          "targetClusterId": "72",
+          "connectionType": "S"
+        }
+      ],
+      "stations": [
+        {"type": "DEFENCE", "race":  "XENON", "owner": "XENON", "faction": "XENON"}
+      ]
+    },
+    {
+      "id": "72",
+      "name": "Xenon Sector 103",
+      "description": "Xenon Sector 103",
+      "music": "music_cluster_02",
+      "sunlight": "1",
+      "economy": "0.5",
+      "security": "0.5",
+      "x": -2,
+      "y": -1,
+      "backdrop": "empty_space",
+      "stations": [
+        {"type": "SHIPYARD", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
+        {"type": "WHARF", "race":  "XENON", "owner": "XENON", "faction": "XENON"},
+        {"type": "DEFENCE", "race":  "XENON", "owner": "XENON", "faction": "XENON"}
       ]
     }
   ],
