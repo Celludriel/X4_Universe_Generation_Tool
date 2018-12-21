@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Ship extends AbstractJson {
-    private Faction faction;
     private List<Tag> tags = new ArrayList<>();
     private List<Faction> factions = new ArrayList<>();
     private ShipSize size;
@@ -18,10 +17,6 @@ public class Ship extends AbstractJson {
     private boolean overridenpc = true;
     private Cargo cargo;
     private List<Unit> units = new ArrayList<>();
-
-    public Faction getFaction() {
-        return faction;
-    }
 
     public List<Tag> getTags() {
         return tags;
@@ -53,10 +48,6 @@ public class Ship extends AbstractJson {
 
     public List<Unit> getUnits() {
         return units;
-    }
-
-    public void setFaction(Faction faction) {
-        this.faction = faction;
     }
 
     public void setTags(List<Tag> tags) {
@@ -102,10 +93,6 @@ public class Ship extends AbstractJson {
 
     @JsonIgnore
     public String getFactionPrint(){
-        if(faction != null){
-            return faction.getName();
-        }
-
         if(factions.size() == 1){
             return factions.get(0).getName();
         }
@@ -119,8 +106,8 @@ public class Ship extends AbstractJson {
 
     @JsonIgnore
     public String getOwner(){
-        if(faction != null){
-            return faction.getName();
+        if(factions.size() == 0){
+            throw new RuntimeException("There has to be at least one faction defined");
         }
 
         return factions.get(0).getName();
@@ -136,7 +123,6 @@ public class Ship extends AbstractJson {
 
         return new EqualsBuilder()
                 .append(overridenpc, ship.overridenpc)
-                .append(faction, ship.faction)
                 .append(tags, ship.tags)
                 .append(factions, ship.factions)
                 .append(size, ship.size)
@@ -150,7 +136,6 @@ public class Ship extends AbstractJson {
     @Override
     public int hashCode() {
         return new HashCodeBuilder(17, 37)
-                .append(faction)
                 .append(tags)
                 .append(factions)
                 .append(size)

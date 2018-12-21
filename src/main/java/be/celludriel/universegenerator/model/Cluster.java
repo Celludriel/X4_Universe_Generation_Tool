@@ -189,12 +189,7 @@ public class Cluster extends AbstractJson {
             yOffset = SEMI_Y_MOVEMENT;
         }
 
-        if(y > 0){
-            return Long.toString(yOffset + (Math.abs(y) * FULL_Y_MOVEMENT));
-        }else if(y < 0){
-            return Long.toString(yOffset - (Math.abs(y) * FULL_Y_MOVEMENT));
-        }
-        return Long.toString(yOffset);
+        return Long.toString(yOffset + (y * FULL_Y_MOVEMENT));
     }
 
     public void addToZoneList(Zone zone){
