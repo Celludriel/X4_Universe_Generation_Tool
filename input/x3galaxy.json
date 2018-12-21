@@ -149,7 +149,7 @@
       "economy": "0.5",
       "security": "0.5",
       "x": -1,
-      "y": 0,
+      "y": -1,
       "backdrop": "empty_space",
       "connections": [
         {
@@ -174,7 +174,7 @@
       "economy": "0.25",
       "security": "0.25",
       "x": -1,
-      "y": -1,
+      "y": -2,
       "backdrop": "empty_space",
       "connections": [
         {
@@ -199,7 +199,7 @@
       "economy": "0.5",
       "security": "0.5",
       "x": -1,
-      "y": 1,
+      "y": 0,
       "backdrop": "empty_space",
       "connections": [
         {
@@ -224,7 +224,7 @@
       "economy": "0.25",
       "security": "0.25",
       "x": -1,
-      "y": 2,
+      "y": 1,
       "backdrop": "empty_space",
       "connections": [
         {
@@ -295,7 +295,7 @@
       "economy": "0.25",
       "security": "0.25",
       "x": -1,
-      "y": -2,
+      "y": -3,
       "backdrop": "empty_space",
       "connections": [
         {
@@ -379,7 +379,7 @@
       "economy": "0.75",
       "security": "0.75",
       "x": -1,
-      "y": 3,
+      "y": 2,
       "backdrop": "empty_space",
       "factionHq": "ANTIGONE",
       "connections": [
@@ -827,7 +827,7 @@
       "economy": "0.25",
       "security": "0.5",
       "x": -1,
-      "y": -3,
+      "y": -4,
       "backdrop": "empty_space",
       "connections": [
         {
@@ -849,7 +849,7 @@
       "economy": "0.75",
       "security": "0.75",
       "x": -1,
-      "y": -4,
+      "y": -5,
       "backdrop": "empty_space",
       "connections": [
         {
@@ -876,7 +876,7 @@
       "economy": "0.25",
       "security": "0.25",
       "x": -1,
-      "y": -5,
+      "y": -6,
       "backdrop": "empty_space",
       "connections": [
         {
@@ -894,7 +894,7 @@
       "economy": "0.25",
       "security": "0.25",
       "x": -1,
-      "y": -6,
+      "y": -7,
       "backdrop": "empty_space"
     },
     {
