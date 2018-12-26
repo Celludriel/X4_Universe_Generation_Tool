@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +18,6 @@ public class Galaxy extends AbstractJson {
     private String version;
     private String date;
     private String save;
-    private String starterZoneName;
     private int minRandomBelts;
     private int maxRandomBelts;
     private List<Cluster> clusters = new ArrayList<>();
@@ -60,11 +58,6 @@ public class Galaxy extends AbstractJson {
 
     public String getSave() {
         return save;
-    }
-
-    @JsonIgnore
-    public String getStarterZoneName() {
-        return starterZoneName;
     }
 
     public int getMinRandomBelts() {
@@ -143,10 +136,6 @@ public class Galaxy extends AbstractJson {
         this.save = save;
     }
 
-    public void setStarterZoneName(String starterZoneName) {
-        this.starterZoneName = starterZoneName;
-    }
-
     public void setMinRandomBelts(int minRandomBelts) {
         this.minRandomBelts = minRandomBelts;
     }
@@ -216,7 +205,6 @@ public class Galaxy extends AbstractJson {
                 .append(version, galaxy.version)
                 .append(date, galaxy.date)
                 .append(save, galaxy.save)
-                .append(starterZoneName, galaxy.starterZoneName)
                 .append(clusters, galaxy.clusters)
                 .append(factionHqLocations, galaxy.factionHqLocations)
                 .append(products, galaxy.products)
@@ -239,7 +227,6 @@ public class Galaxy extends AbstractJson {
                 .append(version)
                 .append(date)
                 .append(save)
-                .append(starterZoneName)
                 .append(minRandomBelts)
                 .append(maxRandomBelts)
                 .append(clusters)
