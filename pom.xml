@@ -6,7 +6,7 @@
 
     <groupId>be.celludriel</groupId>
     <artifactId>universe-generator</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -88,7 +88,7 @@
                                 <artifactItem>
                                     <groupId>be.celludriel</groupId>
                                     <artifactId>universe-generator</artifactId>
-                                    <version>1.2.0</version>
+                                    <version>1.2.1</version>
                                     <type>jar</type>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${basedir}/target</outputDirectory>

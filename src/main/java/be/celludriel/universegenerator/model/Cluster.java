@@ -9,8 +9,7 @@ import java.util.List;
 
 public class Cluster extends AbstractJson {
 
-    public static final int SEMI_X_MOVEMENT = 15000000;
-    public static final int FULL_X_MOVEMENT = 30000000;
+    public static final int FULL_X_MOVEMENT = 15000000;
     public static final int SEMI_Y_MOVEMENT = 8660000;
     public static final int FULL_Y_MOVEMENT = 17320000;
 
@@ -176,27 +175,21 @@ public class Cluster extends AbstractJson {
 
     @JsonIgnore
     public String getClusterX(){
-        return Long.toString(x * SEMI_X_MOVEMENT);
+        return Long.toString(x * FULL_X_MOVEMENT);
     }
 
+    /*
+    x:-1, y:1
+    mod x: -1
+     */
     @JsonIgnore
     public String getClusterZ() {
-        if(x % 2 < 0 && y == 0){
-            return Long.toString(y - SEMI_Y_MOVEMENT);
-        } else if(x % 2 > 0 && y == 0){
-            return Long.toString(y + SEMI_Y_MOVEMENT);
-        } else if (x % 2 == 0 && y > 0){
-            return Long.toString(y * FULL_Y_MOVEMENT);
-        } else if (x % 2 == 0 && y < 0){
-            return Long.toString(y * FULL_Y_MOVEMENT);
-        } else if(y < 0) {
-            int offset = x > 0 ? SEMI_Y_MOVEMENT : -SEMI_Y_MOVEMENT;
-            return Long.toString(offset - (Math.abs(y) * FULL_Y_MOVEMENT));
-        } else if(y > 0) {
-            int offset = x > 0 ? SEMI_Y_MOVEMENT : -SEMI_Y_MOVEMENT;
-            return Long.toString(offset + (Math.abs(y) * FULL_Y_MOVEMENT));
+        int yOffset = 0;
+        if(x % 2 != 0){
+            yOffset = SEMI_Y_MOVEMENT;
         }
-        return "0";
+
+        return Long.toString(yOffset + (y * FULL_Y_MOVEMENT));
     }
 
     public void addToZoneList(Zone zone){
