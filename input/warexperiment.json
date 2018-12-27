@@ -87,6 +87,7 @@
       "y": -1,
       "backdrop": "empty_space",
       "noBelts": false,
+      "factionHq": "ALLIANCE",
       "connections": [
         {
           "targetClusterId": "11",
@@ -102,7 +103,6 @@
         }
       ],
       "belts": [],
-      "factionHq": "ALLIANCE",
       "stations": [
         {
           "type": "SHIPYARD",
@@ -653,6 +653,10 @@
         {
           "targetClusterId": "24",
           "connectionType": "SE"
+        },
+        {
+          "targetClusterId": "20",
+          "connectionType": "SW"
         }
       ],
       "belts": [],
@@ -1659,6 +1663,7 @@
       "x": -3,
       "y": -3,
       "backdrop": "cluster_01",
+      "factionHq": "MINISTRY",
       "connections": [
         {
           "targetClusterId": "29",
@@ -1666,7 +1671,6 @@
         }
       ],
       "belts": [],
-      "factionHq": "MINISTRY",
       "stations": [
         {
           "type": "EQUIP",
@@ -1688,6 +1692,7 @@
       "x": -3,
       "y": 2,
       "backdrop": "cluster_01",
+      "factionHq": "HATIKVAH",
       "connections": [
         {
           "targetClusterId": "30",
@@ -1695,7 +1700,6 @@
         }
       ],
       "belts": [],
-      "factionHq": "HATIKVAH",
       "stations": [
         {
           "type": "TRADE",
@@ -1717,6 +1721,7 @@
       "x": 3,
       "y": -3,
       "backdrop": "cluster_01",
+      "factionHq": "SCALEPLATE",
       "connections": [
         {
           "targetClusterId": "45",
@@ -1724,7 +1729,6 @@
         }
       ],
       "belts": [],
-      "factionHq": "SCALEPLATE",
       "stations": [
         {
           "type": "EQUIP",
@@ -1746,14 +1750,14 @@
       "x": 3,
       "y": 2,
       "backdrop": "cluster_01",
+      "factionHq": "ANTIGONE",
       "connections": [
         {
           "targetClusterId": "46",
-          "connectionType": "SE"
+          "connectionType": "SW"
         }
       ],
       "belts": [],
-      "factionHq": "ANTIGONE",
       "stations": [
         {
           "type": "EQUIP",
