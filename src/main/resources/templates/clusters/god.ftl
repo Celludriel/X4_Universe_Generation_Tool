@@ -45,7 +45,7 @@
         <#list galaxy.products as product>
         <product id="${product.id}" ware="${product.ware}" owner="${product.owner.getName()}" type="factory">
           <quotas>
-            <quota galaxy="${product.galaxyQuota}" <#if product.clusterQuota??>cluster="${product.clusterQuota}"</#if> <#if product.sectorQuota??>sector="${product.sectorQuota}"</#if> <#if product.zoneQuota??>zone="${product.zoneQuota}"</#if>/>
+            <quota galaxy="${product.galaxyQuota}" <#if product.clusterQuota?? && product.clusterQuota != 0>cluster="${product.clusterQuota}"</#if> <#if product.sectorQuota?? && product.sectorQuota != 0>sector="${product.sectorQuota}"</#if> <#if product.zoneQuota?? && product.zoneQuota != 0>zone="${product.zoneQuota}"</#if>/>
           </quotas>
           <#if !product.locationInfo.solitary>
           <location class="galaxy" macro="${galaxy.galaxyPrefix}_galaxy_macro" faction="[${product.locationInfo.factionPrint}]" relation="self" comparison="ge">

@@ -5019,10 +5019,11 @@
       "time": "3600",
       "encounters": "mining_group_large",
       "ship": {
+        "size": "LARGE",
         "factions": ["ARGON"],
         "levelMin": "0",
         "levelMax": "0.4",
-        "tags": ["MINER", "SOLID", "MIXED"]
+        "tags": ["MINER", "SOLID"]
       },
       "subordinates": ["argon_miningfleet_ml_solid_large","argon_fighter_escort_s_miningfleet"]
     },
@@ -5056,10 +5057,11 @@
       "time": "3600",
       "encounters": "lone_miner",
       "ship": {
+        "size": "LARGE",
         "factions": ["ARGON"],
         "levelMin": "0",
         "levelMax": "0.4",
-        "tags": ["MINER", "LIQUID", "MIXED"]
+        "tags": ["MINER", "LIQUID"]
       },
       "subordinates": ["argon_miningfleet_ml_liquid_large","argon_fighter_escort_s_miningfleet"]
     },
@@ -6388,10 +6390,11 @@
       "time": "3600",
       "encounters": "mining_group_large",
       "ship": {
+        "size": "LARGE",
         "factions": ["ANTIGONE"],
         "levelMin": "0",
         "levelMax": "0.4",
-        "tags": ["MINER", "SOLID", "MIXED"]
+        "tags": ["MINER", "SOLID"]
       },
       "subordinates": ["antigone_miningfleet_ml_solid_large","antigone_fighter_escort_s_miningfleet"]
     },
@@ -6425,10 +6428,11 @@
       "time": "3600",
       "encounters": "lone_miner",
       "ship": {
+        "size": "LARGE",
         "factions": ["ANTIGONE"],
         "levelMin": "0",
         "levelMax": "0.4",
-        "tags": ["MINER", "LIQUID", "MIXED"]
+        "tags": ["MINER", "LIQUID"]
       },
       "subordinates": ["antigone_miningfleet_ml_liquid_large","antigone_fighter_escort_s_miningfleet"]
     },
@@ -8177,10 +8181,11 @@
       "time": "3600",
       "encounters": "mining_group_large",
       "ship": {
+        "size": "LARGE",
         "factions": ["PARANID"],
         "levelMin": "0",
         "levelMax": "0.4",
-        "tags": ["MINER", "SOLID", "MIXED"]
+        "tags": ["MINER", "SOLID"]
       },
       "subordinates": ["paranid_miningfleet_ml_solid_large","paranid_fighter_escort_s_miningfleet"]
     },
@@ -8214,10 +8219,11 @@
       "time": "3600",
       "encounters": "lone_miner",
       "ship": {
+        "size": "LARGE",
         "factions": ["PARANID"],
         "levelMin": "0",
         "levelMax": "0.4",
-        "tags": ["MINER", "LIQUID", "MIXED"]
+        "tags": ["MINER", "LIQUID"]
       },
       "subordinates": ["paranid_miningfleet_ml_liquid_large","paranid_fighter_escort_s_miningfleet"]
     },
@@ -9942,10 +9948,11 @@
       "time": "3600",
       "encounters": "mining_group_large",
       "ship": {
+        "size": "LARGE",
         "factions": ["HOLYORDER"],
         "levelMin": "0",
         "levelMax": "0.4",
-        "tags": ["MINER", "SOLID", "MIXED"]
+        "tags": ["MINER", "SOLID"]
       },
       "subordinates": ["holyorder_miningfleet_ml_solid_large","holyorder_fighter_escort_s_miningfleet"]
     },
@@ -9979,10 +9986,11 @@
       "time": "3600",
       "encounters": "lone_miner",
       "ship": {
+        "size": "LARGE",
         "factions": ["HOLYORDER"],
         "levelMin": "0",
         "levelMax": "0.4",
-        "tags": ["MINER", "LIQUID", "MIXED"]
+        "tags": ["MINER", "LIQUID"]
       },
       "subordinates": ["holyorder_miningfleet_ml_liquid_large","holyorder_fighter_escort_s_miningfleet"]
     },
@@ -11649,10 +11657,11 @@
       "time": "3600",
       "encounters": "mining_group_large",
       "ship": {
+        "size": "LARGE",
         "factions": ["TELADI"],
         "levelMin": "0",
         "levelMax": "0.4",
-        "tags": ["MINER", "SOLID", "MIXED"]
+        "tags": ["MINER", "SOLID"]
       },
       "subordinates": ["teladi_miningfleet_ml_solid_large","teladi_fighter_escort_s_miningfleet"]
     },
@@ -11686,10 +11695,11 @@
       "time": "3600",
       "encounters": "lone_miner",
       "ship": {
+        "size": "LARGE",
         "factions": ["TELADI"],
         "levelMin": "0",
         "levelMax": "0.4",
-        "tags": ["MINER", "LIQUID", "MIXED"]
+        "tags": ["MINER", "LIQUID"]
       },
       "subordinates": ["teladi_miningfleet_ml_liquid_large","teladi_fighter_escort_s_miningfleet"]
     },
@@ -12041,8 +12051,8 @@
       }],
       "basket": "minerals_xenon",
       "ship": {
-        "factions": ["ARGON"],
-        "size": "LARGE",
+        "factions": ["XENON"],
+        "size": "MEDIUM",
         "levelMin": "0",
         "levelMax": "0.7",
         "tags": ["MINER","SOLID"],
