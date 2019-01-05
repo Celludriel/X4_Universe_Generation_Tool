@@ -10,6 +10,7 @@ public class FactionStart extends AbstractJson {
     private String name;
     private String description;
     private String playerName;
+    private Integer credits = 10000;
 
     public String getClusterId() {
         return clusterId;
@@ -29,6 +30,10 @@ public class FactionStart extends AbstractJson {
 
     public String getPlayerName() {
         return playerName;
+    }
+
+    public Integer getCredits() {
+        return credits;
     }
 
     public void setClusterId(String clusterId) {
@@ -51,6 +56,10 @@ public class FactionStart extends AbstractJson {
         this.playerName = playerName;
     }
 
+    public void setCredits(Integer credits) {
+        this.credits = credits;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -65,6 +74,7 @@ public class FactionStart extends AbstractJson {
                 .append(name, that.name)
                 .append(description, that.description)
                 .append(playerName, that.playerName)
+                .append(credits, that.credits)
                 .isEquals();
     }
 
@@ -76,6 +86,7 @@ public class FactionStart extends AbstractJson {
                 .append(name)
                 .append(description)
                 .append(playerName)
+                .append(credits)
                 .toHashCode();
     }
 }

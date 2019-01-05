@@ -728,6 +728,12 @@
           "race": "TELADI",
           "owner": "TELADI",
           "faction": "TELADI"
+        },
+        {
+          "type": "TRADE",
+          "race": "TELADI",
+          "owner": "TELADI",
+          "faction": "TELADI"
         }
       ],
       "spaceObjects": []
@@ -1098,6 +1104,12 @@
           "race": "PARANID",
           "owner": "HOLYORDER",
           "faction": "HOLYORDER"
+        },
+        {
+          "type": "TRADE",
+          "race": "PARANID",
+          "owner": "HOLYORDER",
+          "faction": "HOLYORDER"
         }
       ],
       "spaceObjects": []
@@ -1132,6 +1144,12 @@
       "stations": [
         {
           "type": "DEFENCE",
+          "race": "ARGON",
+          "owner": "ARGON",
+          "faction": "ARGON"
+        },
+        {
+          "type": "TRADE",
           "race": "ARGON",
           "owner": "ARGON",
           "faction": "ARGON"
@@ -1185,7 +1203,8 @@
         "faction": "ARGON",
         "name": "The Argon Saga",
         "description": "The Argon Federation is a proud place to call home: the center of culture, science and learning in the universe. This pride is born of a long and storied history; of a bold and daring risk to lure the greatest threat the universe has known away from Earth and a sacrifice to save a home they would never return to. The Argon people were forced to began anew in a place unfamiliar to them and have thrived since. Do you have what it takes to continue this saga?",
-        "playerName": "Vel Driar"
+        "playerName": "Vel Driar",
+        "credits": 50000
       },
       "connections": [
         {
@@ -1501,12 +1520,22 @@
         {
           "targetClusterId": "53",
           "connectionType": "SE"
+        },
+        {
+          "targetClusterId": "48",
+          "connectionType": "SW"
         }
       ],
       "belts": [],
       "stations": [
         {
           "type": "DEFENCE",
+          "race": "PARANID",
+          "owner": "PARANID",
+          "faction": "PARANID"
+        },
+        {
+          "type": "TRADE",
           "race": "PARANID",
           "owner": "PARANID",
           "faction": "PARANID"
@@ -1894,7 +1923,7 @@
     {
       "id": "arg_energycells",
       "ware": "energycells",
-      "galaxyQuota": 2,
+      "galaxyQuota": 10,
       "clusterQuota": 0,
       "sectorQuota": 0,
       "zoneQuota": 0,
@@ -2613,7 +2642,7 @@
     {
       "id": "par_energycells",
       "ware": "energycells",
-      "galaxyQuota": 2,
+      "galaxyQuota": 10,
       "clusterQuota": 0,
       "sectorQuota": 0,
       "zoneQuota": 0,
@@ -2634,7 +2663,7 @@
     {
       "id": "hol_energycells",
       "ware": "energycells",
-      "galaxyQuota": 2,
+      "galaxyQuota": 10,
       "clusterQuota": 0,
       "sectorQuota": 0,
       "zoneQuota": 0,
@@ -3613,7 +3642,7 @@
     {
       "id": "tel_energycells",
       "ware": "energycells",
-      "galaxyQuota": 18,
+      "galaxyQuota": 10,
       "clusterQuota": 0,
       "sectorQuota": 0,
       "zoneQuota": 0,
