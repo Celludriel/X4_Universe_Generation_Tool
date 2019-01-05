@@ -42,15 +42,15 @@ public class Job extends AbstractJson {
         return disabled;
     }
 
-    public boolean isRebuild() {
+    public Boolean getRebuild() {
         return rebuild;
     }
 
-    public boolean isCommandeerable() {
+    public Boolean getCommandeerable() {
         return commandeerable;
     }
 
-    public boolean isSubordinate() {
+    public Boolean getSubordinate() {
         return subordinate;
     }
 
@@ -110,15 +110,15 @@ public class Job extends AbstractJson {
         this.disabled = disabled;
     }
 
-    public void setRebuild(boolean rebuild) {
+    public void setRebuild(Boolean rebuild) {
         this.rebuild = rebuild;
     }
 
-    public void setCommandeerable(boolean commandeerable) {
+    public void setCommandeerable(Boolean commandeerable) {
         this.commandeerable = commandeerable;
     }
 
-    public void setSubordinate(boolean subordinate) {
+    public void setSubordinate(Boolean subordinate) {
         this.subordinate = subordinate;
     }
 
@@ -163,7 +163,7 @@ public class Job extends AbstractJson {
     }
 
     public boolean hasModifiers(){
-        return this.rebuild != null && this.commandeerable != null && this.subordinate != null;
+        return this.rebuild != null || this.commandeerable != null || this.subordinate != null;
     }
 
     @Override
