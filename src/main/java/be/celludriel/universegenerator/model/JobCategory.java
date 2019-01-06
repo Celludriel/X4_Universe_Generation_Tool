@@ -10,14 +10,14 @@ import java.util.List;
 
 public class JobCategory extends AbstractJson {
     private Faction faction;
-    private List<Tag> tags;
+    private List<String> tags;
     private ShipSize shipSize;
 
     public Faction getFaction() {
         return faction;
     }
 
-    public List<Tag> getTags() {
+    public List<String> getTags() {
         return tags;
     }
 
@@ -29,7 +29,7 @@ public class JobCategory extends AbstractJson {
         this.faction = faction;
     }
 
-    public void setTags(List<Tag> tags) {
+    public void setTags(List<String> tags) {
         this.tags = tags;
     }
 
@@ -40,8 +40,8 @@ public class JobCategory extends AbstractJson {
     @JsonIgnore
     public String getTagsPrint(){
         List<String> stringValues = new ArrayList<>();
-        for (Tag tag : tags) {
-            stringValues.add(tag.getName());
+        for (String tag : tags) {
+            stringValues.add(tag);
         }
         return StringUtils.join(stringValues, ",");
     }

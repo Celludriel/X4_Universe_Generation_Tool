@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Ship extends AbstractJson {
-    private List<Tag> tags = new ArrayList<>();
+    private List<String> tags = new ArrayList<>();
     private List<Faction> factions = new ArrayList<>();
     private ShipSize size;
     private String levelMin;
@@ -18,7 +18,7 @@ public class Ship extends AbstractJson {
     private Cargo cargo;
     private List<Unit> units = new ArrayList<>();
 
-    public List<Tag> getTags() {
+    public List<String> getTags() {
         return tags;
     }
 
@@ -50,7 +50,7 @@ public class Ship extends AbstractJson {
         return units;
     }
 
-    public void setTags(List<Tag> tags) {
+    public void setTags(List<String> tags) {
         this.tags = tags;
     }
 
@@ -85,8 +85,8 @@ public class Ship extends AbstractJson {
     @JsonIgnore
     public String getTagPrint(){
         List<String> stringValues = new ArrayList<>();
-        for (Tag tag : tags) {
-            stringValues.add(tag.getName());
+        for (String tag : tags) {
+            stringValues.add(tag);
         }
         return StringUtils.join(stringValues, ",");
     }
