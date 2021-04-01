@@ -11,7 +11,7 @@
       <connection name="${galaxy.galaxyPrefix}_cluster${cl.id}_region00${belt?index}_connection" ref="regions">
         <offset>
           <position x="${belt.x?c}" y="0" z="${belt.y?c}" />
-		  <rotation yaw="${belt.rotation}" pitch="0" roll="0"/>
+		      <rotation yaw="${belt.rotation}" pitch="0" roll="0"/>
         </offset>
         <macro name="${galaxy.galaxyPrefix}_cluster${cl.id}_region00${belt?index}_macro">
           <component connection="cluster" ref="standardregion" />

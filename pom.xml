@@ -41,6 +41,18 @@
             <version>3.2</version>
         </dependency>
         <dependency>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>2.3.2</version>
+        </dependency>
+
+        <!-- Runtime, com.sun.xml.bind module -->
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>2.3.2</version>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
@@ -88,7 +100,7 @@
                                 <artifactItem>
                                     <groupId>be.celludriel</groupId>
                                     <artifactId>universe-generator</artifactId>
-                                    <version>1.2.1</version>
+                                    <version>${project.version}</version>
                                     <type>jar</type>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${basedir}/target</outputDirectory>
@@ -101,6 +113,40 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>2.5.0</version>
+                <executions>
+                    <execution>
+                        <id>common</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                        <configuration>
+                            <packageName>be.celludriel.universegenerator.model.xml.common</packageName>
+                            <sources>
+                                <source>src/main/resources/xsd/common.xsd</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>libraries</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                        <configuration>
+                            <xjbSources>
+                                <xjbSource>src/main/resources/xjb/bindings.xjb</xjbSource>
+                            </xjbSources>
+                            <packageName>be.celludriel.universegenerator.model.xml.libraries</packageName>
+                            <sources>
+                                <source>src/main/resources/xsd/libraries.xsd</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin -->
         </plugins>
     </build>
 </project>

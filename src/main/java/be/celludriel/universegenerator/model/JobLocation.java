@@ -11,9 +11,11 @@ import java.util.List;
 public class JobLocation extends AbstractJson {
 
     private String locationClass = "galaxy";
-    private String comparison;
-    private String relation;
     private String macro;
+    private String factionrace;
+    private Boolean negatefactionrace;
+    private String relation;
+    private String comparison;
     private String regionBasket;
     private List<Faction> factions = new ArrayList<>();
 
