@@ -7,6 +7,14 @@ public class Drop extends AbstractJson {
     private String ref;
     private String comment;
 
+    public Drop() {
+    }
+
+    public Drop(String ref, String comment) {
+        this.ref = ref;
+        this.comment = comment;
+    }
+
     public String getRef() {
         return ref;
     }

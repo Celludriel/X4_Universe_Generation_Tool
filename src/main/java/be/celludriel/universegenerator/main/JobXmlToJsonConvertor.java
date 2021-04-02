@@ -1,16 +1,67 @@
 package be.celludriel.universegenerator.main;
 
-import be.celludriel.universegenerator.model.jobs.*;
+import be.celludriel.universegenerator.model.jobs.Ammo;
+import be.celludriel.universegenerator.model.jobs.Basket;
+import be.celludriel.universegenerator.model.jobs.Cargo;
+import be.celludriel.universegenerator.model.jobs.Category;
+import be.celludriel.universegenerator.model.jobs.Commander;
+import be.celludriel.universegenerator.model.jobs.Distance;
+import be.celludriel.universegenerator.model.jobs.Drop;
+import be.celludriel.universegenerator.model.jobs.Economy;
+import be.celludriel.universegenerator.model.jobs.Environment;
+import be.celludriel.universegenerator.model.jobs.EquipmentMods;
+import be.celludriel.universegenerator.model.jobs.ExpirationTime;
+import be.celludriel.universegenerator.model.jobs.Faction;
+import be.celludriel.universegenerator.model.jobs.FactionLicence;
+import be.celludriel.universegenerator.model.jobs.FactionRace;
+import be.celludriel.universegenerator.model.jobs.Inventory;
+import be.celludriel.universegenerator.model.jobs.Job;
+import be.celludriel.universegenerator.model.jobs.JobOrder;
 import be.celludriel.universegenerator.model.jobs.Loadout;
+import be.celludriel.universegenerator.model.jobs.Location;
+import be.celludriel.universegenerator.model.jobs.MassTraffic;
+import be.celludriel.universegenerator.model.jobs.Modifiers;
+import be.celludriel.universegenerator.model.jobs.Owner;
+import be.celludriel.universegenerator.model.jobs.Page;
+import be.celludriel.universegenerator.model.jobs.People;
+import be.celludriel.universegenerator.model.jobs.Person;
+import be.celludriel.universegenerator.model.jobs.PersonAttributes;
+import be.celludriel.universegenerator.model.jobs.PoliceFaction;
 import be.celludriel.universegenerator.model.jobs.Position;
-import be.celludriel.universegenerator.model.xml.libraries.*;
+import be.celludriel.universegenerator.model.jobs.Quota;
+import be.celludriel.universegenerator.model.jobs.Security;
+import be.celludriel.universegenerator.model.jobs.Select;
+import be.celludriel.universegenerator.model.jobs.Shield;
+import be.celludriel.universegenerator.model.jobs.Ship;
+import be.celludriel.universegenerator.model.jobs.ShipCategory;
+import be.celludriel.universegenerator.model.jobs.Skill;
+import be.celludriel.universegenerator.model.jobs.Stock;
+import be.celludriel.universegenerator.model.jobs.Subordinate;
+import be.celludriel.universegenerator.model.jobs.Sunlight;
+import be.celludriel.universegenerator.model.jobs.Time;
+import be.celludriel.universegenerator.model.jobs.Unit;
+import be.celludriel.universegenerator.model.jobs.ValueType;
+import be.celludriel.universegenerator.model.jobs.Weapon;
+import be.celludriel.universegenerator.model.xml.libraries.Basejobquota;
+import be.celludriel.universegenerator.model.xml.libraries.Gamestartjobquota;
+import be.celludriel.universegenerator.model.xml.libraries.Gamestartjobquotas;
+import be.celludriel.universegenerator.model.xml.libraries.Joborder;
+import be.celludriel.universegenerator.model.xml.libraries.Jobs;
+import be.celludriel.universegenerator.model.xml.libraries.Positionrange;
+import be.celludriel.universegenerator.model.xml.libraries.Selectrandom;
+import be.celludriel.universegenerator.model.xml.libraries.Shipdbcategoryselect;
 import be.celludriel.universegenerator.model.xml.libraries.Task;
-
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationConfig;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -18,11 +69,20 @@ import java.util.stream.Collectors;
 
 public class JobXmlToJsonConvertor {
 
-    public static void main(String[] args) throws JAXBException, FileNotFoundException {
+    public static void main(String[] args) throws JAXBException, IOException {
         JAXBContext context = JAXBContext.newInstance(Jobs.class);
         Jobs jobs = (Jobs) context.createUnmarshaller()
                 .unmarshal(new FileReader("C:\\workspaces\\X4_Universe_Generation_Tool\\input\\jobs\\jobs.xml"));
 
+        List<Job> jsonJobList = loadJobList(jobs);
+
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        mapper.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
+        mapper.writerWithDefaultPrettyPrinter().writeValue(new File("c:\\temp\\jobs.json"), jsonJobList);
+    }
+
+    private static List<Job> loadJobList(Jobs jobs) {
         List<Job> jsonJobList = new ArrayList<>(jobs.getJob().size());
         for (Jobs.Job job : jobs.getJob()) {
             List<Object> basketOrCategoryOrOrder = job.getBasketOrCategoryOrOrder();
@@ -82,41 +142,53 @@ public class JobXmlToJsonConvertor {
             addAddPositionRange(jsonJob, positionrange);
             addModifiers(jsonJob, modifiers);
             addShip(jsonJob, job.getShip());
-
-            /*addSubordinates(jsonJob, job.getSubordinates());
+            addSubordinates(jsonJob, job.getSubordinates());
             addMassTraffic(jsonJob, job.getMasstraffic());
-            */
 
             jsonJobList.add(jsonJob);
         }
+        return jsonJobList;
+    }
 
-        System.out.println("I need a break");
+    private static void addMassTraffic(Job jsonJob, Jobs.Job.Masstraffic masstraffic) {
+        if(masstraffic != null){
+            MassTraffic jsonMassTraffic = setupMassTraffic(masstraffic.getOwnerOrPilotOrLoadout());
+
+            jsonMassTraffic.setRef(masstraffic.getRef());
+            jsonMassTraffic.setMacro(masstraffic.getMacro());
+            jsonMassTraffic.setCapturable(masstraffic.getCapturable());
+            jsonMassTraffic.setGroup(masstraffic.getGroup());
+            jsonMassTraffic.setSellable(masstraffic.getSellable());
+            jsonMassTraffic.setComment(masstraffic.getComment());
+            jsonMassTraffic.setRelaunchdelay(masstraffic.getRelaunchdelay());
+            jsonMassTraffic.setRespawndelay(masstraffic.getRespawndelay());
+
+            ShipCategory shipCategory = new ShipCategory();
+            Shipdbcategoryselect select = masstraffic.getSelect();
+            if(select != null) {
+                shipCategory.setSize(select.getSize());
+                shipCategory.setRequired(select.isRequired());
+                shipCategory.setFaction(select.getFaction());
+                shipCategory.setTags(select.getTags());
+                shipCategory.setComment(select.getComment());
+                jsonMassTraffic.setShipCategory(shipCategory);
+            }
+
+            jsonJob.setMasstraffic(jsonMassTraffic);
+        }
+    }
+
+    private static void addSubordinates(Job jsonJob, Jobs.Job.Subordinates subordinates) {
+        if(subordinates != null){
+            for (Jobs.Job.Subordinates.Subordinate subordinate : subordinates.getSubordinate()) {
+                jsonJob.getSubordinates().add(new Subordinate(subordinate.getJob(), subordinate.getRebuild()));
+            }
+        }
     }
 
     private static void addShip(Job jsonJob, Jobs.Job.Ship ship) {
         if(ship != null){
             List<Object> ownerOrPilotOrLoadout = ship.getOwnerOrPilotOrLoadout();
-            Map<Class, Object> map = ownerOrPilotOrLoadout.stream()
-                    .collect(Collectors.toMap(Object::getClass, object -> object));
-
-            Jobs.Job.Masstraffic.Owner owner = (Jobs.Job.Masstraffic.Owner) map.get(Jobs.Job.Masstraffic.Owner.class);
-            Jobs.Job.Masstraffic.Pilot pilot = (Jobs.Job.Masstraffic.Pilot) map.get(Jobs.Job.Masstraffic.Pilot.class);
-            Jobs.Job.Masstraffic.Loadout loadOut = (Jobs.Job.Masstraffic.Loadout)
-                    map.get(Jobs.Job.Masstraffic.Loadout.class);
-            Jobs.Job.Masstraffic.Equipmentmods equipmentMods = (Jobs.Job.Masstraffic.Equipmentmods)
-                    map.get(Jobs.Job.Masstraffic.Equipmentmods.class);
-            Jobs.Job.Masstraffic.Paint paint = (Jobs.Job.Masstraffic.Paint) map.get(Jobs.Job.Masstraffic.Paint.class);
-            Jobs.Job.Masstraffic.Basket basket = (Jobs.Job.Masstraffic.Basket)
-                    map.get(Jobs.Job.Masstraffic.Basket.class);
-            Jobs.Job.Masstraffic.Ammo ammo = (Jobs.Job.Masstraffic.Ammo) map.get(Jobs.Job.Masstraffic.Ammo.class);
-            Jobs.Job.Masstraffic.Cargo cargo = (Jobs.Job.Masstraffic.Cargo) map.get(Jobs.Job.Masstraffic.Cargo.class);
-            Jobs.Job.Masstraffic.Inventory inventory = (Jobs.Job.Masstraffic.Inventory)
-                    map.get(Jobs.Job.Masstraffic.Inventory.class);
-            Jobs.Job.Masstraffic.Drop drop = (Jobs.Job.Masstraffic.Drop) map.get(Jobs.Job.Masstraffic.Drop.class);
-            Jobs.Job.Masstraffic.Units units = (Jobs.Job.Masstraffic.Units) map.get(Jobs.Job.Masstraffic.Units.class);
-            Jobs.Job.Masstraffic.People people = (Jobs.Job.Masstraffic.People)
-                    map.get(Jobs.Job.Masstraffic.People.class);
-
             Ship jsonShip = new Ship();
 
             jsonShip.setRef(ship.getRef());
@@ -137,24 +209,188 @@ public class JobXmlToJsonConvertor {
                 jsonShip.setShipCategory(shipCategory);
             }
 
-            MassTraffic jsonMassTraffic = new MassTraffic();
-            jsonMassTraffic.setPaint(paint != null ? paint.getWare() : null);
-            jsonMassTraffic.setBasket(basket != null ? new Basket(basket.getBasket(), basket.getComment()) : null);
-
-            addOwnerToMassTraffic(owner, jsonMassTraffic);
-            addPilotToMassTraffic(pilot, jsonMassTraffic);
-            addLoadOutToMassTraffic(loadOut, jsonMassTraffic);
-            addEquipmentModsToMassTraffic(equipmentMods, jsonMassTraffic);
-            addAmmoToMassTraffic(ammo, jsonMassTraffic);
-            /*addCargoToMassTraffic(owner, jsonMassTraffic);
-            addInventoryToMassTraffic(owner, jsonMassTraffic);
-            addDropToMassTraffic(owner, jsonMassTraffic);
-            addUnitsToMassTraffic(owner, jsonMassTraffic);
-            addPeopleToMassTraffic(owner, jsonMassTraffic);*/
+            MassTraffic jsonMassTraffic = setupMassTraffic(ownerOrPilotOrLoadout);
 
             jsonShip.setMasstrafic(jsonMassTraffic);
 
             jsonJob.setShip(jsonShip);
+        }
+    }
+
+    private static MassTraffic setupMassTraffic(List<Object> ownerOrPilotOrLoadout) {
+        Map<Class, Object> map = ownerOrPilotOrLoadout.stream()
+                .collect(Collectors.toMap(Object::getClass, object -> object));
+        Jobs.Job.Masstraffic.Owner owner = (Jobs.Job.Masstraffic.Owner) map.get(Jobs.Job.Masstraffic.Owner.class);
+        Jobs.Job.Masstraffic.Pilot pilot = (Jobs.Job.Masstraffic.Pilot) map.get(Jobs.Job.Masstraffic.Pilot.class);
+        Jobs.Job.Masstraffic.Loadout loadOut = (Jobs.Job.Masstraffic.Loadout)
+                map.get(Jobs.Job.Masstraffic.Loadout.class);
+        Jobs.Job.Masstraffic.Equipmentmods equipmentMods = (Jobs.Job.Masstraffic.Equipmentmods)
+                map.get(Jobs.Job.Masstraffic.Equipmentmods.class);
+        Jobs.Job.Masstraffic.Paint paint = (Jobs.Job.Masstraffic.Paint) map.get(Jobs.Job.Masstraffic.Paint.class);
+        Jobs.Job.Masstraffic.Basket basket = (Jobs.Job.Masstraffic.Basket)
+                map.get(Jobs.Job.Masstraffic.Basket.class);
+        Jobs.Job.Masstraffic.Ammo ammo = (Jobs.Job.Masstraffic.Ammo) map.get(Jobs.Job.Masstraffic.Ammo.class);
+        Jobs.Job.Masstraffic.Cargo cargo = (Jobs.Job.Masstraffic.Cargo) map.get(Jobs.Job.Masstraffic.Cargo.class);
+        Jobs.Job.Masstraffic.Inventory inventory = (Jobs.Job.Masstraffic.Inventory)
+                map.get(Jobs.Job.Masstraffic.Inventory.class);
+        Jobs.Job.Masstraffic.Drop drop = (Jobs.Job.Masstraffic.Drop) map.get(Jobs.Job.Masstraffic.Drop.class);
+        Jobs.Job.Masstraffic.Units units = (Jobs.Job.Masstraffic.Units) map.get(Jobs.Job.Masstraffic.Units.class);
+        Jobs.Job.Masstraffic.People people = (Jobs.Job.Masstraffic.People)
+                map.get(Jobs.Job.Masstraffic.People.class);
+
+        MassTraffic jsonMassTraffic = new MassTraffic();
+        jsonMassTraffic.setPilot(pilot != null ? setupPerson(pilot.getNameOrOwnerOrPage()) : null);
+        jsonMassTraffic.setPaint(paint != null ? paint.getWare() : null);
+        jsonMassTraffic.setBasket(basket != null ? new Basket(basket.getBasket(), basket.getComment()) : null);
+        jsonMassTraffic.setDrop(drop != null ? new Drop(drop.getRef(), drop.getComment()) : null);
+
+        addOwnerToMassTraffic(owner, jsonMassTraffic);
+        addLoadOutToMassTraffic(loadOut, jsonMassTraffic);
+        addEquipmentModsToMassTraffic(equipmentMods, jsonMassTraffic);
+        addAmmoToMassTraffic(ammo, jsonMassTraffic);
+        addCargoToMassTraffic(cargo, jsonMassTraffic);
+        addInventoryToMassTraffic(inventory, jsonMassTraffic);
+        addUnitsToMassTraffic(units, jsonMassTraffic);
+        addPeopleToMassTraffic(people, jsonMassTraffic);
+        return jsonMassTraffic;
+    }
+
+    private static void addPeopleToMassTraffic(Jobs.Job.Masstraffic.People people, MassTraffic jsonMassTraffic) {
+        if(people != null){
+            People jsonPeople = new People();
+
+            jsonPeople.setRef(people.getRef());
+
+            Jobs.Job.Masstraffic.People.Fillpercent fillpercent = people.getFillpercent();
+            if(fillpercent != null){
+                ValueType jsonFillPercent = new ValueType();
+                jsonFillPercent.setList(fillpercent.getList());
+                jsonFillPercent.setMin(fillpercent.getMin());
+                jsonFillPercent.setMax(fillpercent.getMax());
+                jsonFillPercent.setScale(fillpercent.getScale() != null ? fillpercent.getScale().intValue() : null);
+                jsonFillPercent.setExact(fillpercent.getExact());
+                jsonFillPercent.setSeed(fillpercent.getSeed());
+                jsonPeople.setFillPercent(jsonFillPercent);
+            }
+
+            for (Jobs.Job.Masstraffic.People.Person person : people.getPerson()) {
+                Person jsonPerson = new Person();
+
+                jsonPerson.setPerson(setupPerson(person.getNameOrOwnerOrPage()));
+                jsonPerson.setComment(person.getComment());
+                jsonPerson.setGroup(person.getGroup());
+                jsonPerson.setRef(person.getRef());
+                jsonPerson.setWeight(person.getWeight());
+                jsonPerson.setActor(person.getActor());
+                jsonPerson.setRole(person.getRole() != null ? person.getRole().value() : null);
+                jsonPerson.setMacro(person.getMacro());
+
+                jsonPeople.getPeople().add(jsonPerson);
+            }
+
+            jsonMassTraffic.setPeople(jsonPeople);
+        }
+    }
+
+    private static void addUnitsToMassTraffic(Jobs.Job.Masstraffic.Units units, MassTraffic jsonMassTraffic) {
+        if(units != null){
+            for (Jobs.Job.Masstraffic.Units.Unit unit : units.getUnit()) {
+                Unit jsonUnit = new Unit();
+
+                jsonUnit.setCategory(unit.getCategory());
+                jsonUnit.setTags(unit.getTags());
+                jsonUnit.setMk(unit.getMk());
+
+                ValueType jsonUnitValue = new ValueType();
+                jsonUnitValue.setList(unit.getList());
+                jsonUnitValue.setMin(unit.getMin());
+                jsonUnitValue.setMax(unit.getMax());
+                jsonUnitValue.setScale(unit.getScale() != null ? unit.getScale().intValue() : null);
+                jsonUnitValue.setExact(unit.getExact());
+                jsonUnitValue.setSeed(unit.getSeed());
+                jsonUnit.setValue(jsonUnitValue);
+
+                jsonMassTraffic.getUnits().add(jsonUnit);
+            }
+        }
+    }
+
+    private static void addInventoryToMassTraffic(Jobs.Job.Masstraffic.Inventory inventory, MassTraffic jsonMassTraffic) {
+        if(inventory != null){
+            for (Jobs.Job.Masstraffic.Inventory.Wares ware : inventory.getWares()) {
+                Inventory jsonInventory = new Inventory();
+
+                jsonInventory.setBasket(ware.getBasket());
+                jsonInventory.setChance(ware.getChance());
+                jsonInventory.setList(ware.getList());
+                jsonInventory.setMultiple(ware.isMultiple());
+
+                Jobs.Job.Masstraffic.Inventory.Wares.Fillvalue fillvalue = ware.getFillvalue();
+                if(fillvalue != null){
+                    ValueType jsonFillValue = new ValueType();
+                    jsonFillValue.setList(fillvalue.getList());
+                    jsonFillValue.setMin(fillvalue.getMin());
+                    jsonFillValue.setMax(fillvalue.getMax());
+                    jsonFillValue.setScale(fillvalue.getScale() != null ? fillvalue.getScale().intValue() : null);
+                    jsonFillValue.setExact(fillvalue.getExact());
+                    jsonFillValue.setSeed(fillvalue.getSeed());
+                    jsonInventory.setFillValue(jsonFillValue);
+                }
+
+                Jobs.Job.Masstraffic.Inventory.Wares.Fillamount fillAmount = ware.getFillamount();
+                if(fillAmount != null){
+                    ValueType jsonFillPercent = new ValueType();
+                    jsonFillPercent.setList(fillAmount.getList());
+                    jsonFillPercent.setMin(fillAmount.getMin());
+                    jsonFillPercent.setMax(fillAmount.getMax());
+                    jsonFillPercent.setScale(fillAmount.getScale() != null ? fillAmount.getScale().intValue() : null);
+                    jsonFillPercent.setExact(fillAmount.getExact());
+                    jsonFillPercent.setSeed(fillAmount.getSeed());
+                    jsonInventory.setFillAmount(jsonFillPercent);
+                }
+
+                jsonMassTraffic.getInventory().add(jsonInventory);
+            }
+        }
+    }
+
+    private static void addCargoToMassTraffic(Jobs.Job.Masstraffic.Cargo cargo, MassTraffic jsonMassTraffic) {
+        if(cargo != null){
+            for (Jobs.Job.Masstraffic.Cargo.Wares ware : cargo.getWares()) {
+                Cargo jsonCargo = new Cargo();
+
+                jsonCargo.setBasket(ware.getBasket());
+                jsonCargo.setChance(ware.getChance());
+                jsonCargo.setList(ware.getList());
+                jsonCargo.setMultiple(ware.isMultiple());
+                jsonCargo.setOnjobrespawn(ware.isOnjobrespawn());
+
+                Jobs.Job.Masstraffic.Cargo.Wares.Fillvalue fillvalue = ware.getFillvalue();
+                if(fillvalue != null){
+                    ValueType jsonFillValue = new ValueType();
+                    jsonFillValue.setList(fillvalue.getList());
+                    jsonFillValue.setMin(fillvalue.getMin());
+                    jsonFillValue.setMax(fillvalue.getMax());
+                    jsonFillValue.setScale(fillvalue.getScale() != null ? fillvalue.getScale().intValue() : null);
+                    jsonFillValue.setExact(fillvalue.getExact());
+                    jsonFillValue.setSeed(fillvalue.getSeed());
+                    jsonCargo.setFillValue(jsonFillValue);
+                }
+
+                Jobs.Job.Masstraffic.Cargo.Wares.Fillpercent fillpercent = ware.getFillpercent();
+                if(fillpercent != null){
+                    ValueType jsonFillPercent = new ValueType();
+                    jsonFillPercent.setList(fillpercent.getList());
+                    jsonFillPercent.setMin(fillpercent.getMin());
+                    jsonFillPercent.setMax(fillpercent.getMax());
+                    jsonFillPercent.setScale(fillpercent.getScale() != null ? fillpercent.getScale().intValue() : null);
+                    jsonFillPercent.setExact(fillpercent.getExact());
+                    jsonFillPercent.setSeed(fillpercent.getSeed());
+                    jsonCargo.setFillPercent(jsonFillPercent);
+                }
+
+                jsonMassTraffic.getCargo().add(jsonCargo);
+            }
         }
     }
 
@@ -266,105 +502,107 @@ public class JobXmlToJsonConvertor {
 
     private static void addPilotToMassTraffic(Jobs.Job.Masstraffic.Pilot pilot, MassTraffic jsonMassTraffic) {
         if(pilot != null){
-            List<Object> nameOrOwnerOrPage = pilot.getNameOrOwnerOrPage();
-            Map<Class, Object> map = nameOrOwnerOrPage.stream()
-                    .collect(Collectors.toMap(Object::getClass, object -> object));
-
-            Jobs.Job.Masstraffic.People.Person.Name name = (Jobs.Job.Masstraffic.People.Person.Name)
-                    map.get(Jobs.Job.Masstraffic.People.Person.Name.class);
-            Selectrandom owner = (Selectrandom) map.get(Selectrandom.class);
-            Jobs.Job.Masstraffic.People.Person.Page page = (Jobs.Job.Masstraffic.People.Person.Page)
-                    map.get(Jobs.Job.Masstraffic.People.Person.Page.class);
-            Jobs.Job.Masstraffic.People.Person.Skills skills = (Jobs.Job.Masstraffic.People.Person.Skills)
-                    map.get(Jobs.Job.Masstraffic.People.Person.Skills.class);
-            Jobs.Job.Masstraffic.People.Person.Stock stock = (Jobs.Job.Masstraffic.People.Person.Stock)
-                    map.get(Jobs.Job.Masstraffic.People.Person.Stock.class);
-            Jobs.Job.Masstraffic.People.Person.Clothing clothing = (Jobs.Job.Masstraffic.People.Person.Clothing)
-                    map.get(Jobs.Job.Masstraffic.People.Person.Clothing.class);
-
-            PersonAttributes pilotPerson = new PersonAttributes();
-
-            pilotPerson.setName(name != null ? name.getName() : null);
-
-            if(owner != null){
-                Owner pilotOwner = new Owner();
-                pilotOwner.setSelection(owner.getSelection() != null ? owner.getSelection().value() : null);
-                pilotOwner.setComment(owner.getComment());
-                ValueType value = new ValueType();
-                value.setList(owner.getList());
-                value.setMin(owner.getMin());
-                value.setMax(owner.getMax());
-                value.setScale(owner.getScale() != null ? owner.getScale().intValue() : null);
-                value.setExact(owner.getExact());
-                value.setSeed(owner.getSeed());
-                pilotOwner.setValue(value);
-
-                List<Selectrandom.Select> select = owner.getSelect();
-                if(select != null) {
-                    ArrayList<Select> jsonSelections = new ArrayList<>();
-                    for (Selectrandom.Select randomSelect : select) {
-                        Select jsonSelect = new Select();
-                        jsonSelect.setWeight(randomSelect.getWeight() != null ? randomSelect.getWeight().intValue() : null);
-                        jsonSelect.setComment(randomSelect.getComment());
-                        ValueType jsonSelectValue = new ValueType();
-                        jsonSelectValue.setList(randomSelect.getList());
-                        jsonSelectValue.setMin(randomSelect.getMin());
-                        jsonSelectValue.setMax(randomSelect.getMax());
-                        jsonSelectValue.setScale(randomSelect.getScale() != null ? randomSelect.getScale().intValue() : null);
-                        jsonSelectValue.setExact(randomSelect.getExact());
-                        jsonSelectValue.setSeed(randomSelect.getSeed());
-                        jsonSelect.setValue(jsonSelectValue);
-                        jsonSelections.add(jsonSelect);
-                    }
-                    pilotOwner.setSelect(jsonSelections);
-                }
-                pilotPerson.setOwner(pilotOwner);
-            }
-
-            if(clothing != null) {
-                pilotPerson.setClothing(clothing.getWare());
-            }
-
-            if(stock != null) {
-                pilotPerson.setStock(new Stock(stock.getRef(), stock.getComment()));
-            }
-
-            if(page != null){
-                Page jsonPage = new Page();
-                jsonPage.setTags(page.getTags());
-                jsonPage.setComment(page.getComment());
-                ValueType pageValueType = new ValueType();
-                pageValueType.setList(page.getList());
-                pageValueType.setMin(page.getMin());
-                pageValueType.setMax(page.getMax());
-                pageValueType.setScale(page.getScale() != null ? page.getScale().intValue() : null);
-                pageValueType.setExact(page.getExact());
-                pageValueType.setSeed(page.getSeed());
-                jsonPage.setValue(pageValueType);
-                pilotPerson.setPage(jsonPage);
-            }
-
-            if(skills != null){
-                ArrayList<Skill> jsonSkills = new ArrayList<>();
-                for (Jobs.Job.Masstraffic.People.Person.Skills.Skill skill : skills.getSkill()) {
-                    Skill jsonSkill = new Skill();
-                    jsonSkill.setType(skill.getType() != null ? skill.getType().value() : null);
-                    jsonSkill.setComment(skill.getComment());
-                    ValueType skillValueType = new ValueType();
-                    skillValueType.setList(page.getList());
-                    skillValueType.setMin(page.getMin());
-                    skillValueType.setMax(page.getMax());
-                    skillValueType.setScale(page.getScale() != null ? page.getScale().intValue() : null);
-                    skillValueType.setExact(page.getExact());
-                    skillValueType.setSeed(page.getSeed());
-                    jsonSkill.setValue(skillValueType);
-                    jsonSkills.add(jsonSkill);
-                }
-                pilotPerson.setSkills(jsonSkills);
-            }
-
-            jsonMassTraffic.setPilot(pilotPerson);
+            jsonMassTraffic.setPilot(setupPerson(pilot.getNameOrOwnerOrPage()));
         }
+    }
+
+    private static PersonAttributes setupPerson(List<Object> nameOrOwnerOrPage) {
+        Map<Class, Object> map = nameOrOwnerOrPage.stream()
+                .collect(Collectors.toMap(Object::getClass, object -> object));
+
+        Jobs.Job.Masstraffic.People.Person.Name name = (Jobs.Job.Masstraffic.People.Person.Name)
+                map.get(Jobs.Job.Masstraffic.People.Person.Name.class);
+        Selectrandom owner = (Selectrandom) map.get(Selectrandom.class);
+        Jobs.Job.Masstraffic.People.Person.Page page = (Jobs.Job.Masstraffic.People.Person.Page)
+                map.get(Jobs.Job.Masstraffic.People.Person.Page.class);
+        Jobs.Job.Masstraffic.People.Person.Skills skills = (Jobs.Job.Masstraffic.People.Person.Skills)
+                map.get(Jobs.Job.Masstraffic.People.Person.Skills.class);
+        Jobs.Job.Masstraffic.People.Person.Stock stock = (Jobs.Job.Masstraffic.People.Person.Stock)
+                map.get(Jobs.Job.Masstraffic.People.Person.Stock.class);
+        Jobs.Job.Masstraffic.People.Person.Clothing clothing = (Jobs.Job.Masstraffic.People.Person.Clothing)
+                map.get(Jobs.Job.Masstraffic.People.Person.Clothing.class);
+
+        PersonAttributes pilotPerson = new PersonAttributes();
+
+        pilotPerson.setName(name != null ? name.getName() : null);
+
+        if(owner != null){
+            Owner pilotOwner = new Owner();
+            pilotOwner.setSelection(owner.getSelection() != null ? owner.getSelection().value() : null);
+            pilotOwner.setComment(owner.getComment());
+            ValueType value = new ValueType();
+            value.setList(owner.getList());
+            value.setMin(owner.getMin());
+            value.setMax(owner.getMax());
+            value.setScale(owner.getScale() != null ? owner.getScale().intValue() : null);
+            value.setExact(owner.getExact());
+            value.setSeed(owner.getSeed());
+            pilotOwner.setValue(value);
+
+            List<Selectrandom.Select> select = owner.getSelect();
+            if(select != null) {
+                ArrayList<Select> jsonSelections = new ArrayList<>();
+                for (Selectrandom.Select randomSelect : select) {
+                    Select jsonSelect = new Select();
+                    jsonSelect.setWeight(randomSelect.getWeight() != null ? randomSelect.getWeight().intValue() : null);
+                    jsonSelect.setComment(randomSelect.getComment());
+                    ValueType jsonSelectValue = new ValueType();
+                    jsonSelectValue.setList(randomSelect.getList());
+                    jsonSelectValue.setMin(randomSelect.getMin());
+                    jsonSelectValue.setMax(randomSelect.getMax());
+                    jsonSelectValue.setScale(randomSelect.getScale() != null ? randomSelect.getScale().intValue() : null);
+                    jsonSelectValue.setExact(randomSelect.getExact());
+                    jsonSelectValue.setSeed(randomSelect.getSeed());
+                    jsonSelect.setValue(jsonSelectValue);
+                    jsonSelections.add(jsonSelect);
+                }
+                pilotOwner.setSelect(jsonSelections);
+            }
+            pilotPerson.setOwner(pilotOwner);
+        }
+
+        if(clothing != null) {
+            pilotPerson.setClothing(clothing.getWare());
+        }
+
+        if(stock != null) {
+            pilotPerson.setStock(new Stock(stock.getRef(), stock.getComment()));
+        }
+
+        if(page != null){
+            Page jsonPage = new Page();
+            jsonPage.setTags(page.getTags());
+            jsonPage.setComment(page.getComment());
+            ValueType pageValueType = new ValueType();
+            pageValueType.setList(page.getList());
+            pageValueType.setMin(page.getMin());
+            pageValueType.setMax(page.getMax());
+            pageValueType.setScale(page.getScale() != null ? page.getScale().intValue() : null);
+            pageValueType.setExact(page.getExact());
+            pageValueType.setSeed(page.getSeed());
+            jsonPage.setValue(pageValueType);
+            pilotPerson.setPage(jsonPage);
+        }
+
+        if(skills != null){
+            ArrayList<Skill> jsonSkills = new ArrayList<>();
+            for (Jobs.Job.Masstraffic.People.Person.Skills.Skill skill : skills.getSkill()) {
+                Skill jsonSkill = new Skill();
+                jsonSkill.setType(skill.getType() != null ? skill.getType().value() : null);
+                jsonSkill.setComment(skill.getComment());
+                ValueType skillValueType = new ValueType();
+                skillValueType.setList(page.getList());
+                skillValueType.setMin(page.getMin());
+                skillValueType.setMax(page.getMax());
+                skillValueType.setScale(page.getScale() != null ? page.getScale().intValue() : null);
+                skillValueType.setExact(page.getExact());
+                skillValueType.setSeed(page.getSeed());
+                jsonSkill.setValue(skillValueType);
+                jsonSkills.add(jsonSkill);
+            }
+            pilotPerson.setSkills(jsonSkills);
+        }
+        return pilotPerson;
     }
 
     private static void addOwnerToMassTraffic(Jobs.Job.Masstraffic.Owner owner, MassTraffic jsonMassTraffic) {

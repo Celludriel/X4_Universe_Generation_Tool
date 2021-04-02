@@ -2,6 +2,7 @@ package be.celludriel.universegenerator.model.jobs;
 
 import be.celludriel.universegenerator.model.AbstractJson;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Job extends AbstractJson {
@@ -17,9 +18,9 @@ public class Job extends AbstractJson {
 
     private Basket basket;
     private Category category;
-    private List<JobOrder> orders;
-    private List<Task> tasks;
-    private List<Quota> quota;
+    private List<JobOrder> orders = new ArrayList<>();
+    private List<Task> tasks = new ArrayList<>();
+    private List<Quota> quota = new ArrayList<>();
     private Location location;
     private Commander commander;
     private String encounters;
@@ -30,7 +31,7 @@ public class Job extends AbstractJson {
     private ExpirationTime expirationTime;
 
     private Ship ship;
-    private List<Subordinate> subordinates;
+    private List<Subordinate> subordinates = new ArrayList<>();
     private MassTraffic masstraffic;
 
     public String getId() {

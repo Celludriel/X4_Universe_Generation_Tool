@@ -4,25 +4,40 @@
   <replace sel="/jobs">
     <jobs>
       <#list galaxy.jobs as job>
-      <job id="${job.id}" name="${job.name}" <#if job.startActive??>startactive="${job.startActive?c}"</#if> <#if job.disabled??>disabled="${job.disabled?c}"</#if>>
-        <#if job.hasModifiers()>
-        <modifiers <#if job.rebuild??>rebuild="${job.rebuild?c}"</#if> <#if job.commandeerable??>commandeerable="${job.commandeerable?c}"</#if> <#if job.subordinate??>subordinate="${job.subordinate?c}"</#if> />
+      <job id="${job.id}" <#if job.name??>name="${job.name}"</#if> <#if job.startActive??>startactive="${job.startActive?c}"</#if> <#if job.disabled??>disabled="${job.disabled?c}"</#if> <#if job.comment??>comment="${job.comment}"</#if> <#if job.description??>description="${job.description}"</#if> <#if job.fullname??>fullname="${job.fullname?c}"</#if> <#if job.ignorecommanderwares??>ignorecommanderwares="${job.ignorecommanderwares?c}"</#if>">
+        <#if job.basket??>
+        <basket basket="${job.basket.basket}" <#if job.basket.comment??>comment="${job.basket.comment}"</#if>/>
+        </#if>
+        <#if job.category??>
+        <category faction="${job.category.faction}" tags="[${job.category.tags}]" <#if job.category.size??>size="${job.category.size}"</#if> <#if job.basket.comment??>comment="${job.category.comment}"</#if>/>
         </#if>
         <orders>
         <#list job.orders as order>
-            <order order="${order.order}" default="${order.defaultOrder?c}">
-            <#list order.parameters as param>
-                <param name="${param.name}" value="${param.value}"/>
+            <order order="${order.order}" default="${order.defaultOrder?c} <#if order.comment??>comment="${order.comment}"</#if>">
+            <#list order.params as key, value>
+                <param name="${key}" value="${value}"/>
             </#list>
             </order>
         </#list>
         </orders>
-        <#if job.basket??>
-        <basket basket="${job.basket}" />
+        <tasks>
+        <#list job.tasks as task>
+            <task task="${task.task}" <#if task.entitytype??>entitytype="${task.comment}"</#if> <#if task.comment??>comment="${task.comment}"</#if>>
+            <#list task.params as key, value>
+                <param name="${key}" value="${value}"/>
+            </#list>
+            </task>
+        </#list>
+        </tasks>
+
+
+
+
+        <#if job.hasModifiers()>
+        <modifiers <#if job.rebuild??>rebuild="${job.rebuild?c}"</#if> <#if job.commandeerable??>commandeerable="${job.commandeerable?c}"</#if> <#if job.subordinate??>subordinate="${job.subordinate?c}"</#if> />
         </#if>
-        <#if job.jobCategory??>
-        <category faction="${job.jobCategory.faction.getName()}" tags="[${job.jobCategory.getTagsPrint()}]" <#if job.jobCategory.shipSize??>size="${job.jobCategory.shipSize.getName()}"</#if> />
-        </#if>
+
+
         <quota <#if job.jobQuota.galaxy?? && job.jobQuota.galaxy != 0>galaxy="${job.jobQuota.galaxy}"</#if> <#if job.jobQuota.maxGalaxy?? && job.jobQuota.maxGalaxy != 0>maxgalaxy="${job.jobQuota.maxGalaxy}"</#if> <#if job.jobQuota.cluster?? && job.jobQuota.cluster != 0>cluster="${job.jobQuota.cluster}"</#if> <#if job.jobQuota.sector?? && job.jobQuota.sector != 0>sector="${job.jobQuota.sector}"</#if> <#if job.jobQuota.zone?? && job.jobQuota.zone != 0>zone="${job.jobQuota.zone}"</#if> <#if job.jobQuota.wing?? && job.jobQuota.wing != 0>wing="${job.jobQuota.wing}"</#if> <#if job.jobQuota.variation?? && job.jobQuota.variation != 0>variation="${job.jobQuota.variation}"</#if> <#if job.jobQuota.station?? && job.jobQuota.station != 0>station="${job.jobQuota.station}"</#if> />
         <#if job.jobLocation??>
         <location class="${job.jobLocation.locationClass}" <#if job.jobLocation.macro??>macro="${job.jobLocation.macro}"<#else>macro="${galaxy.galaxyPrefix}_galaxy_macro"</#if> <#if job.jobLocation.relation??>relation="${job.jobLocation.relation}"</#if> <#if job.jobLocation.comparison??>comparison="${job.jobLocation.comparison}"</#if> <#if job.jobLocation.regionBasket??>regionbasket="${job.jobLocation.regionBasket}"</#if> <#if job.jobLocation.factions?size != 0>faction="${job.jobLocation.getPrintFactions()}"</#if> />

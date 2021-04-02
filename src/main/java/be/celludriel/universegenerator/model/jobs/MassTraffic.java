@@ -2,6 +2,7 @@ package be.celludriel.universegenerator.model.jobs;
 
 import be.celludriel.universegenerator.model.AbstractJson;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,16 @@ public class MassTraffic extends AbstractJson {
     private Drop drop;
     private List<Unit> units = new ArrayList<>();
     private People people;
+
+    private ShipCategory shipCategory;
+    private Float relaunchdelay;
+    private Float respawndelay;
+    private String comment;
+    private String macro;
+    private String group;
+    private String ref;
+    private String capturable;
+    private String sellable;
 
     public Owner getOwner() {
         return owner;
@@ -68,6 +79,42 @@ public class MassTraffic extends AbstractJson {
         return people;
     }
 
+    public ShipCategory getShipCategory() {
+        return shipCategory;
+    }
+
+    public Float getRelaunchdelay() {
+        return relaunchdelay;
+    }
+
+    public Float getRespawndelay() {
+        return respawndelay;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public String getMacro() {
+        return macro;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public String getRef() {
+        return ref;
+    }
+
+    public String getCapturable() {
+        return capturable;
+    }
+
+    public String getSellable() {
+        return sellable;
+    }
+
     public void setOwner(Owner owner) {
         this.owner = owner;
     }
@@ -114,5 +161,41 @@ public class MassTraffic extends AbstractJson {
 
     public void setPeople(People people) {
         this.people = people;
+    }
+
+    public void setShipCategory(ShipCategory shipCategory) {
+        this.shipCategory = shipCategory;
+    }
+
+    public void setRelaunchdelay(Float relaunchdelay) {
+        this.relaunchdelay = relaunchdelay;
+    }
+
+    public void setRespawndelay(Float respawndelay) {
+        this.respawndelay = respawndelay;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public void setMacro(String macro) {
+        this.macro = macro;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    public void setRef(String ref) {
+        this.ref = ref;
+    }
+
+    public void setCapturable(String capturable) {
+        this.capturable = capturable;
+    }
+
+    public void setSellable(String sellable) {
+        this.sellable = sellable;
     }
 }
