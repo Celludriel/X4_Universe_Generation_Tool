@@ -7,7 +7,6 @@ public class Category extends AbstractJson {
     private String faction;
     private String tags;
     private String size;
-    private String comment;
 
     public String getFaction() {
         return faction;
@@ -21,10 +20,6 @@ public class Category extends AbstractJson {
         return size;
     }
 
-    public String getComment() {
-        return comment;
-    }
-
     public void setFaction(String faction) {
         this.faction = faction;
     }
@@ -35,9 +30,5 @@ public class Category extends AbstractJson {
 
     public void setSize(String size) {
         this.size = size;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
     }
 }

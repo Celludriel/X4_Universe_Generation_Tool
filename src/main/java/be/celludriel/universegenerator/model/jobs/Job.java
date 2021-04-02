@@ -16,7 +16,7 @@ public class Job extends AbstractJson {
     private Boolean ignoreCommanderWares;
     private String comment;
 
-    private Basket basket;
+    private String basket;
     private Category category;
     private List<JobOrder> orders = new ArrayList<>();
     private List<Task> tasks = new ArrayList<>();
@@ -66,7 +66,7 @@ public class Job extends AbstractJson {
         return comment;
     }
 
-    public Basket getBasket() {
+    public String getBasket() {
         return basket;
     }
 
@@ -162,7 +162,7 @@ public class Job extends AbstractJson {
         this.comment = comment;
     }
 
-    public void setBasket(Basket basket) {
+    public void setBasket(String basket) {
         this.basket = basket;
     }
 
