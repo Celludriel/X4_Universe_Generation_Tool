@@ -2,7 +2,7 @@ package be.celludriel.universegenerator.model.jobs;
 
 import be.celludriel.universegenerator.model.AbstractJson;
 
-public class Environment extends AbstractJson {
+public class JsonEnvironment extends AbstractJson {
 
     private boolean buildatshipyard;
     private Boolean gate;

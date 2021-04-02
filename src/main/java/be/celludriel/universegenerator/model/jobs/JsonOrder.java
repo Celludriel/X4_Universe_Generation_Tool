@@ -5,42 +5,33 @@ import be.celludriel.universegenerator.model.AbstractJson;
 import java.util.HashMap;
 import java.util.Map;
 
-public class JobOrder extends AbstractJson {
+public class JsonOrder extends AbstractJson {
 
     private Map<String, String> params = new HashMap<>();
+    private boolean defaultOrder;
     private String order;
-    private Boolean defaultOrder;
-    private String comment;
 
     public Map<String, String> getParams() {
         return params;
+    }
+
+    public boolean isDefaultOrder() {
+        return defaultOrder;
     }
 
     public String getOrder() {
         return order;
     }
 
-    public Boolean getDefaultOrder() {
-        return defaultOrder;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
     public void setParams(Map<String, String> params) {
         this.params = params;
     }
 
-    public void setOrder(String order) {
-        this.order = order;
-    }
-
-    public void setDefaultOrder(Boolean defaultOrder) {
+    public void setDefaultOrder(boolean defaultOrder) {
         this.defaultOrder = defaultOrder;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setOrder(String order) {
+        this.order = order;
     }
 }

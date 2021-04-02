@@ -2,8 +2,7 @@ package be.celludriel.universegenerator.model.jobs;
 
 import be.celludriel.universegenerator.model.AbstractJson;
 
-public class Quota extends AbstractJson {
-    private String gamestart;
+public class JsonQuota extends AbstractJson {
     private Integer galaxy;
     private Integer maxgalaxy;
     private Integer wing;
@@ -12,10 +11,6 @@ public class Quota extends AbstractJson {
     private Integer zone;
     private String station;
     private Integer variation;
-
-    public String getGamestart() {
-        return gamestart;
-    }
 
     public Integer getGalaxy() {
         return galaxy;
@@ -47,10 +42,6 @@ public class Quota extends AbstractJson {
 
     public Integer getVariation() {
         return variation;
-    }
-
-    public void setGamestart(String gamestart) {
-        this.gamestart = gamestart;
     }
 
     public void setGalaxy(Integer galaxy) {

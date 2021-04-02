@@ -2,11 +2,20 @@ package be.celludriel.universegenerator.model.jobs;
 
 import be.celludriel.universegenerator.model.AbstractJson;
 
-public class ValueType extends AbstractJson {
+public class JsonValueType extends AbstractJson {
 
     private String min;
     private String max;
     private String profile;
+
+    public JsonValueType() {
+    }
+
+    public JsonValueType(String min, String max, String profile) {
+        this.min = min;
+        this.max = max;
+        this.profile = profile;
+    }
 
     public String getMin() {
         return min;

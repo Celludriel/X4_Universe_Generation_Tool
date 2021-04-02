@@ -2,12 +2,12 @@ package be.celludriel.universegenerator.model.jobs;
 
 import be.celludriel.universegenerator.model.AbstractJson;
 
-public class Cargo extends AbstractJson {
+public class JsonCargo extends AbstractJson {
 
-    private ValueType fillPercent;
+    private JsonValueType fillPercent;
     private Boolean multiple;
 
-    public ValueType getFillPercent() {
+    public JsonValueType getFillPercent() {
         return fillPercent;
     }
 
@@ -15,7 +15,7 @@ public class Cargo extends AbstractJson {
         return multiple;
     }
 
-    public void setFillPercent(ValueType fillPercent) {
+    public void setFillPercent(JsonValueType fillPercent) {
         this.fillPercent = fillPercent;
     }
 

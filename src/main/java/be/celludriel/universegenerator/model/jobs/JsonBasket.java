@@ -2,11 +2,11 @@ package be.celludriel.universegenerator.model.jobs;
 
 import be.celludriel.universegenerator.model.AbstractJson;
 
-public class Basket extends AbstractJson {
+public class JsonBasket extends AbstractJson {
 
     private String basket;
 
-    public Basket() {
+    public JsonBasket() {
     }
 
     public String getBasket() {

@@ -2,15 +2,14 @@ package be.celludriel.universegenerator.model.jobs;
 
 import be.celludriel.universegenerator.model.AbstractJson;
 
-public class Sunlight extends AbstractJson {
+public class JsonSunlight extends AbstractJson {
 
     private Double min;
     private Double max;
 
-    public Sunlight() {
+    public JsonSunlight() {
     }
-
-    public Sunlight(Double min, Double max) {
+    public JsonSunlight(Double min, Double max) {
         this.min = min;
         this.max = max;
     }

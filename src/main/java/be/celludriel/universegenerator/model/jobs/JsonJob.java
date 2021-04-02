@@ -5,34 +5,31 @@ import be.celludriel.universegenerator.model.AbstractJson;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Job extends AbstractJson {
+public class JsonJob extends AbstractJson {
 
     private String id;
     private String name;
     private String description;
-    private String disabled;
+    private Boolean disabled;
     private Boolean startActive;
-    private Boolean fullName;
     private Boolean ignoreCommanderWares;
     private String comment;
 
     private String basket;
-    private Category category;
-    private List<JobOrder> orders = new ArrayList<>();
-    private List<Task> tasks = new ArrayList<>();
-    private List<Quota> quotas = new ArrayList<>();
-    private Location location;
-    private Commander commander;
+    private JsonCategory category;
+    private JsonOrder order;
+    private String task;
+    private JsonQuota quota;
+    private JsonLocation location;
     private String encounters;
-    private Environment environment;
-    private Position position;
-    private Modifiers modifiers;
-    private Time time;
-    private ExpirationTime expirationTime;
+    private JsonEnvironment environment;
+    private JsonModifiers modifiers;
+    private JsonTime time;
+    private JsonExpirationTime expirationTime;
 
-    private Ship ship;
-    private List<Subordinate> subordinates = new ArrayList<>();
-    private MassTraffic masstraffic;
+    private JsonShip ship;
+    private List<String> subordinates = new ArrayList<>();
+    private JsonMassTraffic masstraffic;
 
     public String getId() {
         return id;
@@ -46,16 +43,12 @@ public class Job extends AbstractJson {
         return description;
     }
 
-    public String getDisabled() {
+    public Boolean getDisabled() {
         return disabled;
     }
 
     public Boolean getStartActive() {
         return startActive;
-    }
-
-    public Boolean getFullName() {
-        return fullName;
     }
 
     public Boolean getIgnoreCommanderWares() {
@@ -70,63 +63,55 @@ public class Job extends AbstractJson {
         return basket;
     }
 
-    public Category getCategory() {
+    public JsonCategory getCategory() {
         return category;
     }
 
-    public List<JobOrder> getOrders() {
-        return orders;
+    public JsonOrder getOrder() {
+        return order;
     }
 
-    public List<Task> getTasks() {
-        return tasks;
+    public String getTask() {
+        return task;
     }
 
-    public List<Quota> getQuotas() {
-        return quotas;
+    public JsonQuota getQuota() {
+        return quota;
     }
 
-    public Location getLocation() {
+    public JsonLocation getLocation() {
         return location;
-    }
-
-    public Commander getCommander() {
-        return commander;
     }
 
     public String getEncounters() {
         return encounters;
     }
 
-    public Environment getEnvironment() {
+    public JsonEnvironment getEnvironment() {
         return environment;
     }
 
-    public Position getPosition() {
-        return position;
-    }
-
-    public Modifiers getModifiers() {
+    public JsonModifiers getModifiers() {
         return modifiers;
     }
 
-    public Time getTime() {
+    public JsonTime getTime() {
         return time;
     }
 
-    public ExpirationTime getExpirationTime() {
+    public JsonExpirationTime getExpirationTime() {
         return expirationTime;
     }
 
-    public Ship getShip() {
+    public JsonShip getShip() {
         return ship;
     }
 
-    public List<Subordinate> getSubordinates() {
+    public List<String> getSubordinates() {
         return subordinates;
     }
 
-    public MassTraffic getMasstraffic() {
+    public JsonMassTraffic getMasstraffic() {
         return masstraffic;
     }
 
@@ -142,16 +127,12 @@ public class Job extends AbstractJson {
         this.description = description;
     }
 
-    public void setDisabled(String disabled) {
+    public void setDisabled(Boolean disabled) {
         this.disabled = disabled;
     }
 
     public void setStartActive(Boolean startActive) {
         this.startActive = startActive;
-    }
-
-    public void setFullName(Boolean fullName) {
-        this.fullName = fullName;
     }
 
     public void setIgnoreCommanderWares(Boolean ignoreCommanderWares) {
@@ -166,63 +147,55 @@ public class Job extends AbstractJson {
         this.basket = basket;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(JsonCategory category) {
         this.category = category;
     }
 
-    public void setOrders(List<JobOrder> orders) {
-        this.orders = orders;
+    public void setOrder(JsonOrder order) {
+        this.order = order;
     }
 
-    public void setTasks(List<Task> tasks) {
-        this.tasks = tasks;
+    public void setTask(String task) {
+        this.task = task;
     }
 
-    public void setQuotas(List<Quota> quotas) {
-        this.quotas = quotas;
+    public void setQuota(JsonQuota quota) {
+        this.quota = quota;
     }
 
-    public void setLocation(Location location) {
+    public void setLocation(JsonLocation location) {
         this.location = location;
-    }
-
-    public void setCommander(Commander commander) {
-        this.commander = commander;
     }
 
     public void setEncounters(String encounters) {
         this.encounters = encounters;
     }
 
-    public void setEnvironment(Environment environment) {
+    public void setEnvironment(JsonEnvironment environment) {
         this.environment = environment;
     }
 
-    public void setPosition(Position position) {
-        this.position = position;
-    }
-
-    public void setModifiers(Modifiers modifiers) {
+    public void setModifiers(JsonModifiers modifiers) {
         this.modifiers = modifiers;
     }
 
-    public void setTime(Time time) {
+    public void setTime(JsonTime time) {
         this.time = time;
     }
 
-    public void setExpirationTime(ExpirationTime expirationTime) {
+    public void setExpirationTime(JsonExpirationTime expirationTime) {
         this.expirationTime = expirationTime;
     }
 
-    public void setShip(Ship ship) {
+    public void setShip(JsonShip ship) {
         this.ship = ship;
     }
 
-    public void setSubordinates(List<Subordinate> subordinates) {
+    public void setSubordinates(List<String> subordinates) {
         this.subordinates = subordinates;
     }
 
-    public void setMasstraffic(MassTraffic masstraffic) {
+    public void setMasstraffic(JsonMassTraffic masstraffic) {
         this.masstraffic = masstraffic;
     }
 }
