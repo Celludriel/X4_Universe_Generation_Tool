@@ -7,6 +7,9 @@ public class Subordinate extends AbstractJson {
     private String job;
     private String rebuild;
 
+    public Subordinate() {
+    }
+
     public Subordinate(String job) {
         this.job = job;
     }

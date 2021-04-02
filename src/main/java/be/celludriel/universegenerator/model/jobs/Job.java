@@ -20,7 +20,7 @@ public class Job extends AbstractJson {
     private Category category;
     private List<JobOrder> orders = new ArrayList<>();
     private List<Task> tasks = new ArrayList<>();
-    private List<Quota> quota = new ArrayList<>();
+    private List<Quota> quotas = new ArrayList<>();
     private Location location;
     private Commander commander;
     private String encounters;
@@ -82,8 +82,8 @@ public class Job extends AbstractJson {
         return tasks;
     }
 
-    public List<Quota> getQuota() {
-        return quota;
+    public List<Quota> getQuotas() {
+        return quotas;
     }
 
     public Location getLocation() {
@@ -178,8 +178,8 @@ public class Job extends AbstractJson {
         this.tasks = tasks;
     }
 
-    public void setQuota(List<Quota> quota) {
-        this.quota = quota;
+    public void setQuotas(List<Quota> quotas) {
+        this.quotas = quotas;
     }
 
     public void setLocation(Location location) {

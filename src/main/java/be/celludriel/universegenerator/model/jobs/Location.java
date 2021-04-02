@@ -1,6 +1,8 @@
 package be.celludriel.universegenerator.model.jobs;
 
 import be.celludriel.universegenerator.model.AbstractJson;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -123,5 +125,76 @@ public class Location extends AbstractJson {
 
     public void setMatchExtension(Boolean matchExtension) {
         this.matchExtension = matchExtension;
+    }
+
+    //Utility
+
+    @JsonIgnore
+    public String getPrintFactions(){
+        if(factions.size() == 1){
+            return factions.get(0).getFaction();
+        }
+
+        List<String> stringValues = new ArrayList<>();
+        for (Faction faction : factions) {
+            stringValues.add(faction.getFaction());
+        }
+        return "[" + StringUtils.join(stringValues, ",") + "]";
+    }
+
+    @JsonIgnore
+    public boolean isNegateFaction() {
+        for (Faction faction : factions) {
+            if(faction.getNegateFaction() != null && faction.getNegateFaction().booleanValue()){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @JsonIgnore
+    public String getPrintPoliceFactions(){
+        if(policeFactions.size() == 1){
+            return policeFactions.get(0).getPoliceFaction();
+        }
+
+        List<String> stringValues = new ArrayList<>();
+        for (PoliceFaction faction : policeFactions) {
+            stringValues.add(faction.getPoliceFaction());
+        }
+        return "[" + StringUtils.join(stringValues, ",") + "]";
+    }
+
+    @JsonIgnore
+    public boolean isNegatePoliceFaction() {
+        for (PoliceFaction faction : policeFactions) {
+            if(faction.getNegatePoliceFaction() != null && faction.getNegatePoliceFaction().booleanValue()){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @JsonIgnore
+    public String getPrintFactionRaces(){
+        if(factionRaces.size() == 1){
+            return factionRaces.get(0).getFactionRace();
+        }
+
+        List<String> stringValues = new ArrayList<>();
+        for (FactionRace faction : factionRaces) {
+            stringValues.add(faction.getFactionRace());
+        }
+        return "[" + StringUtils.join(stringValues, ",") + "]";
+    }
+
+    @JsonIgnore
+    public boolean isNegateFactionRace() {
+        for (FactionRace faction : factionRaces) {
+            if(faction.getNegateFactionRace() != null && faction.getNegateFactionRace().booleanValue()){
+                return true;
+            }
+        }
+        return false;
     }
 }

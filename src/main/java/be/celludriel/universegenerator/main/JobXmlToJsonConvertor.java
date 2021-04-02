@@ -53,13 +53,10 @@ import be.celludriel.universegenerator.model.xml.libraries.Shipdbcategoryselect;
 import be.celludriel.universegenerator.model.xml.libraries.Task;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationConfig;
-import com.fasterxml.jackson.databind.SerializationFeature;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -809,7 +806,7 @@ public class JobXmlToJsonConvertor {
             }
         }
 
-        jsonJob.setQuota(jsonQuotas);
+        jsonJob.setQuotas(jsonQuotas);
     }
 
     private static void addTasks(Job jsonJob, Task task, Jobs.Job.Tasks tasks) {

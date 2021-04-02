@@ -8,7 +8,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -70,7 +70,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8,
         "cluster":4
@@ -136,7 +136,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":30,
         "cluster":8,
@@ -203,7 +203,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":35,
         "cluster":10,
@@ -270,7 +270,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "sector":1
@@ -339,7 +339,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":2
@@ -408,7 +408,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":25,
         "cluster":7,
@@ -475,7 +475,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":1
@@ -544,7 +544,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -610,7 +610,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":3,
@@ -680,7 +680,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":2
@@ -746,7 +746,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":18,
         "cluster":3
@@ -815,7 +815,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -883,7 +883,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -952,7 +952,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -1021,7 +1021,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":18,
         "cluster":3,
@@ -1091,7 +1091,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":2
@@ -1160,7 +1160,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "cluster":3,
@@ -1230,7 +1230,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":2,
@@ -1297,7 +1297,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":3,
@@ -1364,7 +1364,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":3,
@@ -1434,7 +1434,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "cluster":1
@@ -1500,7 +1500,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":4,
@@ -1567,7 +1567,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":10
@@ -1633,7 +1633,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":3
@@ -1702,7 +1702,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2
       }
@@ -1780,7 +1780,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8
       }
@@ -1857,7 +1857,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8
       }
@@ -1934,7 +1934,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":17
       }
@@ -2011,7 +2011,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7
       }
@@ -2088,7 +2088,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -2165,7 +2165,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7
       }
@@ -2237,7 +2237,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -2309,7 +2309,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "sector":1
@@ -2376,7 +2376,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "maxgalaxy":11,
@@ -2440,7 +2440,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1,
         "maxgalaxy":1,
@@ -2504,7 +2504,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":35,
         "maxgalaxy":90,
@@ -2573,7 +2573,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":20,
         "maxgalaxy":20,
@@ -2642,7 +2642,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8,
         "maxgalaxy":20,
@@ -2715,7 +2715,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":4,
         "maxgalaxy":4,
@@ -2788,7 +2788,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":30,
         "maxgalaxy":50,
@@ -2854,7 +2854,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":12,
         "maxgalaxy":24,
@@ -2916,7 +2916,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":60,
         "sector":3
@@ -2981,7 +2981,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2
       }
@@ -3042,7 +3042,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3
       }
@@ -3103,7 +3103,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":10
       }
@@ -3159,7 +3159,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":4
       }
@@ -3215,7 +3215,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3
       }
@@ -3271,7 +3271,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1
       }
@@ -3331,7 +3331,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -3398,7 +3398,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -3464,7 +3464,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -3529,7 +3529,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -3590,7 +3590,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1,
         "variation":1
@@ -3645,7 +3645,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "sector":1
@@ -3709,7 +3709,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "sector":1
@@ -3764,7 +3764,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -3826,7 +3826,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "cluster":1
@@ -3893,7 +3893,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -3961,7 +3961,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -4029,7 +4029,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -4105,7 +4105,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -4182,7 +4182,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -4260,7 +4260,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -4337,7 +4337,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":2
@@ -4403,7 +4403,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":18,
         "cluster":6,
@@ -4470,7 +4470,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "sector":3
@@ -4536,7 +4536,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "sector":1
@@ -4605,7 +4605,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -4674,7 +4674,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":13,
         "cluster":5
@@ -4740,7 +4740,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":1
@@ -4809,7 +4809,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -4875,7 +4875,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "cluster":3,
@@ -4945,7 +4945,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -5011,7 +5011,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":3
@@ -5080,7 +5080,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -5148,7 +5148,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -5217,7 +5217,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1,
         "cluster":1
@@ -5286,7 +5286,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7,
         "cluster":2,
@@ -5356,7 +5356,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1,
         "cluster":1
@@ -5425,7 +5425,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "cluster":3,
@@ -5495,7 +5495,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1,
         "cluster":1
@@ -5561,7 +5561,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "cluster":2,
@@ -5628,7 +5628,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":10
@@ -5694,7 +5694,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":3
@@ -5763,7 +5763,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -5840,7 +5840,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7
       }
@@ -5917,7 +5917,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2
       }
@@ -5989,7 +5989,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1,
         "sector":1
@@ -6059,7 +6059,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "maxgalaxy":11,
@@ -6123,7 +6123,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1,
         "maxgalaxy":1,
@@ -6187,7 +6187,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":35,
         "maxgalaxy":90,
@@ -6256,7 +6256,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":20,
         "maxgalaxy":20,
@@ -6325,7 +6325,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "maxgalaxy":8,
@@ -6398,7 +6398,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "maxgalaxy":2,
@@ -6471,7 +6471,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":23,
         "maxgalaxy":38,
@@ -6537,7 +6537,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "maxgalaxy":4,
@@ -6600,7 +6600,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":60,
         "sector":2
@@ -6665,7 +6665,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -6735,7 +6735,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2
       }
@@ -6805,7 +6805,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -6868,7 +6868,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2
       }
@@ -6929,7 +6929,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3
       }
@@ -6990,7 +6990,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2
       }
@@ -7046,7 +7046,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3
       }
@@ -7102,7 +7102,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1
       }
@@ -7162,7 +7162,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -7229,7 +7229,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -7295,7 +7295,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -7360,7 +7360,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -7421,7 +7421,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1,
         "variation":1
@@ -7476,7 +7476,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "sector":1
@@ -7539,7 +7539,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "sector":1
@@ -7606,7 +7606,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -7672,7 +7672,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -7740,7 +7740,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -7808,7 +7808,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -7884,7 +7884,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -7961,7 +7961,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -8039,7 +8039,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -8116,7 +8116,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -8181,7 +8181,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "cluster":10,
@@ -8248,7 +8248,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":30,
         "cluster":10,
@@ -8315,7 +8315,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "sector":1
@@ -8384,7 +8384,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -8452,7 +8452,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "cluster":8,
@@ -8519,7 +8519,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":1
@@ -8588,7 +8588,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -8653,7 +8653,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":10,
@@ -8723,7 +8723,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -8788,7 +8788,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "cluster":5
@@ -8857,7 +8857,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -8925,7 +8925,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -8994,7 +8994,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -9062,7 +9062,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "cluster":10,
@@ -9132,7 +9132,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -9200,7 +9200,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "cluster":10,
@@ -9270,7 +9270,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "cluster":6,
@@ -9337,7 +9337,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":5,
@@ -9404,7 +9404,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":10,
@@ -9474,7 +9474,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -9539,7 +9539,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":10,
@@ -9606,7 +9606,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":10
@@ -9672,7 +9672,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":3
@@ -9741,7 +9741,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -9819,7 +9819,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":4
       }
@@ -9896,7 +9896,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5
       }
@@ -9973,7 +9973,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":9
       }
@@ -10050,7 +10050,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5
       }
@@ -10127,7 +10127,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2
       }
@@ -10204,7 +10204,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":4
       }
@@ -10275,7 +10275,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":9,
         "sector":1
@@ -10339,7 +10339,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "sector":1
@@ -10394,7 +10394,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -10453,7 +10453,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -10525,7 +10525,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":14,
         "sector":1
@@ -10592,7 +10592,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "maxgalaxy":11,
@@ -10657,7 +10657,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1,
         "maxgalaxy":1,
@@ -10721,7 +10721,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":33,
         "maxgalaxy":54,
@@ -10790,7 +10790,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "maxgalaxy":12,
@@ -10864,7 +10864,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "maxgalaxy":2,
@@ -10937,7 +10937,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "maxgalaxy":12,
@@ -11002,7 +11002,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "maxgalaxy":2,
@@ -11063,7 +11063,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "maxgalaxy":12,
@@ -11124,7 +11124,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":60,
         "sector":3
@@ -11189,7 +11189,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":6
       }
@@ -11245,7 +11245,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1
       }
@@ -11306,7 +11306,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":10
       }
@@ -11362,7 +11362,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2
       }
@@ -11418,7 +11418,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2
       }
@@ -11474,7 +11474,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1
       }
@@ -11534,7 +11534,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -11601,7 +11601,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -11667,7 +11667,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -11732,7 +11732,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -11793,7 +11793,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1,
         "variation":1
@@ -11854,7 +11854,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -11922,7 +11922,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -11990,7 +11990,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -12066,7 +12066,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -12143,7 +12143,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -12221,7 +12221,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -12298,7 +12298,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -12363,7 +12363,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "cluster":10,
@@ -12430,7 +12430,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":20,
         "sector":5
@@ -12496,7 +12496,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "sector":1
@@ -12565,7 +12565,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -12633,7 +12633,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "cluster":8,
@@ -12700,7 +12700,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":1
@@ -12769,7 +12769,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -12834,7 +12834,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":10,
@@ -12904,7 +12904,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -12969,7 +12969,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "cluster":5
@@ -13038,7 +13038,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -13106,7 +13106,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -13175,7 +13175,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -13243,7 +13243,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "cluster":10,
@@ -13313,7 +13313,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -13381,7 +13381,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "cluster":10,
@@ -13451,7 +13451,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "cluster":6,
@@ -13518,7 +13518,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":5,
@@ -13585,7 +13585,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":10,
@@ -13655,7 +13655,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -13720,7 +13720,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":10,
@@ -13787,7 +13787,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":10
@@ -13853,7 +13853,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":3
@@ -13922,7 +13922,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -14000,7 +14000,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":4
       }
@@ -14077,7 +14077,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5
       }
@@ -14154,7 +14154,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":9
       }
@@ -14231,7 +14231,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5
       }
@@ -14308,7 +14308,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2
       }
@@ -14385,7 +14385,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":4
       }
@@ -14456,7 +14456,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "sector":1
@@ -14519,7 +14519,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "sector":1
@@ -14582,7 +14582,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":13,
         "sector":1
@@ -14655,7 +14655,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "maxgalaxy":11,
@@ -14720,7 +14720,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1,
         "maxgalaxy":1,
@@ -14784,7 +14784,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":50,
         "maxgalaxy":80,
@@ -14852,7 +14852,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "maxgalaxy":15,
@@ -14926,7 +14926,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "maxgalaxy":5,
@@ -14999,7 +14999,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "maxgalaxy":9,
@@ -15069,7 +15069,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "maxgalaxy":3,
@@ -15138,7 +15138,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -15204,7 +15204,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "maxgalaxy":12,
@@ -15266,7 +15266,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":60,
         "sector":3
@@ -15331,7 +15331,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":6
       }
@@ -15392,7 +15392,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2
       }
@@ -15454,7 +15454,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2
       }
@@ -15511,7 +15511,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2
       }
@@ -15569,7 +15569,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2
       }
@@ -15625,7 +15625,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2
       }
@@ -15681,7 +15681,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1
       }
@@ -15741,7 +15741,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -15808,7 +15808,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -15874,7 +15874,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -15939,7 +15939,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -16000,7 +16000,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1,
         "variation":1
@@ -16061,7 +16061,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -16129,7 +16129,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -16197,7 +16197,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -16273,7 +16273,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -16350,7 +16350,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -16428,7 +16428,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -16506,7 +16506,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5
       }
@@ -16572,7 +16572,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":24,
         "sector":10
@@ -16639,7 +16639,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":40,
         "sector":5
@@ -16706,7 +16706,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8,
         "sector":1
@@ -16776,7 +16776,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5
       }
@@ -16845,7 +16845,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":24,
         "sector":4
@@ -16912,7 +16912,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8,
         "cluster":1
@@ -16982,7 +16982,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5
       }
@@ -17048,7 +17048,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":16,
         "sector":5
@@ -17118,7 +17118,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5
       }
@@ -17184,7 +17184,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":24,
         "cluster":5
@@ -17254,7 +17254,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -17323,7 +17323,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "cluster":1
@@ -17393,7 +17393,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5
       }
@@ -17462,7 +17462,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":24,
         "sector":5
@@ -17532,7 +17532,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5
       }
@@ -17601,7 +17601,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":24,
         "sector":5
@@ -17671,7 +17671,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "sector":3
@@ -17738,7 +17738,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8,
         "sector":2
@@ -17805,7 +17805,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":16,
         "sector":5
@@ -17875,7 +17875,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5
       }
@@ -17941,7 +17941,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":16,
         "sector":10
@@ -18008,7 +18008,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":16
@@ -18075,7 +18075,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":5
@@ -18145,7 +18145,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2
       }
@@ -18224,7 +18224,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6
       }
@@ -18302,7 +18302,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8
       }
@@ -18380,7 +18380,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":14
       }
@@ -18458,7 +18458,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8
       }
@@ -18536,7 +18536,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -18614,7 +18614,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6
       }
@@ -18686,7 +18686,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "sector":1
@@ -18751,7 +18751,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "sector":1
@@ -18815,7 +18815,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -18888,7 +18888,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":14,
         "sector":1
@@ -18956,7 +18956,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":13,
         "sector":1
@@ -19030,7 +19030,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "maxgalaxy":17,
@@ -19095,7 +19095,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "maxgalaxy":2,
@@ -19160,7 +19160,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":66,
         "maxgalaxy":107,
@@ -19230,7 +19230,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7,
         "maxgalaxy":20,
@@ -19304,7 +19304,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7,
         "maxgalaxy":7,
@@ -19378,7 +19378,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "maxgalaxy":12,
@@ -19443,7 +19443,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "maxgalaxy":2,
@@ -19508,7 +19508,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "maxgalaxy":9,
@@ -19578,7 +19578,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "maxgalaxy":3,
@@ -19645,7 +19645,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "maxgalaxy":19,
@@ -19707,7 +19707,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":60,
         "sector":3
@@ -19772,7 +19772,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":6
       }
@@ -19827,7 +19827,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":6
       }
@@ -19888,7 +19888,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1
       }
@@ -19950,7 +19950,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2
       }
@@ -20006,7 +20006,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2
       }
@@ -20062,7 +20062,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":10
       }
@@ -20118,7 +20118,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2
       }
@@ -20174,7 +20174,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1
       }
@@ -20234,7 +20234,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -20301,7 +20301,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -20367,7 +20367,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -20432,7 +20432,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -20493,7 +20493,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1,
         "variation":1
@@ -20555,7 +20555,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -20624,7 +20624,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -20693,7 +20693,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -20770,7 +20770,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -20848,7 +20848,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -20927,7 +20927,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -20991,7 +20991,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -21055,7 +21055,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "cluster":3
@@ -21121,7 +21121,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":30,
         "cluster":15,
@@ -21188,7 +21188,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":55,
         "sector":5
@@ -21254,7 +21254,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "sector":1
@@ -21323,7 +21323,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "cluster":3
@@ -21392,7 +21392,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":40,
         "cluster":8,
@@ -21459,7 +21459,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8,
         "cluster":1
@@ -21528,7 +21528,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "cluster":3
@@ -21594,7 +21594,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "cluster":3,
@@ -21664,7 +21664,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "cluster":3
@@ -21730,7 +21730,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":30,
         "cluster":5
@@ -21799,7 +21799,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":4,
         "cluster":1
@@ -21868,7 +21868,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":12,
         "cluster":2
@@ -21937,7 +21937,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":4,
         "cluster":1
@@ -22006,7 +22006,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":12,
         "cluster":2
@@ -22075,7 +22075,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -22144,7 +22144,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":4,
         "cluster":1
@@ -22213,7 +22213,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "cluster":3
@@ -22282,7 +22282,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "cluster":5,
@@ -22352,7 +22352,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "cluster":3
@@ -22421,7 +22421,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "cluster":5,
@@ -22491,7 +22491,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "cluster":3,
@@ -22558,7 +22558,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8,
         "cluster":3,
@@ -22625,7 +22625,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "cluster":5,
@@ -22695,7 +22695,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "cluster":3
@@ -22761,7 +22761,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":50,
         "cluster":10,
@@ -22828,7 +22828,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":15
@@ -22894,7 +22894,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":5
@@ -22963,7 +22963,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2
       }
@@ -23041,7 +23041,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8
       }
@@ -23118,7 +23118,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":12
       }
@@ -23195,7 +23195,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":17
       }
@@ -23272,7 +23272,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7
       }
@@ -23349,7 +23349,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -23426,7 +23426,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7
       }
@@ -23497,7 +23497,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":12,
         "sector":1
@@ -23561,7 +23561,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "sector":1
@@ -23623,7 +23623,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -23695,7 +23695,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "cluster":1
@@ -23762,7 +23762,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":31,
         "maxgalaxy":69,
@@ -23831,7 +23831,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":31,
         "maxgalaxy":31,
@@ -23897,7 +23897,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":12,
         "maxgalaxy":24,
@@ -23963,7 +23963,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":2
@@ -24025,7 +24025,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -24087,7 +24087,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":6
       }
@@ -24143,7 +24143,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":4,
         "variation":4
@@ -24200,7 +24200,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":3
@@ -24257,7 +24257,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1
       }
@@ -24317,7 +24317,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -24384,7 +24384,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -24450,7 +24450,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -24515,7 +24515,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -24576,7 +24576,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1,
         "variation":1
@@ -24636,7 +24636,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "cluster":1
@@ -24703,7 +24703,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -24771,7 +24771,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -24839,7 +24839,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -24915,7 +24915,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -24992,7 +24992,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -25070,7 +25070,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -25144,7 +25144,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8,
         "sector":3
@@ -25209,7 +25209,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":19,
         "sector":2
@@ -25275,7 +25275,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "sector":1
@@ -25339,7 +25339,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -25408,7 +25408,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -25477,7 +25477,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "maxgalaxy":11,
@@ -25540,7 +25540,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1,
         "maxgalaxy":1,
@@ -25600,7 +25600,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":75,
         "sector":2
@@ -25671,7 +25671,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8,
         "maxgalaxy":24,
@@ -25743,7 +25743,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8,
         "maxgalaxy":8,
@@ -25816,7 +25816,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -25877,7 +25877,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -25939,7 +25939,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -26000,7 +26000,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":5,
         "variation":1
@@ -26056,7 +26056,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":3
@@ -26112,7 +26112,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1
       }
@@ -26165,7 +26165,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "sector":1
@@ -26229,7 +26229,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "sector":1
@@ -26294,7 +26294,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":10
@@ -26360,7 +26360,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":3
@@ -26429,7 +26429,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":56,
         "cluster":8
@@ -26500,7 +26500,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":42,
         "cluster":6
@@ -26557,7 +26557,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1,
         "maxgalaxy":1
@@ -26619,7 +26619,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "sector":1
@@ -26681,7 +26681,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "maxgalaxy":18,
@@ -26744,7 +26744,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "maxgalaxy":6,
@@ -26807,7 +26807,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "cluster":4
@@ -26869,7 +26869,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "maxgalaxy":11,
@@ -26927,7 +26927,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1,
         "maxgalaxy":1,
@@ -26985,7 +26985,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":59,
         "maxgalaxy":94,
@@ -27049,7 +27049,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":29,
         "maxgalaxy":69,
@@ -27114,7 +27114,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":13,
         "maxgalaxy":13,
@@ -27175,7 +27175,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8,
         "maxgalaxy":16,
@@ -27233,7 +27233,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15
       }
@@ -27290,7 +27290,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7
       }
@@ -27354,7 +27354,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2
       }
@@ -27410,7 +27410,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3
       }
@@ -27464,7 +27464,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":4
       }
@@ -27513,7 +27513,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2
       }
@@ -27565,7 +27565,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":4
       }
@@ -27614,7 +27614,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15
       }
@@ -27664,7 +27664,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8
       }
@@ -27724,7 +27724,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "sector":1
@@ -27792,7 +27792,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "sector":1
@@ -27862,7 +27862,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -27929,7 +27929,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -27995,7 +27995,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -28060,7 +28060,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -28121,7 +28121,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1,
         "variation":1
@@ -28181,7 +28181,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "sector":1
@@ -28248,7 +28248,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":4,
         "cluster":1
@@ -28315,7 +28315,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -28382,7 +28382,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -28455,7 +28455,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":13,
         "sector":1
@@ -28523,7 +28523,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1,
         "sector":1
@@ -28590,7 +28590,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":17,
         "sector":1
@@ -28657,7 +28657,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":9,
         "sector":1
@@ -28725,7 +28725,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":30,
         "sector":1
@@ -28792,7 +28792,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":11,
         "sector":1
@@ -28862,7 +28862,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":2
@@ -28923,7 +28923,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":24,
         "sector":3
@@ -28996,7 +28996,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8,
         "sector":2
@@ -29061,7 +29061,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -29124,7 +29124,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":3
@@ -29182,7 +29182,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -29255,7 +29255,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":9
       }
@@ -29318,7 +29318,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":18,
         "sector":3
@@ -29383,7 +29383,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":4,
         "variation":2
@@ -29445,7 +29445,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -29507,7 +29507,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":3
@@ -29564,7 +29564,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":8,
         "variation":4
@@ -29621,7 +29621,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1
       }
@@ -29680,7 +29680,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8,
         "cluster":4
@@ -29746,7 +29746,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":30,
         "cluster":8,
@@ -29813,7 +29813,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":35,
         "cluster":10,
@@ -29880,7 +29880,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "sector":1
@@ -29949,7 +29949,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":4,
         "cluster":1
@@ -30018,7 +30018,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":20,
         "cluster":5,
@@ -30085,7 +30085,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":1
@@ -30154,7 +30154,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":2
@@ -30227,7 +30227,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":20,
         "cluster":8,
@@ -30301,7 +30301,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -30367,7 +30367,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":3,
@@ -30437,7 +30437,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":2
@@ -30503,7 +30503,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":18,
         "cluster":3
@@ -30572,7 +30572,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -30640,7 +30640,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -30709,7 +30709,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":17,
         "cluster":2,
@@ -30776,7 +30776,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":38,
         "cluster":5,
@@ -30843,7 +30843,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":3,
@@ -30910,7 +30910,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":10
@@ -30976,7 +30976,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":3
@@ -31045,7 +31045,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -31123,7 +31123,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":12
       }
@@ -31200,7 +31200,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":40
       }
@@ -31277,7 +31277,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":50
       }
@@ -31354,7 +31354,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":20
       }
@@ -31431,7 +31431,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -31508,7 +31508,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7
       }
@@ -31586,7 +31586,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -31653,7 +31653,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -31719,7 +31719,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -31784,7 +31784,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -31845,7 +31845,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1,
         "variation":1
@@ -31900,7 +31900,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "sector":1
@@ -31963,7 +31963,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "sector":1
@@ -32017,7 +32017,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":4,
         "sector":1
@@ -32080,7 +32080,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "cluster":1
@@ -32147,7 +32147,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -32215,7 +32215,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -32283,7 +32283,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -32359,7 +32359,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -32436,7 +32436,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -32514,7 +32514,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -32585,7 +32585,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -32656,7 +32656,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -32727,7 +32727,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -32795,7 +32795,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -32864,7 +32864,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -32933,7 +32933,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -32998,7 +32998,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "sector":1
@@ -33064,7 +33064,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "sector":2
@@ -33130,7 +33130,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "sector":1
@@ -33197,7 +33197,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "maxgalaxy":9,
@@ -33266,7 +33266,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "maxgalaxy":2,
@@ -33335,7 +33335,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":17,
         "maxgalaxy":39,
@@ -33404,7 +33404,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7,
         "maxgalaxy":7,
@@ -33473,7 +33473,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8,
         "maxgalaxy":27,
@@ -33542,7 +33542,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "maxgalaxy":5,
@@ -33607,7 +33607,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":2
@@ -33666,7 +33666,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":60,
         "sector":4
@@ -33727,7 +33727,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1,
         "maxgalaxy":1
@@ -33797,7 +33797,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1,
         "maxgalaxy":1
@@ -33863,7 +33863,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "maxgalaxy":3
@@ -33932,7 +33932,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1
       }
@@ -33987,7 +33987,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1
       }
@@ -34042,7 +34042,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -34099,7 +34099,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -34161,7 +34161,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -34219,7 +34219,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":6
       }
@@ -34281,7 +34281,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2
       }
@@ -34337,7 +34337,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":4,
         "variation":2
@@ -34394,7 +34394,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3
       }
@@ -34450,7 +34450,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1
       }
@@ -34510,7 +34510,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":5
       }
@@ -34570,7 +34570,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":6
       }
@@ -34630,7 +34630,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8,
         "cluster":4
@@ -34696,7 +34696,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":30,
         "cluster":8,
@@ -34763,7 +34763,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":35,
         "cluster":10,
@@ -34830,7 +34830,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "sector":1
@@ -34899,7 +34899,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":2
@@ -34968,7 +34968,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":25,
         "cluster":7,
@@ -35035,7 +35035,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":1
@@ -35104,7 +35104,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -35170,7 +35170,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":3,
@@ -35240,7 +35240,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":2
@@ -35306,7 +35306,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":18,
         "cluster":3
@@ -35375,7 +35375,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -35443,7 +35443,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -35512,7 +35512,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -35581,7 +35581,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":18,
         "cluster":3,
@@ -35651,7 +35651,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":2
@@ -35720,7 +35720,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "cluster":3,
@@ -35790,7 +35790,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":2,
@@ -35857,7 +35857,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":3,
@@ -35924,7 +35924,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":3,
@@ -35993,7 +35993,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "sector":1
@@ -36058,7 +36058,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":10
@@ -36124,7 +36124,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":3
@@ -36193,7 +36193,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -36271,7 +36271,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":12
       }
@@ -36348,7 +36348,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":30
       }
@@ -36425,7 +36425,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":40
       }
@@ -36502,7 +36502,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15
       }
@@ -36579,7 +36579,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -36656,7 +36656,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7
       }
@@ -36734,7 +36734,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -36801,7 +36801,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -36867,7 +36867,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -36932,7 +36932,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -36993,7 +36993,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1,
         "variation":1
@@ -37048,7 +37048,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "sector":1
@@ -37111,7 +37111,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "sector":1
@@ -37165,7 +37165,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "sector":1
@@ -37228,7 +37228,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "cluster":1
@@ -37295,7 +37295,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -37363,7 +37363,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -37431,7 +37431,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -37507,7 +37507,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -37584,7 +37584,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -37662,7 +37662,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -37733,7 +37733,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -37798,7 +37798,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "sector":1
@@ -37865,7 +37865,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "maxgalaxy":5,
@@ -37929,7 +37929,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "maxgalaxy":2,
@@ -37992,7 +37992,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":17,
         "sector":5
@@ -38054,7 +38054,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "maxgalaxy":2,
@@ -38117,7 +38117,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "sector":1
@@ -38181,7 +38181,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":2
@@ -38246,7 +38246,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -38308,7 +38308,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":7,
         "variation":5
@@ -38368,7 +38368,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":36,
         "sector":6
@@ -38448,7 +38448,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":5,
         "variation":1
@@ -38511,7 +38511,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":3
@@ -38571,7 +38571,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8,
         "cluster":4
@@ -38637,7 +38637,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":30,
         "cluster":8,
@@ -38704,7 +38704,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":35,
         "cluster":10,
@@ -38771,7 +38771,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "sector":1
@@ -38840,7 +38840,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":2
@@ -38909,7 +38909,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":25,
         "cluster":7,
@@ -38976,7 +38976,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":1
@@ -39045,7 +39045,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -39111,7 +39111,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":3,
@@ -39181,7 +39181,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":2
@@ -39247,7 +39247,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":18,
         "cluster":3
@@ -39316,7 +39316,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -39384,7 +39384,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -39453,7 +39453,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -39522,7 +39522,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":18,
         "cluster":3,
@@ -39592,7 +39592,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":2
@@ -39661,7 +39661,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "cluster":3,
@@ -39731,7 +39731,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":2,
@@ -39798,7 +39798,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":3,
@@ -39865,7 +39865,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":3,
@@ -39935,7 +39935,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "cluster":1
@@ -40001,7 +40001,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":4,
@@ -40068,7 +40068,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":10
@@ -40134,7 +40134,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":3
@@ -40203,7 +40203,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2
       }
@@ -40281,7 +40281,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8
       }
@@ -40358,7 +40358,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8
       }
@@ -40435,7 +40435,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":17
       }
@@ -40512,7 +40512,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7
       }
@@ -40589,7 +40589,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -40666,7 +40666,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7
       }
@@ -40744,7 +40744,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -40811,7 +40811,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -40877,7 +40877,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -40942,7 +40942,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -41003,7 +41003,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1,
         "variation":1
@@ -41058,7 +41058,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "sector":1
@@ -41121,7 +41121,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "sector":1
@@ -41175,7 +41175,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":4,
         "sector":1
@@ -41238,7 +41238,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "cluster":1
@@ -41305,7 +41305,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -41373,7 +41373,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -41441,7 +41441,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -41517,7 +41517,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -41594,7 +41594,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -41672,7 +41672,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -41743,7 +41743,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -41814,7 +41814,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -41886,7 +41886,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "sector":1
@@ -41957,7 +41957,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "maxgalaxy":9,
@@ -42026,7 +42026,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "maxgalaxy":2,
@@ -42095,7 +42095,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "maxgalaxy":15,
@@ -42164,7 +42164,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "maxgalaxy":3,
@@ -42233,7 +42233,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":17,
         "maxgalaxy":39,
@@ -42302,7 +42302,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7,
         "maxgalaxy":7,
@@ -42371,7 +42371,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":17,
         "maxgalaxy":17,
@@ -42440,7 +42440,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":11,
         "maxgalaxy":11,
@@ -42507,7 +42507,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":2
@@ -42567,7 +42567,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":60,
         "sector":3
@@ -42629,7 +42629,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "sector":1
@@ -42700,7 +42700,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "maxgalaxy":13,
@@ -42769,7 +42769,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "maxgalaxy":3,
@@ -42838,7 +42838,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "maxgalaxy":30,
@@ -42907,7 +42907,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "maxgalaxy":10,
@@ -42976,7 +42976,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":24,
         "maxgalaxy":24,
@@ -43046,7 +43046,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1
       }
@@ -43101,7 +43101,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -43159,7 +43159,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":6
       }
@@ -43221,7 +43221,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2
       }
@@ -43277,7 +43277,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2
       }
@@ -43333,7 +43333,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3
       }
@@ -43389,7 +43389,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1
       }
@@ -43449,7 +43449,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":5
       }
@@ -43509,7 +43509,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":6
       }
@@ -43564,7 +43564,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -43637,7 +43637,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8,
         "sector":1
@@ -43709,7 +43709,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "sector":3
@@ -43785,7 +43785,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":13,
         "maxgalaxy":29,
@@ -43855,7 +43855,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "maxgalaxy":5,
@@ -43925,7 +43925,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":42,
         "sector":2
@@ -43994,7 +43994,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "maxgalaxy":5,
@@ -44064,7 +44064,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":51,
         "maxgalaxy":51,
@@ -44134,7 +44134,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "maxgalaxy":10,
@@ -44200,7 +44200,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":60,
         "sector":2
@@ -44263,7 +44263,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1
       }
@@ -44318,7 +44318,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -44376,7 +44376,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":4,
         "variation":2
@@ -44439,7 +44439,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -44496,7 +44496,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1,
         "variation":1
@@ -44553,7 +44553,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":4,
         "variation":2
@@ -44610,7 +44610,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1
       }
@@ -44670,7 +44670,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":5
       }
@@ -44730,7 +44730,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":6
       }
@@ -44790,7 +44790,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8,
         "cluster":4
@@ -44856,7 +44856,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":30,
         "cluster":8,
@@ -44923,7 +44923,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":35,
         "cluster":10,
@@ -44990,7 +44990,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "sector":1
@@ -45059,7 +45059,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":2
@@ -45128,7 +45128,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":25,
         "cluster":7,
@@ -45195,7 +45195,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":1
@@ -45264,7 +45264,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -45330,7 +45330,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":3,
@@ -45400,7 +45400,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":2
@@ -45466,7 +45466,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":18,
         "cluster":3
@@ -45535,7 +45535,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -45603,7 +45603,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -45672,7 +45672,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "cluster":1
@@ -45741,7 +45741,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":18,
         "cluster":3,
@@ -45811,7 +45811,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":2
@@ -45880,7 +45880,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":15,
         "cluster":3,
@@ -45950,7 +45950,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":2,
@@ -46017,7 +46017,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "cluster":3,
@@ -46084,7 +46084,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":3,
@@ -46154,7 +46154,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "cluster":1
@@ -46220,7 +46220,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "cluster":4,
@@ -46287,7 +46287,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":10
@@ -46353,7 +46353,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":0,
         "maxgalaxy":3
@@ -46422,7 +46422,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2
       }
@@ -46500,7 +46500,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8
       }
@@ -46577,7 +46577,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":8
       }
@@ -46654,7 +46654,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":17
       }
@@ -46731,7 +46731,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7
       }
@@ -46808,7 +46808,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3
       }
@@ -46885,7 +46885,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7
       }
@@ -46963,7 +46963,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -47030,7 +47030,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":1
@@ -47096,7 +47096,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -47161,7 +47161,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":3,
         "variation":1
@@ -47222,7 +47222,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":1,
         "variation":1
@@ -47277,7 +47277,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "sector":1
@@ -47340,7 +47340,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":10,
         "sector":1
@@ -47394,7 +47394,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "sector":1
@@ -47457,7 +47457,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "cluster":1
@@ -47524,7 +47524,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -47592,7 +47592,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -47660,7 +47660,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -47736,7 +47736,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -47813,7 +47813,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -47891,7 +47891,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -47966,7 +47966,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":6,
         "sector":1
@@ -48033,7 +48033,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "sector":1
@@ -48101,7 +48101,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":30,
         "sector":1
@@ -48165,7 +48165,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":4,
         "variation":3
@@ -48220,7 +48220,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":36,
         "sector":6
@@ -48300,7 +48300,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":13,
         "sector":1
@@ -48373,7 +48373,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":4,
         "variation":3
@@ -48435,7 +48435,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "wing":2,
         "variation":2
@@ -48491,7 +48491,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "sector":1
@@ -48561,7 +48561,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":9,
         "maxgalaxy":23,
@@ -48630,7 +48630,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "maxgalaxy":5,
@@ -48699,7 +48699,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "maxgalaxy":9,
@@ -48772,7 +48772,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "maxgalaxy":3,
@@ -48845,7 +48845,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":12,
         "maxgalaxy":20,
@@ -48914,7 +48914,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1,
         "maxgalaxy":1
@@ -48990,7 +48990,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7,
         "maxgalaxy":17,
@@ -49055,7 +49055,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "maxgalaxy":5,
@@ -49118,7 +49118,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":18,
         "maxgalaxy":29,
@@ -49188,7 +49188,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1,
         "maxgalaxy":1
@@ -49265,7 +49265,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7,
         "maxgalaxy":17,
@@ -49330,7 +49330,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":5,
         "maxgalaxy":5,
@@ -49394,7 +49394,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":18,
         "maxgalaxy":29,
@@ -49463,7 +49463,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -49532,7 +49532,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":12,
         "zone":1
@@ -49605,7 +49605,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":40,
         "cluster":8
@@ -49676,7 +49676,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":30,
         "cluster":6
@@ -49733,7 +49733,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":1
       }
@@ -49794,7 +49794,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":3,
         "maxgalaxy":3,
@@ -49857,7 +49857,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":2,
         "maxgalaxy":2,
@@ -49920,7 +49920,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":11,
         "maxgalaxy":27,
@@ -49983,7 +49983,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":7,
         "maxgalaxy":7,
@@ -50046,7 +50046,7 @@
         "defaultOrder":true
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "galaxy":16,
         "maxgalaxy":25,
@@ -50098,7 +50098,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "sector":1000
       }
@@ -50122,7 +50122,7 @@
         "task":"masstraffic.police"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"5"
       }
@@ -50146,7 +50146,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "sector":2,
         "station":"1"
@@ -50179,7 +50179,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -50203,7 +50203,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -50227,7 +50227,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -50251,7 +50251,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -50275,7 +50275,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -50299,7 +50299,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -50323,7 +50323,7 @@
         "task":"masstraffic.police"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"5"
       }
@@ -50347,7 +50347,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "sector":1000
       }
@@ -50371,7 +50371,7 @@
         "task":"masstraffic.police"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"5"
       }
@@ -50395,7 +50395,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "sector":2,
         "station":"1"
@@ -50428,7 +50428,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -50452,7 +50452,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -50476,7 +50476,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -50500,7 +50500,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -50524,7 +50524,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -50548,7 +50548,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -50572,7 +50572,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "sector":1000
       }
@@ -50596,7 +50596,7 @@
         "task":"masstraffic.police"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"5"
       }
@@ -50620,7 +50620,7 @@
         "task":"masstraffic.police"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"5"
       }
@@ -50644,7 +50644,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "sector":2,
         "station":"1"
@@ -50677,7 +50677,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -50701,7 +50701,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -50725,7 +50725,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -50749,7 +50749,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -50773,7 +50773,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -50797,7 +50797,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -50821,7 +50821,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "sector":1000
       }
@@ -50845,7 +50845,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"100"
       }
@@ -50869,7 +50869,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"50"
       }
@@ -50889,7 +50889,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"60"
       }
@@ -50909,7 +50909,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"70"
       }
@@ -50929,7 +50929,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"50"
       }
@@ -50949,7 +50949,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"60"
       }
@@ -50969,7 +50969,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"70"
       }
@@ -50989,7 +50989,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"50"
       }
@@ -51009,7 +51009,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"60"
       }
@@ -51029,7 +51029,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"70"
       }
@@ -51049,7 +51049,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "zone":2000
       }
@@ -51069,7 +51069,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "sector":1000
       }
@@ -51093,7 +51093,7 @@
         "task":"masstraffic.police"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"5"
       }
@@ -51117,7 +51117,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "sector":2,
         "station":"1"
@@ -51150,7 +51150,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "sector":2,
         "station":"1"
@@ -51183,7 +51183,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -51207,7 +51207,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -51231,7 +51231,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -51255,7 +51255,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -51279,7 +51279,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -51303,7 +51303,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -51327,7 +51327,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "sector":1000
       }
@@ -51351,7 +51351,7 @@
         "task":"masstraffic.police"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"5"
       }
@@ -51375,7 +51375,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "sector":2,
         "station":"1"
@@ -51408,7 +51408,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "sector":2,
         "station":"1"
@@ -51441,7 +51441,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -51465,7 +51465,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -51489,7 +51489,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -51513,7 +51513,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -51537,7 +51537,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
@@ -51561,7 +51561,7 @@
         "task":"masstraffic.generic"
       }
     ],
-    "quota":[
+    "quotas":[
       {
         "station":"20"
       }
