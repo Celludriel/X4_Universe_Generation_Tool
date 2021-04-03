@@ -8,7 +8,7 @@
     <objects></objects>
     <stations>
 		<defaults>
-		  <location newzonechance="0.25" coreboundaryzoneheight="20000">
+		  <location newzonechance="0.25" coreboundaryzoneheight="40000">
 			<corerange max="1.3"/>
 		  </location>
 		  <modules production="5" storage="10" />
@@ -22,6 +22,8 @@
 		<station id="station_${count}" race="${station.race.getName()}" owner="${station.owner.getName()}" type="defence">
 		    <#elseif station.type == "TRADE">
 		<station id="station_${count}" race="${station.race.getName()}" owner="${station.owner.getName()}" type="tradingstation">
+		    <#elseif station.type == "PIRATE">
+		<station id="station_${count}" race="${station.race.getName()}" owner="${station.owner.getName()}" type="piratebase">
 		    <#else>
 		<station id="station_${count}" race="${station.race.getName()}" owner="${station.owner.getName()}" type="factory">
 		    </#if>
@@ -68,7 +70,7 @@
           <location class="galaxy" macro="${galaxy.galaxyPrefix}_galaxy_macro" faction="[${product.locationInfo.factionPrint}]" solitary="true" />
           </#if>
           <module>
-            <select ware="${product.ware}" race="${product.race.getName()}" faction="${product.owner.getName()}"/>
+            <select ware="${product.ware}" race="${product.race.getName()}" />
           </module>
         </product>
         </#list>
