@@ -211,7 +211,7 @@
                 </do_else>
 
                 <!--Give all ships the order to move and wait-->
-                <create_order id="'MoveWait'" object="$Ship" default="true" immediate="true">
+                <create_order id="'ProtectPosition'" object="$Ship" default="true" immediate="true">
                   <param name="destination" value="[$NewSubgoalTable.$Target, $GuardPosition]"/>
                 </create_order>
 
