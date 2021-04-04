@@ -72,6 +72,7 @@ public class UniverseGenerator {
         generateGameStart(cfg, root, CLUSTERS);
         generateMdFixFiles(cfg, root, CLUSTERS);
         generatePlacedObjects(cfg, root, CLUSTERS);
+        generateAssets(cfg, root, CLUSTERS);
         copyCoreResources(root, path, galaxy);
     }
 
@@ -101,6 +102,18 @@ public class UniverseGenerator {
         target = path + "/libraries/defaults.xml";
         copyUtils.copyToOutputDir(source, target);
 
+        source = "core/environments/cluster";
+        target = path + "/assets/environments/cluster/";
+        copyUtils.copyDirectoryToOutputDir(source, target);
+
+        source = "core/environments/cluster/macros";
+        target = path + "/assets/environments/cluster/macros/";
+        copyUtils.copyDirectoryToOutputDir(source, target);
+
+        source = "core/environments/cluster/empty_space_data";
+        target = path + "/assets/environments/cluster/empty_space_data/";
+        copyUtils.copyDirectoryToOutputDir(source, target);
+
         if (galaxy.getGalaxyOptions().isAddDoubleTravelSpeed()) {
             addDoubleTravelSpeedToOutput(path);
         }
@@ -110,6 +123,18 @@ public class UniverseGenerator {
         String originFolder = "core/engines";
         String targetFolder = path + "/assets/props/Engines/macros/";
         copyUtils.copyDirectoryToOutputDir(originFolder, targetFolder);
+    }
+
+    private void generateAssets(Configuration cfg, Map<String, Object> root, String type) throws IOException, TemplateException {
+        Template temp = cfg.getTemplate(type + "/empty_space.ftl");
+        Galaxy galaxy = (Galaxy) root.get("galaxy");
+        String path = "output/" + galaxy.getGalaxyName() + "/assets/environments/cluster/empty_space.xml";
+        writeToFile(root, temp, path);
+
+        temp = cfg.getTemplate(type + "/components.ftl");
+        galaxy = (Galaxy) root.get("galaxy");
+        path = "output/" + galaxy.getGalaxyName() + "/index/components.xml";
+        writeToFile(root, temp, path);
     }
 
     private void generateGameStart(Configuration cfg, Map<String, Object> root, String type) throws IOException, TemplateException {
@@ -190,6 +215,14 @@ public class UniverseGenerator {
 
         temp = cfg.getTemplate(type + "/drainStations.ftl");
         path = "output/" + galaxy.getGalaxyName() + "/md/Drain_Stations.xml";
+        writeToFile(root, temp, path);
+
+        temp = cfg.getTemplate(type + "/playerreputation.ftl");
+        path = "output/" + galaxy.getGalaxyName() + "/md/playerreputation.xml";
+        writeToFile(root, temp, path);
+
+        temp = cfg.getTemplate(type + "/x4ep1_war_subscriptions.ftl");
+        path = "output/" + galaxy.getGalaxyName() + "/md/x4ep1_war_subscriptions.xml";
         writeToFile(root, temp, path);
 
         temp = cfg.getTemplate(type + "/customGameStart.ftl");

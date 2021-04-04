@@ -259,7 +259,7 @@ public class JobXmlToJsonConvertor {
             jsonQuota.setZone(quota.getZone() != null ? quota.getZone().intValue() : null);
             jsonQuota.setWing(quota.getWing() != null ? quota.getWing().intValue() : null);
             jsonQuota.setVariation(quota.getVariation() != null ? quota.getVariation().intValue() : null);
-            jsonQuota.setStation(jsonQuota.getStation());
+            jsonQuota.setStation(quota.getStation() != null ? quota.getStation().intValue() : null);
             return jsonQuota;
         }
         return null;

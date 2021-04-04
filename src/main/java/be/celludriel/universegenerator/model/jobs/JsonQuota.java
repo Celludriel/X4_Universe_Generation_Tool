@@ -9,7 +9,7 @@ public class JsonQuota extends AbstractJson {
     private Integer cluster;
     private Integer sector;
     private Integer zone;
-    private String station;
+    private Integer station;
     private Integer variation;
 
     public Integer getGalaxy() {
@@ -36,7 +36,7 @@ public class JsonQuota extends AbstractJson {
         return zone;
     }
 
-    public String getStation() {
+    public Integer getStation() {
         return station;
     }
 
@@ -68,7 +68,7 @@ public class JsonQuota extends AbstractJson {
         this.zone = zone;
     }
 
-    public void setStation(String station) {
+    public void setStation(Integer station) {
         this.station = station;
     }
 

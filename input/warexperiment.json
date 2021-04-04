@@ -5956,8 +5956,8 @@
         "galaxy": 1
       },
       "location": {
-        "macro": "Zone002_Cluster_14_Sector001_macro",
-        "clazz": "zone",
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy",
         "relation": "self",
         "comparison": "exact",
         "faction": "argon"
@@ -8959,8 +8959,8 @@
         "sector": 1
       },
       "location": {
-        "macro": "Cluster_13_Sector001_macro",
-        "clazz": "sector",
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy",
         "relation": "self",
         "comparison": "exact",
         "faction": "antigone"
@@ -9496,8 +9496,8 @@
         "galaxy": 1
       },
       "location": {
-        "macro": "Cluster_48_Sector001_macro",
-        "clazz": "sector",
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy",
         "relation": "neutral",
         "comparison": "ge",
         "faction": "antigone"
@@ -9550,8 +9550,8 @@
         "galaxy": 2
       },
       "location": {
-        "macro": "Cluster_49_Sector001_macro",
-        "clazz": "sector",
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy",
         "relation": "neutral",
         "comparison": "ge",
         "faction": "antigone"
@@ -9604,8 +9604,8 @@
         "galaxy": 1
       },
       "location": {
-        "macro": "Cluster_26_Sector001_macro",
-        "clazz": "sector"
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy"
       },
       "environment": {
         "buildatshipyard": true
@@ -12525,8 +12525,8 @@
         "galaxy": 1
       },
       "location": {
-        "macro": "Cluster_18_Sector001_macro",
-        "clazz": "sector",
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy",
         "relation": "self",
         "comparison": "exact",
         "faction": "paranid"
@@ -16273,8 +16273,8 @@
         "galaxy": 1
       },
       "location": {
-        "macro": "Cluster_11_Sector001_macro",
-        "clazz": "sector",
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy",
         "relation": "self",
         "comparison": "exact",
         "faction": "holyorder"
@@ -24464,8 +24464,8 @@
         "galaxy": 1
       },
       "location": {
-        "macro": "Cluster_15_Sector001_macro",
-        "clazz": "sector",
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy",
         "relation": "self",
         "comparison": "exact",
         "faction": "[teladi, ministry]"
@@ -24517,8 +24517,8 @@
         "galaxy": 1
       },
       "location": {
-        "macro": "Cluster_20_Sector001_macro",
-        "clazz": "sector",
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy",
         "relation": "self",
         "comparison": "exact",
         "faction": "[teladi, ministry]"
@@ -27552,8 +27552,8 @@
         "galaxy": 3
       },
       "location": {
-        "macro": "Cluster_04_Sector002_macro",
-        "clazz": "sector",
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy",
         "relation": "self",
         "comparison": "exact",
         "faction": "[buccaneers, faction.player, paranid, holyorder, trinity, ownerless]"
@@ -27607,8 +27607,8 @@
         "galaxy": 9
       },
       "location": {
-        "macro": "Cluster_04_Sector002_macro",
-        "clazz": "sector",
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy",
         "relation": "self",
         "comparison": "exact",
         "faction": "[buccaneers, faction.player, paranid, holyorder, trinity, ownerless]"
@@ -30276,8 +30276,8 @@
         "galaxy": 1
       },
       "location": {
-        "macro": "Cluster_104_Sector001_macro",
-        "clazz": "sector",
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy",
         "relation": "self",
         "comparison": "exact",
         "faction": "terran"
@@ -30329,8 +30329,8 @@
         "galaxy": 1
       },
       "location": {
-        "macro": "Cluster_100_Sector001_macro",
-        "clazz": "sector",
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy",
         "relation": "self",
         "comparison": "exact",
         "faction": "terran"
@@ -30382,8 +30382,8 @@
         "galaxy": 1
       },
       "location": {
-        "macro": "Cluster_110_Sector001_macro",
-        "clazz": "sector",
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy",
         "relation": "self",
         "comparison": "exact",
         "faction": "terran"
@@ -30434,8 +30434,8 @@
         "galaxy": 1
       },
       "location": {
-        "macro": "Cluster_101_Sector001_macro",
-        "clazz": "sector",
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy",
         "relation": "self",
         "comparison": "exact",
         "faction": "terran"
@@ -30487,8 +30487,8 @@
         "galaxy": 1
       },
       "location": {
-        "macro": "zone005_cluster_104_sector002_macro",
-        "clazz": "zone",
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy",
         "relation": "self",
         "comparison": "exact",
         "faction": "terran"
@@ -30541,8 +30541,8 @@
         "galaxy": 1
       },
       "location": {
-        "macro": "zone005_cluster_101_sector001_macro",
-        "clazz": "zone",
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy",
         "relation": "self",
         "comparison": "exact",
         "faction": "terran"
@@ -34400,8 +34400,8 @@
         "galaxy": 1
       },
       "location": {
-        "macro": "Cluster_113_Sector001_macro",
-        "clazz": "sector",
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy",
         "relation": "self",
         "comparison": "exact",
         "faction": "pioneers"
@@ -37602,8 +37602,8 @@
         "galaxy": 1
       },
       "location": {
-        "macro": "Cluster_405_Sector001_macro",
-        "clazz": "sector",
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy",
         "relation": "self",
         "comparison": "exact",
         "faction": "split"
@@ -37655,8 +37655,8 @@
         "galaxy": 1
       },
       "location": {
-        "macro": "Cluster_401_Sector001_macro",
-        "clazz": "sector",
+        "macro": "xu_ep2_universe_macro",
+        "clazz": "galaxy",
         "relation": "self",
         "comparison": "exact",
         "faction": "split"
@@ -44293,7 +44293,9 @@
     {
       "id": "masstraffic_argon_police",
       "task": "masstraffic.police",
-      "quota": {},
+      "quota": {
+        "station": 5
+      },
       "location": {
         "clazz": "station",
         "policeFaction": "argon"
@@ -44306,7 +44308,8 @@
       "id": "masstraffic_argon_criminal",
       "task": "masstraffic.generic",
       "quota": {
-        "sector": 2
+        "sector": 2,
+        "station": 1
       },
       "location": {
         "clazz": "station",
@@ -44325,7 +44328,9 @@
     {
       "id": "masstraffic_argon_dockarea",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "dockarea",
         "factionRace": "argon"
@@ -44337,7 +44342,9 @@
     {
       "id": "masstraffic_argon_pier",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "pier",
         "factionRace": "argon"
@@ -44349,7 +44356,9 @@
     {
       "id": "masstraffic_argon_storage",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "storage",
         "factionRace": "argon"
@@ -44361,7 +44370,9 @@
     {
       "id": "masstraffic_argon_production",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "production",
         "factionRace": "argon"
@@ -44373,7 +44384,9 @@
     {
       "id": "masstraffic_argon_buildmodule",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "buildmodule",
         "factionRace": "argon"
@@ -44385,7 +44398,9 @@
     {
       "id": "masstraffic_argon_defencemodule",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "defencemodule",
         "factionRace": "argon"
@@ -44397,7 +44412,9 @@
     {
       "id": "masstraffic_antigone_police",
       "task": "masstraffic.police",
-      "quota": {},
+      "quota": {
+        "station": 5
+      },
       "location": {
         "clazz": "station",
         "policeFaction": "antigone"
@@ -44423,7 +44440,9 @@
     {
       "id": "masstraffic_teladi_police",
       "task": "masstraffic.police",
-      "quota": {},
+      "quota": {
+        "station": 5
+      },
       "location": {
         "clazz": "station",
         "policeFaction": "ministry"
@@ -44436,7 +44455,8 @@
       "id": "masstraffic_teladi_criminal",
       "task": "masstraffic.generic",
       "quota": {
-        "sector": 2
+        "sector": 2,
+        "station": 1
       },
       "location": {
         "clazz": "station",
@@ -44455,7 +44475,9 @@
     {
       "id": "masstraffic_teladi_dockarea",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "dockarea",
         "factionRace": "teladi"
@@ -44467,7 +44489,9 @@
     {
       "id": "masstraffic_teladi_pier",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "pier",
         "factionRace": "teladi"
@@ -44479,7 +44503,9 @@
     {
       "id": "masstraffic_teladi_storage",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "storage",
         "factionRace": "teladi"
@@ -44491,7 +44517,9 @@
     {
       "id": "masstraffic_teladi_production",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "production",
         "factionRace": "teladi"
@@ -44503,7 +44531,9 @@
     {
       "id": "masstraffic_teladi_buildmodule",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "buildmodule",
         "factionRace": "teladi"
@@ -44515,7 +44545,9 @@
     {
       "id": "masstraffic_teladi_defencemodule",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "defencemodule",
         "factionRace": "teladi"
@@ -44541,7 +44573,9 @@
     {
       "id": "masstraffic_paranid_police",
       "task": "masstraffic.police",
-      "quota": {},
+      "quota": {
+        "station": 5
+      },
       "location": {
         "clazz": "station",
         "policeFaction": "paranid"
@@ -44553,7 +44587,9 @@
     {
       "id": "masstraffic_holyorder_police",
       "task": "masstraffic.police",
-      "quota": {},
+      "quota": {
+        "station": 5
+      },
       "location": {
         "clazz": "station",
         "policeFaction": "holyorder"
@@ -44566,7 +44602,8 @@
       "id": "masstraffic_paranid_criminal",
       "task": "masstraffic.generic",
       "quota": {
-        "sector": 2
+        "sector": 2,
+        "station": 1
       },
       "location": {
         "clazz": "station",
@@ -44585,7 +44622,9 @@
     {
       "id": "masstraffic_paranid_dockarea",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "dockarea",
         "factionRace": "paranid"
@@ -44597,7 +44636,9 @@
     {
       "id": "masstraffic_paranid_pier",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "pier",
         "factionRace": "paranid"
@@ -44609,7 +44650,9 @@
     {
       "id": "masstraffic_paranid_storage",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "storage",
         "factionRace": "paranid"
@@ -44621,7 +44664,9 @@
     {
       "id": "masstraffic_paranid_production",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "production",
         "factionRace": "paranid"
@@ -44633,7 +44678,9 @@
     {
       "id": "masstraffic_paranid_buildmodule",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "buildmodule",
         "factionRace": "paranid"
@@ -44645,7 +44692,9 @@
     {
       "id": "masstraffic_paranid_defencemodule",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "defencemodule",
         "factionRace": "paranid"
@@ -44671,7 +44720,9 @@
     {
       "id": "masstraffic_xenon_station",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 100
+      },
       "location": {
         "clazz": "station",
         "faction": "xenon"
@@ -44683,7 +44734,9 @@
     {
       "id": "masstraffic_hab_arg_s_01",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 50
+      },
       "location": {
         "macro": "hab_arg_s_01_macro",
         "clazz": "habitation"
@@ -44695,7 +44748,9 @@
     {
       "id": "masstraffic_hab_arg_m_01",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 60
+      },
       "location": {
         "macro": "hab_arg_m_01_macro",
         "clazz": "habitation"
@@ -44707,7 +44762,9 @@
     {
       "id": "masstraffic_hab_arg_l_01",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 70
+      },
       "location": {
         "macro": "hab_arg_l_01_macro",
         "clazz": "habitation"
@@ -44719,7 +44776,9 @@
     {
       "id": "masstraffic_hab_tel_s_01",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 50
+      },
       "location": {
         "macro": "hab_tel_s_01_macro",
         "clazz": "habitation"
@@ -44731,7 +44790,9 @@
     {
       "id": "masstraffic_hab_tel_m_01",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 60
+      },
       "location": {
         "macro": "hab_arg_m_01_macro",
         "clazz": "habitation"
@@ -44743,7 +44804,9 @@
     {
       "id": "masstraffic_hab_tel_l_01",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 70
+      },
       "location": {
         "macro": "hab_tel_l_01_macro",
         "clazz": "habitation"
@@ -44755,7 +44818,9 @@
     {
       "id": "masstraffic_hab_par_s_01",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 50
+      },
       "location": {
         "macro": "hab_par_s_01_macro",
         "clazz": "habitation"
@@ -44767,7 +44832,9 @@
     {
       "id": "masstraffic_hab_par_m_01",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 60
+      },
       "location": {
         "macro": "hab_par_m_01_macro",
         "clazz": "habitation"
@@ -44779,7 +44846,9 @@
     {
       "id": "masstraffic_hab_par_l_01",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 70
+      },
       "location": {
         "macro": "hab_par_l_01_macro",
         "clazz": "habitation"
@@ -44819,7 +44888,9 @@
     {
       "id": "masstraffic_split_police",
       "task": "masstraffic.police",
-      "quota": {},
+      "quota": {
+        "station": 5
+      },
       "location": {
         "clazz": "station",
         "faction": "[split]"
@@ -44832,7 +44903,8 @@
       "id": "masstraffic_split_criminal",
       "task": "masstraffic.generic",
       "quota": {
-        "sector": 2
+        "sector": 2,
+        "station": 1
       },
       "location": {
         "clazz": "station",
@@ -44852,7 +44924,8 @@
       "id": "masstraffic_freesplit_criminal",
       "task": "masstraffic.generic",
       "quota": {
-        "sector": 2
+        "sector": 2,
+        "station": 1
       },
       "location": {
         "clazz": "station",
@@ -44871,7 +44944,9 @@
     {
       "id": "masstraffic_split_dockarea",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "dockarea",
         "factionRace": "split"
@@ -44883,7 +44958,9 @@
     {
       "id": "masstraffic_split_pier",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "pier",
         "factionRace": "split"
@@ -44895,7 +44972,9 @@
     {
       "id": "masstraffic_split_storage",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "storage",
         "factionRace": "split"
@@ -44907,7 +44986,9 @@
     {
       "id": "masstraffic_split_production",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "production",
         "factionRace": "split"
@@ -44919,7 +45000,9 @@
     {
       "id": "masstraffic_split_buildmodule",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "buildmodule",
         "factionRace": "split"
@@ -44931,7 +45014,9 @@
     {
       "id": "masstraffic_split_defencemodule",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "defencemodule",
         "factionRace": "split"
@@ -44957,7 +45042,9 @@
     {
       "id": "masstraffic_terran_police",
       "task": "masstraffic.police",
-      "quota": {},
+      "quota": {
+        "station": 5
+      },
       "location": {
         "clazz": "station",
         "faction": "[terran]"
@@ -44970,7 +45057,8 @@
       "id": "masstraffic_terran_criminal",
       "task": "masstraffic.generic",
       "quota": {
-        "sector": 2
+        "sector": 2,
+        "station": 1
       },
       "location": {
         "clazz": "station",
@@ -44990,7 +45078,8 @@
       "id": "masstraffic_pioneers_criminal",
       "task": "masstraffic.generic",
       "quota": {
-        "sector": 2
+        "sector": 2,
+        "station": 1
       },
       "location": {
         "clazz": "station",
@@ -45009,7 +45098,9 @@
     {
       "id": "masstraffic_terran_dockarea",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "dockarea",
         "factionRace": "terran"
@@ -45021,7 +45112,9 @@
     {
       "id": "masstraffic_terran_pier",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "pier",
         "factionRace": "terran"
@@ -45033,7 +45126,9 @@
     {
       "id": "masstraffic_terran_storage",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "storage",
         "factionRace": "terran"
@@ -45045,7 +45140,9 @@
     {
       "id": "masstraffic_terran_production",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "production",
         "factionRace": "terran"
@@ -45057,7 +45154,9 @@
     {
       "id": "masstraffic_terran_buildmodule",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "buildmodule",
         "factionRace": "terran"
@@ -45069,7 +45168,9 @@
     {
       "id": "masstraffic_terran_defencemodule",
       "task": "masstraffic.generic",
-      "quota": {},
+      "quota": {
+        "station": 20
+      },
       "location": {
         "clazz": "defencemodule",
         "factionRace": "terran"
