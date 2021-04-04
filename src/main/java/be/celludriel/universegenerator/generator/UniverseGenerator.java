@@ -98,6 +98,10 @@ public class UniverseGenerator {
         target = path + "/md/Notifications.xml";
         copyUtils.copyToOutputDir(source, target);
 
+        source = "/core/factiongoal_expand_space.xml";
+        target = path + "/md/factiongoal_expand_space.xml";
+        copyUtils.copyToOutputDir(source, target);
+
         source = "/core/defaults.xml";
         target = path + "/libraries/defaults.xml";
         copyUtils.copyToOutputDir(source, target);
