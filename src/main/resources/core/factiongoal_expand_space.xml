@@ -25,11 +25,11 @@
           <do_for_each name="$RunningGoal" in="$Goals">
             <debug_text text="'[EXPAND_GOAL_EVALUATE] $RunningGoal %1'.[$RunningGoal]" chance="$DebugChance" />
             <debug_text text="'[EXPAND_GOAL_EVALUATE] $RunningGoal.static %1'.[$RunningGoal.static]" chance="$DebugChance" />
-            <debug_text text="'[EXPAND_GOAL_EVALUATE] $RunningGoal.$Target %1'.[$RunningGoal.$Target]" chance="$DebugChance" />
-            <debug_text text="'[EXPAND_GOAL_EVALUATE] $EvaluationTarget %1'.[$EvaluationTarget]" chance="$DebugChance" />
             <do_if value="$RunningGoal.static == md.FactionGoal_Expand_Space.Start">
-              <do_if value="$RunningGoal.$Target == $EvaluationTarget">
-                <debug_text text="'[EXPAND_GOAL_EVALUATE] %1 evaluating %2 for expansion. Target already designated for expansion, discarding.'.[$Faction, $EvaluationTarget.knownname]" chance="100" />
+              <debug_text text="'[EXPAND_GOAL_EVALUATE] $RunningGoal.$Faction %1'.[$RunningGoal.$Faction]" chance="$DebugChance" />
+              <debug_text text="'[EXPAND_GOAL_EVALUATE] $Faction %1'.[$Faction]" chance="$DebugChance" />
+              <do_if value="$RunningGoal.$Faction == $Faction">
+                <debug_text text="'[EXPAND_GOAL_EVALUATE] %1 evaluating %2 for expansion. Faction already designated for expansion, discarding.'.[$Faction, $EvaluationTarget.knownname]" chance="100" />
                 <set_value name="$Valid" exact="false" />
                 <break />
               </do_if>
@@ -84,6 +84,7 @@
         <set_value name="$GoalTimeout" exact="player.age + 60min" />>
         <set_value name="$StateEvaluationDelay" exact="1ms"/>
         <set_value name="$CurrentPhaseSubGoals" exact="[]"/>
+        <create_group groupname="$Ships"/>
 
         <!--Entry points to sector-->
         <create_group groupname="$EntryPoints"/>
@@ -170,6 +171,58 @@
               <set_value name="$NewSubgoalTable.$DebugChance2"              exact="100"/>
   
               <signal_cue_instantly cue="md.FactionSubgoal_BuildStation.Start" param="$NewSubgoalTable"/>
+
+              <!--==== BEGIN Create a squadron to defend the station ====-->
+              <find_cluster_in_range name="$PossibleReinforcementSectors" object="$NewSubgoalTable.$Target" maxdistance="3" multiple="true"/>
+              <find_ship_by_true_owner name="$OurLocalShips" faction="$Faction" primarypurpose="purpose.fight" class="[class.ship_m, class.ship_s]" space="$PossibleReinforcementSectors" commandeerable="true" multiple="true"/>
+              <shuffle_list list="$OurLocalShips"/>
+              
+              <create_position name="$GuardPosition" object="$NewSubgoalTable.$Target" value="$NewSubgoalTable.$Position" min="5km" max="10km"/>
+
+              <debug_text text="'[EXPAND_GOAL_BUILD_SQUAD] position to guard ' + $GuardPosition"  context="false" chance="100"/>
+
+              <set_value name="$Commander" exact="null" />
+              <do_all exact="$OurLocalShips.count" counter="$shipcounter">
+                <set_value name="$Ship" exact="$OurLocalShips.{$shipcounter}"/>
+                <add_to_group groupname="$Ships" object="$Ship"/>
+
+                <commandeer_object object="$Ship"/>
+                <debug_text text="'[EXPAND_GOAL_BUILD_SQUAD] commandeered ' + $Ship.knownname + ' ' + $Ship" context="false" chance="100"/>
+
+                <!--Release subordinates from ship-->
+                <do_if value="$Ship.subordinates? or $Ship.subordinates.count gt 0">
+                  <set_value name="$subordinates" exact="$Ship.subordinates"/>
+                  <do_all exact="$subordinates.count" counter="$subcounter">
+                    <remove_object_commander object="$subordinates.{$subcounter}"/>
+                    <cancel_all_orders object="$subordinates.{$subcounter}"/>
+                    <create_order id="'Patrol'" object="$subordinates.{$subcounter}" default="true" immediate="true">
+                      <param name="space" value="$subordinates.{$subcounter}.sector"/>
+                    </create_order>
+                  </do_all>
+                </do_if>
+
+                <!--Make first ship commander or attach commander to other ships-->
+                <cancel_all_orders object="$Ship"/>
+                <do_if value="$Ships.count == 1">
+                  <set_value name="$Commander" exact="$Ship" />
+                </do_if>
+                <do_else>
+                  <set_object_commander object="$Ship" commander="$Commander"/>
+                </do_else>
+
+                <!--Give all ships the order to move and wait-->
+                <create_order id="'MoveWait'" object="$Ship" default="true" immediate="true">
+                  <param name="destination" value="[$NewSubgoalTable.$Target, $GuardPosition]"/>
+                </create_order>
+
+                <!--We only want 5 ships-->
+                <do_if value="$Ships.count ge 5">
+                  <break/>
+                </do_if>
+              </do_all>
+              <remove_value name="$Commander"/>
+              <!--==== END Create a squadron to defend the station ====-->
+
             </do_if>
             <do_else>
               <debug_text text="$DebugText + 'Unable to find suitable station macro for ' + $Faction.primaryrace + ' ' + $StationType" context="false" chance="$DebugChance2"/>
@@ -375,6 +428,18 @@
             <do_if value="$IDX">
               <remove_value name="$FactionCue.$Goals.{$IDX}"/>
             </do_if>
+
+            <do_if value="$Ships?">
+              <do_all exact="$Ships.count" counter="$i">
+                <debug_text text="$DebugText + 'Releasing ships'" context="false" chance="if $i == 1 then $DebugChance else 0"/>
+                <debug_text text="$DebugText + '%1 resuming prior orders.'.[$Ships.{$i}.knownname]" context="false" chance="$DebugChance"/>
+                <release_commandeered_object object="$Ships.{$i}"/>
+                <create_order id="'Patrol'" object="$Ships.{$i}" default="true">
+                  <param name="space" value="$Ships.{$i}.sector"/>
+                </create_order>
+              </do_all>
+            </do_if>
+
             <cancel_cue cue="Start" />
           </actions>
         </cue>
