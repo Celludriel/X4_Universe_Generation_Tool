@@ -210,7 +210,7 @@
                   <set_object_commander object="$Ship" commander="$Commander"/>
                 </do_else>
 
-                <!--Give all ships the order to move and wait-->
+                <!--Give all ships the order to ProtectPosition-->
                 <create_order id="'ProtectPosition'" object="$Ship" default="true" immediate="true">
                   <param name="destination" value="[$NewSubgoalTable.$Target, $GuardPosition]"/>
                 </create_order>
@@ -254,7 +254,7 @@
                   <debug_text text="'[EXPAND_GOAL_STATECHECK] $CurrentSubGoalDescriptor %1'.[$CurrentSubGoalDescriptor]" chance="$DebugChance2" />
                   <do_if value="$CurrentSubGoalDescriptor == '$SUBGOAL_BuildStation'">
                     <do_if value="$CurrentSubGoal.$EvaluationResult == 'failed'">
-                      <!--TODO @Celludriel We probably have to end the goal ???-->
+                      <signal_cue_instantly cue="Cleanup" />
                     </do_if>
                     <do_elseif value="$CurrentSubGoal.$EvaluationResult == 'achieved'">
                       <signal_cue_instantly cue="Cleanup" />
