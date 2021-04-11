@@ -9,7 +9,7 @@
         <basket basket="${job.basket}"/>
         </#if>
         <#if job.category??>
-        <category faction="${job.category.faction}" tags="[${job.category.tags}]"<#if job.category.size??> size="${job.category.size}"</#if>/>
+        <category faction="${job.category.faction}" tags="${job.category.tags}"<#if job.category.size??> size="${job.category.size}"</#if>/>
         </#if>
         <#if job.order??>
         <orders>
