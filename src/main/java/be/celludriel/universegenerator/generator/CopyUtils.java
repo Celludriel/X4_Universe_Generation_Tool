@@ -20,8 +20,9 @@ public class CopyUtils {
 
         Path folderPath = null;
         URI uri = getClass().getClassLoader().getResource(originFolder).toURI();
-        FileSystem fileSystem = FileSystems.newFileSystem(uri, Collections.emptyMap(), null);
+        FileSystem fileSystem = null;
         if ("jar".equals(uri.getScheme())) {
+            fileSystem = FileSystems.newFileSystem(uri, Collections.emptyMap(), null);
             folderPath = fileSystem.getPath(originFolder);
         } else {
             folderPath = Paths.get(uri);
@@ -37,7 +38,9 @@ public class CopyUtils {
             target = targetFolder + fileName;
             copyToOutputDir(source, target);
         }
-        fileSystem.close();
+        if(fileSystem != null){
+            fileSystem.close();
+        }
     }
 
     public void copyToOutputDir(String source, String target) throws IOException {
