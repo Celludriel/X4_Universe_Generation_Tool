@@ -1,0 +1,18 @@
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb"
+          xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          version="1.0">
+    <bindings schemaLocation="../xsd/libraries.xsd" version="1.0">
+        <!-- Customise the package name -->
+        <schemaBindings>
+            <package name="be.celludriel.universegenerator.model.xml"/>
+        </schemaBindings>
+
+        <bindings node="//xs:element[@name='race']">
+            <property name="raceValue"/>
+        </bindings>
+        <bindings node="//xs:element[@name='job']/xs:complexType/xs:sequence/xs:choice/xs:element[@name='location']/xs:complexType/xs:sequence/xs:element[@name='policefaction']">
+            <property name="policeFactionValue"/>
+        </bindings>
+    </bindings>
+</bindings>

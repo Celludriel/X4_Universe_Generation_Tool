@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="FactionGoal_Expand_Space" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+    <!--Add goal to global variable-->
+    <cue name="RegisterGoal">
+      <actions>
+        <do_if value="not global.$FactionGoals?">
+          <create_list name="global.$FactionGoals" />
+        </do_if>
+        <set_value name="Start.$Name" exact="'Expand'" />
+        <append_to_list name="global.$FactionGoals" exact="table[$EvaluationCue = Evaluate, $EvaluateEventLib = null, $TriggerCue = Start]" />
+      </actions>
+    </cue>
+
+    <library name="Evaluate">
+      <actions>
+        <set_value name="$Valid" exact="true" />
+
+        <do_if value="not $EvaluationTarget?">
+          <debug_text text="'[EXPAND_GOAL_EVALUATE] No evaluation target'" chance="$DebugChance" />
+          <set_value name="$Valid" exact="false" />
+        </do_if>
+        <do_else>
+          <!--Check if we are already expanding into the sector or we have a valid target-->
+          <do_for_each name="$RunningGoal" in="$Goals">
+            <debug_text text="'[EXPAND_GOAL_EVALUATE] $RunningGoal %1'.[$RunningGoal]" chance="$DebugChance" />
+            <debug_text text="'[EXPAND_GOAL_EVALUATE] $RunningGoal.static %1'.[$RunningGoal.static]" chance="$DebugChance" />
+            <do_if value="$RunningGoal.static == md.FactionGoal_Expand_Space.Start">
+              <debug_text text="'[EXPAND_GOAL_EVALUATE] $RunningGoal.$Faction %1'.[$RunningGoal.$Faction]" chance="$DebugChance" />
+              <debug_text text="'[EXPAND_GOAL_EVALUATE] $Faction %1'.[$Faction]" chance="$DebugChance" />
+              <do_if value="$RunningGoal.$Faction == $Faction">
+                <debug_text text="'[EXPAND_GOAL_EVALUATE] %1 evaluating %2 for expansion. Faction already designated for expansion, discarding.'.[$Faction, $EvaluationTarget.knownname]" chance="100" />
+                <set_value name="$Valid" exact="false" />
+                <break />
+              </do_if>
+            </do_if>
+          </do_for_each>
+        </do_else>
+
+        <do_if value="$Valid">
+          <!-- if sector is ownerless try and take it -->
+          <do_if value="$EvaluationTarget.owner == faction.ownerless and $EvaluationTarget.factionlogic">
+            <set_value name="$EvaluatedWeight" min="0.1" max="1.0" />
+            <debug_text text="'[EXPAND_GOAL_EVALUATE] %1 considers %2 fair game. They want it %3 badly.'.[$Faction, $EvaluationTarget.knownname, $EvaluatedWeight]" chance="$DebugChance" />
+
+            <append_to_list name="$EvaluatedGoals" exact="table[
+                                    $FactionCue = namespace,
+                                    $Faction = $Faction,
+                                    $TriggerCue = global.$FactionGoals.{$i}.$TriggerCue,
+                                    $Weight = $EvaluatedWeight,
+                                    $Target = $EvaluationTarget,
+                                    $ReconData = [],
+                                    $ExpeditionForce = false,
+                                    $DebugChance = $DebugChance,
+                                    $DebugChance2 = $DebugChance2]" />
+          </do_if>
+        </do_if>
+      </actions>
+    </library>
+
+    <!--Instance the goal by passing a list.
+    This cue may be signalled with other parameters to trigger child cues e.g. event.param.{1} == 'generate_report' - See Process_Signal cue-->
+    <cue name="Start" instantiate="true" namespace="this" version="4">
+      <conditions>
+        <event_cue_signalled />
+        <check_value value="this.state == cuestate.waiting and typeof event.param == datatype.table" />
+      </conditions>
+      <actions>
+        <set_value name="$DebugChance" exact="@event.param.$DebugChance" />
+        <set_value name="$DebugChance2" exact="@event.param.$DebugChance2" />
+
+        <debug_text text="'[EXPAND_GOAL_START] Starting expansion'" chance="$DebugChance" />
+        <!--Params-->
+        <set_value name="$FactionCue" exact="event.param.$FactionCue" />
+        <set_value name="$Faction" exact="event.param.$Faction" />
+        <set_value name="$GoalWeight" exact="event.param.$Weight" />
+        <set_value name="$Target" exact="event.param.$Target" comment="Target sector" />
+        <set_value name="$ExpeditionForce" exact="@event.param.$ExpeditionForce" comment="Long range invasion force with no station construction" />
+        <debug_text text="'[EXPAND_GOAL_START] $Target.isclass.sector: %1'.[$Target.isclass.sector]" chance="$DebugChance" />
+        <assert value="$Target.isclass.sector" text="'[EXPAND_GOAL] ' + $DebugText + 'Target is not a sector, not currently supported [Celludriel]'" />
+
+        <!--Goal needed values-->
+        <find_cluster_in_range name="$LocalClusters" object="$Target" maxdistance="6" multiple="true"/>
+        <set_value name="$GoalTimeout" exact="player.age + 60min" />>
+        <set_value name="$StateEvaluationDelay" exact="1ms"/>
+        <set_value name="$CurrentPhaseSubGoals" exact="[]"/>
+        <create_group groupname="$Ships"/>
+
+        <!--Entry points to sector-->
+        <create_group groupname="$EntryPoints"/>
+				<create_group groupname="$AlliedEntryPoints"/>
+				<find_cluster_in_range name="$AdjacentClusters" object="$Target" maxdistance="1" multiple="true"/>
+				<find_sector name="$AdjacentSectors" space="$AdjacentClusters" multiple="true"/>
+				<remove_value name="$AdjacentClusters"/>
+				<set_value name="$LocalEntryPoints" exact="[]"/>
+				<set_value name="$TargetCluster" exact="$Target.cluster"/>
+				<do_all exact="$AdjacentSectors.count" counter="$i">
+				  <do_if value="$AdjacentSectors.{$i}.cluster == $TargetCluster">
+					  <find_object name="$LocalEntryPoints" class="class.highwayentrygate" space="$AdjacentSectors.{$i}" destination="$Target" multiple="true"/>
+				  </do_if>
+				  <do_else>
+					  <find_gate name="$LocalEntryPoints" destination="$Target" space="$AdjacentSectors.{$i}" multiple="true"/>
+				  </do_else>
+				  <do_if value="$LocalEntryPoints.count">
+					  <add_to_group groupname="$EntryPoints" list="$LocalEntryPoints"/>
+					<do_if value="$AdjacentSectors.{$i}.hasrelation.friend.{$Faction}">
+					  <add_to_group groupname="$AlliedEntryPoints" list="$LocalEntryPoints"/>
+					</do_if>
+				  </do_if>
+				</do_all>
+
+
+        <!--***Debug***-->
+        <set_value name="$DebugText" exact="'(' + $Faction.id + ') ' + static.$Name + ': ' + $Target.knownname + '(' + $Target.owner.id + ') - '" />
+        <debug_text text="'[EXPAND_GOAL_START] ' + $DebugText" chance="$DebugChance" />
+        <debug_text text="'[EXPAND_GOAL_START] ' + $DebugText + 'weight ' + $GoalWeight" context="false" chance="$DebugChance" />
+        <set_value name="$DebugGoalText" exact="'[EXPAND_GOAL_START] Starting Expand Goal'" />
+      </actions>
+      <cues>
+        <cue name="Init">
+          <actions>
+            <debug_text text="'[EXPAND_GOAL_INIT] Starting init phase'" chance="$DebugChance" />
+            <do_if value="@$FeedbackValue">
+              <!--Something happened during setup which requires this goal to be aborted-->
+              <debug_text text="'[EXPAND_GOAL_INIT] Switching to cleanup'" chance="$DebugChance" />
+              <signal_cue_instantly cue="Cleanup" />
+            </do_if>
+            <do_else>
+              <!--Register this goal with the faction logic-->
+              <debug_text text="'[EXPAND_GOAL_INIT] Registering goal with faction logic'" chance="$DebugChance" />
+              <append_to_list name="$FactionCue.$Goals" exact="namespace" />
+            </do_else>
+          </actions>
+        </cue>
+        
+        <cue name="Start_Build">
+          <actions>
+            <debug_text text="'[EXPAND_GOAL_BUILD] Starting build phase'" chance="$DebugChance" />
+            <set_value name="$StationTag" exact="tag.defence"/>
+            <set_value name="$StationType" exact="'defence'"/>
+            <get_construction_plan result="$ConstructionPlan" faction="$Faction" tags="$StationTag" rawname="$StationRawName"/>
+            <do_if value="$ConstructionPlan">
+            <get_module_set_macro result="$StationMacro" race="$Faction.primaryrace" type="$StationType"/>
+            <do_if value="not $StationMacro and $Faction.primaryrace != race.xenon">
+              <get_module_set_macro result="$StationMacro" race="$Faction.primaryrace" type="'factory'" comment="Note: non-Xenon races use the 'factory' set"/>
+            </do_if>
+            <do_if value="$StationMacro">
+              <!--Trigger new BuildStation Subgoal-->
+              <set_value name="$NewSubgoalTable" exact="table[]"/>
+              <set_value name="$NewSubgoalTable.$OwnerGoal"                 exact="namespace"/>
+              <set_value name="$NewSubgoalTable.$Descriptor"                exact="'$SUBGOAL_BuildStation'"/>
+              <!--TODO @Celludriel better end time for subgoals which persist over multiple phases?-->
+              <set_value name="$NewSubgoalTable.$DesiredEndTime"            exact="$GoalTimeout"/>
+              <set_value name="$NewSubgoalTable.$StationMacro"              exact="$StationMacro"/>
+              <set_value name="$NewSubgoalTable.$ConstructionPlan"          exact="$ConstructionPlan"/>
+              <set_value name="$NewSubgoalTable.$StationRawName"            exact="$StationRawName"/>
+              <set_value name="$NewSubgoalTable.$DeployImmediate"           exact="true"/>
+              <!--TODO @Celludriel find scope of search area for commandeering ships-->
+              <set_value name="$NewSubgoalTable.$FindShipSpaces"            exact="$LocalClusters"/>
+              <!--TODO @Celludriel - better select entry point, perhaps share entry point info with other subgoals-->
+              <!--TODO @Celludriel - have a 'exit point' to explicitly link the route of attack between the start sector and the target?-->
+              <set_value name="$NewSubgoalTable.$EntryPoint"                exact="if $AlliedEntryPoints.count then $AlliedEntryPoints.random else $EntryPoints.random"/>
+  
+              <set_value name="$NewSubgoalTable.$Target"                    exact="$NewSubgoalTable.$EntryPoint.destination.sector"/>
+              <!--TODO @Celludriel better radius based on plot size-->
+              <!--TODO @Celludriel better positioning-->
+              <get_safe_pos result="$NewSubgoalTable.$Position"             sector="$NewSubgoalTable.$Target" radius="5km" object="$NewSubgoalTable.$EntryPoint.destination" max="10km" allowyaxis="false"/>
+              <!--TODO @Celludriel create a better position in front of the gate, taking into account other subgoals/safepos-->
+              <create_position name="$NewSubgoalTable.$EntryPointPosition"  object="$NewSubgoalTable.$EntryPoint" z="-15km" max="7km"/>
+              <set_value name="$NewSubgoalTable.$DebugChance"               exact="100"/>
+              <set_value name="$NewSubgoalTable.$DebugChance2"              exact="100"/>
+  
+              <signal_cue_instantly cue="md.FactionSubgoal_BuildStation.Start" param="$NewSubgoalTable"/>
+
+              <!--==== BEGIN Create a squadron to defend the station ====-->
+              <find_cluster_in_range name="$PossibleReinforcementSectors" object="$NewSubgoalTable.$Target" maxdistance="3" multiple="true"/>
+              <find_ship_by_true_owner name="$OurLocalShips" faction="$Faction" primarypurpose="purpose.fight" class="[class.ship_m, class.ship_s]" space="$PossibleReinforcementSectors" commandeerable="true" multiple="true"/>
+              <shuffle_list list="$OurLocalShips"/>
+              
+              <create_position name="$GuardPosition" object="$NewSubgoalTable.$Target" value="$NewSubgoalTable.$Position" min="5km" max="10km"/>
+
+              <debug_text text="'[EXPAND_GOAL_BUILD_SQUAD] position to guard ' + $GuardPosition"  context="false" chance="100"/>
+
+              <set_value name="$Commander" exact="null" />
+              <do_all exact="$OurLocalShips.count" counter="$shipcounter">
+                <set_value name="$Ship" exact="$OurLocalShips.{$shipcounter}"/>
+                <add_to_group groupname="$Ships" object="$Ship"/>
+
+                <commandeer_object object="$Ship"/>
+                <debug_text text="'[EXPAND_GOAL_BUILD_SQUAD] commandeered ' + $Ship.knownname + ' ' + $Ship" context="false" chance="100"/>
+
+                <!--Release subordinates from ship-->
+                <do_if value="$Ship.subordinates? or $Ship.subordinates.count gt 0">
+                  <set_value name="$subordinates" exact="$Ship.subordinates"/>
+                  <do_all exact="$subordinates.count" counter="$subcounter">
+                    <remove_object_commander object="$subordinates.{$subcounter}"/>
+                    <cancel_all_orders object="$subordinates.{$subcounter}"/>
+                    <create_order id="'Patrol'" object="$subordinates.{$subcounter}" default="true" immediate="true">
+                      <param name="space" value="$subordinates.{$subcounter}.sector"/>
+                    </create_order>
+                  </do_all>
+                </do_if>
+
+                <!--Make first ship commander or attach commander to other ships-->
+                <cancel_all_orders object="$Ship"/>
+                <do_if value="$Ships.count == 1">
+                  <set_value name="$Commander" exact="$Ship" />
+                </do_if>
+                <do_else>
+                  <set_object_commander object="$Ship" commander="$Commander"/>
+                </do_else>
+
+                <!--Give all ships the order to ProtectPosition-->
+                <create_order id="'ProtectPosition'" object="$Ship" default="true" immediate="true">
+                  <param name="destination" value="[$NewSubgoalTable.$Target, $GuardPosition]"/>
+                </create_order>
+
+                <!--We only want 5 ships-->
+                <do_if value="$Ships.count ge 5">
+                  <break/>
+                </do_if>
+              </do_all>
+              <remove_value name="$Commander"/>
+              <!--==== END Create a squadron to defend the station ====-->
+
+            </do_if>
+            <do_else>
+              <debug_text text="$DebugText + 'Unable to find suitable station macro for ' + $Faction.primaryrace + ' ' + $StationType" context="false" chance="$DebugChance2"/>
+            </do_else>
+            <remove_value name="$StationMacro"/>
+            </do_if>
+            <do_else>
+            <debug_text text="$DebugText + 'Unable to find suitable station macro for ' + $Faction + ' ' + $StationTag" context="false" chance="$DebugChance2"/>
+            </do_else>
+            <remove_value name="$StationTag"/>
+            <remove_value name="$StationType"/>
+            <remove_value name="$ConstructionPlan"/>
+          </actions>
+        </cue>
+
+        <cue name="EvaluateState">
+          <delay exact="$StateEvaluationDelay"/>
+          <actions>
+            <set_value name="$StateEvaluationDelay" exact="0s"/>
+            <set_value name="$CurrentSubGoalDescriptor" exact="null"/>
+            <do_all exact="$CurrentPhaseSubGoals.count" counter="$i" reverse="true">
+              <set_value name="$CurrentSubGoal" exact="$CurrentPhaseSubGoals.{$i}"/>
+              <do_if value="$CurrentSubGoal.$EvaluateCue?">
+                <signal_cue_instantly cue="$CurrentSubGoal.$EvaluateCue"/>
+                <do_if value="$CurrentSubGoal.$EvaluationResult?">
+                  <debug_text text="'[EXPAND_GOAL_STATECHECK] subgoal state %1'.[$CurrentSubGoal.$EvaluationResult]" chance="$DebugChance2" />
+                  <debug_text text="'[EXPAND_GOAL_STATECHECK] subgoal phase %1'.[$CurrentSubGoal.$Cue.$Phase]" chance="$DebugChance2" />
+                  <set_value name="$CurrentSubGoalDescriptor" exact="$CurrentSubGoal.$Cue.$Descriptor"/>
+                  <debug_text text="'[EXPAND_GOAL_STATECHECK] $CurrentSubGoalDescriptor %1'.[$CurrentSubGoalDescriptor]" chance="$DebugChance2" />
+                  <do_if value="$CurrentSubGoalDescriptor == '$SUBGOAL_BuildStation'">
+                    <do_if value="$CurrentSubGoal.$EvaluationResult == 'failed'">
+                      <signal_cue_instantly cue="Cleanup" />
+                    </do_if>
+                    <do_elseif value="$CurrentSubGoal.$EvaluationResult == 'achieved'">
+                      <signal_cue_instantly cue="Cleanup" />
+                    </do_elseif>
+                  </do_if>
+                  <do_else>
+                    <assert value="false" text="'Faction Subgoal ' + [$CurrentSubGoal.$Cue] +' was not recognised for this Faction Goal [Celludriel]\n' + $DebugText"/>
+                  </do_else>
+                </do_if>
+              </do_if>
+            </do_all>
+            <remove_value name="$CurrentSubGoalDescriptor"/>
+
+            <do_if value="not $StateEvaluationDelay">
+              <set_value name="$StateEvaluationDelay" min="10s" max="15s"/>
+            </do_if>
+            <reset_cue cue="EvaluateState"/>
+          </actions>
+        </cue>
+
+        <!--event.param.{1} == Signal ID (Other elements are custom)-->
+        <cue name="Process_Signal" instantiate="true">
+          <conditions>
+            <event_cue_signalled cue="Start" />
+          </conditions>
+          <actions>
+            <do_if value="event.param.{1} == 'evaluate_event'">
+              <signal_cue_instantly cue="Evaluate_Event" param="event.param.{2}" />
+            </do_if>
+            <do_elseif value="event.param.{1} == 'add_subgoal'">
+              <signal_cue_instantly cue="Add_Subgoal" param="event.param.{2}" />
+            </do_elseif>
+            <do_elseif value="event.param.{1} == 'remove_subgoal'">
+              <signal_cue_instantly cue="Remove_Subgoal" param="event.param.{2}" />
+            </do_elseif>
+            <do_elseif value="event.param.{1} == 'reactivate_subgoal'">
+              <signal_cue_instantly cue="Reactivate_Subgoal" param="event.param.{2}" />
+            </do_elseif>
+            <do_elseif value="event.param.{1} == 'add_standby_ship'">
+              <!--event.param = ['add_standby_ship', Ship, FeedbackList (Element 1 set to true if ship added as standby ship)-->
+              <signal_cue_instantly cue="Add_Standby_Ship" param="event.param" comment="Pass all parameters" />
+            </do_elseif>
+            <do_elseif value="event.param.{1} == 'remove_standby_ship'">
+              <!--event.param = ['remove_standby_ship', Ship, Uncommandeer? (bool)-->
+              <signal_cue_instantly cue="Remove_Standby_Ship" param="event.param" />
+            </do_elseif>
+            <do_elseif value="event.param.{1} == 'generate_report'">
+              <signal_cue_instantly cue="Generate_Report" />
+            </do_elseif>
+            <do_else>
+              <assert value="false" text="'Signal ' + event.param + ' was not recognised [Celludriel]\n' + $DebugText" break="1" />
+            </do_else>
+          </actions>
+        </cue>
+
+        <!--Signal cues-->
+        <!--No events that we should know about but keeping it in for later updates-->
+        <cue name="Evaluate_Event" instantiate="true">
+          <conditions>
+            <event_cue_signalled />
+          </conditions>
+          <actions>
+            <assert value="typeof event.param == datatype.list and event.param.count ge 2" text="'[EXPAND_GOAL] Invalid event parameters' + event.param + ' [Celludriel]\n' + $DebugText" break="1"/>
+            <set_value name="$EventParams" exact="event.param"/>
+            <debug_text text="'[EXPAND_GOAL] evaluating event with params %1'.[$EventParams]" chance="$DebugChance" />
+          </actions>
+        </cue>
+
+        <cue name="Generate_Report" instantiate="true">
+          <conditions>
+            <event_cue_signalled />
+          </conditions>
+          <actions>
+            <debug_text text="'[EXPAND_GOAL] ' + $Faction.knownname + ' is set to expand Space: ' + $Target.knownname + ' (' + $Target.owner + ')'" context="false" />
+            <debug_text text="'[EXPAND_GOAL] Has ' + $CurrentPhaseSubGoals.count + ' subgoals'" context="false" />
+            <do_all exact="$CurrentPhaseSubGoals.count" counter="$i">
+              <do_if value="$CurrentPhaseSubGoals.{$i}.$GenerateReportCue?">
+                <signal_cue_instantly cue="$CurrentPhaseSubGoals.{$i}.$GenerateReportCue" />
+              </do_if>
+              <do_else>
+                <debug_text text="'[EXPAND_GOAL] SUBGOAL - ' + $CurrentPhaseSubGoals.{$i}.$Cue" context="false" />
+              </do_else>
+            </do_all>
+          </actions>
+        </cue>
+
+        <!--event.param = Subgoal registry table-->
+        <cue name="Add_Subgoal" instantiate="true">
+          <conditions>
+            <event_cue_signalled />
+          </conditions>
+          <actions>
+            <set_value name="$EventParams" exact="event.param"/>
+            <debug_text text="'[EXPAND_GOAL] adding subgoal with params %1'.[$EventParams]" chance="$DebugChance" />
+
+            <assert value="typeof $EventParams == datatype.table" text="'parameter ' + $EventParams + ' was not a table [Owen]'" break="1"/>
+            <set_value name="this.$IDX" exact="$CurrentPhaseSubGoals.indexof.{$EventParams}"/>
+            <do_if value="this.$IDX">
+              <assert value="not $CurrentPhaseSubGoals.indexof.{$EventParams}" text="'Subgoal ' + $EventParams + ' was already in $CurrentPhaseSubGoals [Owen]'" break="1"/>
+            </do_if>
+            <do_else>
+              <append_to_list name="$CurrentPhaseSubGoals" exact="$EventParams"/>
+              <debug_text text="$DebugText + 'Adding subgoal ' + $EventParams.$Cue.$DebugText + ' - now has ' + $CurrentPhaseSubGoals.count + ' subgoals'" context="false" chance="$DebugChance"/>
+            </do_else>            
+          </actions>
+        </cue>
+
+        <!--event.param = Subgoal registry table-->
+        <cue name="Remove_Subgoal" instantiate="true">
+          <conditions>
+            <event_cue_signalled />
+          </conditions>
+          <actions>
+            <set_value name="$EventParams" exact="event.param"/>
+            <debug_text text="'[EXPAND_GOAL] removing subgoal with params %1'.[$EventParams]" chance="$DebugChance" />
+            <assert value="typeof $EventParams == datatype.table" text="'parameter ' + $EventParams + ' was not a table [Owen]'" break="1"/>
+            <set_value name="this.$IDX" exact="$CurrentPhaseSubGoals.indexof.{$EventParams}"/>
+            <do_if value="this.$IDX">
+              <debug_text text="$DebugText + ' Removing subgoal: ' + $EventParams + ' from $CurrentPhaseSubGoals'" chance="$DebugChance"/>
+              <remove_value name="$CurrentPhaseSubGoals.{this.$IDX}"/>
+            </do_if>         
+          </actions>
+        </cue>
+
+        <!--event.param = Subgoal registry table-->
+        <cue name="Reactivate_Subgoal" instantiate="true">
+          <conditions>
+            <event_cue_signalled />
+          </conditions>
+          <actions>
+            <set_value name="$EventParams" exact="event.param"/>
+            <debug_text text="'[EXPAND_GOAL] reactivating subgoal with params %1'.[$EventParams]" chance="$DebugChance" />
+          </actions>
+        </cue>
+
+        <!--
+        event.param.{1} = signal ID 'add_standby_ship' (optional)
+        event.param.{2} = Ship
+        event.param.{3} = Result feedback list ref. Element 1 set to true if ship added as standby ship-->
+        <cue name="Add_Standby_Ship" instantiate="true">
+          <conditions>
+            <event_cue_signalled />
+          </conditions>
+          <actions>
+            <set_value name="$EventParams" exact="event.param"/>
+            <debug_text text="'[EXPAND_GOAL] adding standby ship with params %1'.[$EventParams]" chance="$DebugChance" />
+          </actions>
+        </cue>
+
+        <!--
+        event.param.{1} = signal ID 'remove_standby_ship' (optional)
+        event.param.{2} = Ship
+        event.param.{3} = Uncommandeer?-->
+        <cue name="Remove_Standby_Ship" instantiate="true">
+          <conditions>
+            <event_cue_signalled />
+          </conditions>
+          <actions>
+            <set_value name="$EventParams" exact="event.param"/>
+            <debug_text text="'[EXPAND_GOAL] removing standby ship with params %1'.[$EventParams]" chance="$DebugChance" />
+          </actions>
+        </cue>
+
+        <cue name="Cleanup">
+          <conditions>
+            <event_cue_signalled />
+          </conditions>
+          <actions>
+            <debug_text filter="economy_verbose" text="'#FL#;%1;%2;%3;%4;%5;%6;%7;%8;%9'.[player.age, 'cleanup', $DebugGoalText, null, null, null, $Target.knownname, $Faction.id, $Target.owner.id]" context="false" />
+            <set_value name="$IDX" exact="$FactionCue.$Goals.indexof.{namespace}"/>
+            <do_if value="$IDX">
+              <remove_value name="$FactionCue.$Goals.{$IDX}"/>
+            </do_if>
+
+            <do_if value="$Ships?">
+              <do_all exact="$Ships.count" counter="$i">
+                <debug_text text="$DebugText + 'Releasing ships'" context="false" chance="if $i == 1 then $DebugChance else 0"/>
+                <debug_text text="$DebugText + '%1 resuming prior orders.'.[$Ships.{$i}.knownname]" context="false" chance="$DebugChance"/>
+                <release_commandeered_object object="$Ships.{$i}"/>
+                <create_order id="'Patrol'" object="$Ships.{$i}" default="true">
+                  <param name="space" value="$Ships.{$i}.sector"/>
+                </create_order>
+              </do_all>
+            </do_if>
+
+            <cancel_cue cue="Start" />
+          </actions>
+        </cue>
+      </cues>
+    </cue>
+  </cues>
+</mdscript>

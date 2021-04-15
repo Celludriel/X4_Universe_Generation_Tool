@@ -1,0 +1,3612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="diff.xsd">
+
+  <!-- Disable galaxy-wide jobs in terran space (added by base game) -->
+
+  <add sel="/jobs/job[@id='xenon_frigate_patrol_m_zone_everywhereelse']/location">
+    <factionlicences>
+      <factionlicence faction="terran" licence="innercore_access" negatefactionlicence="true"/>
+      <factionlicence faction="terran" licence="outercore_access" negatefactionlicence="true"/>
+    </factionlicences>
+  </add>
+
+  <add sel="/jobs/job[@id='xenon_frigate_patrol_m_zone_everywhereelse_mission']/location">
+    <factionlicences>
+      <factionlicence faction="terran" licence="innercore_access" negatefactionlicence="true"/>
+      <factionlicence faction="terran" licence="outercore_access" negatefactionlicence="true"/>
+    </factionlicences>
+  </add>
+
+  <add sel="/jobs/job[@id='xenon_scout_patrol_s']/location">
+    <factionlicences>
+      <factionlicence faction="terran" licence="innercore_access" negatefactionlicence="true"/>
+      <factionlicence faction="terran" licence="outercore_access" negatefactionlicence="true"/>
+    </factionlicences>
+  </add>
+
+  <add sel="/jobs/job[@id='xenon_fighter_escort_s_patrol']/location">
+    <factionlicences>
+      <factionlicence faction="terran" licence="innercore_access" negatefactionlicence="true"/>
+      <factionlicence faction="terran" licence="outercore_access" negatefactionlicence="true"/>
+    </factionlicences>
+  </add>
+
+  <add sel="/jobs/job[@id='antigone_scout_patrol_s']/location">
+    <factionlicences>
+      <factionlicence faction="terran" licence="innercore_access" negatefactionlicence="true"/>
+      <factionlicence faction="terran" licence="outercore_access" negatefactionlicence="true"/>
+    </factionlicences>
+  </add>
+
+  <add sel="/jobs/job[@id='teladi_scout_patrol_s']/location">
+      <factionlicences>
+        <factionlicence faction="terran" licence="innercore_access" negatefactionlicence="true"/>
+        <factionlicence faction="terran" licence="outercore_access" negatefactionlicence="true"/>
+      </factionlicences>
+  </add>
+
+  <add sel="/jobs/job[@id='paranid_scout_patrol_s']/location">
+      <factionlicences>
+        <factionlicence faction="terran" licence="innercore_access" negatefactionlicence="true"/>
+        <factionlicence faction="terran" licence="outercore_access" negatefactionlicence="true"/>
+      </factionlicences>
+  </add>
+
+  <add sel="/jobs/job[@id='holyorder_scout_patrol_s']/location">
+    <factionlicences>
+      <factionlicence faction="terran" licence="innercore_access" negatefactionlicence="true"/>
+      <factionlicence faction="terran" licence="outercore_access" negatefactionlicence="true"/>
+    </factionlicences>
+  </add>
+
+  <add sel="/jobs/job[@id='trinity_scout_patrol_s']/location">
+    <factionlicences>
+      <factionlicence faction="terran" licence="innercore_access" negatefactionlicence="true"/>
+      <factionlicence faction="terran" licence="outercore_access" negatefactionlicence="true"/>
+    </factionlicences>
+  </add>
+
+  <add sel="/jobs/job[@id='argon_scout_patrol_s']/location">
+    <factionlicences>
+      <factionlicence faction="terran" licence="innercore_access" negatefactionlicence="true"/>
+      <factionlicence faction="terran" licence="outercore_access" negatefactionlicence="true"/>
+    </factionlicences>
+  </add>
+
+  <!-- Disable galaxy-wide jobs in terran space (added by SV) -->
+
+  <add sel="/jobs/job[@id='fallensplit_raider_mixed_cluster']/location" silent="true">
+    <factionlicences>
+      <factionlicence faction="terran" licence="innercore_access" negatefactionlicence="true"/>
+      <factionlicence faction="terran" licence="outercore_access" negatefactionlicence="true"/>
+    </factionlicences>
+  </add>
+
+  <add sel="/jobs/job[@id='fallensplit_marauder_mixed_cluster']/location" silent="true">
+    <factionlicences>
+      <factionlicence faction="terran" licence="innercore_access" negatefactionlicence="true"/>
+      <factionlicence faction="terran" licence="outercore_access" negatefactionlicence="true"/>
+    </factionlicences>
+  </add>
+
+  <add sel="/jobs/job[@id='zyarth_scout_patrol_s']/location" silent="true">
+    <factionlicences>
+      <factionlicence faction="terran" licence="innercore_access" negatefactionlicence="true"/>
+      <factionlicence faction="terran" licence="outercore_access" negatefactionlicence="true"/>
+    </factionlicences>
+  </add>
+
+  <!-- CoH Jobs -->
+
+  <add sel="/jobs">
+    <!-- TERRAN MANDATE
+        Starting Clusters: 9 (16)
+        Sectors: 9 (17)
+        - policed by Terran Mandate -->
+
+    <job id="terran_food_trader_l" name="{20204,1301}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="food_terran"/>
+      <category faction="terran" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+      <quota galaxy="8" cluster="4"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_food_trader_m" name="{20204,1401}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="Middleman" default="true">
+          <param name="range" value="5"/>
+        </order>
+      </orders>
+      <basket basket="food_terran"/>
+      <category faction="terran" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+      <quota galaxy="30" cluster="8" sector="6"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_food_trader_s" name="{20204,1801}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="Middleman" default="true">
+          <param name="range" value="3"/>
+        </order>
+      </orders>
+      <basket basket="food_terran"/>
+      <category faction="terran" tags="[factionlogic, freighter, trader]" size="ship_s"/>
+      <quota galaxy="35" cluster="10" sector="5"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_s"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_medical_trader_s" name="{20204,10011}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="Middleman" default="true">
+          <param name="range" value="3"/>
+        </order>
+      </orders>
+      <basket basket="medicalsupplies"/>
+      <category faction="terran" tags="[factionlogic, freighter, trader]" size="ship_s"/>
+      <quota galaxy="5" sector="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_s"/>
+        <loadout>
+          <level min="0.3" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_energycell_trader_l" name="{20204,101}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="energycells"/>
+      <category faction="terran" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+      <quota galaxy="4" cluster="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_energycell_trader_m" name="{20204,201}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="energycells"/>
+      <category faction="terran" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+      <quota galaxy="20" cluster="5" sector="4"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_energycell_trader_s" name="{20204,201}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="Middleman" default="true">
+          <param name="range" value="5"/>
+        </order>
+      </orders>
+      <basket basket="energycells"/>
+      <category faction="terran" tags="[factionlogic, freighter, trader]" size="ship_s"/>
+      <quota galaxy="5" cluster="1" />
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_s"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_energycell_trader_l_longrange" name="{20204,101}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="4"/>
+          <param name="minsell" value="5"/>
+          <param name="maxsell" value="8"/>
+        </order>
+      </orders>
+      <basket basket="energycells"/>
+      <category faction="terran" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+      <quota galaxy="10" cluster="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge">
+        <sunlight min="0.4" max="10.0" />
+      </location>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_energycell_trader_m_longrange" name="{20204,201}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="4"/>
+          <param name="minsell" value="5"/>
+          <param name="maxsell" value="8"/>
+        </order>
+      </orders>
+      <basket basket="energycells"/>
+      <category faction="terran" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+      <quota galaxy="20" cluster="8" sector="4"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge">
+        <sunlight min="0.4" max="10.0" />
+      </location>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_equipment_trader_l" name="{20204,301}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="tech_terran"/>
+      <category faction="terran" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+      <quota galaxy="2" cluster="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_l"/>
+        <loadout>
+          <level min="0.4" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_equipment_trader_m" name="{20204,401}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="Middleman" default="true">
+          <param name="range" value="5"/>
+        </order>
+      </orders>
+      <basket basket="tech_terran"/>
+      <category faction="terran" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+      <quota galaxy="10" cluster="3" sector="3"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_m"/>
+        <loadout>
+          <level min="0.4" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_construction_trader_l" name="{20204,301}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="construction_stations_terran"/>
+      <category faction="terran" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+      <quota galaxy="5" cluster="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_construction_trader_m" name="{20204,401}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="Middleman" default="true">
+          <param name="range" value="5"/>
+        </order>
+      </orders>
+      <basket basket="construction_stations_terran"/>
+      <category faction="terran" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+      <quota galaxy="18" cluster="3"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_ship_construction_trader_l" name="{20204,301}">
+      <modifiers rebuild="true" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="construction_ships_terran"/>
+      <category faction="terran" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+      <quota galaxy="1" />
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_ship_construction_trader_m" name="{20204,401}">
+      <modifiers rebuild="true" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="construction_ships_terran"/>
+      <category faction="terran" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+      <quota galaxy="2" cluster="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_tech_trader_l" name="{20204,301}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="tech_terran"/>
+      <category faction="terran" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+      <quota galaxy="17" cluster="2" sector="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_l"/>
+        <loadout>
+          <level min="0.4" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_tech_trader_m" name="{20204,401}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="Middleman" default="true">
+          <param name="range" value="5"/>
+        </order>
+      </orders>
+      <basket basket="tech_terran"/>
+      <category faction="terran" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+      <quota galaxy="38" cluster="5" sector="4"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_m"/>
+        <loadout>
+          <level min="0.4" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_tech_trader_s" name="{20204,401}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="Middleman" default="true">
+          <param name="range" value="5"/>
+        </order>
+      </orders>
+      <basket basket="tech_terran"/>
+      <category faction="terran" tags="[factionlogic, freighter, trader]" size="ship_s"/>
+      <quota galaxy="10" cluster="3" sector="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_s"/>
+        <loadout>
+          <level min="0.4" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <!-- Station Trader Jobs, by request only -->
+    <job id="terran_stationtrader_m" name="{20204,801}">
+      <modifiers rebuild="false" commandeerable="false"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="maxbuy" value="5"/>
+        </order>
+      </orders>
+      <basket basket="all_container_terran"/>
+      <category faction="terran" tags="[stationtrader]" size="ship_m"/>
+      <quota galaxy="0" maxgalaxy="10"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.6"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_stationtrader_l" name="{20204,701}">
+      <modifiers rebuild="false" commandeerable="false"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="maxbuy" value="5"/>
+        </order>
+      </orders>
+      <basket basket="all_container_terran"/>
+      <category faction="terran" tags="[stationtrader]" size="ship_l"/>
+      <quota galaxy="0" maxgalaxy="3"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[trader, container]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.6"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <!-- Mining Jobs -->
+    <job id="terran_free_miner_l_liquid" name="{20204,5701}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="gases"/>
+      <category faction="terran" tags="[factionlogic, freighter, miner]" size="ship_l"/>
+      <quota galaxy="3"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge" regionbasket="gases"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[miner, liquid]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+        <cargo>
+          <wares multiple="true">
+            <fillpercent min="0" max="100" profile="inversebell"/>
+          </wares>
+        </cargo>
+      </ship>
+    </job>
+
+    <job id="terran_free_miner_m_liquid" name="{20204,5701}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="gases"/>
+      <category faction="terran" tags="[factionlogic, freighter, miner]" size="ship_m"/>
+      <quota galaxy="12"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge" regionbasket="gases"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[miner, liquid]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+        <cargo>
+          <wares>
+            <fillpercent min="0" max="100" profile="inversebell"/>
+          </wares>
+        </cargo>
+      </ship>
+    </job>
+
+    <job id="terran_free_miner_l_mineral" name="{20204,5601}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="minerals"/>
+      <category faction="terran" tags="[factionlogic, freighter, miner]" size="ship_l"/>
+      <quota galaxy="40"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge" regionbasket="minerals"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[miner, solid]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+        <cargo>
+          <wares>
+            <fillpercent min="0" max="100" profile="inversebell"/>
+          </wares>
+        </cargo>
+      </ship>
+    </job>
+
+    <job id="terran_free_miner_m_mineral" name="{20204,5601}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="minerals"/>
+      <category faction="terran" tags="[factionlogic, freighter, miner]" size="ship_m"/>
+      <quota galaxy="50"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge" regionbasket="minerals"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[miner, solid]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+        <cargo>
+          <wares>
+            <fillpercent min="0" max="100" profile="inversebell"/>
+          </wares>
+        </cargo>
+      </ship>
+    </job>
+    <job id="terran_free_miner_s_mineral" name="{20204,5601}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="1"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="minerals"/>
+      <category faction="terran" tags="[factionlogic, freighter, miner]" size="ship_s"/>
+      <quota galaxy="20"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge" regionbasket="minerals"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[miner, solid]" size="ship_s"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+        <cargo>
+          <wares>
+            <fillpercent min="0" max="100" profile="inversebell"/>
+          </wares>
+        </cargo>
+      </ship>
+    </job>
+
+    <job id="terran_free_miner_l_ice" name="{20204,2001}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="ice"/>
+      <category faction="terran" tags="[factionlogic, freighter, miner]" size="ship_l"/>
+      <quota galaxy="3"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge" regionbasket="ice"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[miner, solid]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+        <cargo>
+          <wares>
+            <fillpercent min="0" max="100" profile="inversebell"/>
+          </wares>
+        </cargo>
+      </ship>
+    </job>
+
+    <job id="terran_free_miner_m_ice" name="{20204,2001}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="ice"/>
+      <category faction="terran" tags="[factionlogic, freighter, miner]" size="ship_m"/>
+      <quota galaxy="7"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge" regionbasket="ice"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[miner, solid]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+        <cargo>
+          <wares>
+            <fillpercent min="0" max="100" profile="inversebell"/>
+          </wares>
+        </cargo>
+      </ship>
+    </job>
+
+    <job id="terran_miningfleet_m_solid_small" name="{20204,5601}" startactive="false">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[freighter, miner, deepspace]" size="ship_m"/>
+      <quota wing="2" variation="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="minerals"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="terran" tags="[miner, solid]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_fighter_escort_s_miningfleet"/>
+      </subordinates>
+    </job>
+    <job id="terran_miningfleet_m_liquid_small" name="{20204,5701}" startactive="false">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[freighter, miner, deepspace]" size="ship_m"/>
+      <quota wing="2" variation="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="gases"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="terran" tags="[miner, liquid]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_fighter_escort_s_miningfleet"/>
+      </subordinates>
+    </job>
+    <job id="terran_miningfleet_ml_solid_large" name="{20204,5601}" startactive="false">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[freighter, miner, deepspace]"/>
+      <quota wing="3" variation="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="minerals"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="terran" tags="[miner, solid, mixed]"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_fighter_escort_s_miningfleet"/>
+      </subordinates>
+    </job>
+    <job id="terran_miningfleet_ml_liquid_large" name="{20204,5701}" startactive="false">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[freighter, miner, deepspace]"/>
+      <quota wing="3" variation="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="gases"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="terran" tags="[miner, liquid, mixed]"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_fighter_escort_s_miningfleet"/>
+      </subordinates>
+    </job>
+    <job id="terran_fighter_escort_s_miningfleet" name="{20204,2901}" startactive="false">
+      <orders>
+        <order order="Escort" default="true">
+          <param name="formation" value="formationshape.pointguard"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <quota wing="1" variation="1"/>
+      <category faction="terran" tags="[military, fighter, deepspace]" size="ship_s"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="terran" tags="[military, fighter, selection]" size="ship_s"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <!--Terran Mandate-->
+    <!--TODO @Owen distribute construction vessels around space with shipyard?-->
+    <job id="terran_construction_vessel_xl" name="{20204,5101}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="FindBuildTasks" default="true">
+          <param name="maxjumps" value="6"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[factionlogic, builder]" size="ship_xl"/>
+      <quota galaxy="10" sector="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[builder]" size="ship_xl"/>
+        <loadout>
+          <level min="0.4" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <!--TEMP @Owen - remove once the mass-busy CVs issue is solved-->
+    <job id="terran_construction_vessel_xl_playeronly" name="{20204,5101}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="FindBuildTasks" default="true">
+          <param name="maxjumps" value="6"/>
+          <param name="playeronly" value="true"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[factionlogic, builder]" size="ship_xl"/>
+      <quota galaxy="10" sector="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[builder]" size="ship_xl"/>
+        <loadout>
+          <level min="0.4" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_resupplier_xl" name="{20204,5501}">
+      <orders>
+        <order order="SupplyFleet" default="true"/>
+      </orders>
+      <quota galaxy="4" sector="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[resupplier]"/>
+        <loadout>
+          <level min="0.4" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <!-- Terran Mandate Deep Space Jobs -->
+    <job id="terran_resourcescout_s_deepspace_single" name="{20204,10049}" comment="very few">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="deepspace" value="true"/>
+          <param name="resourcescout" value="true"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[scout, deepspace]" size="ship_s"/>
+      <quota galaxy="3" cluster="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="friend" comparison="ge" regionbasket="minerals"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="minerals"/>
+      <encounters id="resource_scout"/>
+      <ship>
+        <select faction="terran" tags="[scout]" size="ship_s"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_free_miner_ml_solid_deepspace_single" name="{20204,5601}" comment="very few">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[freighter, miner, deepspace]"/>
+      <quota galaxy="1"/>
+      <time interval="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="friend" comparison="ge" regionbasket="minerals"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="minerals"/>
+      <encounters id="lone_miner"/>
+      <ship>
+        <select faction="terran" tags="[miner, solid, mixed]"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+    <job id="terran_free_miner_ml_liquid_deepspace_single" name="{20204,5701}" comment="very few">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[freighter, miner, deepspace]"/>
+      <quota galaxy="1"/>
+      <time interval="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="friend" comparison="ge" regionbasket="gases"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="gases"/>
+      <encounters id="lone_miner"/>
+      <ship>
+        <select faction="terran" tags="[miner, liquid, mixed]"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+    <job id="terran_free_miner_ml_solid_deepspace_smallgroup" name="{20204,5601}" comment="very few">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[freighter, miner, deepspace]"/>
+      <quota galaxy="1"/>
+      <time interval="600"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="friend" comparison="ge" regionbasket="minerals"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="minerals"/>
+      <encounters id="mining_group_small"/>
+      <ship>
+        <select faction="terran" tags="[miner, solid, mixed]"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_miningfleet_m_solid_small"/>
+        <subordinate job="terran_fighter_escort_s_miningfleet"/>
+      </subordinates>
+    </job>
+    <job id="terran_free_miner_ml_liquid_deepspace_smallgroup" name="{20204,5701}" comment="very few">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[freighter, miner, deepspace]"/>
+      <quota galaxy="1"/>
+      <time interval="600"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="friend" comparison="ge" regionbasket="gases"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="gases"/>
+      <encounters id="mining_group_small"/>
+      <ship>
+        <select faction="terran" tags="[miner, liquid, mixed]"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_miningfleet_m_liquid_small"/>
+        <subordinate job="terran_fighter_escort_s_miningfleet"/>
+      </subordinates>
+    </job>
+    <job id="terran_free_miner_l_solid_deepspace_largegroup" name="{20204,5601}" comment="very few">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[freighter, miner, deepspace]" size="ship_l"/>
+      <quota galaxy="1"/>
+      <time interval="3600"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="friend" comparison="ge" regionbasket="minerals"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="minerals"/>
+      <encounters id="mining_group_large"/>
+      <ship>
+        <select faction="terran" tags="[miner, solid]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_miningfleet_ml_solid_large"/>
+        <subordinate job="terran_fighter_escort_s_miningfleet"/>
+      </subordinates>
+    </job>
+    <job id="terran_free_miner_l_liquid_deepspace_largegroup" name="{20204,5701}" comment="very few">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[freighter, miner, deepspace]" size="ship_l"/>
+      <quota galaxy="1"/>
+      <time interval="3600"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="friend" comparison="ge" regionbasket="gases"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="gases"/>
+      <encounters id="mining_group_large"/>
+      <ship>
+        <select faction="terran" tags="[miner, liquid]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_miningfleet_ml_liquid_large"/>
+        <subordinate job="terran_fighter_escort_s_miningfleet"/>
+      </subordinates>
+    </job>
+
+    <!-- Terran Mandate Combat Jobs -->
+
+    <job id="terran_carrier_defence_xl_earth_heavy" name="{20204,3201}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, carrier, terrandefence]" size="ship_xl"/>
+      <quota galaxy="1"/>
+      <location class="sector" macro="Cluster_104_Sector001_macro" faction="terran" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[military, carrier]" size="ship_xl"/>
+        <loadout>
+          <level exact="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_destroyer_escort_l"/>
+        <subordinate job="terran_escort_s_carrier"/>
+        <subordinate job="terran_resupplier_escort_xl"/>
+      </subordinates>
+    </job>
+    <job id="terran_carrier_defence_xl_asteroidbelt_heavy" name="{20204,3201}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, carrier, terrandefence]" size="ship_xl"/>
+      <quota galaxy="1"/>
+      <location class="sector" macro="Cluster_100_Sector001_macro" faction="terran" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[military, carrier]" size="ship_xl"/>
+        <loadout>
+          <level exact="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_destroyer_escort_l"/>
+        <subordinate job="terran_escort_s_carrier"/>
+        <subordinate job="terran_resupplier_escort_xl"/>
+      </subordinates>
+    </job>
+    <job id="terran_carrier_defence_xl_neptune_medium" name="{20204,3201}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, carrier, terrandefence]" size="ship_xl"/>
+      <quota galaxy="1"/>
+      <location class="sector" macro="Cluster_110_Sector001_macro" faction="terran" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[military, carrier]" size="ship_xl"/>
+        <loadout>
+          <level exact="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_escort_m_carrier"/>
+        <subordinate job="terran_escort_s_carrier"/>
+      </subordinates>
+    </job>
+    <job id="terran_carrier_defence_xl_mars_medium" name="{20204,3201}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, carrier, terrandefence]" size="ship_xl"/>
+      <quota galaxy="1"/>
+      <location class="sector" macro="Cluster_101_Sector001_macro" faction="terran" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[military, carrier]" size="ship_xl"/>
+        <loadout>
+          <level exact="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_escort_m_carrier"/>
+        <subordinate job="terran_escort_s_carrier"/>
+      </subordinates>
+    </job>
+
+    <job id="terran_battleship_patrol_xl_luna" name="{20204,5201}">
+      <modifiers commandeerable="false"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+          <param name="stayinspace" value="true"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, battleship]" size="ship_xl"/>
+      <quota galaxy="1"/>
+      <location class="zone" macro="zone005_cluster_104_sector002_macro" faction="terran" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[military, battleship, atf]" size="ship_xl"/>
+        <loadout>
+          <level exact="1"/>
+          <variation exact="0"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_destroyer_escort_l_atf_noescort"/>
+        <subordinate job="terran_destroyer_escort_l"/>
+      </subordinates>
+    </job>
+    <job id="terran_destroyer_patrol_l_mars" name="{20204,5201}">
+      <modifiers commandeerable="false"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+          <param name="stayinspace" value="true"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, destroyer]" size="ship_l"/>
+      <quota galaxy="1"/>
+      <location class="zone" macro="zone005_cluster_101_sector001_macro" faction="terran" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[military, destroyer, atf]" size="ship_l"/>
+        <loadout>
+          <level exact="1"/>
+          <variation exact="0"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_frigate_escort_m"/>
+      </subordinates>
+    </job>
+
+    <job id="terran_carrier_patrol_xl_mobile_light" name="{20204,3201}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[factionlogic, military, carrier]" size="ship_xl"/>
+      <quota galaxy="3" sector="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[military, carrier]" size="ship_xl"/>
+        <loadout>
+          <level exact="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_escort_s_carrier"/>
+      </subordinates>
+    </job>
+
+    <job id="terran_destroyer_patrol_l_mobile_pack" name="{20204,3301}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[factionlogic, military, destroyer]" size="ship_l"/>
+      <quota galaxy="5" sector="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[military, destroyer, noatf]" size="ship_l"/>
+        <loadout>
+          <level exact="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_destroyer_escort_l_teratf_noescort"/>
+      </subordinates>
+    </job>
+    <job id="terran_destroyer_patrol_l_pioneers_pack" name="{20204,3301}">
+      <modifiers commandeerable="false"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, destroyer]" size="ship_l"/>
+      <quota galaxy="2" sector="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[military, destroyer, noatf]" size="ship_l"/>
+        <loadout>
+          <level exact="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_destroyer_escort_l_noescort"/>
+      </subordinates>
+    </job>
+
+    <job id="terran_destroyer_patrol_l_comp" name="{20204,3301}" comment="compression">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[factionlogic, military, destroyer]" size="ship_l"/>
+      <quota galaxy="3" maxgalaxy="9" sector="9"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[military, destroyer]" size="ship_l"/>
+        <loadout>
+          <level min="0.4" max="1.0"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_destroyer_escort_l_noescort"/>
+      </subordinates>
+    </job>
+    <job id="terran_destroyer_patrol_l_comp_mission" name="{20204,3301}" comment="compression">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, destroyer]" size="ship_l"/>
+      <quota galaxy="2" maxgalaxy="2" sector="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[military, destroyer]" size="ship_l"/>
+        <loadout>
+          <level min="0.4" max="1.0"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_destroyer_escort_l_noescort"/>
+      </subordinates>
+    </job>
+
+    <job id="terran_frigate_patrol_m_sector_exp" name="{20204,2901}" comment="each sector, expansion">
+      <modifiers commandeerable="false"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, frigate]" size="ship_m"/>
+      <quota galaxy="17" maxgalaxy="39" sector="3"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[military, frigate]" size="ship_m"/>
+        <loadout>
+          <level min="0.4" max="1.0"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_fighter_escort_s_frigate"/>
+      </subordinates>
+    </job>
+    <job id="terran_frigate_patrol_m_sector_mission" name="{20204,2901}" comment="each sector">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.sector"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, frigate]" size="ship_m"/>
+      <quota galaxy="7" maxgalaxy="7" sector="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[military, frigate]" size="ship_m"/>
+        <loadout>
+          <level min="0.4" max="1.0"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_fighter_escort_s_frigate"/>
+      </subordinates>
+    </job>
+
+    <job id="terran_corvette_patrol_m_sector_pack" name="{20204,2901}" comment="each sector">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[factionlogic, military, corvette]" size="ship_m"/>
+      <quota galaxy="8" maxgalaxy="27" sector="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[military, corvette]" size="ship_m"/>
+        <loadout>
+          <level min="0.4" max="1.0"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_corvette_escort_m"/>
+      </subordinates>
+    </job>
+    <job id="terran_corvette_patrol_m_sector_pack_mission" name="{20204,2901}" comment="each sector">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.sector"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, corvette]" size="ship_m"/>
+      <quota galaxy="5" maxgalaxy="5" sector="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[military, corvette]" size="ship_m"/>
+        <loadout>
+          <level min="0.4" max="1.0"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_corvette_escort_m"/>
+      </subordinates>
+    </job>
+
+    <job id="terran_scout_patrol_s" name="{20204,7201}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Recon" default="true"/>
+      </orders>
+      <category faction="terran" tags="[factionlogic, military, scout]" size="ship_s"/>
+      <quota galaxy="10" cluster="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="self" comparison="lt" matchextension="false"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[scout]" size="ship_s"/>
+        <loadout>
+          <level min="0.7" max="1.0"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_police_patrol_s" name="{20204,6101}">
+      <modifiers commandeerable="false"/>
+      <orders>
+        <order order="Police" default="true"/>
+      </orders>
+      <category faction="terran" tags="[police]"/>
+      <quota galaxy="60" sector="4"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[police]"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_battleship_intervention_xl" name="{20204,10060}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.sector"/>
+        </order>
+      </orders>
+      <!--don't include the 'factionlogic' tag as 'intervention' is a more specific faction-logic related tag. Prevents it being used for other purposes-->
+      <category faction="terran" tags="[intervention, military, battleship]" size="ship_xl"/>
+      <quota galaxy="1" maxgalaxy="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <time start="0" interval="3600"/>
+      <ship>
+        <select faction="terran" tags="[military, battleship, atf]" size="ship_xl"/>
+        <loadout>
+          <level exact="1"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_destroyer_escort_l"/>
+      </subordinates>
+    </job>
+
+    <job id="terran_carrier_intervention_xl" name="{20204,10060}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[intervention, military, carrier]" size="ship_xl"/>
+      <quota galaxy="1" maxgalaxy="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[military, carrier]" size="ship_xl"/>
+        <loadout>
+          <level exact="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_escort_s_carrier"/>
+      </subordinates>
+    </job>
+
+    <job id="terran_frigate_intervention_m" name="{20204,10060}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.sector"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[intervention, military, frigate]" size="ship_m"/>
+      <quota galaxy="2" maxgalaxy="3"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="terran" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="terran" tags="[military, frigate]" size="ship_m"/>
+        <loadout>
+          <level min="0.4" max="1.0"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_fighter_escort_s_frigate"/>
+      </subordinates>
+    </job>
+
+    <!-- Terran Mandate Fleet Subordinates -->
+    <job id="terran_resupplier_escort_xl" name="{20204,5501}" startactive="false">
+      <orders>
+        <order order="SupplyFleet" default="true">
+          <param name="formation" value="formationshape.pointguard"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[resupplier]" size="ship_xl"/>
+      <quota wing="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="terran" tags="[resupplier]" size="ship_xl"/>
+        <loadout>
+          <level exact="1.0"/>
+          <variation exact="0"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+    <job id="terran_destroyer_escort_l_atf_noescort" name="{20204,3301}" startactive="false">
+      <orders>
+        <order order="Escort" default="true">
+          <param name="formation" value="formationshape.xshapeforward"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, destroyer]" size="ship_l"/>
+      <quota wing="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="terran" tags="[military, destroyer, atf]" size="ship_l"/>
+        <loadout>
+          <level exact="1.0"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+    <job id="terran_destroyer_escort_l_teratf_noescort" name="{20204,3301}" startactive="false">
+      <orders>
+        <order order="Escort" default="true">
+          <param name="formation" value="formationshape.xshapeforward"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, destroyer]" size="ship_l"/>
+      <quota wing="2" variation="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="terran" tags="[military, destroyer, teratf]" size="ship_l"/>
+        <loadout>
+          <level min="0.2" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+    <job id="terran_destroyer_escort_l" name="{20204,3301}" startactive="false">
+      <orders>
+        <order order="Escort" default="true">
+          <param name="formation" value="formationshape.xshapeforward"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, destroyer]" size="ship_l"/>
+      <quota wing="2" variation="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="terran" tags="[military, destroyer, noatf]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_frigate_escort_m"/>
+      </subordinates>
+    </job>
+    <job id="terran_destroyer_escort_l_noescort" name="{20204,3301}" startactive="false">
+      <orders>
+        <order order="Escort" default="true">
+          <param name="formation" value="formationshape.xshapeforward"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, destroyer]" size="ship_l"/>
+      <quota wing="3" variation="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="terran" tags="[military, destroyer, noatf]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+    <job id="terran_frigate_escort_m" name="{20204,2901}" startactive="false">
+      <orders>
+        <order order="Escort" default="true">
+          <param name="formation" value="formationshape.dartvertical"/>
+          <param name="formationparam" value="2500m"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, frigate]" size="ship_m"/>
+      <quota wing="6"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="terran" tags="[military, frigate]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_fighter_escort_s_frigate"/>
+      </subordinates>
+    </job>
+    <job id="terran_corvette_escort_m" name="{20204,2901}" startactive="false">
+      <orders>
+        <order order="Escort" default="true">
+          <param name="formation" value="formationshape.dartvertical"/>
+          <param name="formationparam" value="2500m"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, corvette]" size="ship_m"/>
+      <quota wing="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="terran" tags="[military, medium, corvette]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="terran_fighter_escort_s_frigate" name="{20204,2901}" startactive="false">
+      <orders>
+        <order order="Escort" default="true">
+          <param name="formation" value="formationshape.pointguard"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, fighter]" size="ship_s"/>
+      <quota wing="4" variation="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="terran" tags="[military, fighter, light]" size="ship_s"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+    <job id="terran_fighter_escort_s_patrol" name="{20204,2901}" startactive="false">
+      <orders>
+        <order order="Escort" default="true">
+          <param name="formation" value="formationshape.pointguard"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, fighter]" size="ship_s"/>
+      <quota wing="3"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="terran" tags="[military, fighter, light]" size="ship_s"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+    <job id="terran_escort_m_carrier" name="{20204,2901}" startactive="false">
+      <orders>
+        <order order="Escort" default="true">
+          <param name="formation" value="formationshape.pointguard"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, corvette]" size="ship_m"/>
+      <quota wing="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="terran" tags="[military, corvette]" size="ship_m"/>
+        <loadout>
+          <level exact="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_fighter_escort_s_carrier_wing"/>
+      </subordinates>
+    </job>
+    <job id="terran_escort_s_carrier" name="{20204,2901}" startactive="false">
+      <orders>
+        <order order="Escort" default="true">
+          <param name="formation" value="formationshape.pointguard"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, fighter]" size="ship_s"/>
+      <quota wing="5"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="terran" tags="[military, fighter, heavy]" size="ship_s"/>
+        <loadout>
+          <level exact="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="terran_fighter_escort_s_carrier_wing"/>
+      </subordinates>
+    </job>
+    <job id="terran_fighter_escort_s_carrier_wing" name="{20204,2901}" startactive="false">
+      <orders>
+        <order order="Escort" default="true">
+          <param name="formation" value="formationshape.pointguard"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <category faction="terran" tags="[military, fighter]" size="ship_s"/>
+      <quota wing="6"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="terran" tags="[military, fighter, selection]" size="ship_s"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="terran" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <!-- SEGARIS PIONEERS
+        Starting Clusters: 7
+        Sectors: 8
+
+        Regular economy,
+        Few military ships, mostly fighters and single corvettes. -->
+
+    <job id="pioneers_food_trader_l" name="{20204,1301}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="food"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+      <quota galaxy="8" cluster="4"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_food_trader_m" name="{20204,1401}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="Middleman" default="true">
+          <param name="range" value="5"/>
+        </order>
+      </orders>
+      <basket basket="food"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+      <quota galaxy="30" cluster="8" sector="6"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_food_trader_s" name="{20204,1801}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="Middleman" default="true">
+          <param name="range" value="3"/>
+        </order>
+      </orders>
+      <basket basket="food"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_s"/>
+      <quota galaxy="35" cluster="10" sector="5"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_s"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_medical_trader_s" name="{20204,10011}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="Middleman" default="true">
+          <param name="range" value="3"/>
+        </order>
+      </orders>
+      <basket basket="medicalsupplies"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_s"/>
+      <quota galaxy="5" sector="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_s"/>
+        <loadout>
+          <level min="0.3" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_energycell_trader_l" name="{20204,101}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="energycells"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+      <quota galaxy="5" cluster="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_energycell_trader_m" name="{20204,201}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="energycells"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+      <quota galaxy="25" cluster="7" sector="5"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_energycell_trader_s" name="{20204,201}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="Middleman" default="true">
+          <param name="range" value="5"/>
+        </order>
+      </orders>
+      <basket basket="energycells"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_s"/>
+      <quota galaxy="5" cluster="1" />
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_s"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_equipment_trader_l" name="{20204,301}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="equipment"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+      <quota galaxy="2" cluster="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_l"/>
+        <loadout>
+          <level min="0.4" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_equipment_trader_m" name="{20204,401}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="Middleman" default="true">
+          <param name="range" value="5"/>
+        </order>
+      </orders>
+      <basket basket="equipment"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+      <quota galaxy="10" cluster="3" sector="3"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_m"/>
+        <loadout>
+          <level min="0.4" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_construction_trader_l" name="{20204,301}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="construction_stations_terran"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+      <quota galaxy="5" cluster="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_construction_trader_m" name="{20204,401}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="Middleman" default="true">
+          <param name="range" value="5"/>
+        </order>
+      </orders>
+      <basket basket="construction_stations_terran"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+      <quota galaxy="18" cluster="3"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_ship_construction_trader_l" name="{20204,301}">
+      <modifiers rebuild="true" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="construction_ships_terran"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+      <quota galaxy="1" />
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_ship_construction_trader_m" name="{20204,401}">
+      <modifiers rebuild="true" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="construction_ships_terran"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+      <quota galaxy="2" cluster="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_refinedgas_trader_l" name="{20204,501}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="refined_gas_terran"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+      <quota galaxy="2" cluster="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_refinedgas_trader_m" name="{20204,601}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="refined_gas_terran"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+      <quota galaxy="18" cluster="3" sector="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_refinedmineral_trader_l" name="{20204,501}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="refined_mineral_terran"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+      <quota galaxy="5" cluster="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_refinedmineral_trader_m" name="{20204,601}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="refined_mineral_terran"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+      <quota galaxy="15" cluster="3" sector="3"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_tech_trader_l" name="{20204,301}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="tech_terran"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_l"/>
+      <quota galaxy="5" cluster="2" sector="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_l"/>
+        <loadout>
+          <level min="0.4" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_tech_trader_m" name="{20204,401}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="Middleman" default="true">
+          <param name="range" value="5"/>
+        </order>
+      </orders>
+      <basket basket="tech_terran"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+      <quota galaxy="5" cluster="3" sector="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_m"/>
+        <loadout>
+          <level min="0.4" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+    <job id="pioneers_tech_trader_s" name="{20204,401}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="Middleman" default="true">
+          <param name="range" value="5"/>
+        </order>
+      </orders>
+      <basket basket="tech_terran"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, trader]" size="ship_s"/>
+      <quota galaxy="10" cluster="3" sector="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_s"/>
+        <loadout>
+          <level min="0.4" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_smuggler_s" name="{20204,10009}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="maxbuy" value="30"/>
+          <param name="maxsell" value="30"/>
+          <param name="usecover" value="true"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[trader]" size="ship_s"/>
+      <quota galaxy="5" sector="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="xenon" relation="self" comparison="lt" />
+      <environment buildatshipyard="true" />
+      <basket basket="stimulants"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_s"/>
+        <loadout>
+          <level min="0.6" max="1.0"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <!-- Station Trader Jobs, by request only -->
+    <job id="pioneers_stationtrader_m" name="{20204,801}">
+      <modifiers rebuild="false" commandeerable="false"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="maxbuy" value="5"/>
+        </order>
+      </orders>
+      <basket basket="all_container"/>
+      <category faction="pioneers" tags="[stationtrader]" size="ship_m"/>
+      <quota galaxy="0" maxgalaxy="10"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.6"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_stationtrader_l" name="{20204,701}">
+      <modifiers rebuild="false" commandeerable="false"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="maxbuy" value="5"/>
+        </order>
+      </orders>
+      <basket basket="all_container"/>
+      <category faction="pioneers" tags="[stationtrader]" size="ship_l"/>
+      <quota galaxy="0" maxgalaxy="3"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[trader, container]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.6"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <!-- Mining Jobs -->
+    <job id="pioneers_free_miner_l_liquid" name="{20204,5701}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="gases"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, miner]" size="ship_l"/>
+      <quota galaxy="3"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge" regionbasket="gases"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[miner, liquid]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+        <cargo>
+          <wares multiple="true">
+            <fillpercent min="0" max="100" profile="inversebell"/>
+          </wares>
+        </cargo>
+      </ship>
+    </job>
+
+    <job id="pioneers_free_miner_m_liquid" name="{20204,5701}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="gases"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, miner]" size="ship_m"/>
+      <quota galaxy="12"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge" regionbasket="gases"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[miner, liquid]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+        <cargo>
+          <wares>
+            <fillpercent min="0" max="100" profile="inversebell"/>
+          </wares>
+        </cargo>
+      </ship>
+    </job>
+
+    <job id="pioneers_free_miner_l_mineral" name="{20204,5601}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="minerals"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, miner]" size="ship_l"/>
+      <quota galaxy="30"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge" regionbasket="minerals"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[miner, solid]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+        <cargo>
+          <wares>
+            <fillpercent min="0" max="100" profile="inversebell"/>
+          </wares>
+        </cargo>
+      </ship>
+    </job>
+
+    <job id="pioneers_free_miner_m_mineral" name="{20204,5601}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="minerals"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, miner]" size="ship_m"/>
+      <quota galaxy="40"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge" regionbasket="minerals"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[miner, solid]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+        <cargo>
+          <wares>
+            <fillpercent min="0" max="100" profile="inversebell"/>
+          </wares>
+        </cargo>
+      </ship>
+    </job>
+    <job id="pioneers_free_miner_s_mineral" name="{20204,5601}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="1"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="minerals"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, miner]" size="ship_s"/>
+      <quota galaxy="15"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge" regionbasket="minerals"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[miner, solid]" size="ship_s"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+        <cargo>
+          <wares>
+            <fillpercent min="0" max="100" profile="inversebell"/>
+          </wares>
+        </cargo>
+      </ship>
+    </job>
+
+    <job id="pioneers_free_miner_l_ice" name="{20204,2001}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="ice"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, miner]" size="ship_l"/>
+      <quota galaxy="3"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge" regionbasket="ice"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[miner, solid]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+        <cargo>
+          <wares>
+            <fillpercent min="0" max="100" profile="inversebell"/>
+          </wares>
+        </cargo>
+      </ship>
+    </job>
+
+    <job id="pioneers_free_miner_m_ice" name="{20204,2001}">
+      <modifiers rebuild="false" commandeerable="true"/>
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <basket basket="ice"/>
+      <category faction="pioneers" tags="[factionlogic, freighter, miner]" size="ship_m"/>
+      <quota galaxy="7"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge" regionbasket="ice"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[miner, solid]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+        <cargo>
+          <wares>
+            <fillpercent min="0" max="100" profile="inversebell"/>
+          </wares>
+        </cargo>
+      </ship>
+    </job>
+
+    <job id="pioneers_miningfleet_m_solid_small" name="{20204,5601}" startactive="false">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[freighter, miner, deepspace]" size="ship_m"/>
+      <quota wing="2" variation="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="minerals"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="pioneers" tags="[miner, solid]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="pioneers_fighter_escort_s_miningfleet"/>
+      </subordinates>
+    </job>
+    <job id="pioneers_miningfleet_m_liquid_small" name="{20204,5701}" startactive="false">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[freighter, miner, deepspace]" size="ship_m"/>
+      <quota wing="2" variation="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="gases"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="pioneers" tags="[miner, liquid]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="pioneers_fighter_escort_s_miningfleet"/>
+      </subordinates>
+    </job>
+    <job id="pioneers_miningfleet_ml_solid_large" name="{20204,5601}" startactive="false">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[freighter, miner, deepspace]"/>
+      <quota wing="3" variation="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="minerals"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="pioneers" tags="[miner, solid, mixed]"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="pioneers_fighter_escort_s_miningfleet"/>
+      </subordinates>
+    </job>
+    <job id="pioneers_miningfleet_ml_liquid_large" name="{20204,5701}" startactive="false">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[freighter, miner, deepspace]"/>
+      <quota wing="3" variation="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="gases"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="pioneers" tags="[miner, liquid, mixed]"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="pioneers_fighter_escort_s_miningfleet"/>
+      </subordinates>
+    </job>
+    <job id="pioneers_fighter_escort_s_miningfleet" name="{20204,2901}" startactive="false">
+      <orders>
+        <order order="Escort" default="true">
+          <param name="formation" value="formationshape.pointguard"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <quota wing="1" variation="1"/>
+      <category faction="pioneers" tags="[military, fighter, deepspace]" size="ship_s"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="pioneers" tags="[military, fighter, selection]" size="ship_s"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <!--Segaris Pioneers-->
+    <!--TODO @Owen distribute construction vessels around space with shipyard?-->
+    <job id="pioneers_construction_vessel_xl" name="{20204,5101}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="FindBuildTasks" default="true">
+          <param name="maxjumps" value="6"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[factionlogic, builder]" size="ship_xl"/>
+      <quota galaxy="10" sector="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[builder]" size="ship_xl"/>
+        <loadout>
+          <level min="0.4" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <!--TEMP @Owen - remove once the mass-busy CVs issue is solved-->
+    <job id="pioneers_construction_vessel_xl_playeronly" name="{20204,5101}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="FindBuildTasks" default="true">
+          <param name="maxjumps" value="6"/>
+          <param name="playeronly" value="true"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[factionlogic, builder]" size="ship_xl"/>
+      <quota galaxy="10" sector="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="member" comparison="ge"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[builder]" size="ship_xl"/>
+        <loadout>
+          <level min="0.4" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_resupplier_xl" name="{20204,5501}">
+      <orders>
+        <order order="SupplyFleet" default="true"/>
+      </orders>
+      <quota galaxy="3" sector="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[resupplier]"/>
+        <loadout>
+          <level min="0.4" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <!-- Segaris Pioneers Deep Space Jobs -->
+    <job id="pioneers_resourcescout_s_deepspace_single" name="{20204,10049}" comment="very few">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="deepspace" value="true"/>
+          <param name="resourcescout" value="true"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[scout, deepspace]" size="ship_s"/>
+      <quota galaxy="3" cluster="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="friend" comparison="ge" regionbasket="minerals"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="minerals"/>
+      <encounters id="resource_scout"/>
+      <ship>
+        <select faction="pioneers" tags="[scout]" size="ship_s"/>
+        <loadout>
+          <level min="0" max="0.4"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_free_miner_ml_solid_deepspace_single" name="{20204,5601}" comment="very few">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[freighter, miner, deepspace]"/>
+      <quota galaxy="1"/>
+      <time interval="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="friend" comparison="ge" regionbasket="minerals"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="minerals"/>
+      <encounters id="lone_miner"/>
+      <ship>
+        <select faction="pioneers" tags="[miner, solid, mixed]"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+    <job id="pioneers_free_miner_ml_liquid_deepspace_single" name="{20204,5701}" comment="very few">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[freighter, miner, deepspace]"/>
+      <quota galaxy="1"/>
+      <time interval="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="friend" comparison="ge" regionbasket="gases"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="gases"/>
+      <encounters id="lone_miner"/>
+      <ship>
+        <select faction="pioneers" tags="[miner, liquid, mixed]"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+    <job id="pioneers_free_miner_ml_solid_deepspace_smallgroup" name="{20204,5601}" comment="very few">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[freighter, miner, deepspace]"/>
+      <quota galaxy="1"/>
+      <time interval="600"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="friend" comparison="ge" regionbasket="minerals"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="minerals"/>
+      <encounters id="mining_group_small"/>
+      <ship>
+        <select faction="pioneers" tags="[miner, solid, mixed]"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="pioneers_miningfleet_m_solid_small"/>
+        <subordinate job="pioneers_fighter_escort_s_miningfleet"/>
+      </subordinates>
+    </job>
+    <job id="pioneers_free_miner_ml_liquid_deepspace_smallgroup" name="{20204,5701}" comment="very few">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[freighter, miner, deepspace]"/>
+      <quota galaxy="1"/>
+      <time interval="600"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="friend" comparison="ge" regionbasket="gases"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="gases"/>
+      <encounters id="mining_group_small"/>
+      <ship>
+        <select faction="pioneers" tags="[miner, liquid, mixed]"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="pioneers_miningfleet_m_liquid_small"/>
+        <subordinate job="pioneers_fighter_escort_s_miningfleet"/>
+      </subordinates>
+    </job>
+    <job id="pioneers_free_miner_l_solid_deepspace_largegroup" name="{20204,5601}" comment="very few">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[freighter, miner, deepspace]" size="ship_l"/>
+      <quota galaxy="1"/>
+      <time interval="3600"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="friend" comparison="ge" regionbasket="minerals"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="minerals"/>
+      <encounters id="mining_group_large"/>
+      <ship>
+        <select faction="pioneers" tags="[miner, solid]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="pioneers_miningfleet_ml_solid_large"/>
+        <subordinate job="pioneers_fighter_escort_s_miningfleet"/>
+      </subordinates>
+    </job>
+    <job id="pioneers_free_miner_l_liquid_deepspace_largegroup" name="{20204,5701}" comment="very few">
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="5"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="5"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[freighter, miner, deepspace]" size="ship_l"/>
+      <quota galaxy="1"/>
+      <time interval="3600"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="friend" comparison="ge" regionbasket="gases"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="gases"/>
+      <encounters id="mining_group_large"/>
+      <ship>
+        <select faction="pioneers" tags="[miner, liquid]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="pioneers_miningfleet_ml_liquid_large"/>
+        <subordinate job="pioneers_fighter_escort_s_miningfleet"/>
+      </subordinates>
+    </job>
+
+    <!-- Segaris Pioneers Combat jobs -->
+    <job id="pioneers_destroyer_patrol_l_segaris" name="{20204,3301}">
+      <modifiers commandeerable="false"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[military, destroyer]" size="ship_l"/>
+      <quota galaxy="1"/>
+      <location class="sector" macro="Cluster_113_Sector001_macro" faction="pioneers" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[military, destroyer]" size="ship_l"/>
+        <loadout>
+          <level exact="0.5"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="pioneers_corvette_escort_m"/>
+      </subordinates>
+    </job>
+
+    <job id="pioneers_destroyer_patrol_l_exp" name="{20204,3301}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[factionlogic, military, destroyer]" size="ship_l"/>
+      <quota galaxy="5" sector="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[military, destroyer]" size="ship_l"/>
+        <loadout>
+          <level exact="0.5"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="pioneers_fighter_escort_s"/>
+      </subordinates>
+    </job>
+
+    <job id="pioneers_destroyer_patrol_l_comp" name="{20204,3301}" comment="compression">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[factionlogic, military, destroyer]" size="ship_l"/>
+      <quota galaxy="5" maxgalaxy="5" sector="5"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[military, destroyer]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.5"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+    <job id="pioneers_destroyer_patrol_l_comp_mission" name="{20204,3301}" comment="compression">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[military, destroyer]" size="ship_l"/>
+      <quota galaxy="2" maxgalaxy="2" sector="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[military, destroyer]" size="ship_l"/>
+        <loadout>
+          <level min="0" max="0.5"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_corvette_patrol_m" name="{20204,7001}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[factionlogic, military, corvette]" size="ship_m"/>
+      <quota galaxy="17" sector="5"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[military, corvette]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.5"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+    <job id="pioneers_corvette_patrol_m_mission" name="{20204,7001}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[military, corvette]" size="ship_m"/>
+      <quota galaxy="2" maxgalaxy="2" sector="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[military, corvette]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.5"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <job id="pioneers_fighter_patrol_s_zone" name="{20204,2901}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.zone"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[factionlogic, military, fighter]" size="ship_s"/>
+      <quota galaxy="2" sector="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[fighter]" size="ship_s"/>
+        <loadout>
+          <level min="0.3" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="pioneers_fighter_escort_s"/>
+      </subordinates>
+    </job>
+
+    <job id="pioneers_scout_patrol_s" name="{20204,7101}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Recon" default="true"/>
+      </orders>
+      <category faction="pioneers" tags="[factionlogic, military, scout]" size="ship_s"/>
+      <quota galaxy="10" cluster="2"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="pioneers" relation="self" comparison="lt" matchextension="false"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="pioneers" tags="[scout]" size="ship_s"/>
+        <loadout>
+          <level min="0.7" max="1.0"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <!-- Segaris Pioneers Subordinate Jobs -->
+    <job id="pioneers_corvette_escort_m" name="{20204,2901}" startactive="false">
+      <orders>
+        <order order="Escort" default="true">
+          <param name="formation" value="formationshape.pointguard"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <category faction="pioneers" tags="[military, corvette]" size="ship_m"/>
+      <quota wing="2" variation="1"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="pioneers" tags="[military, corvette]" size="ship_m"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="pioneers_fighter_escort_s"/>
+      </subordinates>
+    </job>
+    <job id="pioneers_fighter_escort_s" name="{20204,2901}" startactive="false">
+      <orders>
+        <order order="Escort" default="true">
+          <param name="formation" value="formationshape.pointguard"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <quota wing="7" variation="5"/>
+      <category faction="pioneers" tags="[military, fighter]" size="ship_s"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="pioneers" tags="[military, fighter]" size="ship_s"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="pioneers" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <!-- YAKI
+        Starting Clusters: 0
+        Sectors: 0
+
+        Does not control space,
+        Many raiding parties with highly variable wings operating in all spaces except Xenon. -->
+
+    <job id="yaki_raider_m_sector" name="{20204,3401}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="Patrol" default="true">
+          <param name="range" value="class.sector"/>
+          <param name="targetpurposes" value="[purpose.trade, purpose.mine]"/>
+          <param name="usebasket" value="true"/>
+        </order>
+      </orders>
+      <category faction="yaki" tags="[factionlogic, military]" size="ship_m"/>
+      <quota galaxy="36" sector="6"/>
+      <time start="3600" interval="60"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" factionrace="xenon" negatefactionrace="true" faction="yaki" relation="neutral" comparison="lt" matchextension="false"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="construction_ships"/>
+      <ship>
+        <select faction="yaki" size="ship_m"/>
+        <loadout>
+          <level min="0" max="1.0"/>
+        </loadout>
+        <owner exact="yaki" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="yaki_fighter_escort_mixed"/>
+      </subordinates>
+    </job>
+
+    <!-- Yaki Subordinate Jobs -->
+    <job id="yaki_fighter_escort_mixed" name="{20204,3401}" startactive="false">
+      <orders>
+        <order order="Escort" default="true">
+          <param name="formation" value="formationshape.pointguard"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <quota wing="5" variation="1"/>
+      <category faction="yaki" tags="[military]"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="construction_ships"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="yaki"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="yaki" overridenpc="true"/>
+      </ship>
+      <subordinates>
+        <subordinate job="yaki_fighter_escort_s_escort"/>
+      </subordinates>
+    </job>
+    <job id="yaki_fighter_escort_s_escort" name="{20204,3401}" startactive="false">
+      <orders>
+        <order order="Escort" default="true">
+          <param name="formation" value="formationshape.xshapeback"/>
+          <param name="overrideformationskill" value="true"/>
+        </order>
+      </orders>
+      <quota wing="3" variation="3"/>
+      <category faction="yaki" tags="[military, fighter]" size="ship_s"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro"/>
+      <environment buildatshipyard="true"/>
+      <basket basket="construction_ships"/>
+      <modifiers subordinate="true"/>
+      <ship>
+        <select faction="yaki" size="ship_s"/>
+        <loadout>
+          <level min="0" max="0.7"/>
+        </loadout>
+        <owner exact="yaki" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <!-- XENON
+        Savage Spur
+          Clusters: 2
+          Sectors: 2 -->
+
+    <!-- Xenon economic jobs -->
+    <job id="xenon_free_miner_m_mineral_ter" name="{20204,1901}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="MiningRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="2"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="2"/>
+        </order>
+      </orders>
+      <basket basket="minerals_xenon"/>
+      <category faction="xenon" tags="[factionlogic, miner]" size="ship_m"/>
+      <quota galaxy="40" cluster="8"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="xenon" relation="self" comparison="exact" regionbasket="minerals_xenon"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <select faction="xenon" tags="[miner, solid]" size="ship_m"/>
+        <owner exact="xenon" overridenpc="true"/>
+        <cargo>
+          <wares>
+            <fillpercent min="0" max="100" profile="inversebell"/>
+          </wares>
+        </cargo>
+      </ship>
+    </job>
+
+    <job id="xenon_free_trader_m_energy_ter" name="{20204,4801}">
+      <modifiers commandeerable="true"/>
+      <orders>
+        <order order="TradeRoutine" default="true">
+          <param name="minbuy" value="0"/>
+          <param name="maxbuy" value="2"/>
+          <param name="minsell" value="0"/>
+          <param name="maxsell" value="2"/>
+        </order>
+      </orders>
+      <basket basket="energycells"/>
+      <category faction="xenon" tags="[factionlogic, freighter, trader]" size="ship_m"/>
+      <quota galaxy="30" cluster="6"/>
+      <location class="galaxy" macro="xu_ep2_universe_macro" faction="xenon" relation="self" comparison="exact"/>
+      <environment buildatshipyard="true"/>
+      <ship>
+        <!-- use miner ship for energy transport -->
+        <select faction="xenon" tags="[miner, solid]" size="ship_m"/>
+        <owner exact="xenon" overridenpc="true"/>
+      </ship>
+    </job>
+
+    <!-- Xenon combat jobs -->
+    <!--<job id="xenon_carrier_patrol_xl_border_zone_defence_ter" name="{20204,3801}" comment="one">
+    <modifiers commandeerable="false"/>
+    <orders>
+      <order order="Patrol" default="true">
+        <param name="range" value="class.zone"/>
+      </order>
+    </orders>
+    <category faction="xenon" tags="[military, carrier]" size="ship_xl"/>
+    <quota galaxy="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="xenon" relation="self" comparison="exact"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="xenon" tags="[military, carrier]" size="ship_xl"/>
+      <owner exact="xenon" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="xenon_destroyer_escort_xl"/>
+    </subordinates>
+  </job>
+
+  <job id="xenon_destroyer_patrol_xl_comp_ter" name="{20204,3801}" comment="compression">
+    <modifiers commandeerable="false"/>
+    <orders>
+      <order order="Patrol" default="true">
+        <param name="range" value="class.zone"/>
+      </order>
+    </orders>
+    <category faction="xenon" tags="[military, destroyer]" size="ship_xl"/>
+    <quota galaxy="3" maxgalaxy="3" sector="3"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="xenon" relation="self" comparison="exact"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="xenon" tags="[military, destroyer]" size="ship_xl"/>
+      <owner exact="xenon" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="xenon_frigate_escort_m"/>
+    </subordinates>
+  </job>
+  <job id="xenon_destroyer_patrol_xl_comp_ter_mission" name="{20204,3801}" comment="compression">
+    <modifiers commandeerable="true"/>
+    <orders>
+      <order order="Patrol" default="true">
+        <param name="range" value="class.zone"/>
+      </order>
+    </orders>
+    <category faction="xenon" tags="[military, destroyer]" size="ship_xl"/>
+    <quota galaxy="2" maxgalaxy="2" sector="2"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="xenon" relation="self" comparison="exact"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="xenon" tags="[military, destroyer]" size="ship_xl"/>
+      <owner exact="xenon" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="xenon_frigate_escort_m"/>
+    </subordinates>
+  </job>
+
+  <job id="xenon_frigate_patrol_m_sector_ter" name="{20204,3401}" comment="asymmetrical">
+    <modifiers commandeerable="true"/>
+    <orders>
+      <order order="Patrol" default="true">
+        <param name="range" value="class.sector"/>
+      </order>
+    </orders>
+    <category faction="xenon" tags="[factionlogic, military, frigate]" size="ship_m"/>
+    <quota galaxy="11" maxgalaxy="27" sector="3"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="xenon" relation="self" comparison="exact"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="xenon" tags="[military, medium]" size="ship_m"/>
+      <owner exact="xenon" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="xenon_frigate_escort_m"/>
+    </subordinates>
+  </job>
+  <job id="xenon_frigate_patrol_m_sector_ter_mission" name="{20204,3401}" comment="asymmetrical">
+    <modifiers commandeerable="true"/>
+    <orders>
+      <order order="Patrol" default="true">
+        <param name="range" value="class.sector"/>
+      </order>
+    </orders>
+    <category faction="xenon" tags="[military, frigate]" size="ship_m"/>
+    <quota galaxy="7" maxgalaxy="7" sector="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="xenon" relation="self" comparison="exact"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="xenon" tags="[military, medium]" size="ship_m"/>
+      <owner exact="xenon" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="xenon_frigate_escort_m"/>
+    </subordinates>
+  </job>
+
+  <job id="xenon_fighter_patrol_s_zone_ter" name="{20204,3401}" comment="each zone">
+    <modifiers commandeerable="true"/>
+    <orders>
+      <order order="Patrol" default="true">
+        <param name="range" value="class.zone"/>
+      </order>
+    </orders>
+    <category faction="xenon" tags="[factionlogic, military, fighter]" size="ship_s"/>
+    <quota galaxy="16" maxgalaxy="25" zone="1"/>
+    <location class="galaxy" macro="xu_ep2_universe_macro" faction="xenon" relation="self" comparison="exact"/>
+    <environment buildatshipyard="true"/>
+    <ship>
+      <select faction="xenon" tags="[fighter, heavy]" size="ship_s"/>
+      <owner exact="xenon" overridenpc="true"/>
+    </ship>
+    <subordinates>
+      <subordinate job="xenon_fighter_escort_s_patrol"/>
+    </subordinates>
+  </job>-->
+
+    <!-- MASS TRAFFIC -->
+    <!--terran sectors-->
+    <job id="masstraffic_terran_civilian">
+      <task task="masstraffic.generic"/>
+      <location class="sector" factionrace="terran"/>
+      <quota sector="1000"/>
+      <masstraffic ref="masstraffic_terran_civilian"/>
+    </job>
+    <!--terran stations-->
+    <job id="masstraffic_terran_police">
+      <task task="masstraffic.police"/>
+      <location class="station" faction="[terran]"/>
+      <quota station="5"/>
+      <masstraffic ref="masstraffic_terran_police"/>
+    </job>
+    <job id="masstraffic_terran_criminal">
+      <task task="masstraffic.generic"/>
+      <location class="station" faction="[terran]"/>
+      <quota sector="2" station="1"/>
+      <masstraffic ref="masstraffic_terran_civilian" respawndelay="300" relaunchdelay="60">
+        <owner exact="faction.criminal" overridenpc="true"/>
+      </masstraffic>
+    </job>
+    <!--pioneers stations-->
+    <job id="masstraffic_pioneers_criminal">
+      <task task="masstraffic.generic"/>
+      <location class="station" faction="[pioneers]"/>
+      <quota sector="2" station="1"/>
+      <masstraffic ref="masstraffic_terran_civilian" respawndelay="300" relaunchdelay="60">
+        <owner exact="faction.criminal" overridenpc="true"/>
+      </masstraffic>
+    </job>
+    <!--terran station modules-->
+    <job id="masstraffic_terran_dockarea">
+      <task task="masstraffic.generic"/>
+      <location class="dockarea" factionrace="terran"/>
+      <quota station="20"/>
+      <masstraffic ref="masstraffic_terran_dockarea"/>
+    </job>
+    <job id="masstraffic_terran_pier">
+      <task task="masstraffic.generic"/>
+      <location class="pier" factionrace="terran"/>
+      <quota station="20"/>
+      <masstraffic ref="masstraffic_terran_pier"/>
+    </job>
+    <job id="masstraffic_terran_storage">
+      <task task="masstraffic.generic"/>
+      <location class="storage" factionrace="terran"/>
+      <quota station="20"/>
+      <masstraffic ref="masstraffic_terran_storage"/>
+    </job>
+    <job id="masstraffic_terran_production">
+      <task task="masstraffic.generic"/>
+      <location class="production" factionrace="terran"/>
+      <quota station="20"/>
+      <masstraffic ref="masstraffic_terran_production"/>
+    </job>
+    <job id="masstraffic_terran_buildmodule">
+      <task task="masstraffic.generic"/>
+      <location class="buildmodule" factionrace="terran"/>
+      <quota station="20"/>
+      <masstraffic ref="masstraffic_terran_buildmodule"/>
+    </job>
+    <job id="masstraffic_terran_defencemodule">
+      <task task="masstraffic.generic"/>
+      <location class="defencemodule" factionrace="terran"/>
+      <quota station="20"/>
+      <masstraffic ref="masstraffic_terran_defencemodule"/>
+    </job>
+  </add>
+
+  <!--disable generic mass traffic jobs for Yaki stations - we need to do this for all that use factionrace="argon" or don't specify a faction or race at all-->
+  <add sel="/jobs/job[@id='masstraffic_argon_civilian']/location[not(factions)]" silent="true">
+    <factions>
+    </factions>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_argon_civilian']/location/factions">
+    <faction faction="yaki" negatefaction="true"/>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_argon_police']/location[not(factions)]" silent="true">
+    <factions>
+    </factions>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_argon_police']/location/factions">
+    <faction faction="yaki" negatefaction="true"/>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_argon_criminal']/location[not(factions)]" silent="true">
+    <factions>
+    </factions>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_argon_criminal']/location/factions">
+    <faction faction="yaki" negatefaction="true"/>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_argon_dockarea']/location[not(factions)]" silent="true">
+    <factions>
+    </factions>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_argon_dockarea']/location/factions">
+    <faction faction="yaki" negatefaction="true"/>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_argon_pier']/location[not(factions)]" silent="true">
+    <factions>
+    </factions>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_argon_pier']/location/factions">
+    <faction faction="yaki" negatefaction="true"/>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_argon_storage']/location[not(factions)]" silent="true">
+    <factions>
+    </factions>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_argon_storage']/location/factions">
+    <faction faction="yaki" negatefaction="true"/>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_argon_production']/location[not(factions)]" silent="true">
+    <factions>
+    </factions>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_argon_production']/location/factions">
+    <faction faction="yaki" negatefaction="true"/>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_argon_buildmodule']/location[not(factions)]" silent="true">
+    <factions>
+    </factions>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_argon_buildmodule']/location/factions">
+    <faction faction="yaki" negatefaction="true"/>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_argon_defencemodule']/location[not(factions)]" silent="true">
+    <factions>
+    </factions>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_argon_defencemodule']/location/factions">
+    <faction faction="yaki" negatefaction="true"/>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_hab_arg_s_01']/location[not(factions)]" silent="true">
+    <factions>
+    </factions>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_hab_arg_s_01']/location/factions">
+    <faction faction="yaki" negatefaction="true"/>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_hab_arg_m_01']/location[not(factions)]" silent="true">
+    <factions>
+    </factions>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_hab_arg_m_01']/location/factions">
+    <faction faction="yaki" negatefaction="true"/>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_hab_arg_l_01']/location[not(factions)]" silent="true">
+    <factions>
+    </factions>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_hab_arg_l_01']/location/factions">
+    <faction faction="yaki" negatefaction="true"/>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_hab_tel_s_01']/location[not(factions)]" silent="true">
+    <factions>
+    </factions>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_hab_tel_s_01']/location/factions">
+    <faction faction="yaki" negatefaction="true"/>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_hab_tel_m_01']/location[not(factions)]" silent="true">
+    <factions>
+    </factions>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_hab_tel_m_01']/location/factions">
+    <faction faction="yaki" negatefaction="true"/>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_hab_tel_l_01']/location[not(factions)]" silent="true">
+    <factions>
+    </factions>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_hab_tel_l_01']/location/factions">
+    <faction faction="yaki" negatefaction="true"/>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_hab_par_s_01']/location[not(factions)]" silent="true">
+    <factions>
+    </factions>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_hab_par_s_01']/location/factions">
+    <faction faction="yaki" negatefaction="true"/>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_hab_par_m_01']/location[not(factions)]" silent="true">
+    <factions>
+    </factions>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_hab_par_m_01']/location/factions">
+    <faction faction="yaki" negatefaction="true"/>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_hab_par_l_01']/location[not(factions)]" silent="true">
+    <factions>
+    </factions>
+  </add>
+  <add sel="/jobs/job[@id='masstraffic_hab_par_l_01']/location/factions">
+    <faction faction="yaki" negatefaction="true"/>
+  </add>
+</diff>

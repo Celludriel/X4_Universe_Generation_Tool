@@ -1,5 +1,6 @@
 package be.celludriel.universegenerator.model;
 
+import be.celludriel.universegenerator.model.jobs.JsonJob;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -23,7 +24,7 @@ public class Galaxy extends AbstractJson {
     private List<Cluster> clusters = new ArrayList<>();
     private List<FactionHqLocation> factionHqLocations = new ArrayList<>();
     private List<Product> products = new ArrayList<>();
-    private List<Job> jobs = new ArrayList<>();
+    private List<JsonJob> jobs = new ArrayList<>();
     private List<FactionStart> factionStarts = new ArrayList<>();
     private List<SpaceObject> spaceObjects = new ArrayList<>();
     private List<DataVault> dataVaults = new ArrayList<>();
@@ -81,7 +82,7 @@ public class Galaxy extends AbstractJson {
         return products;
     }
 
-    public List<Job> getJobs() {
+    public List<JsonJob> getJobs() {
         return jobs;
     }
 
@@ -152,7 +153,7 @@ public class Galaxy extends AbstractJson {
         this.products = products;
     }
 
-    public void setJobs(List<Job> jobs) {
+    public void setJobs(List<JsonJob> jobs) {
         this.jobs = jobs;
     }
 

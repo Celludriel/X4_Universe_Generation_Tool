@@ -57,7 +57,7 @@ public class ZoneConnectionProcessor {
         originZone.setY(getOriginY(connection));
         originZone.setName(zoneName);
         ZoneConnection originZoneConnection = new ZoneConnection(connection.getConnectionType(), originConnectionID, targetConnectionID, target.getId(),
-                targetZoneName, connection.getConnectionType().getRotation());
+                targetZoneName, connection.getConnectionType().getRotation(), connection.getGateType());
         originZoneConnection.setParameters(connection.getParameters());
         originZone.getConnections().add(originZoneConnection);
         origin.addToZoneList(originZone);
@@ -68,7 +68,7 @@ public class ZoneConnectionProcessor {
         targetZone.setY(getTargetY(connection));
         targetZone.setName(targetZoneName);
         ZoneConnection targetZoneConnection = new ZoneConnection(connection.getConnectionType(), targetConnectionID, originConnectionID, origin.getId(),
-                zoneName, connection.getConnectionType().opposite().getRotation(), true);
+                zoneName, connection.getConnectionType().opposite().getRotation(), true, connection.getGateType());
         targetZoneConnection.setParameters(connection.getParameters());
         targetZone.getConnections().add(targetZoneConnection);
         target.addToZoneList(targetZone);

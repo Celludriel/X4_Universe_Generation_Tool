@@ -12,10 +12,11 @@ public class ZoneConnection {
     private final String targetZoneName;
     private final int rotation;
     private final boolean reverseConnection;
+    private final GateType gateType;
     private CustomConnectionParameters parameters;
 
     public ZoneConnection(ConnectionType connectionType, String origin, String target, String targetZoneId, String targetZoneName, int rotation,
-                          boolean reverseConnection) {
+                          boolean reverseConnection, GateType gateType) {
         this.connectionType = connectionType;
         this.origin = origin;
         this.target = target;
@@ -23,9 +24,10 @@ public class ZoneConnection {
         this.targetZoneName = targetZoneName;
         this.rotation = rotation;
         this.reverseConnection = reverseConnection;
+        this.gateType = gateType;
     }
 
-    public ZoneConnection(ConnectionType connectionType, String origin, String target, String targetZoneId, String targetZoneName, int rotation) {
+    public ZoneConnection(ConnectionType connectionType, String origin, String target, String targetZoneId, String targetZoneName, int rotation, GateType gateType) {
         this.connectionType = connectionType;
         this.origin = origin;
         this.target = target;
@@ -33,6 +35,7 @@ public class ZoneConnection {
         this.targetZoneName = targetZoneName;
         this.rotation = rotation;
         this.reverseConnection = false;
+        this.gateType = gateType;
     }
 
     public ConnectionType getConnectionType() {
@@ -63,6 +66,10 @@ public class ZoneConnection {
         return reverseConnection;
     }
 
+    public GateType getGateType() {
+        return gateType;
+    }
+
     public CustomConnectionParameters getParameters() {
         return parameters;
     }
@@ -86,6 +93,7 @@ public class ZoneConnection {
                 .append(target, that.target)
                 .append(targetZoneId, that.targetZoneId)
                 .append(targetZoneName, that.targetZoneName)
+                .append(gateType, that.gateType)
                 .isEquals();
     }
 
@@ -98,6 +106,7 @@ public class ZoneConnection {
                 .append(targetZoneName)
                 .append(rotation)
                 .append(reverseConnection)
+                .append(gateType)
                 .toHashCode();
     }
 }
