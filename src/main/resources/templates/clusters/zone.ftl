@@ -20,7 +20,7 @@
 		      <rotation yaw="${zoneconnection.rotation}" pitch="0" roll="0" />
 		      </#if>
             </offset>
-            <macro ref="props_gates_orb_accelerator_01_macro" connection="space" />
+            <macro ref="${zoneconnection.gateType.macro}" connection="space" />
           </connection>
             </#list>
           </#if>
