@@ -3,6 +3,7 @@ package be.celludriel.universegenerator.main;
 import be.celludriel.universegenerator.generator.UniverseGenerator;
 import be.celludriel.universegenerator.model.Galaxy;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
@@ -23,6 +24,7 @@ public class UniverseGeneratorMain {
 
         String jsonFile = args[0];
         ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         Galaxy galaxy = objectMapper.readValue(new File(jsonFile), Galaxy.class);
 
         UniverseGenerator universeGenerator = new UniverseGenerator(galaxy);

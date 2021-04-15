@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="jobs">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="job"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="job">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice minOccurs="0">
+                    <xs:element ref="expirationtime"/>
+                    <xs:element ref="task"/>
+                </xs:choice>
+                <xs:choice maxOccurs="unbounded">
+                    <xs:element ref="basket"/>
+                    <xs:element ref="category"/>
+                    <xs:element ref="environment"/>
+                    <xs:element ref="location"/>
+                    <xs:element ref="modifiers"/>
+                    <xs:element ref="orders"/>
+                    <xs:element ref="quota"/>
+                    <xs:element ref="time"/>
+                </xs:choice>
+                <xs:element minOccurs="0" ref="encounters"/>
+                <xs:element minOccurs="0" ref="ship"/>
+                <xs:choice minOccurs="0">
+                    <xs:element ref="masstraffic"/>
+                    <xs:element ref="subordinates"/>
+                </xs:choice>
+            </xs:sequence>
+            <xs:attribute name="comment"/>
+            <xs:attribute name="disabled" type="xs:boolean"/>
+            <xs:attribute name="id" use="required" type="xs:NCName"/>
+            <xs:attribute name="name"/>
+            <xs:attribute name="startactive" type="xs:boolean"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="expirationtime">
+        <xs:complexType>
+            <xs:attribute name="max" use="required" type="xs:integer"/>
+            <xs:attribute name="min" use="required" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="task">
+        <xs:complexType>
+            <xs:attribute name="task" use="required" type="xs:NCName"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="basket">
+        <xs:complexType>
+            <xs:attribute name="basket" use="required" type="xs:NCName"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="category">
+        <xs:complexType>
+            <xs:attribute name="faction" use="required" type="xs:NCName"/>
+            <xs:attribute name="size" type="xs:NCName"/>
+            <xs:attribute name="tags" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="environment">
+        <xs:complexType>
+            <xs:attribute name="buildatshipyard" use="required" type="xs:boolean"/>
+            <xs:attribute name="gate" type="xs:boolean"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="location">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="sunlight"/>
+            </xs:sequence>
+            <xs:attribute name="class" use="required" type="xs:NCName"/>
+            <xs:attribute name="comparison" type="xs:NCName"/>
+            <xs:attribute name="faction"/>
+            <xs:attribute name="factionrace" type="xs:NCName"/>
+            <xs:attribute name="macro" type="xs:NCName"/>
+            <xs:attribute name="matchextension" type="xs:boolean"/>
+            <xs:attribute name="negatefactionrace" type="xs:boolean"/>
+            <xs:attribute name="policefaction" type="xs:NCName"/>
+            <xs:attribute name="regionbasket" type="xs:NCName"/>
+            <xs:attribute name="relation" type="xs:NCName"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="sunlight">
+        <xs:complexType>
+            <xs:attribute name="max" use="required" type="xs:decimal"/>
+            <xs:attribute name="min" use="required" type="xs:decimal"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="modifiers">
+        <xs:complexType>
+            <xs:attribute name="commandeerable" type="xs:boolean"/>
+            <xs:attribute name="rebuild" type="xs:boolean"/>
+            <xs:attribute name="subordinate" type="xs:boolean"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="orders">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="order"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="order">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" ref="param"/>
+            </xs:sequence>
+            <xs:attribute name="default" use="required" type="xs:boolean"/>
+            <xs:attribute name="order" use="required" type="xs:NCName"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="param">
+        <xs:complexType>
+            <xs:attribute name="name" use="required" type="xs:NCName"/>
+            <xs:attribute name="value" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="quota">
+        <xs:complexType>
+            <xs:attribute name="cluster" type="xs:integer"/>
+            <xs:attribute name="galaxy" type="xs:integer"/>
+            <xs:attribute name="maxgalaxy" type="xs:integer"/>
+            <xs:attribute name="sector" type="xs:integer"/>
+            <xs:attribute name="station" type="xs:integer"/>
+            <xs:attribute name="variation" type="xs:integer"/>
+            <xs:attribute name="wing" type="xs:integer"/>
+            <xs:attribute name="zone" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="time">
+        <xs:complexType>
+            <xs:attribute name="interval" use="required" type="xs:integer"/>
+            <xs:attribute name="start" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="encounters">
+        <xs:complexType>
+            <xs:attribute name="id" use="required" type="xs:NCName"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ship">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="select"/>
+                <xs:element minOccurs="0" ref="loadout"/>
+                <xs:element minOccurs="0" ref="units"/>
+                <xs:element ref="owner"/>
+                <xs:choice minOccurs="0">
+                    <xs:element ref="cargo"/>
+                    <xs:element ref="pilot"/>
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="select">
+        <xs:complexType>
+            <xs:attribute name="faction" use="required"/>
+            <xs:attribute name="size" type="xs:NCName"/>
+            <xs:attribute name="tags"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="loadout">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="level"/>
+                <xs:element minOccurs="0" ref="variation"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="level">
+        <xs:complexType>
+            <xs:attribute name="exact" type="xs:decimal"/>
+            <xs:attribute name="max" type="xs:decimal"/>
+            <xs:attribute name="min" type="xs:decimal"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="variation">
+        <xs:complexType>
+            <xs:attribute name="exact" use="required" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="units">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="unit"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="unit">
+        <xs:complexType>
+            <xs:attribute name="category" use="required" type="xs:NCName"/>
+            <xs:attribute name="max" use="required" type="xs:integer"/>
+            <xs:attribute name="min" use="required" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="cargo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="wares"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="wares">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="fillpercent"/>
+            </xs:sequence>
+            <xs:attribute name="multiple" type="xs:boolean"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="fillpercent">
+        <xs:complexType>
+            <xs:attribute name="max" use="required" type="xs:integer"/>
+            <xs:attribute name="min" use="required" type="xs:integer"/>
+            <xs:attribute name="profile" use="required" type="xs:NCName"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="pilot">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="page"/>
+            </xs:sequence>
+            <xs:attribute name="macro" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="page">
+        <xs:complexType>
+            <xs:attribute name="comment" use="required"/>
+            <xs:attribute name="exact" use="required" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="masstraffic">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="owner"/>
+            </xs:sequence>
+            <xs:attribute name="ref" use="required" type="xs:NCName"/>
+            <xs:attribute name="relaunchdelay" type="xs:integer"/>
+            <xs:attribute name="respawndelay" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="subordinates">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="subordinate"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="subordinate">
+        <xs:complexType>
+            <xs:attribute name="job" use="required" type="xs:NCName"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="owner">
+        <xs:complexType>
+            <xs:attribute name="exact" use="required" type="xs:NCName"/>
+            <xs:attribute name="overridenpc" use="required" type="xs:boolean"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
