@@ -14,5 +14,4 @@ Usage
 - an output folder is now created in your folder containing the mod for the galaxy
 
 TODO
-- Generate PlacedObjects.xml with custom placable objects
 - Add support for &lt;objects&gt; in the god generation
