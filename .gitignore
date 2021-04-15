@@ -1,3 +1,6 @@
 .idea/
 output/
 target/
+.settings/
+*.iml
+.project

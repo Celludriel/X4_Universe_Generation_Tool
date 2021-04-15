@@ -8,6 +8,7 @@ public class Connection extends AbstractJson {
     private String targetClusterId;
     private ConnectionType connectionType;
     private CustomConnectionParameters parameters;
+    private GateType gateType = GateType.ANCIENT_GATE;
 
     public String getTargetClusterId() {
         return targetClusterId;
@@ -19,6 +20,10 @@ public class Connection extends AbstractJson {
 
     public CustomConnectionParameters getParameters() {
         return parameters;
+    }
+
+    public GateType getGateType() {
+        return gateType;
     }
 
     public void setTargetClusterId(String targetClusterId) {
@@ -33,6 +38,10 @@ public class Connection extends AbstractJson {
         this.parameters = parameters;
     }
 
+    public void setGateType(GateType gateType) {
+        this.gateType = gateType;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -45,6 +54,7 @@ public class Connection extends AbstractJson {
                 .append(targetClusterId, that.targetClusterId)
                 .append(connectionType, that.connectionType)
                 .append(parameters, that.parameters)
+                .append(gateType, that.gateType)
                 .isEquals();
     }
 
@@ -54,6 +64,7 @@ public class Connection extends AbstractJson {
                 .append(targetClusterId)
                 .append(connectionType)
                 .append(parameters)
+                .append(gateType)
                 .toHashCode();
     }
 }
