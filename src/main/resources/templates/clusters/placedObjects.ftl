@@ -43,8 +43,6 @@
           <do_if value="$vault.exists">
             <find_signalleak_location name="$slot" container="$vault"/>
             <create_signal_leak name="$leak${datavault?index + 1}" type="signalleaktype.data" object="$vault" slot="$slot" macro="macro.dataleak_xs_vault_01_macro"/>
-            <!--add_cargo object="$lockbox" exact="5" ware="ware.inv_agidevice_02"/-->
-            <!--TODO: Apply rotation-->
           </do_if>
         </do_if>
         </#list>
