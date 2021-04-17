@@ -90,8 +90,8 @@ public class UniverseGenerator {
         String target = path + "/libraries/region_definitions.xml";
         copyUtils.copyToOutputDir(source, target);
 
-        source = "/core/X4Ep1_Mentor_Subscription.xml";
-        target = path + "/md/X4Ep1_Mentor_Subscription.xml";
+        source = "/core/x4e1_mentor_subscription.xml";
+        target = path + "/md/x4e1_mentor_subscription.xml";
         copyUtils.copyToOutputDir(source, target);
 
         source = "/core/Notifications.xml";
@@ -212,13 +212,13 @@ public class UniverseGenerator {
     }
 
     private void generateMdFixFiles(Configuration cfg, Map<String, Object> root, String type) throws IOException, TemplateException {
-        Template temp = cfg.getTemplate(type + "/factionLogic.ftl");
+        Template temp = cfg.getTemplate(type + "/factionlogic.ftl");
         Galaxy galaxy = (Galaxy) root.get("galaxy");
-        String path = "output/" + galaxy.getGalaxyName() + "/md/FactionLogic.xml";
+        String path = "output/" + galaxy.getGalaxyName() + "/md/factionlogic.xml";
         writeToFile(root, temp, path);
 
-        temp = cfg.getTemplate(type + "/drainStations.ftl");
-        path = "output/" + galaxy.getGalaxyName() + "/md/Drain_Stations.xml";
+        temp = cfg.getTemplate(type + "/drain_stations.ftl");
+        path = "output/" + galaxy.getGalaxyName() + "/md/drain_stations.xml";
         writeToFile(root, temp, path);
 
         temp = cfg.getTemplate(type + "/playerreputation.ftl");
@@ -229,15 +229,23 @@ public class UniverseGenerator {
         path = "output/" + galaxy.getGalaxyName() + "/md/x4ep1_war_subscriptions.xml";
         writeToFile(root, temp, path);
 
-        temp = cfg.getTemplate(type + "/customGameStart.ftl");
-        path = "output/" + galaxy.getGalaxyName() + "/md/CustomGameStart.xml";
+        temp = cfg.getTemplate(type + "/x4ep1_trade_subscriptions.ftl");
+        path = "output/" + galaxy.getGalaxyName() + "/md/x4ep1_trade_subscriptions.xml";
+        writeToFile(root, temp, path);
+
+        temp = cfg.getTemplate(type + "/x4ep1_pirates_subscriptions.ftl");
+        path = "output/" + galaxy.getGalaxyName() + "/md/x4ep1_pirates_subscriptions.xml";
+        writeToFile(root, temp, path);
+
+        temp = cfg.getTemplate(type + "/customgame_start.ftl");
+        path = "output/" + galaxy.getGalaxyName() + "/md/customgame_start.xml";
         writeToFile(root, temp, path);
     }
 
     private void generatePlacedObjects(Configuration cfg, Map<String, Object> root, String type) throws IOException, TemplateException {
-        Template temp = cfg.getTemplate(type + "/placedObjects.ftl");
+        Template temp = cfg.getTemplate(type + "/placedobjects.ftl");
         Galaxy galaxy = (Galaxy) root.get("galaxy");
-        String path = "output/" + galaxy.getGalaxyName() + "/md/PlacedObjects.xml";
+        String path = "output/" + galaxy.getGalaxyName() + "/md/placedobjects.xml";
         writeToFile(root, temp, path);
     }
 
