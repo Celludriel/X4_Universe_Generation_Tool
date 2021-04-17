@@ -237,6 +237,14 @@ public class UniverseGenerator {
         path = "output/" + galaxy.getGalaxyName() + "/md/x4ep1_pirates_subscriptions.xml";
         writeToFile(root, temp, path);
 
+        temp = cfg.getTemplate(type + "/yaki_supply.ftl");
+        path = "output/" + galaxy.getGalaxyName() + "/md/yaki_supply.xml";
+        writeToFile(root, temp, path);
+
+        temp = cfg.getTemplate(type + "/khaak_activity.ftl");
+        path = "output/" + galaxy.getGalaxyName() + "/md/khaak_activity.xml";
+        writeToFile(root, temp, path);
+
         temp = cfg.getTemplate(type + "/customgame_start.ftl");
         path = "output/" + galaxy.getGalaxyName() + "/md/customgame_start.xml";
         writeToFile(root, temp, path);

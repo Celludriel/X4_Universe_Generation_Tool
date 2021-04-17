@@ -6,7 +6,9 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Galaxy extends AbstractJson {
 
@@ -21,6 +23,7 @@ public class Galaxy extends AbstractJson {
     private String save;
     private int minRandomBelts;
     private int maxRandomBelts;
+    private int khaakSectors = 5;
     private List<Cluster> clusters = new ArrayList<>();
     private List<FactionHqLocation> factionHqLocations = new ArrayList<>();
     private List<Product> products = new ArrayList<>();
@@ -67,6 +70,10 @@ public class Galaxy extends AbstractJson {
 
     public int getMaxRandomBelts() {
         return maxRandomBelts;
+    }
+
+    public int getKhaakSectors() {
+        return khaakSectors;
     }
 
     public List<Cluster> getClusters() {
@@ -145,6 +152,10 @@ public class Galaxy extends AbstractJson {
         this.maxRandomBelts = maxRandomBelts;
     }
 
+    public void setKhaakSectors(int khaakSectors) {
+        this.khaakSectors = khaakSectors;
+    }
+
     public void setClusters(List<Cluster> clusters) {
         this.clusters = clusters;
     }
@@ -186,6 +197,16 @@ public class Galaxy extends AbstractJson {
         return false;
     }
 
+    @JsonIgnore
+    public List<String> getKhaakClusters(){
+        List<Cluster> copy = new ArrayList<>(clusters);
+        Collections.shuffle(copy);
+        return copy.stream()
+                .map(Cluster::getId)
+                .limit(khaakSectors)
+                .collect(Collectors.toList());
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -198,6 +219,7 @@ public class Galaxy extends AbstractJson {
                 .append(seed, galaxy.seed)
                 .append(minRandomBelts, galaxy.minRandomBelts)
                 .append(maxRandomBelts, galaxy.maxRandomBelts)
+                .append(khaakSectors, galaxy.khaakSectors)
                 .append(galaxyName, galaxy.galaxyName)
                 .append(galaxyPrefix, galaxy.galaxyPrefix)
                 .append(galaxyOptions, galaxy.galaxyOptions)
@@ -230,6 +252,7 @@ public class Galaxy extends AbstractJson {
                 .append(save)
                 .append(minRandomBelts)
                 .append(maxRandomBelts)
+                .append(khaakSectors)
                 .append(clusters)
                 .append(factionHqLocations)
                 .append(products)
