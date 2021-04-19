@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<language id="44">
+    <page id="4582001" title="galaxy_player_goals" descr="0" voice="no">
+        <t id="1000">(Title)X Collective directive</t>
+        <t id="1001">(Logfile)X Collective gave you your secret task you pledged to complete.</t>
+        <t id="1002">(Description)Pilot,\n\nProspectors have found a rare mineral that will allow us to create a new power source capable of hurling ships to far reaches of space.  We are a collective of members of each faction that strives to use them to better the universe, outside of regular faction politics.  Unfortunately, the faction leaders became aware of this mineral and are now mobilizing to take ownership of the sectors.  We fear this will start a new round of warfare across the galaxy, as tensions have already been rising.\n\nWe want you to beat them to the punch and secure as many sectors as possible—we do not care how you reach this goal as there is too much at stake.  Whenever you secure a sector, we will contact the prospectors and determine if another suitable target is out there.\n\nTake care pilot, all factions are gearing up for war !\n\nThe X Collective</t>
+        <t id="1003">(Organisation name)The X Collective</t>
+		<t id="2001">(Mission Title)Claim $SECTOR_TO_CLAIM$</t>
+		<t id="2002">(Mission Description)Please go capture $SECTOR_TO_CLAIM$</t>
+		<t id="2003">(Mission Objective)Capture : </t>
+		<t id="2004">(Mission Objective)Capture : </t>
+    </page>
+</language>

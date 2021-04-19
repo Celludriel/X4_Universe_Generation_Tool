@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="GM_ClaimSpace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
+  <cues>
+
+    <!--Base Mission information-->
+    <!--
+    Generic Mission name:    Achieve satellite coverage of specified area - intended for Master Missions
+    Primary 'missiontype':   e.g missiontype.intelligence
+    -->
+    <!--The Feedback Manager contains a table of feedback values related to this Generic Mission. 
+		This table is 'const' during the mission (the table itself doesn't change anymore after inialization)
+
+	There are several maintypes of feedback:
+    event:    Something which happens during a mission but does not cause it to end e.g. the mission being accepted
+    removed:  The mission offer was removed before acceptance
+    success:  The mission was successfully completed by the player
+    failure:  The player failed the mission
+    error:    Something went wrong with the mission set-up or during the mission-->
+    <cue name="FeedbackValueManager" namespace="this" version="2">
+      <actions>
+        <set_value name="$FeedbackValues" exact="table[
+                   $MISSION_GENERATED       = table[$type = 'event',    $text = 'Mission variation generated successfully'],
+                   $MISSION_ACCEPTED        = table[$type = 'event',    $text = 'Mission accepted'],
+                   $MISSION_NO_VARIANT      = table[$type = 'event',    $text = 'No mission variant currently possible'],
+                   
+                   $OFFER_REMOVED           = table[$type = 'removed',  $text = 'Offer removed'],
+                   $DECLINED_OFFER          = table[$type = 'removed',  $text = 'Player declined Event Offer'],
+                   $EVENT_OFFER_TIMEOUT     = table[$type = 'removed',  $text = 'Event Offer timeout'],
+                   $SIGNAL_LEAK_REMOVED     = table[$type = 'removed',  $text = 'Signal leak offer removed'],
+                   
+                   $MISSION_SUCCEEDED       = table[$type = 'success',  $text = 'Mission succeeded'],
+                   
+                   $MISSION_ABORTED         = table[$type = 'failure',  $text = 'Mission aborted by player'],
+                   $FORCED_CLEANUP          = table[$type = 'failure',  $text = 'Forced to end from outside'],
+                   $MISSION_TIMEOUT         = table[$type = 'failure',  $text = 'Mission timeout'],
+                   $RML_FAILED              = table[$type = 'failure',  $text = 'RML failure'],
+                   
+                   $NO_VALID_CLIENT_OWNER   = table[$type = 'error',    $text = 'No valid ClientOwner parameter provided'],
+                   $INVALID_OFFER_TYPE      = table[$type = 'error',    $text = 'No offer parameters were valid'],
+                   $NO_TEXT_OFFSET          = table[$type = 'error',    $text = 'No TextOffset set'],
+                   $INVALID_SECTOR_PARAM    = table[$type = 'error',    $text = 'Invalid Sector param'],
+                   $INVALID_FACTION_PARAM   = table[$type = 'error',    $text = 'Invalid Faction param'],
+                   $INVALID_FORCE_CLEANUP   = table[$type = 'error',    $text = 'ForceCleanup cue invalid'],
+                   $RML_ERROR               = table[$type = 'error',    $text = 'RML error']
+                   ]"/>
+      </actions>
+      <patch sinceversion="2">
+        <!--To patch new feedback values, increment 'version' and 'sinceversion' number-->
+        <force_cue cue="FeedbackValueManager"/>
+      </patch>
+    </cue>
+
+    <!--Required variables: $Page & $TextOffset (and any below substitute_text values)
+    If text is to be substituted for a new text variant, people should feel free to add the substitution below. Alternatively, pass in an overriding text in the $TextTable param-->
+    <library name="GenerateTextTable">
+      <actions>
+        <!--Text page indexes $TextOffset + #
+        1 = $TextTable.$missionname
+        2 = $TextTable.$description
+        3 = $TextTable.$objective
+        4 = $TextTable.$objective_inrange
+        -->
+        <substitute_text text="$TextTable.$missionname" source="readtext.{$Page}.{$TextOffset + 1}" chance="if $TextTable.$missionname? then 0 else 100">
+          <replace string="'$SECTOR_TO_CLAIM$'" with="$ClaimSector.name"/>
+        </substitute_text>
+        <substitute_text text="$TextTable.$description" source="readtext.{$Page}.{$TextOffset + 2}" chance="if $TextTable.$description? then 0 else 100">
+          <replace string="'$SECTOR_TO_CLAIM$'" with="$ClaimSector.name"/>
+        </substitute_text>
+        <substitute_text text="$TextTable.$objective" source="readtext.{$Page}.{$TextOffset + 3}" chance="if $TextTable.$objective? then 0 else 100">
+          <replace string="'$SECTOR_TO_CLAIM$'" with="$ClaimSector.name"/>
+        </substitute_text>
+        <substitute_text text="$TextTable.$objective_inrange" source="readtext.{$Page}.{$TextOffset + 4}" chance="if $TextTable.$objective_inrange? then 0 else 100">
+          <replace string="'$SECTOR_TO_CLAIM$'" with="$ClaimSector.name"/>
+        </substitute_text>
+
+        <run_actions ref="md.LIB_Generic.GenerateTextTable_BriefingWarning_Call" result="$TextTable.$description">
+          <param name="BriefingText" value="$TextTable.$description"/>
+          <param name="TargetSpace" value="$ClaimSector"/>
+        </run_actions>
+      </actions>
+    </library>
+
+    <!--TODO @Owen Simple example mission variant shortcut for testing-->
+
+    <library name="Start">
+      <params>
+        <!-- For creating your own custom GM, you might need to change _some_ of the below parameters -->
+        <param name="OfferObject" default="null" comment="The object on which this mission is based e.g. A Ship / Station / Signal Leak. Only needed for missions with a physical location."/>
+        <param name="Client" default="null" comment="Pre-existing client"/>
+        <param name="ClientOwner" default="null" comment="Overriding owner for reward calculation or creation of $Client if not provided. Defaults to $OfferObject owner if able"/>
+        <param name="MissionCue" default="null" comment="Cue the mission is attached to. Defaults to Start (this)."/>
+        <param name="MissionThread" default="null" comment="Mission thread for the offer and mission"/>
+
+        <param name="GenerateReward" default="true" comment="If RewardCr or RewardNotoriety are invalid, generate them?"/>
+        <param name="RewardCr" default="null" comment="If the reward for this mission is credits, the number of credits should be set to this variable." />
+        <param name="RewardObj" default="null" comment="If the reward for this mission is not credits, and is an object, it should be set to this variable." />
+        <param name="RewardNotoriety" default="null"/>
+        <param name="RewardText" default="null"  comment="Any text needed to define the reward for this mission - may be used in conjunction with $RewardCr and $RewardObj." />
+        <param name="MissionDuration" default="null"/>
+        <param name="MissionType" default="missiontype.extend" comment="Variations can override mission type if required"/>
+        <param name="MissionLevel"/>
+        <param name="Difficulty"/>
+
+        <!--Offer location and conversation-->
+        <param name="WithoutOffer" default="false" comment="Do not create a mission offer. Either run immediatly or wait for WithoutOfferWaitCue"/>
+        <param name="WithoutOfferWaitCue" default="null" comment="Do not create a mission offer but wait for this cue to be completed before running the mission"/>
+        <param name="DeclineButton" default="true" comment="Have a decline button instead of a back button in the offer conversation"/>
+        <param name="EventOffer" default="false" comment="Is the mission offered directly to the player with an interactive event"/>
+        <param name="ConversationOffer" default="false" comment="When $EventOffer is false, should this offer be through a conversation with the $Client. Otherwise, offer at mission location"/>
+        <param name="ConversationTriggerCue" default="null" comment="If provided, when this cue is signalled, start the mission offer conversation."/>
+        <param name="OfferMaxDistance" default="null"/>
+		<param name="OfferType" default="null"/>
+        <param name="HideFromBBS" default="false" comment="Hide this offer from the BBS? Show only through locations or special conversation handling."/>
+        <param name="RemoveOnSectorChange" default="true"/>
+        <param name="OfferDistance" default="50km" comment="Distance to the offer location before it becomes visible on the map or BBS (unless otherwise hidden)"/>
+
+        <!--BBS only params-->
+        <param name="BBSObject" default="null"/>
+        <param name="BBSDistance" default="null"/>
+        <param name="BBSTimeoutMin" default="null"/>
+        <param name="BBSTimeoutMax" default="null"/>
+        <param name="BBSSpace" default="null"/>
+
+        <!--Mission text-->
+        <param name="Page"        comment="Allows a different text page to be used instead of the generic one. Text IDs must be mapped similarly."/>
+        <param name="TextOffset"  comment="The text offset for this variant's text on the page.
+               Each variant starts at a different offset, but the entries[] within that offset have to match for all variants."/>
+        <param name="TextTable" default="table[]" comment="Table, usually populated by the mission, to store the texts by an identifier key e.g. $missionname = 'Kill Bala Gi'
+               Check library 'GenerateTextTable' for identifier keys. Pass in a table with such an entry to override the text usually generated from the $Page and $TextOffset"/>
+
+        <!--Mission specific params-->
+        <param name="ClaimSector"                    comment="Sector which we need to claim"/>
+		<param name="ClaimFaction"					 comment="Faction who to claim the sector for"/>
+
+        <param name="ReportSignalCue" default="null" comment="Cue to be signalled when something happens which could be of interest to the calling cue. Saves values to ReportSignalCue.$FeedbackValue and ReportSignalCue.$EndFeedbackValue"/>
+        <param name="CancelOfferCue" default="null" comment="Cue which when completed will force this missions offer to be removed and cleaned up. No effect if mission has been accepted."/>
+        <param name="ForceCleanup" default="null" comment="Cue to force a cleanup from outside when completed"/>
+        <param name="DebugChance" default="0"/>
+      </params>
+      <actions>
+        <!--Feedback value setup-->
+        <set_value name="$Feedback" exact="null"/>
+        <set_value name="$FeedbackManager" exact="md.GM_ClaimSpace.FeedbackValueManager"/>
+
+        <assert value="$WithoutOffer or not $MissionCue or (not $MissionCue.hasmission and not $MissionCue.hasmissionoffer)"
+                text="'Mission is set to create an offer but provided MissionCue: ' + $MissionCue + ' already has an offer or is a running mission [Owen]'"/>
+
+        <assert value="not $MissionThread or $WithoutOffer" text="'Thread sub-mission is also set to create an offer which is not supported.\n
+                The mission thread offer should be populated with mission details suitable for this mission, but not from an actual mission. Thread: ' + $MissionThread + ' [Owen]'"/>
+
+        <!--Param validation-->
+        <do_if value="not $WithoutOffer">
+          <include_actions ref="md.GenericMissions.GetOfferType"/>
+          <do_if value="not $OfferType">
+            <set_value name="$Feedback" exact="'$INVALID_OFFER_TYPE'"/>
+          </do_if>
+        </do_if>
+
+        <do_if value="not $Feedback">
+          <do_if value="not $TextOffset">
+            <set_value name="$Feedback" exact="'$NO_TEXT_OFFSET'"/>
+          </do_if>
+          <do_else>
+            <do_if value="$Client">
+              <set_value name="$PreexistingClient"/>
+            </do_if>
+            <do_if value="not $ClientOwner">
+              <set_value name="$ClientOwner" exact="if $Client then $Client.owner else @$OfferObject.owner"/>
+              <assert value="$ClientOwner" text="'No valid $ClientOwner [Owen]'"/>
+            </do_if>
+
+            <do_if value="not $ClientOwner">
+              <set_value name="$Feedback" exact="'$NO_VALID_CLIENT_OWNER'"/>
+            </do_if>
+            <do_else>
+              <!--Mission specific param checks-->
+              <do_if value="$ClaimSector" exact="null">
+                <set_value name="$Feedback" exact="'$INVALID_SECTOR_PARAM'" />
+              </do_if>
+			  <do_if value="$ClaimFaction" exact="null">
+                <set_value name="$Feedback" exact="'$INVALID_FACTION_PARAM'" />
+              </do_if>
+            </do_else>
+          </do_else>
+        </do_if>
+      </actions>
+      <cues>
+        <cue name="Do_Not_Start_Mission" onfail="cancel">
+          <conditions>
+            <check_value value="$Feedback"/>
+          </conditions>
+          <actions>
+            <signal_cue cue="CleanUp"/>
+          </actions>
+        </cue>
+
+        <cue name="Do_Start_Mission" onfail="cancel">
+          <conditions>
+            <check_value value="not $Feedback"/>
+          </conditions>
+          <actions>
+            <do_if value="not $MissionCue">
+              <set_value name="$MissionCue" exact="Start"/>
+            </do_if>
+
+            <do_if value="not $PreexistingClient?">
+              <!-- No pre-existing client, create a temporary client for this mission -->
+              <!-- This auto-assigns a 'matching' text-page using the metadata (id=0) specified in the text-files. Speak commands for this actor will then refer to the selected text-page-->
+              <!-- Possibly we'll need to add additional filters (in case some topics aren't supported by all generic text-pages) -->
+              <create_cue_actor cue="Start" name="$Client" comment="temporary cue-actor will be cleaned up in the Cleanup-cue, see destroy_object on $Client">
+                <select faction="$ClientOwner"/>
+                <owner exact="$ClientOwner"/>
+              </create_cue_actor>
+            </do_if>
+
+            <!-- Determine the reward (credits/object/notoriety) -->
+            <do_if value="$GenerateReward">
+              <include_actions ref="md.LIB_Reward_Balancing.Allocate_RewardWeight" comment="input: $Difficulty, $ClientOwner; output: $RewardCreditsWeight, $RewardModWeight, $RewardSeminarWeight"/>
+
+              <do_if value="not $RewardCr" weight="$RewardCreditsWeight">
+                <signal_cue_instantly cue="md.LIB_Reward_Balancing.Reward_Money" param="[Start, $Difficulty, $MissionLevel, $ClientOwner]" comment="basic reward credits"/>
+                <include_actions ref="md.LIB_Reward_Balancing.Apply_RewardMultiplier" comment="signal leak and mission thread bonus"/>
+                <set_value name="$RewardCr" exact="$Reward_Money__Result_Multiplied"/>
+              </do_if>
+              <do_if value="not $RewardObj">
+                <run_actions ref="md.LIB_Reward_Balancing.DetermineAdditionalReward" result="$AdditionalReward">
+                  <param name="RewardModWeight" value="$RewardModWeight"/>
+                  <param name="RewardSeminarWeight" value="$RewardSeminarWeight"/>
+                </run_actions>
+                <do_if value="$AdditionalReward != null">
+                  <set_value name="$RewardObj" exact="$AdditionalReward"/>
+                  <set_value name="$RewardText" exact="$RewardObj.name"/>
+                </do_if>
+              </do_if>
+
+              <do_if value="not $RewardNotoriety">
+                <signal_cue_instantly cue="md.LIB_Reward_Balancing.Reward_Notoriety" param="[Start, $Difficulty, $MissionLevel, $ClientOwner]"/>
+                <set_value name="$RewardNotoriety" exact="$Reward_Notoriety__Result"/>
+              </do_if>
+            </do_if>
+
+            <include_actions ref="GenerateTextTable"/>
+
+            <do_if value="$ReportSignalCue">
+              <!--Signal the $ReportSignalCue that the mission has been successfully generated-->
+              <set_value name="$FeedbackData" exact="$FeedbackManager.$FeedbackValues.$MISSION_GENERATED.clone"/>
+              <set_value name="$FeedbackData.$ID" exact="'$MISSION_GENERATED'"/>
+              <set_value name="$ReportSignalCue.$FeedbackValue" exact="$FeedbackData.clone" comment="Mission variation generated successfully"/>
+              <signal_cue_instantly cue="$ReportSignalCue" param="table[$Name = $TextTable.$missionname, $Cue = $MissionCue, $Reward = $RewardCr, $RewardText = $RewardText]"/>
+            </do_if>
+          </actions>
+          <cues>
+
+            <!--***MISSION OFFER***-->
+            <cue name="With_Offer" onfail="cancel">
+              <conditions>
+                <check_value value="$WithoutOffer" exact="false"/>
+              </conditions>
+              <cues>
+                <!--Cue which creates the offer, when signalled. To be signalled from the GenericMissions.OfferMission library, referenced below-->
+                <cue name="CreateOffer" instantiate="true" comment="instanced to prevent cleanup">
+                  <conditions>
+                    <event_cue_signalled/>
+                    <check_value value="not @$OfferCreated"/>
+                  </conditions>
+                  <actions>
+                    <do_if value="not @$OfferCreated">
+
+                      <!-- TODO: For creating your own custom GM, you want to change the below briefing details/objective -->
+                      <!-- Briefing details -->
+                      <create_offer cue="$MissionCue" location="$OfferObject" distance="$OfferDistance" name="$TextTable.$missionname" description="$TextTable.$description" difficulty="$Difficulty" actor="$Client"
+                                  faction="$ClientOwner" type="$MissionType" reward="$RewardCr" rewardtext="$RewardText" duration="$MissionDuration" hidden="$HideFromBBS" space="$BBSSpace">
+                        <briefing>
+                          <!--TODO @Owen @Roger more suitable action?-->
+                          <objective step="1" action="objective.claim" text="$TextTable.$objective"/>
+                        </briefing>
+                      </create_offer>
+                    </do_if>
+                    <set_value name="$OfferCreated" exact="true"/>
+                  </actions>
+                </cue>
+
+                <!--The majority of the offer logic is within this library. The parameters we pass down below, specify in which way this mission is going to be offered to the player (i.e. BBS, Signal-Leak, ...)
+                Some of the mission specific handling is still contained in this file but triggered via the library via a signal e.g. setting up the briefing details via the 'CreateOffer' cue above.-->
+                <cue name="Offer_Management" ref="md.GenericMissions.OfferMission">
+                  <param name="OfferType"     value="$OfferType"/>
+                  <param name="OfferCue"      value="$MissionCue"/>
+                  <param name="CleanupCue"    value="Offer_End"/>
+                  <param name="BriefingSetupCue" value="CreateOffer"/>
+                  <param name="MissionName"   value="$TextTable.$missionname"/>
+                  <param name="CancelOfferCue" value="$CancelOfferCue"/>
+
+                  <!--Object based params (offered by Station/Ship/Signal-leak)-->
+                  <param name="TimeoutMin"  value="8min" comment="Minimum time the offer remains valid"/>
+                  <param name="TimeoutMax"  value="12min"/>
+                  <param name="MaxDistance" value="$OfferMaxDistance"/>
+                  <param name="RemoveOnSectorChange" value="$RemoveOnSectorChange"/>
+
+                  <!--Object and Signal Leak based params-->
+                  <param name="OfferObject" value="$OfferObject"/>
+
+                  <!--BBS based offers-->
+                  <param name="BBSObject"     value="@$BBSObject"/>
+                  <param name="BBSDistance"   value="@$BBSDistance"/>
+                  <param name="BBSTimeoutMin" value="@$BBSTimeoutMin"/>
+                  <param name="BBSTimeoutMax" value="@$BBSTimeoutMax"/>
+
+                  <!--Conversation event offers-->
+                  <param name="AllowOfferEvent" value="$AllowOfferEvent"/>
+                  <param name="ConversationTriggerCue" value="$ConversationTriggerCue"/>
+
+                  <!--Client-->
+                  <param name="Client"                 value="$Client"/>
+                  <param name="Line_EventOffer"        value="1000101" comment="Client speaks this line from his generic-npc-page"/>
+                  <param name="Line_StartConversation" value="null" comment ="Client speaks this line from his generic-npc-page"/>
+                  <param name="Line_Goodbye"           value="null" comment="Client speaks this line from his generic-npc-page"/>
+
+                  <param name="DebugChance" value="$DebugChance"/>
+                </cue>
+
+                <!--Cue signalled when the offer library is finished-->
+                <cue name="Offer_End">
+                  <conditions>
+                    <event_cue_signalled/>
+                  </conditions>
+                  <actions>
+                    <do_if value="this.$Feedback.$ID == '$accepted_offer'">
+                      <signal_cue cue="MissionAccepted"/>
+                    </do_if>
+                    <do_elseif value="this.$Feedback.$ID == '$DECLINED_OFFER'">
+                      <set_value name="$Feedback" exact="'$DECLINED_OFFER'"/>
+                      <signal_cue cue="CleanUp" />
+                    </do_elseif>
+                    <do_elseif value="this.$Feedback.$ID == '$OFFER_REMOVED'">
+                      <set_value name="$Feedback" exact="'$OFFER_REMOVED'"/>
+                      <signal_cue cue="CleanUp" />
+                    </do_elseif>
+                    <do_elseif value="this.$Feedback.$ID == '$SIGNAL_LEAK_REMOVED'">
+                      <set_value name="$Feedback" exact="'$SIGNAL_LEAK_REMOVED'"/>
+                      <signal_cue cue="CleanUp" />
+                    </do_elseif>
+                    <do_elseif value="this.$Feedback.$ID == '$EVENT_OFFER_TIMEOUT'">
+                      <set_value name="$Feedback" exact="'$EVENT_OFFER_TIMEOUT'"/>
+                      <signal_cue cue="CleanUp" />
+                    </do_elseif>
+                  </actions>
+                </cue>
+              </cues>
+            </cue>
+
+            <!--These cues handle the cases where a mission is automatically accepted on creation-->
+            <cue name="Without_Offer" onfail="cancel">
+              <conditions>
+                <check_value value="$WithoutOffer"/>
+                <check_value value="not $WithoutOfferWaitCue"/>
+              </conditions>
+              <actions>
+                <signal_cue cue="MissionAccepted" />
+              </actions>
+            </cue>
+
+            <cue name="Without_Offer_Wait_Cue" onfail="cancel">
+              <conditions>
+                <check_value value="$WithoutOffer"/>
+                <check_value value="$WithoutOfferWaitCue"/>
+              </conditions>
+              <cues>
+                <cue name="Without_Offer_Wait_Cue_Completed">
+                  <conditions>
+                    <check_any>
+                      <event_cue_completed cue="$WithoutOfferWaitCue"/>
+                      <check_all>
+                        <event_cue_signalled cue="$WithoutOfferWaitCue"/>
+                        <check_value value="not event.param? or event.param == $MissionCue"/>
+                      </check_all>
+                    </check_any>
+                  </conditions>
+                  <actions>
+                    <signal_cue_instantly cue="MissionAccepted" />
+                  </actions>
+                </cue>
+              </cues>
+            </cue>
+
+            <!--These cues handle the briefing presentations e.g. Holomap or cutscene render targets (depending on the mission)-->
+            <cue name="BriefingStarted">
+              <conditions>
+                <check_any>
+                  <event_briefing_started cue="$MissionCue"/>
+                  <event_briefing_submission_selected cue="$MissionCue"/>
+                </check_any>
+              </conditions>
+              <actions>
+                <set_value name="$RenderTarget" exact="event.param.{1}"/>
+                <set_value name="$StartBriefingCutscene"/>
+                <set_value name="$stationindex" exact="1"/>
+                <debug_text text="'Briefing started'" chance="$DebugChance"/>
+              </actions>
+              <cues>
+                <cue name="DisplayCutscene" onfail="cancel">
+                  <conditions>
+                    <check_value value="$StartBriefingCutscene?"/>
+                  </conditions>
+                  <actions>
+                    <create_presentation_cluster name="$CutsceneCluster" background="macro.cluster_black_wlight_bg_macro"/>
+                    <find_sector name="$CutsceneSector" space="$CutsceneCluster"/>
+
+                    <create_object name="$CutsceneObject" macro="macro.eq_arg_satellite_02_macro" sector="$CutsceneSector">
+                      <position x="0" y="0" z="0"/>
+                    </create_object>
+
+                    <set_value name="$BriefingCutsceneStarted"/>
+                    <set_value name="$CutsceneKey" exact="'OrbitParameterized'"/>
+                    <play_cutscene key="$CutsceneKey" rendertarget="$RenderTarget">
+                      <param name="targetobject" object="$CutsceneObject"/>
+                      <param name="orbitdist" number="4"/>
+                      <param name="orbitelevation" number="5"/>
+                    </play_cutscene>
+                  </actions>
+                </cue>
+
+                <cue name="BriefingStopped">
+                  <conditions>
+                    <check_any>
+                      <event_briefing_cancelled cue="$MissionCue"/>
+                      <event_briefing_submission_unselected cue="$MissionCue"/>
+                    </check_any>
+                  </conditions>
+                  <actions>
+                    <do_if value="$BriefingCutsceneStarted?">
+                      <!--Temp value. This is used to identify if a cutscene for this mission is still playing.-->
+                      <remove_value name="$BriefingCutsceneStarted"/>
+
+                      <stop_cutscene key="$CutsceneKey"/>
+
+                      <do_if value="$CutsceneCluster.exists">
+                        <destroy_object object="$CutsceneCluster"/>
+                      </do_if>
+                      <do_if value="$CutsceneObject.exists">
+                        <destroy_object object="$CutsceneObject"/>
+                      </do_if>
+                    </do_if>
+
+                    <do_if value="$HoloMap?">
+                      <remove_holomap />
+                      <remove_value name="$HoloMap"/>
+                    </do_if>
+
+                    <debug_text text="'Briefing canceled'" chance="$DebugChance"/>
+                    <reset_cue cue="BriefingStarted"/>
+                  </actions>
+                </cue>
+              </cues>
+            </cue>
+
+            <!--This cue creates the mission itself, either from scratch or via an existing mission offer-->
+            <cue name="MissionAccepted">
+              <conditions>
+                <event_cue_signalled />
+              </conditions>
+              <actions>
+                <do_if value="not $WithoutOffer">
+                  <speak actor="$Client" line="1000204" comment="(player accepted mission offer)" />
+                  <signal_cue_instantly cue="md.GenericMissions.PlotMissionInterrupted" param="table[$client = $Client, $line = 1000204]"/>
+                </do_if>
+
+                <debug_text text="'Mission accepted!'" chance="$DebugChance"/>
+                <set_value name="stat.missions_accepted" operation="add"/>
+
+                <do_if value="$WithoutOffer">
+                  <!--$MissionCue may already be a mission cue passed in as a parameter-->
+                  <do_if value="not $MissionCue.hasmission">
+                    <do_if value="$MissionThread">
+                      <create_mission cue="$MissionCue" missionthread="$MissionThread" name="$TextTable.$missionname" description="$TextTable.$description" difficulty="$Difficulty" faction="$ClientOwner" type="$MissionType" reward="$RewardCr" rewardtext="$RewardText"/>
+                    </do_if>
+                    <do_else>
+                      <create_mission cue="$MissionCue" name="$TextTable.$missionname" description="$TextTable.$description" difficulty="$Difficulty" faction="$ClientOwner" type="$MissionType" reward="$RewardCr" rewardtext="$RewardText"/>
+                    </do_else>
+                  </do_if>
+
+                  <update_mission cue="$MissionCue">
+                    <briefing>
+                      <objective step="1" action="objective.claim" text="$TextTable.$objective" object="$ClaimSector" />
+                    </briefing>
+                  </update_mission>
+                </do_if>
+                <do_else>
+                  <!--Copy data from the offer, then remove it-->
+                  <do_if value="$MissionThread">
+                    <create_mission cue="$MissionCue" offercue="$MissionCue" missionthread="$MissionThread"/>
+                  </do_if>
+                  <do_else>
+                    <create_mission cue="$MissionCue" offercue="$MissionCue"/>
+                  </do_else>
+                  <remove_offer cue="$MissionCue"/>
+                  <cancel_cue cue="With_Offer"/>
+                </do_else>
+
+                <!-- TODO: For creating your own custom GM, the below code consists of the actual mission-logic, this will likely need major changes -->
+                <do_if value="$ReportSignalCue">
+                  <set_value name="$FeedbackData" exact="$FeedbackManager.$FeedbackValues.$MISSION_ACCEPTED.clone"/>
+                  <set_value name="$FeedbackData.$ID" exact="'$MISSION_ACCEPTED'"/>
+                  <set_value name="$ReportSignalCue.$FeedbackValue" exact="$FeedbackData.clone" comment="Mission accepted"/>
+                  <signal_cue_instantly cue="$ReportSignalCue"/>
+                </do_if>
+
+                <signal_cue_instantly cue="md.GenericMissions.GenericAcceptLogbookEntry" param="[$TextTable.$missionname, $Client, $ClientOwner]"/>
+              </actions>
+              <cues>
+                <cue name="ActivateImmediately" onfail="cancel">
+                  <conditions>
+                    <check_value value="not $MissionThread"/>
+                  </conditions>
+                  <actions>
+                    <signal_cue cue="ActivateMission"/>
+                  </actions>
+                </cue>
+
+                <cue name="ActivateOnCondition" onfail="cancel">
+                  <conditions>
+                    <check_value value="$MissionThread"/>
+                  </conditions>
+                  <actions>
+                    <do_if value="$MissionThread.canactivatesubmission.{$MissionCue}">
+                      <signal_cue cue="ActivateMission"/>
+                      <cancel_cue cue="ActivateOnCondition"/>
+                    </do_if>
+                  </actions>
+                  <cues>
+                    <!--TODO @Owen add an event for when a submission has been removed from the thread-->
+                    <cue name="CheckMissionThreadState" checkinterval="1s">
+                      <conditions>
+                        <check_value value="$MissionThread.canactivatesubmission.{$MissionCue}"/>
+                      </conditions>
+                      <actions>
+                        <signal_cue cue="ActivateMission"/>
+                        <cancel_cue cue="ActivateOnCondition"/>
+                      </actions>
+                    </cue>
+                  </cues>
+                </cue>
+
+                <cue name="ActivateMission" version="2">
+                  <conditions>
+                    <event_cue_signalled/>
+                  </conditions>
+                  <actions>
+                    <set_value name="$StartStep" exact="1"/>
+                    <do_if value="$MissionDuration">
+                      <update_mission cue="$MissionCue" endtime="player.age + $MissionDuration"/>
+                    </do_if>
+                  </actions>
+                  <cues>
+                    <!-- Trigger the RML, which will check the win/lose conditions and report back -->
+                    <cue name="ClaimSpace_Ref" ref="md.RML_Claim_Space.ClaimSpace">
+                      <!-- always pass these -->
+                      <param name="EndSignalCue" value="MissionEnded"/>
+                      <param name="MissionCue" value="$MissionCue"/>
+                      <param name="StartStep" value="$StartStep" comment="Briefing step to start the mission on"/>
+                      <param name="UpdateBriefing" value="true" comment="Update the briefing objective step when the objective is updated"/>
+                      <param name="DebugChance" value="$DebugChance"/>
+                      <param name="Text_Objective"     value="$TextTable.$objective"/>
+
+                      <!-- mission-related parameters -->
+                      <param name="ClaimSpaces"    value="[$ClaimSector]"/>
+                      <param name="ClaimFactions"    value="[$ClaimFaction]"/>
+                    </cue>
+
+                    <cue name="Aborted">
+                      <conditions>
+                        <event_mission_aborted cue="$MissionCue"/>
+                      </conditions>
+                      <actions>
+                        <signal_cue_instantly cue="md.GenericMissions.GenericAbortLogbookEntry" param="[$TextTable.$missionname, $Client]"/>
+
+                        <set_value name="$Feedback" exact="'$MISSION_ABORTED'"/>
+                        <remove_mission cue="$MissionCue" type="aborted"/>
+                        <signal_cue cue="CleanUp" />
+                      </actions>
+                    </cue>
+
+                    <cue name="MissionTimeout" onfail="cancel">
+                      <conditions>
+                        <check_value value="typeof $MissionDuration == datatype.time"/>
+                        <check_value value="$MissionDuration" min="1s"/>
+                      </conditions>
+                      <delay exact="$MissionDuration"/>
+                      <actions>
+                        <signal_cue_instantly cue="md.GenericMissions.GenericTimeoutLogbookEntry" param="[$TextTable.$missionname, $Client]"/>
+
+                        <remove_mission cue="$MissionCue" type="failed"/>
+                        <set_value name="$Feedback" exact="'$MISSION_TIMEOUT'"/>
+                        <signal_cue_instantly cue="CleanUp" />
+                      </actions>
+                    </cue>
+
+                    <cue name="MissionEnded">
+                      <!-- TODO: For creating your own custom GM, you want to handle the end-feedback (usually originating from the RML used above) -->
+                      <conditions>
+                        <event_cue_signalled/>
+                      </conditions>
+                      <actions>
+                        <!-- Failure case -->
+                        <do_if value="MissionEnded.$EndFeedbackValue" max="0">
+                          <debug_text text="'This mission has failed. RML Feedback: ' + MissionEnded.$EndFeedbackValue" chance="$DebugChance"/>
+                          <set_value name="$Feedback" exact="'$RML_FAILED'"/>
+                          <speak actor="$Client" line="1000403" comment="(failed mission)" />
+                          <signal_cue_instantly cue="md.GenericMissions.GenericFailLogbookEntry" param="[$TextTable.$missionname, $Client, @MissionEnded.$EndFeedbackText]"/>
+
+                          <remove_mission cue="$MissionCue" type="failed" reason="@MissionEnded.$EndFeedbackText"/>
+                        </do_if>
+
+                        <!-- Success case -->
+                        <do_else>
+                          <!--TODO: Partial success-->
+                          <debug_text text="'This mission has ended. RML Feedback: ' + MissionEnded.$EndFeedbackValue" chance="$DebugChance"/>
+                          <do_if value="$RewardNotoriety and $ClientOwner">
+                            <debug_text text="'Relation was: ' + player.entity.relationto.{$ClientOwner}" chance="$DebugChance"/>
+                            <add_faction_relation faction="faction.player" otherfaction="$ClientOwner" value="$RewardNotoriety" reason="relationchangereason.missioncompleted" />
+                            <debug_text text="'Relation is now: ' + player.entity.relationto.{$ClientOwner}" chance="$DebugChance"/>
+                          </do_if>
+
+                          <do_if value="$RewardCr">
+                            <reward_player money="$RewardCr" />
+                          </do_if>
+                          <do_if value="$RewardObj">
+                            <do_if value="$RewardObj.isinventory">
+                              <add_inventory entity="player.entity" ware="$RewardObj" />
+                              <show_notification text="[{1015,100}, '', $RewardText]" sound="notification_achievement" comment="Item received" />
+                            </do_if>
+                          </do_if>
+                          <set_value name="stat.missions_completed" operation="add"/>
+                          <set_value name="$Feedback" exact="'$MISSION_SUCCEEDED'"/>
+                          <speak actor="$Client" line="1000401" comment="(successful mission)" />
+                          <signal_cue_instantly cue="md.GenericMissions.GenericCompleteLogbookEntry" param="[$TextTable.$missionname, $Client, null, $RewardCr]"/>
+
+                          <remove_mission cue="$MissionCue" type="completed" activate="next" />
+                        </do_else>
+                        <signal_cue cue="CleanUp" />
+                      </actions>
+                    </cue>
+                  </cues>
+                </cue>
+              </cues>
+            </cue>
+          </cues>
+        </cue>
+
+        <cue name="ForceCleanup" onfail="cancel">
+          <conditions>
+            <check_value value="$ForceCleanup"/>
+          </conditions>
+          <actions>
+            <do_if value="not $ForceCleanup.exists">
+              <set_value name="$Feedback" exact="'$INVALID_FORCE_CLEANUP'"/>
+              <signal_cue_instantly cue="CleanUp"/>
+            </do_if>
+          </actions>
+          <cues>
+            <cue name="ForceCleanup_Wait">
+              <conditions>
+                <check_any>
+                  <event_cue_completed cue="$ForceCleanup"/>
+                  <check_all>
+                    <event_cue_signalled cue="$ForceCleanup"/>
+                    <check_value value="not event.param? or event.param == $MissionCue"/>
+                  </check_all>
+                </check_any>
+              </conditions>
+              <actions>
+                <set_value name="$Feedback" exact="'$FORCED_CLEANUP'"/>
+                <signal_cue_instantly cue="CleanUp"/>
+              </actions>
+            </cue>
+          </cues>
+        </cue>
+
+        <cue name="CleanUp">
+          <conditions>
+            <event_cue_signalled/>
+          </conditions>
+          <actions>
+            <!--Temp value. This is used to identify if a cutscene for this mission is still playing.-->
+            <do_if value="$BriefingCutsceneStarted?">
+              <remove_value name="$BriefingCutsceneStarted"/>
+              <stop_cutscene key="$CutsceneKey"/>
+
+              <do_if value="$CutsceneCluster.exists">
+                <destroy_object object="$CutsceneCluster"/>
+              </do_if>
+              <do_if value="$CutsceneShip.exists">
+                <destroy_object object="$CutsceneShip"/>
+              </do_if>
+            </do_if>
+            <do_if value="$HoloMap?">
+              <remove_holomap />
+              <remove_value name="$HoloMap"/>
+            </do_if>
+
+
+            <!--***Cleanup objects***-->
+
+            <!--No .exists check here as $Client may not be connected to gamegraph-->
+            <do_if value="$Client.isclass.npc and (not $PreexistingClient?)">
+              <destroy_object object="$Client" comment="cleanup the client we created with create_cue_actor"/>
+            </do_if>
+
+            <!--***Evaluate result***-->
+
+            <do_if value="$DebugChance or $ReportSignalCue">
+              <set_value name="$FeedbackData" exact="$FeedbackManager.$FeedbackValues.{$Feedback}.clone"/>
+              <do_if value="$FeedbackData">
+                <set_value name="$FeedbackData.$ID" exact="$Feedback"/>
+                <debug_text text="'Mission ended with reason: ' + $FeedbackData.$type + ' - ' + $FeedbackData.$text" chance="$DebugChance"/>
+              </do_if>
+              <do_else>
+                <set_value name="$FeedbackData" exact="table[$ID = 'error_unknown', $type = 'error', $text = 'This is an unknown error']" comment="feedback = id, type and error-text from the above FeedbackValues-table"/>
+                <assert value="false" text="'Mission ended with unknown case: ' + $Feedback + ' [Owen]'" break="1"/>
+              </do_else>
+
+              <do_if value="$ReportSignalCue" comment ="The cue which called us">
+                <set_value name="$ReportSignalCue.$EndFeedbackValue" exact="$FeedbackData" comment="return feedback-data to calling cue"/>
+                <signal_cue cue="$ReportSignalCue"/>
+              </do_if>
+            </do_if>
+
+            <cancel_cue cue="Start"/>
+          </actions>
+        </cue>
+      </cues>
+    </library>
+
+    <!--event.param = table[
+    $Sector,
+    $ReportSignalCue (Optional. Cue to be signalled when something happens which could be of interest to the calling cue. Saves values to ReportSignalCue.$FeedbackValue and ReportSignalCue.$EndFeedbackValue)
+    $MissionVariant (Optional),
+    $RemoveOnSectorChange (Optional, defaults to true)
+    $DebugChance (Optional)]-->
+    <cue name="GenerateGenericMission" instantiate="true" namespace="this" version="2">
+      <conditions>
+        <event_cue_signalled/>
+      </conditions>
+      <actions>
+        <set_value name="$Sector"           exact="event.param.$Sector"/>
+        <set_value name="$ReportSignalCue"  exact="@event.param.$ReportSignalCue"/>
+        <set_value name="$MissionVariant"   exact="@event.param.$MissionVariant"/>
+        <do_if value="event.param.$RemoveOnSectorChange?">
+          <set_value name="$RemoveOnSectorChange" exact="event.param.$RemoveOnSectorChange"/>
+        </do_if>
+        <do_else>
+          <set_value name="$RemoveOnSectorChange" exact="true"/>
+        </do_else>
+        <set_value name="$DebugChance"      exact="@event.param.$DebugChance"/>
+        <set_value name="$ReportSignalCue.$GM_Wrapper" exact="this"/>
+
+        <set_value name="$FeedbackManager" exact="FeedbackValueManager"/>
+        <assert value="$FeedbackManager.$FeedbackValues.$MISSION_NO_VARIANT?" text="'Required error code does not exist. Was the FeedbackValueManager not updated for stand-alone missions? [Owen/Roger]'"/>
+
+        <debug_text text="'Attempting to generate a generic mission'" chance="$DebugChance"/>
+      </actions>
+      <patch sinceversion="2" state="complete">
+        <do_if value="$ReportSignalCue.exists">
+          <set_value name="$ReportSignalCue.$GM_Wrapper" exact="this"/>
+        </do_if>
+        <do_else>
+          <debug_text text="'cancelling dead GM instance'" filter="savegame"/>
+          <cancel_cue cue="this"/>
+        </do_else>
+      </patch>
+      <cues>
+        <cue name="GenerateGenericMission_SelectVariant">
+          <actions>
+            <set_value name="$ValidVariants" exact="[]"/>
+
+            <!--Set up some common variables first so that the variants don't have to do things multiple times-->
+
+            <!--Find potential offer stations in the sector-->
+            <find_station name="$PotentialOfferStations" excluded="md.GenericMissions.Manager.$ExcludedOfferObjects" space="$Sector" multiple="true">
+              <match owner="md.GenericMissions.Manager.$DefaultExcludedOfferFactions" negate="true"/>
+              <match_relation_to object="player.entity" comparison="not" relation="killmilitary" />
+            </find_station>
+
+            <do_if value="$PotentialOfferStations.count">
+              <do_if value="$MissionVariant">
+                <!--A specific MissionVariant ID was requested-->
+                <debug_text text="'Checking if requested ' + $MissionVariant + ' can be spawned'" chance="$DebugChance"/>
+                <!--<do_if value="$MissionVariant == 1">
+                  <signal_cue_instantly cue="GenerateGenericMission_Variant_1"/>
+                </do_if>
+                <do_else>
+                  <assert value="false" text="'Unknown $MissionVariant ID ' + $MissionVariant + ' [Owen]'"/>
+                </do_else>-->
+
+                <!--No variants for this GM yet-->
+                <assert value="false" text="'Unknown $MissionVariant ID ' + $MissionVariant + '. This mission does not yet have variants. [Owen]'"/>
+              </do_if>
+              <do_else>
+                <!--Attempt to a mission variant at random-->
+                <!--No variants for this GM yet-->
+                <!--<signal_cue_instantly cue="GenerateGenericMission_Variant_1"/>-->
+              </do_else>
+            </do_if>
+
+            <do_if value="$ValidVariants.count">
+              <signal_cue cue="$ValidVariants.random"/>
+            </do_if>
+            <do_else>
+              <do_if value="$ReportSignalCue">
+                <set_value name="$FeedbackData" exact="$FeedbackManager.$FeedbackValues.$MISSION_NO_VARIANT.clone"/>
+                <set_value name="$FeedbackData.$ID" exact="'$MISSION_NO_VARIANT'"/>
+                <set_value name="$ReportSignalCue.$FeedbackValue" exact="$FeedbackData.clone" comment="No mission variant possible"/>
+                <signal_cue_instantly cue="$ReportSignalCue"/>
+              </do_if>
+              <cancel_cue cue="GenerateGenericMission"/>
+            </do_else>
+          </actions>
+        </cue>
+      </cues>
+    </cue>
+  </cues>
+</mdscript>

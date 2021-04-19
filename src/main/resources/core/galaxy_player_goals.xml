@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="galaxy_player_goals" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
+	<cues>
+		<cue name="Manager">
+		  <conditions>
+			<event_cue_signalled cue="md.Setup.GameStart" />
+		  </conditions>
+		  <actions>			
+			<set_value name="$MissionCue" exact="null" />
+			<set_value name="$SectorGoal" exact="5" />
+			<set_value name="$AchievedGoals" exact="0" />
+			<write_to_logbook category="missions" faction="faction.player" title="{4582001,1000}" text="{4582001,1001}"/>
+			<write_incoming_message title="{4582001,1000}" text="{4582001,1002}" source="{4582001,1003}" highpriority="true" comment="X Collective Email"/>
+			
+			<find_sector groupname="$OwnerlessSectors" space="player.galaxy" owner="faction.ownerless" multiple="true"/>
+			<shuffle_group group="$OwnerlessSectors"/>
+			<set_value name="$SectorsToCapture" exact="[]" />
+			<do_all exact="$OwnerlessSectors.count" counter="$i">
+				<do_if value="$i le $SectorGoal">
+					<append_to_list name="$SectorsToCapture" exact="$OwnerlessSectors.{$i}" />
+				</do_if>
+				<do_else>
+					<break/>
+				</do_else>
+			</do_all>			
+		  </actions>
+		  <cues>
+			<cue name="Claim_Space_Mission">
+			  <actions>
+				<set_value name="$SectorToClaim" exact="$SectorsToCapture.{$AchievedGoals+1}" />
+				<create_cue_actor name="$Client" cue="this">
+					<select faction="faction.player"/>
+					<owner exact="faction.player"/>
+				</create_cue_actor>
+			  </actions>
+			  <cues>
+			  <!-- player.entity.race -->
+				<cue name="Claim_Space_Mission_Ref" ref="md.GM_ClaimSpace.Start">
+				  <param name="Client"     			value="$Client"/>
+				  <param name="ReportSignalCue"     value="Claim_Space__Standard_GM_Event"/>
+				  <param name="WithoutOffer"        value="true"/>
+
+				  <param name="Page"              	value="4582001"/>
+				  <param name="TextOffset"        	value="2000"/>
+				  <param name="MissionLevel"      	value="1"/>
+				  <param name="Difficulty"        	value="level.veryhard"/>
+
+				  <param name="ClaimFaction"        value="faction.player" />
+				  <param name="ClaimSector"    		value="$SectorToClaim"/>
+
+				  <param name="DebugChance" 		value="100"/>
+				</cue>
+
+				<!--Signalled by GM when an event happens e.g. mission successfully generated or mission ended.
+				Feedback values saved to the static of this cue: $FeedbackValue and $EndFeedbackValue-->
+				<cue name="Claim_Space__Standard_GM_Event" instantiate="true">
+				  <conditions>
+					<event_cue_signalled/>
+				  </conditions>
+				  <actions>
+					<do_if value="@static.$EndFeedbackValue" comment="Evaluate return-value of GM (success/failure)">
+						<debug_text text="'$FeedbackValue: %1'.[@static.$FeedbackValue]" chance="100"/>
+						<debug_text text="'$EndFeedbackValue: %1'.[@static.$EndFeedbackValue]" chance="100"/>
+						<do_if value="static.$EndFeedbackValue.$ID"  exact="'$MISSION_SUCCEEDED'">
+							<set_value name="$AchievedGoals" exact="$AchievedGoals+1" />
+							<do_if value="$AchievedGoals != $SectorGoal">
+								<reset_cue cue="md.galaxy_player_goals.Claim_Space_Mission"/>
+							</do_if>
+						</do_if>
+					</do_if>
+				  </actions>
+				</cue>
+			  </cues>
+			</cue>		  
+		  </cues>
+		</cue>
+	</cues>
+</mdscript>
