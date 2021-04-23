@@ -1,0 +1,13 @@
+<create_ship name="$Testship" zone="player.zone" macro="macro.ship_arg_xl_carrier_01_b_macro">
+	<owner exact="faction.player"/>
+	<pilot macro="character_boron_generic_01_macro">
+		<owner exact=" faction.player"/>
+		<skills>
+			<skill type="boarding" exact="15"/>
+			<skill type="engineering" exact="15"/>
+			<skill type="management" exact="15"/>
+			<skill type="morale" exact="15"/>
+		</skills>
+	</pilot>
+	<safepos object="player.container" radius="5km"/>
+</create_ship>

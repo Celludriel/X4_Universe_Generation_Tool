@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="RML_Sector_Takeover" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/md.xsd">
+	<cues>
+		<library name="SectorTakeover">
+			<params>
+				<param name="Faction" comment="Faction taking over the sector" />
+				<param name="SectorMacro" comment="Sector being taken over" />
+			</params>
+			<actions>
+				<set_value name="$DebugChance" exact="100" />
+				<debug_text text="'Faction: %1'.[$Faction]" chance="$DebugChance"/>
+				<debug_text text="'SectorMacro: %1'.[$SectorMacro]" chance="$DebugChance"/>
+
+				<find_sector name="$Sector" macro="$SectorMacro" />
+				<debug_text text="'Sector: %1'.[$Sector]" chance="$DebugChance"/>
+				<set_value name="$CurrentSectorOwner" exact="null" />
+				<set_value name="$ShipMultiplier" exact="1" />
+
+
+				<debug_text text="'CurrentSectorOwner: %1'.[$CurrentSectorOwner]" chance="$DebugChance"/>
+				<debug_text text="'ShipMultiplier: %1'.[$ShipMultiplier]" chance="$DebugChance"/>
+			</actions>
+			<cues>
+
+				<library name="Get_Safe_Position_Near_Gate">
+					<actions>
+						<create_group groupname="$EntryPoints" />
+						<create_group groupname="$AlliedEntryPoints" />
+						<set_value name="$LocalEntryPoints" exact="[]" />
+
+						<find_cluster_in_range name="$AdjacentClusters" object="$Sector" maxdistance="1" multiple="true" />
+						<find_sector name="$AdjacentSectors" space="$AdjacentClusters" multiple="true" />
+						<remove_value name="$AdjacentClusters" />
+						<set_value name="$TargetCluster" exact="$Sector.cluster" />
+						<do_all exact="$AdjacentSectors.count" counter="$i">
+							<do_if value="$AdjacentSectors.{$i}.cluster == $TargetCluster">
+								<find_object name="$LocalEntryPoints" class="class.highwayentrygate" space="$AdjacentSectors.{$i}" destination="$Sector" multiple="true" />
+							</do_if>
+							<do_else>
+								<find_gate name="$LocalEntryPoints" destination="$Sector" space="$AdjacentSectors.{$i}" multiple="true" />
+							</do_else>
+							<do_if value="$LocalEntryPoints.count">
+								<add_to_group groupname="$EntryPoints" list="$LocalEntryPoints" />
+								<do_if value="$AdjacentSectors.{$i}.hasrelation.friend.{$Faction}">
+									<add_to_group groupname="$AlliedEntryPoints" list="$LocalEntryPoints" />
+								</do_if>
+							</do_if>
+						</do_all>
+						<set_value name="$EntryPoint" exact="if $AlliedEntryPoints.count then $AlliedEntryPoints.random else $EntryPoints.random" />
+						<get_safe_pos result="$Position" sector="$Sector" radius="5km" object="$EntryPoint.destination" max="10km" allowyaxis="false" />
+					</actions>
+				</library>
+
+				<cue name="Evaluate">
+					<actions>
+						<set_value name="$CurrentSectorOwner" exact="$Sector.owner" />
+						<do_if value="$CurrentSectorOwner == $Faction" negate="true">
+							<find_station_by_true_owner name="$HostileStation" faction="$CurrentSectorOwner" space="$Sector" checkoperational="true" defencestation="true">
+								<match state="componentstate.wreck" negate="true" />
+							</find_station_by_true_owner>
+							<debug_text text="'HostileStation: %1'.[$HostileStation]" chance="$DebugChance"/>
+							<do_if value="$HostileStation">
+								<!-- start sector invasion cue -->
+								<signal_cue_instantly cue="Invade_Sector" />
+							</do_if>
+							<do_else>
+								<!-- start build defense station cue -->
+								<signal_cue_instantly cue="Build_Defense_Station" />
+							</do_else>
+						</do_if>
+						<do_else>
+							<debug_text text="'The sector has been won'" chance="$DebugChance"/>
+							<signal_cue_instantly cue="Cleanup" />
+						</do_else>
+					</actions>
+				</cue>
+
+				<cue name="Build_Defense_Station">
+					<conditions>
+						<event_cue_signalled />
+					</conditions>
+					<actions>
+						<include_actions ref="Get_Safe_Position_Near_Gate" />
+					</actions>
+					<cues>
+						<cue name="Start_Build">
+							<actions>
+								<get_construction_plan result="$ConstructionPlan" faction="$Faction" tags="tag.defence" rawname="$StationRawName" />
+								<do_if value="$ConstructionPlan">
+									<get_module_set_macro result="$StationMacro" race="$Faction.primaryrace" type="'defence'" />
+								</do_if>
+								<do_if value="not $StationMacro and $Faction.primaryrace != race.xenon">
+									<get_module_set_macro result="$StationMacro" race="$Faction.primaryrace" type="'factory'" comment="Note: non-Xenon races use the 'factory' set" />
+								</do_if>
+
+								<create_station name="$Station" sector="$Sector" owner="$Faction" macro="$StationMacro" rawname="$StationRawName">
+									<safepos value="$Position" includeplotbox="true" />
+								</create_station>
+
+								<generate_loadout sequence="$ConstructionPlan" level="0.9" result="$Loadouts" faction="$Faction" />
+								<do_all exact="$Loadouts.count" counter="$l">
+									<apply_loadout sequence="$ConstructionPlan" index="$l" loadout="$Loadouts.{$l}" />
+								</do_all>
+								<remove_value name="$Loadouts" />
+								<add_build_to_expand_station object="$Station.buildstorage" buildobject="$Station" constructionplan="$ConstructionPlan" result="$BuildID" />
+								<remove_value name="$ConstructionPlan" />
+							</actions>
+							<cues>
+								<cue name="Station_Destroyed">
+									<conditions>
+										<event_object_destroyed object="$Station" />
+									</conditions>
+									<actions>
+										<reset_cue cue="Build_Defense_Station" />
+										<reset_cue cue="Evaluate" />
+									</actions>
+								</cue>
+		
+								<cue name="Station_Completed">
+									<conditions>
+										<event_build_finished object="$Station" />
+									</conditions>
+									<actions>
+										<reset_cue cue="Build_Defense_Station" />
+										<reset_cue cue="Evaluate" />
+									</actions>
+								</cue>	
+							</cues>
+						</cue>				
+					</cues>
+				</cue>
+
+				<cue name="Invade_Sector">
+					<conditions>
+						<event_cue_signalled />
+					</conditions>
+					<delay exact="1s" />
+					<actions>
+						<set_value name="$Phase" exact="'PREPARATION'" />
+						<set_value name="$PhaseEvaluationDelay" exact="1ms" />
+						<set_value name="$PositionToTarget" exact="null" />
+						<create_list name="$Fleet" />
+
+						<find_station_by_true_owner name="$Target" faction="$CurrentSectorOwner" space="$Sector" checkoperational="true" defencestation="true">
+							<match state="componentstate.wreck" negate="true" />
+						</find_station_by_true_owner>
+						<do_if value="$Target">
+							<signal_cue_instantly cue="Evaluate_Invasion" />
+						</do_if>
+						<do_else>
+							<signal_cue_instantly cue="End_Invasion" />
+						</do_else>
+					</actions>
+					<cues>
+						<cue name="Evaluate_Invasion">
+							<conditions>
+								<event_cue_signalled />
+							</conditions>
+							<delay exact="$PhaseEvaluationDelay" />
+							<actions>
+								<set_value name="$PhaseEvaluationDelay" exact="0s" />
+								<set_value name="$MinDelay" exact="10s" />
+								<set_value name="$MaxDelay" exact="15s" />
+
+								<do_if value="$Phase == 'END_INVASION'">
+									<reset_faction_relation faction="$Faction" otherfaction="$CurrentSectorOwner" />
+									<reset_faction_relation faction="$CurrentSectorOwner" otherfaction="$Faction" />
+									<remove_value name="$PhaseEvaluationDelay" />
+									<remove_value name="$MinDelay" />
+									<remove_value name="$MaxDelay" />
+									<remove_value name="$Phase" />
+									<remove_value name="$PositionToTarget" />
+									<remove_value name="$Target" />
+									<destroy_group group="$Fleet" />
+									<reset_cue cue="Evaluate" />
+									<cancel_cue cue="Evaluate_Invasion" />
+								</do_if>
+								<do_elseif value="$Phase == 'PREPARATION'">
+									<!-- setup build of the invasion fleet -->
+									<set_value name="$Phase" exact="'BUILDUP'" />
+									<signal_cue_instantly cue="Build_Assault_Fleet" />
+								</do_elseif>
+								<do_elseif value="$Phase == 'MOBILIZATION'">
+									<!-- move the fleet to the target sector -->
+									<set_value name="$Phase" exact="'MOBILIZING'" />
+									<get_safe_pos result="$PositionToTarget" object="$Target" sector="$Target.sector" min="15km" max="25km" allowyaxis="false" />
+									<do_for_each name="$Ship" in="$Fleet">
+										<cancel_all_orders object="$Ship" />
+										<create_order object="$Ship" id="'MoveGeneric'" name="$moveorder" immediate="true">
+											<param name="destination" value="$PositionToTarget" />
+										</create_order>
+									</do_for_each>
+								</do_elseif>
+								<do_elseif value="$Phase == 'MOBILIZING'">
+									<!-- check if fleet has arrived -->
+									<set_value name="$AllShipsInRange" exact="true" />
+									<do_for_each name="$Ship" in="$Fleet">
+										<do_if value="$Ship.distanceto.{$PositionToTarget} gt 5km">
+											<set_value name="$AllShipsInRange" exact="false" />
+										</do_if>
+									</do_for_each>
+									<do_if value="$AllShipsInRange">
+										<set_value name="$Phase" exact="'ATTACK'" />
+										<!-- declare war on station owning faction -->
+										<set_faction_relation faction="$Faction" otherfaction="$CurrentSectorOwner" value="$CurrentSectorOwner.relation.kill.max" />
+										<!-- give attack order to each ship -->
+										<do_for_each name="$Ship" in="$Fleet">
+											<create_order object="$Ship" id="'Attack'">
+												<param name="primarytarget" value="$Target" />
+											</create_order>
+										</do_for_each>
+										<set_value name="$Phase" exact="'ATTACKING'" />
+									</do_if>
+								</do_elseif>								
+								<do_elseif value="$Phase == 'Attacking'">
+									<!-- check on attack if $Target is destroyed or all ships in the group are death move to END_INVASION -->
+									<do_if value="not $Target.isoperational or $Fleet.count == 0">
+										<set_value name="$Phase" exact="'END_INVASION'" />
+										<do_if value="$Fleet.count == 0">
+											<set_value name="$ShipMultiplier" exact="$ShipMultiplier + 0.5"/>
+										</do_if>
+									</do_if>
+								</do_elseif>
+
+								<do_if value="not $PhaseEvaluationDelay">
+									<set_value name="$PhaseEvaluationDelay" min="$MinDelay" max="$MaxDelay" />
+								</do_if>
+								<reset_cue cue="Evaluate_Invasion" />
+							</actions>
+						</cue>
+
+						<cue name="Build_Assault_Fleet">
+							<conditions>
+								<event_cue_signalled />
+							</conditions>
+							<actions>
+								<!--Ship definitions-->
+								<!--[$Amount, $ShipSize, [$Tags]]-->
+								<set_value name="$SmallFighterGroup" exact="[(5*$ShipMultiplier)i, class.ship_s, [tag.military, tag.mission]]" />
+								<set_value name="$MediumFighterGroup" exact="[(2*$ShipMultiplier)i, class.ship_m, [tag.military, tag.mission]]" />
+								<set_value name="$LargeShipGroup" exact="[(3*$ShipMultiplier)i, class.ship_l, [tag.military, tag.mission]]" />
+
+								<set_value name="$Definition_Amount" exact="1" />
+								<set_value name="$Definition_Size" exact="2" />
+								<set_value name="$Definition_Tags" exact="3" />
+
+								<debug_text text="'Faction: %1'.[$Faction]" chance="$DebugChance"/>
+								
+								<find_station_by_true_owner name="$Shipyard" faction="$Faction" space="player.galaxy" canbuildships="true" shipyard="true"/>
+								<find_station_by_true_owner name="$Dock" faction="$Faction" space="player.galaxy" canbuildships="true" wharf="true"/>
+
+								<debug_text text="'Shipyard: %1'.[$Shipyard]" chance="$DebugChance"/>
+								<debug_text text="'Dock: %1'.[$Dock]" chance="$DebugChance"/>
+
+								<debug_text text="'Unitrader SY: %1 %2 %3'.[$Shipyard,$Shipyard.knownname,$Shipyard.class]" chance="$DebugChance"/>  
+								<debug_text text="'Unitrader DK: %1 %2 %3'.[$Dock,$Dock.knownname,$Dock.class]" chance="$DebugChance"/>
+
+								<debug_text text="'typeof $Dock: %1'.[typeof $Dock]" chance="$DebugChance"/>
+								<debug_text text="'typeof $Shipyard: %1'.[typeof $Shipyard]" chance="$DebugChance"/>
+
+								<find_dockingbay name="$CheckDock" object="$Dock">
+									<match_dock size="tag.dock_s" />
+								</find_dockingbay>
+								<debug_text text="'after find dockingbay $Dock: %1'.[$CheckDock]" chance="$DebugChance"/>
+
+								<find_dockingbay name="$CheckDock" object="$Shipyard">
+									<match_dock size="tag.dock_l" />
+								</find_dockingbay>
+								<debug_text text="'after find dockingbay $Shipyard: %1'.[$CheckDock]" chance="$DebugChance"/>
+							</actions>
+							<cues>
+								<cue name="Create_Support_Ships" ref="md.LIB_Create_Ships.Start">
+									<param name="EndSignalCue" value="Support_Ships_Created" />
+									<param name="GroupCue" value="Invade_Sector" />
+
+									<!--Ship Info-->
+									<param name="Ship_Amount" value="$SmallFighterGroup.{$Definition_Amount}" />
+
+									<param name="Ship_Faction" value="$Faction" />
+									<param name="Ship_Class" value="$SmallFighterGroup.{$Definition_Size}" />
+
+									<param name="Ship_CategoryFaction" value="$Faction" />
+									<param name="Ship_Category_Size" value="$SmallFighterGroup.{$Definition_Size}" />
+									<param name="Ship_CategoryTags" value="$SmallFighterGroup.{$Definition_Tags}" />
+
+									<!--Dock Info-->
+									<param name="Dock" value="$Dock" />
+									<param name="DebugChance" value="$DebugChance" />
+								</cue>
+								<cue name="Support_Ships_Created">
+									<conditions>
+										<event_cue_signalled />
+									</conditions>
+									<actions>
+										<do_if value="$LIB_Create_Ships_Result.count" min="1">
+											<append_to_list name="$Fleet" exact="$LIB_Create_Ships_Result" />
+										</do_if>
+									</actions>
+								</cue>
+								<cue name="Create_Medium_Support_Ships" ref="md.LIB_Create_Ships.Start">
+									<param name="EndSignalCue" value="Medium_Support_Ships_Created" />
+									<param name="GroupCue" value="Invade_Sector" />
+
+									<!--Ship Info-->
+									<param name="Ship_Amount" value="$MediumFighterGroup.{$Definition_Amount}" />
+
+									<param name="Ship_Faction" value="$Faction" />
+									<param name="Ship_Class" value="$MediumFighterGroup.{$Definition_Size}" />
+
+									<param name="Ship_CategoryFaction" value="$Faction" />
+									<param name="Ship_Category_Size" value="$MediumFighterGroup.{$Definition_Size}" />
+									<param name="Ship_CategoryTags" value="$MediumFighterGroup.{$Definition_Tags}" />
+
+									<!--Dock Info-->
+									<param name="Dock" value="$Dock" />
+									<param name="DebugChance" value="$DebugChance" />
+								</cue>
+								<cue name="Medium_Support_Ships_Created">
+									<conditions>
+										<event_cue_signalled />
+									</conditions>
+									<actions>
+										<do_if value="$LIB_Create_Ships_Result.count" min="1">
+											<append_to_list name="$Fleet" exact="$LIB_Create_Ships_Result" />
+										</do_if>
+									</actions>
+								</cue>
+								<cue name="Create_Destroyers" ref="md.LIB_Create_Ships.Start">
+									<param name="EndSignalCue" value="Destroyers_Created" />
+									<param name="GroupCue" value="Invade_Sector" />
+
+									<!--Ship Info-->
+									<param name="Ship_Amount" value="$LargeShipGroup.{$Definition_Amount}" />
+
+									<param name="Ship_Faction" value="$Faction" />
+									<param name="Ship_Class" value="$LargeShipGroup.{$Definition_Size}" />
+
+									<param name="Ship_CategoryFaction" value="$Faction" />
+									<param name="Ship_Category_Size" value="$LargeShipGroup.{$Definition_Size}" />
+									<param name="Ship_CategoryTags" value="$LargeShipGroup.{$Definition_Tags}" />
+
+									<!--Dock Info-->
+									<param name="Dock" value="$Shipyard" />
+									<param name="DebugChance" value="$DebugChance" />
+								</cue>
+								<cue name="Destroyers_Created">
+									<conditions>
+										<event_cue_signalled />
+									</conditions>
+									<actions>
+										<do_if value="$LIB_Create_Ships_Result.count" min="1">
+											<append_to_list name="$Fleet" exact="$LIB_Create_Ships_Result" />
+											<set_value name="$Phase" exact="'MOBILIZATION'" />
+										</do_if>
+									</actions>
+								</cue>
+							</cues>
+						</cue>
+					</cues>
+				</cue>
+
+				<cue name="Cleanup">
+					<conditions>
+						<event_cue_signalled />
+					</conditions>
+					<actions></actions>
+				</cue>
+			</cues>
+		</library>
+	</cues>
+</mdscript>

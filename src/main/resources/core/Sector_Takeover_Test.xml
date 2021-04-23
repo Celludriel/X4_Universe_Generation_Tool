@@ -1,0 +1,15 @@
+<mdscript name="Sector_Takeover_Test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/md.xsd">
+    <cues>
+        <cue name="Start">
+            <conditions>
+                <event_cue_signalled cue="md.Setup.GameStart" />
+            </conditions>
+            <cues>
+                <cue name="Argon_Takes_Center" ref="md.RML_Sector_Takeover.SectorTakeover">
+                    <param name="Faction" value="faction.argon" />
+                    <param name="SectorMacro" value="macro.sectaketest_clustercenter_sector001_macro" />
+                </cue>
+            </cues>
+        </cue>
+    </cues>
+</mdscript>
