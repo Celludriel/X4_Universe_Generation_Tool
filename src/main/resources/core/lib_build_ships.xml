@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="LIB_Build_Ships" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/md.xsd">
+    <cues>
+        <library name="Start">
+            <params>
+                <param name="EndSignalCue" default="null" />
+                <param name="GroupCue" comment="Ship group is saved to '$GroupCue.$LIB_Build_Ships_Result'" />
+                <param name="ClearGroup" default="true" comment="Clear the group before adding the results" />
+
+                <!--Ship Info-->
+                <param name="Ship_Amount" />
+                <param name="Ship_Faction" default="null" comment="Overriding faction for the ship and created NPCs" />
+                <param name="Ship_Macro" default="null" comment="Overriding macro for ship. Ship_Category and Ship_Ref params ignored." />
+
+                <!--Location Info-->
+                <param name="Dock" default="null" comment="Either a Dockslot, DockingBay component or Container component" />
+
+                <param name="DebugChance" default="100" />
+            </params>
+            <actions>
+                <do_if value="$ClearGroup and $GroupCue.$LIB_Build_Ships_Result?">
+                    <do_if value="typeof $GroupCue.$LIB_Build_Ships_Result == datatype.group">
+                        <clear_group group="$GroupCue.$LIB_Build_Ships_Result" />
+                    </do_if>
+                </do_if>
+                <do_else>
+                    <create_group groupname="$GroupCue.$LIB_Build_Ships_Result" />
+                </do_else>
+                <set_value name="$Total_Ships_Queued" exact="0" />
+                <set_value name="$Total_Build_Ships" exact="0" />
+            </actions>
+            <cues>
+                <cue name="Try_Build_All_Ships">
+                    <actions>
+                        <find_object_component name="$buildmodules" object="$Dock" class="class.buildmodule" multiple="true"/>
+                        <debug_text text="'Found %1 buildcomponents'.[$buildmodules.count]" chance="$DebugChance"/>
+                        <do_all exact="$buildmodules.count" counter="$Count">
+                            <do_if value="$buildmodules.{$Count}.buildanchor.exists" negate="true" comment="If nothing is currently under construction...">
+                              <set_value name="$buildmodule" exact="$buildmodules.{$Count}"/>
+                  
+                              <add_build_to_construct_ship result="$build" object="$Dock" macro="$Ship_Macro" faction="$Ship_Faction"/>
+                              <do_if value="$build">
+                                  <set_value name="$Total_Ships_Queued" exact="$Total_Ships_Queued+1" />
+                              </do_if>
+                            </do_if>
+
+                            <do_if value="$Total_Ships_Queued == $Ship_Amount">
+                                <break />
+                            </do_if>
+                          </do_all>
+                    </actions>
+                    <cues>
+                        <cue name="Build_Completed" instantiate="true">
+                          <conditions>
+                            <check_all>
+                              <event_build_finished object="$Dock"/>
+                            </check_all>
+                          </conditions>
+                          <actions>               
+                            <debug_text text="'event.param %1'.[event.param]" chance="$DebugChance"/>  
+                            <debug_text text="'event.param %1'.[event.param3]" chance="$DebugChance"/>  
+                            <!-- store event-params-->
+                            <set_value name="$ship" exact="event.param.buildanchor" />
+                            <set_value name="$buildmodule" exact="event.param" />
+                            <debug_text text="'Completed: '+ $ship.name"/>
+                            
+                            <!-- increase total build ships -->
+                            <set_value name="$Total_Build_Ships" exact="$Total_Build_Ships+1" />
+
+                            <!-- create loadout -->
+                            <generate_loadout result="$loadout" faction="$Ship_Faction" macro="$ship.macro" level="1" flags="ammo units drones" />
+                            <apply_loadout object="$ship" loadout="$loadout.{1}"/>
+
+                            <!-- create pilot, assign to ship -->
+                            <create_cue_actor name="$Pilot" cue="Build_Completed">
+                              <select faction="event.param.buildanchor.owner" tags="tag.aipilot"/>
+                              <owner exact="event.param.buildanchor.owner"/>
+                            </create_cue_actor>
+                            <assign_control_entity actor="$Pilot" object="$ship" post="controlpost.aipilot" transfer="true"/>
+
+                            <!-- add a defense officer if capital -->
+                            <do_if value="$ship.iscapitalship">
+                                <!-- create defense officer, assign to ship, set script to 'patrol' -->
+                                <create_control_entity object="$ship" post="controlpost.defence">
+                                    <select tags="controlpost.defence.tag"/>
+                                    <owner exact="$ship.owner"/>
+                                </create_control_entity>
+                                <do_all min="20" max="50">
+                                    <get_character_definition macro="$macro" faction="${Ship_Faction}" tags="tag.service"/>
+                                    <create_npc_template name="$crew" object="$ship" macro="$macro" role="entityrole.service"/>
+                                    <do_if value="$crew">
+                                        <set_skill object="$ship" template="$crew" type="skilltype.boarding" min="1" max="9"/>
+                                        <set_skill object="$ship" template="$crew" type="skilltype.engineering" min="13" max="15"/>
+                                        <set_skill object="$ship" template="$crew" type="skilltype.management" min="1" max="9"/>
+                                        <set_skill object="$ship" template="$crew" type="skilltype.piloting" min="1" max="9"/>
+                                        <set_skill object="$ship" template="$crew" type="skilltype.morale" min="13" max="15"/>
+                                    </do_if>
+                                </do_all>
+                            </do_if>
+
+                            <create_order object="$ship" id="'Patrol'" default="true" />
+                                            
+                            <!-- And free the buildmodule for the next thing to be built-->
+                            <clear_buildanchor buildprocessor="event.param"/>
+                
+                            <!-- Tell ship to undock -->
+                            <create_order id="'Undock'" object="$ship" immediate="true"/>
+                            
+                            <!-- Add ship to result group -->
+                            <add_to_group groupname="$GroupCue.$LIB_Build_Ships_Result" object="$ship" />
+
+                            <debug_text text="'$Total_Build_Ships %1'.[$Total_Build_Ships]" chance="$DebugChance"/>
+                            <debug_text text="'$Ship_Amount %1'.[$Ship_Amount]" chance="$DebugChance"/>
+                            <do_if value="$Total_Build_Ships == $Ship_Amount">
+                                <signal_cue_instantly cue="Cleanup" />
+                            </do_if>
+                            <do_elseif value="$Total_Ships_Queued lt $Ship_Amount">
+                                <reset_cue cue="Try_Build_All_Ships" />
+                            </do_elseif>
+                          </actions>
+                        </cue>
+                      </cues>
+                </cue>
+                <cue name="Cleanup">
+                    <conditions>
+                      <event_cue_signalled/>
+                    </conditions>
+                    <actions>          
+                      <do_if value="$EndSignalCue">
+                        <signal_cue cue="$EndSignalCue"/>
+                      </do_if>
+                      <cancel_cue cue="Start"/>
+                    </actions>
+                  </cue>                
+            </cues>
+        </library>
+    </cues>
+</mdscript>

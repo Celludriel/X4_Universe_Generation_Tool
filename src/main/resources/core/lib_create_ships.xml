@@ -3,6 +3,6 @@
     <replace sel="//library[@name='Start']/actions/do_elseif[@exact='class.ship_xl']/set_value[@exact='tag.ship_xl']/@exact">tag.dock_l</replace>
     <replace sel="//library[@name='Start']/actions/do_elseif[@exact='class.ship_l']/set_value[@exact='tag.ship_l']/@exact">tag.dock_l</replace>
     <replace sel="//library[@name='Start']/actions/do_elseif[@exact='class.ship_m']/set_value[@exact='tag.ship_m']/@exact">tag.dock_m</replace>
-    <replace sel="//library[@name='Start']/actions/do_elseif[@exact='class.ship_s']/set_value[@exact='tag.ship_s']/@exact">tag.dock_s</replace>
+    <replace sel="//library[@name='Start']/actions/do_elseifee[@exact='class.ship_s']/set_value[@exact='tag.ship_s']/@exact">tag.dock_s</replace>
     <replace sel="//library[@name='Start']/actions/do_if[@exact='class.ship_xs']/set_value[@exact='tag.ship_xs']/@exact">tag.dock_s</replace>
 </diff>

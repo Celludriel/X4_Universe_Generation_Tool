@@ -8,17 +8,17 @@
 			</params>
 			<actions>
 				<set_value name="$DebugChance" exact="100" />
-				<debug_text text="'Faction: %1'.[$Faction]" chance="$DebugChance"/>
-				<debug_text text="'SectorMacro: %1'.[$SectorMacro]" chance="$DebugChance"/>
+				<debug_text text="'Faction: %1'.[$Faction]" chance="$DebugChance" />
+				<debug_text text="'SectorMacro: %1'.[$SectorMacro]" chance="$DebugChance" />
 
 				<find_sector name="$Sector" macro="$SectorMacro" />
-				<debug_text text="'Sector: %1'.[$Sector]" chance="$DebugChance"/>
+				<debug_text text="'Sector: %1'.[$Sector]" chance="$DebugChance" />
 				<set_value name="$CurrentSectorOwner" exact="null" />
 				<set_value name="$ShipMultiplier" exact="1" />
 
 
-				<debug_text text="'CurrentSectorOwner: %1'.[$CurrentSectorOwner]" chance="$DebugChance"/>
-				<debug_text text="'ShipMultiplier: %1'.[$ShipMultiplier]" chance="$DebugChance"/>
+				<debug_text text="'CurrentSectorOwner: %1'.[$CurrentSectorOwner]" chance="$DebugChance" />
+				<debug_text text="'ShipMultiplier: %1'.[$ShipMultiplier]" chance="$DebugChance" />
 			</actions>
 			<cues>
 
@@ -58,7 +58,7 @@
 							<find_station_by_true_owner name="$HostileStation" faction="$CurrentSectorOwner" space="$Sector" checkoperational="true" defencestation="true">
 								<match state="componentstate.wreck" negate="true" />
 							</find_station_by_true_owner>
-							<debug_text text="'HostileStation: %1'.[$HostileStation]" chance="$DebugChance"/>
+							<debug_text text="'HostileStation: %1'.[$HostileStation]" chance="$DebugChance" />
 							<do_if value="$HostileStation">
 								<!-- start sector invasion cue -->
 								<signal_cue_instantly cue="Invade_Sector" />
@@ -69,7 +69,7 @@
 							</do_else>
 						</do_if>
 						<do_else>
-							<debug_text text="'The sector has been won'" chance="$DebugChance"/>
+							<debug_text text="'The sector has been won'" chance="$DebugChance" />
 							<signal_cue_instantly cue="Cleanup" />
 						</do_else>
 					</actions>
@@ -115,7 +115,7 @@
 										<reset_cue cue="Evaluate" />
 									</actions>
 								</cue>
-		
+
 								<cue name="Station_Completed">
 									<conditions>
 										<event_build_finished object="$Station" />
@@ -124,9 +124,9 @@
 										<reset_cue cue="Build_Defense_Station" />
 										<reset_cue cue="Evaluate" />
 									</actions>
-								</cue>	
+								</cue>
 							</cues>
-						</cue>				
+						</cue>
 					</cues>
 				</cue>
 
@@ -158,9 +158,9 @@
 							</conditions>
 							<delay exact="$PhaseEvaluationDelay" />
 							<actions>
+								<reset_cue cue="Evaluate_Invasion" />
+								<debug_text text="'Running Phase: %1'.[$Phase]" chance="$DebugChance" />
 								<set_value name="$PhaseEvaluationDelay" exact="0s" />
-								<set_value name="$MinDelay" exact="10s" />
-								<set_value name="$MaxDelay" exact="15s" />
 
 								<do_if value="$Phase == 'END_INVASION'">
 									<reset_faction_relation faction="$Faction" otherfaction="$CurrentSectorOwner" />
@@ -170,62 +170,74 @@
 									<remove_value name="$MaxDelay" />
 									<remove_value name="$Phase" />
 									<remove_value name="$PositionToTarget" />
+									<remove_value name="$Fleet" />
 									<remove_value name="$Target" />
-									<destroy_group group="$Fleet" />
+									<reset_cue cue="Invade_Sector" />
 									<reset_cue cue="Evaluate" />
-									<cancel_cue cue="Evaluate_Invasion" />
 								</do_if>
 								<do_elseif value="$Phase == 'PREPARATION'">
 									<!-- setup build of the invasion fleet -->
 									<set_value name="$Phase" exact="'BUILDUP'" />
-									<signal_cue_instantly cue="Build_Assault_Fleet" />
+									<signal_cue cue="Build_Assault_Fleet" />
 								</do_elseif>
 								<do_elseif value="$Phase == 'MOBILIZATION'">
+									<debug_text text="'$Fleet: %1'.[$Fleet]" chance="$DebugChance" />
 									<!-- move the fleet to the target sector -->
 									<set_value name="$Phase" exact="'MOBILIZING'" />
 									<get_safe_pos result="$PositionToTarget" object="$Target" sector="$Target.sector" min="15km" max="25km" allowyaxis="false" />
-									<do_for_each name="$Ship" in="$Fleet">
-										<cancel_all_orders object="$Ship" />
-										<create_order object="$Ship" id="'MoveGeneric'" name="$moveorder" immediate="true">
-											<param name="destination" value="$PositionToTarget" />
-										</create_order>
+									<do_for_each name="$Group" in="$Fleet">
+										<do_for_each name="$Ship" in="$Group">
+											<cancel_all_orders object="$Ship" />
+											<create_order object="$Ship" id="'MoveWait'" name="$MoveOrder" immediate="true">
+												<param name="destination" value="[$Target.sector, $PositionToTarget]" />
+											</create_order>
+										</do_for_each>
 									</do_for_each>
+									<signal_cue cue="Signal_Evaluate_Invasion" />
 								</do_elseif>
 								<do_elseif value="$Phase == 'MOBILIZING'">
 									<!-- check if fleet has arrived -->
 									<set_value name="$AllShipsInRange" exact="true" />
-									<do_for_each name="$Ship" in="$Fleet">
-										<do_if value="$Ship.distanceto.{$PositionToTarget} gt 5km">
-											<set_value name="$AllShipsInRange" exact="false" />
-										</do_if>
+									<do_for_each name="$Group" in="$Fleet">
+										<do_for_each name="$Ship" in="$Group">
+											<do_if value="$Ship.distanceto.[$Target.sector, $PositionToTarget] gt 5km">
+												<set_value name="$AllShipsInRange" exact="false" />
+											</do_if>
+										</do_for_each>
 									</do_for_each>
 									<do_if value="$AllShipsInRange">
 										<set_value name="$Phase" exact="'ATTACK'" />
 										<!-- declare war on station owning faction -->
 										<set_faction_relation faction="$Faction" otherfaction="$CurrentSectorOwner" value="$CurrentSectorOwner.relation.kill.max" />
 										<!-- give attack order to each ship -->
-										<do_for_each name="$Ship" in="$Fleet">
-											<create_order object="$Ship" id="'Attack'">
-												<param name="primarytarget" value="$Target" />
-											</create_order>
+										<do_for_each name="$Group" in="$Fleet">
+											<do_for_each name="$Ship" in="$Group">
+												<cancel_all_orders object="$Ship" />
+												<create_order object="$Ship" id="'Attack'" immediate="true">
+													<param name="primarytarget" value="$Target" />
+													<param name="pursuetargets" value="true"/>
+												</create_order>
+											</do_for_each>
 										</do_for_each>
 										<set_value name="$Phase" exact="'ATTACKING'" />
 									</do_if>
-								</do_elseif>								
-								<do_elseif value="$Phase == 'Attacking'">
+									<signal_cue cue="Signal_Evaluate_Invasion" />
+								</do_elseif>
+								<do_elseif value="$Phase == 'ATTACKING'">
 									<!-- check on attack if $Target is destroyed or all ships in the group are death move to END_INVASION -->
-									<do_if value="not $Target.isoperational or $Fleet.count == 0">
+									<set_value name="$LeftOverShipCount" exact="0" />
+									<do_for_each name="$Group" in="$Fleet">
+										<set_value name="$LeftOverShipCount" exact="$LeftOverShipCount+$Group.count" />
+									</do_for_each>
+
+									<do_if value="not $Target.isoperational or $LeftOverShipCount == 0">
 										<set_value name="$Phase" exact="'END_INVASION'" />
-										<do_if value="$Fleet.count == 0">
-											<set_value name="$ShipMultiplier" exact="$ShipMultiplier + 0.5"/>
+										<do_if value="$LeftOverShipCount == 0">
+											<set_value name="$ShipMultiplier" exact="$ShipMultiplier + 0.5" />
 										</do_if>
 									</do_if>
+									<signal_cue cue="Signal_Evaluate_Invasion" />
 								</do_elseif>
-
-								<do_if value="not $PhaseEvaluationDelay">
-									<set_value name="$PhaseEvaluationDelay" min="$MinDelay" max="$MaxDelay" />
-								</do_if>
-								<reset_cue cue="Evaluate_Invasion" />
 							</actions>
 						</cue>
 
@@ -236,125 +248,107 @@
 							<actions>
 								<!--Ship definitions-->
 								<!--[$Amount, $ShipSize, [$Tags]]-->
-								<set_value name="$SmallFighterGroup" exact="[(5*$ShipMultiplier)i, class.ship_s, [tag.military, tag.mission]]" />
-								<set_value name="$MediumFighterGroup" exact="[(2*$ShipMultiplier)i, class.ship_m, [tag.military, tag.mission]]" />
-								<set_value name="$LargeShipGroup" exact="[(3*$ShipMultiplier)i, class.ship_l, [tag.military, tag.mission]]" />
+								<find_station_by_true_owner name="$Shipyard" faction="$Faction" space="player.galaxy" canbuildships="true" shipyard="true" />
+								<find_station_by_true_owner name="$Dock" faction="$Faction" space="player.galaxy" canbuildships="true" wharf="true" />
+
+								<get_ship_definition macro="$SmallShipDefinitions" tags="[tag.military, tag.mission]" faction="$Faction" size="class.ship_s" multiple="true" />
+								<debug_text text="'pre filter $SmallShipDefinitions: %1'.[$SmallShipDefinitions]" chance="$DebugChance" />
+								<do_all exact="$SmallShipDefinitions.count" counter="$i" reverse="true">
+									<debug_text text="'i: %1'.[$i]" chance="$DebugChance" />
+									<debug_text text="'macro: %1, class: %2, canbuild: %3'.[$SmallShipDefinitions.{$i}, $SmallShipDefinitions.{$i}.class,$Dock.canbuildmacro.{$SmallShipDefinitions.{$i}}]" chance="$DebugChance" />
+									<do_if value="$Dock.canbuildmacro.{$SmallShipDefinitions.{$i}}" exact="0">
+										<remove_from_list name="$SmallShipDefinitions" exact="$SmallShipDefinitions.{$i}" multiple="false" />
+									</do_if>
+								</do_all>
+								<debug_text text="'post filter $SmallShipDefinitions: %1'.[$SmallShipDefinitions]" chance="$DebugChance" />
+								<set_value name="$SmallShipDefinition" exact="$SmallShipDefinitions.random" />
+
+								<get_ship_definition macro="$LargeShipDefinitions" tags="[tag.military, tag.mission]" faction="$Faction" size="class.ship_l" multiple="true" />
+								<debug_text text="'pre filter $LargeShipDefinitions: %1'.[$LargeShipDefinitions]" chance="$DebugChance" />
+								<do_all exact="$LargeShipDefinitions.count" counter="$i" reverse="true">
+									<debug_text text="'i: %1'.[$i]" chance="$DebugChance" />
+									<debug_text text="'macro: %1, class: %2, canbuild: %3'.[$LargeShipDefinitions.{$i}, $LargeShipDefinitions.{$i}.class,$Shipyard.canbuildmacro.{$LargeShipDefinitions.{$i}}]" chance="$DebugChance" />
+									<do_if value="$Shipyard.canbuildmacro.{$LargeShipDefinitions.{$i}}" exact="0">
+										<remove_from_list name="$LargeShipDefinitions" exact="$LargeShipDefinitions.{$i}" multiple="false" />
+									</do_if>
+								</do_all>
+								<debug_text text="'post filter $LargeShipDefinitions: %1'.[$LargeShipDefinitions]" chance="$DebugChance" />
+								<set_value name="$LargeShipDefinition" exact="$LargeShipDefinitions.random" />
+
+								<set_value name="$SmallFighterGroup" exact="[(5*$ShipMultiplier)i, $SmallShipDefinition]" />
+								<set_value name="$LargeAssaultGroup" exact="[(3*$ShipMultiplier)i, $LargeShipDefinition]" />
 
 								<set_value name="$Definition_Amount" exact="1" />
-								<set_value name="$Definition_Size" exact="2" />
-								<set_value name="$Definition_Tags" exact="3" />
+								<set_value name="$Definition_Macro" exact="2" />
 
-								<debug_text text="'Faction: %1'.[$Faction]" chance="$DebugChance"/>
-								
-								<find_station_by_true_owner name="$Shipyard" faction="$Faction" space="player.galaxy" canbuildships="true" shipyard="true"/>
-								<find_station_by_true_owner name="$Dock" faction="$Faction" space="player.galaxy" canbuildships="true" wharf="true"/>
-
-								<debug_text text="'Shipyard: %1'.[$Shipyard]" chance="$DebugChance"/>
-								<debug_text text="'Dock: %1'.[$Dock]" chance="$DebugChance"/>
-
-								<debug_text text="'Unitrader SY: %1 %2 %3'.[$Shipyard,$Shipyard.knownname,$Shipyard.class]" chance="$DebugChance"/>  
-								<debug_text text="'Unitrader DK: %1 %2 %3'.[$Dock,$Dock.knownname,$Dock.class]" chance="$DebugChance"/>
-
-								<debug_text text="'typeof $Dock: %1'.[typeof $Dock]" chance="$DebugChance"/>
-								<debug_text text="'typeof $Shipyard: %1'.[typeof $Shipyard]" chance="$DebugChance"/>
-
-								<find_dockingbay name="$CheckDock" object="$Dock">
-									<match_dock size="tag.dock_s" />
-								</find_dockingbay>
-								<debug_text text="'after find dockingbay $Dock: %1'.[$CheckDock]" chance="$DebugChance"/>
-
-								<find_dockingbay name="$CheckDock" object="$Shipyard">
-									<match_dock size="tag.dock_l" />
-								</find_dockingbay>
-								<debug_text text="'after find dockingbay $Shipyard: %1'.[$CheckDock]" chance="$DebugChance"/>
 							</actions>
 							<cues>
-								<cue name="Create_Support_Ships" ref="md.LIB_Create_Ships.Start">
+								<cue name="Create_Support_Ships" ref="md.LIB_Build_Ships.Start">
 									<param name="EndSignalCue" value="Support_Ships_Created" />
-									<param name="GroupCue" value="Invade_Sector" />
+									<param name="GroupCue" value="SectorTakeover" />
 
 									<!--Ship Info-->
 									<param name="Ship_Amount" value="$SmallFighterGroup.{$Definition_Amount}" />
 
 									<param name="Ship_Faction" value="$Faction" />
-									<param name="Ship_Class" value="$SmallFighterGroup.{$Definition_Size}" />
-
-									<param name="Ship_CategoryFaction" value="$Faction" />
-									<param name="Ship_Category_Size" value="$SmallFighterGroup.{$Definition_Size}" />
-									<param name="Ship_CategoryTags" value="$SmallFighterGroup.{$Definition_Tags}" />
+									<param name="Ship_Macro" value="$SmallShipDefinition" />
 
 									<!--Dock Info-->
 									<param name="Dock" value="$Dock" />
-									<param name="DebugChance" value="$DebugChance" />
 								</cue>
 								<cue name="Support_Ships_Created">
 									<conditions>
 										<event_cue_signalled />
 									</conditions>
 									<actions>
-										<do_if value="$LIB_Create_Ships_Result.count" min="1">
-											<append_to_list name="$Fleet" exact="$LIB_Create_Ships_Result" />
+										<debug_text text="'Support_Ships_Created: %1'.[$LIB_Build_Ships_Result.count]" chance="$DebugChance" />
+										<do_if value="$LIB_Build_Ships_Result.count" min="1">
+											<append_to_list name="$Fleet" exact="$LIB_Build_Ships_Result" />
 										</do_if>
 									</actions>
 								</cue>
-								<cue name="Create_Medium_Support_Ships" ref="md.LIB_Create_Ships.Start">
-									<param name="EndSignalCue" value="Medium_Support_Ships_Created" />
-									<param name="GroupCue" value="Invade_Sector" />
+								
+								<cue name="Create_Assault_Ships" ref="md.LIB_Build_Ships.Start">
+									<param name="EndSignalCue" value="Assault_Ships_Created" />
+									<param name="GroupCue" value="SectorTakeover" />
 
 									<!--Ship Info-->
-									<param name="Ship_Amount" value="$MediumFighterGroup.{$Definition_Amount}" />
+									<param name="Ship_Amount" value="$LargeAssaultGroup.{$Definition_Amount}" />
 
 									<param name="Ship_Faction" value="$Faction" />
-									<param name="Ship_Class" value="$MediumFighterGroup.{$Definition_Size}" />
-
-									<param name="Ship_CategoryFaction" value="$Faction" />
-									<param name="Ship_Category_Size" value="$MediumFighterGroup.{$Definition_Size}" />
-									<param name="Ship_CategoryTags" value="$MediumFighterGroup.{$Definition_Tags}" />
-
-									<!--Dock Info-->
-									<param name="Dock" value="$Dock" />
-									<param name="DebugChance" value="$DebugChance" />
-								</cue>
-								<cue name="Medium_Support_Ships_Created">
-									<conditions>
-										<event_cue_signalled />
-									</conditions>
-									<actions>
-										<do_if value="$LIB_Create_Ships_Result.count" min="1">
-											<append_to_list name="$Fleet" exact="$LIB_Create_Ships_Result" />
-										</do_if>
-									</actions>
-								</cue>
-								<cue name="Create_Destroyers" ref="md.LIB_Create_Ships.Start">
-									<param name="EndSignalCue" value="Destroyers_Created" />
-									<param name="GroupCue" value="Invade_Sector" />
-
-									<!--Ship Info-->
-									<param name="Ship_Amount" value="$LargeShipGroup.{$Definition_Amount}" />
-
-									<param name="Ship_Faction" value="$Faction" />
-									<param name="Ship_Class" value="$LargeShipGroup.{$Definition_Size}" />
-
-									<param name="Ship_CategoryFaction" value="$Faction" />
-									<param name="Ship_Category_Size" value="$LargeShipGroup.{$Definition_Size}" />
-									<param name="Ship_CategoryTags" value="$LargeShipGroup.{$Definition_Tags}" />
+									<param name="Ship_Macro" value="$LargeShipDefinition" />
 
 									<!--Dock Info-->
 									<param name="Dock" value="$Shipyard" />
-									<param name="DebugChance" value="$DebugChance" />
 								</cue>
-								<cue name="Destroyers_Created">
+								<cue name="Assault_Ships_Created">
 									<conditions>
 										<event_cue_signalled />
 									</conditions>
 									<actions>
-										<do_if value="$LIB_Create_Ships_Result.count" min="1">
-											<append_to_list name="$Fleet" exact="$LIB_Create_Ships_Result" />
+										<debug_text text="'Assault_Ships_Created: %1'.[$LIB_Build_Ships_Result.count]" chance="$DebugChance" />
+										<do_if value="$LIB_Build_Ships_Result.count" min="1">
+											<append_to_list name="$Fleet" exact="$LIB_Build_Ships_Result" />
 											<set_value name="$Phase" exact="'MOBILIZATION'" />
 										</do_if>
+										<signal_cue_instantly cue="Signal_Evaluate_Invasion" />
 									</actions>
-								</cue>
+								</cue>								
 							</cues>
+						</cue>
+
+						<cue name="Signal_Evaluate_Invasion" instantiate="true">
+							<conditions>
+								<event_cue_signalled />
+							</conditions>
+							<actions>
+								<set_value name="$MinDelay" exact="10s" />
+								<set_value name="$MaxDelay" exact="15s" />
+								<do_if value="not $PhaseEvaluationDelay">
+									<set_value name="$PhaseEvaluationDelay" min="$MinDelay" max="$MaxDelay" />
+								</do_if>
+								<signal_cue_instantly cue="Evaluate_Invasion" />
+							</actions>
 						</cue>
 					</cues>
 				</cue>
