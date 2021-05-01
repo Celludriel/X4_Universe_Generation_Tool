@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<diff>
+  <replace sel="//aiscript/attention[@min='unknown']/actions/do_while/do_all/do_if[2]/do_if/set_value[@name='$result_hullonly']">
+    <set_value name="$result_hullonly" exact="$result_hullonly * ($waittime)f" />
+    <debug_text text="'$result_hullonly: %1'.[$result_hullonly]" />
+    <do_if value="$target.class" exact="class.station">
+      <set_value name="$result_hullonly" exact="(this.assignedcontrolled.dps.primary + this.assignedcontrolled.dps.secondary) * ($waittime)f" />
+    </do_if>
+    <debug_text text="'$result_hullonly: %1'.[$result_hullonly]" />
+  </replace>
+</diff>

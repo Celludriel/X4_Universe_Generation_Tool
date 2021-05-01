@@ -53,7 +53,9 @@
 
 				<cue name="Evaluate">
 					<actions>
-						<set_value name="$CurrentSectorOwner" exact="$Sector.owner" />
+						<do_if value="$Sector.owner" exact="faction.ownerless" negate="true">
+							<set_value name="$CurrentSectorOwner" exact="$Sector.owner" />
+						</do_if>
 						<do_if value="$CurrentSectorOwner == $Faction" negate="true">
 							<find_station_by_true_owner name="$HostileStation" faction="$CurrentSectorOwner" space="$Sector" checkoperational="true" defencestation="true">
 								<match state="componentstate.wreck" negate="true" />
@@ -139,6 +141,8 @@
 						<set_value name="$Phase" exact="'PREPARATION'" />
 						<set_value name="$PhaseEvaluationDelay" exact="1ms" />
 						<set_value name="$PositionToTarget" exact="null" />
+						<set_value name="$FleetCommander" exact="null" />
+						<set_value name="$DefenceSummoned" exact="false" />
 						<create_list name="$Fleet" />
 
 						<find_station_by_true_owner name="$Target" faction="$CurrentSectorOwner" space="$Sector" checkoperational="true" defencestation="true">
@@ -184,15 +188,51 @@
 									<debug_text text="'$Fleet: %1'.[$Fleet]" chance="$DebugChance" />
 									<!-- move the fleet to the target sector -->
 									<set_value name="$Phase" exact="'MOBILIZING'" />
-									<get_safe_pos result="$PositionToTarget" object="$Target" sector="$Target.sector" min="15km" max="25km" allowyaxis="false" />
+
+									<!-- organise fleet -->
+									<create_list name="$AssaultShips" />>
 									<do_for_each name="$Group" in="$Fleet">
 										<do_for_each name="$Ship" in="$Group">
-											<cancel_all_orders object="$Ship" />
-											<create_order object="$Ship" id="'MoveWait'" name="$MoveOrder" immediate="true">
-												<param name="destination" value="[$Target.sector, $PositionToTarget]" />
-											</create_order>
+											<do_if value="$Ship.iscapitalship">
+												<append_to_list name="$AssaultShips" exact="$Ship" />
+											</do_if>
 										</do_for_each>
 									</do_for_each>
+									<do_if value="$AssaultShips.count gt 0">
+										<set_value name="$FleetCommander" exact="$AssaultShips.random" />
+									</do_if>
+
+									<get_safe_pos result="$PositionToTarget" object="$Target" sector="$Target.sector" min="30km" max="35km" allowyaxis="false" />
+									<cancel_all_orders object="$FleetCommander" />
+									<create_order object="$FleetCommander" id="'MoveWait'" name="$MoveOrder" default="true">
+										<param name="destination" value="[$Target.sector, $PositionToTarget]" />
+									</create_order>
+
+									<do_for_each name="$Group" in="$Fleet">
+										<do_for_each name="$Ship" in="$Group">
+											<do_if value="$FleetCommander" negate="true">
+												<set_value name="$FleetCommander" exact="$Ship" />
+											</do_if>
+											<do_if value="$Ship" exact="$FleetCommander" negate="true">
+												<set_object_commander object="$Ship" commander="$FleetCommander" />
+												<do_if value="$Ship.iscapitalship" negate="true">
+													<cancel_all_orders object="$Ship" />
+													<create_order object="$Ship" id="'ProtectShip'" default="true"/>
+												</do_if>
+												<do_else>
+													<create_order object="$Ship" id="'Assist'" default="true"/>
+													<cancel_all_orders object="$Ship" />
+												</do_else>
+											</do_if>
+										</do_for_each>
+									</do_for_each>									
+
+
+									<!-- start defense buildup -->
+									<do_if value="$DefenceSummoned" negate="true">
+										<signal_cue cue="Request_Job_Ship_For_Tags" />
+										<set_value name="$DefenceSummoned" exact="true" />
+									</do_if>
 									<signal_cue cue="Signal_Evaluate_Invasion" />
 								</do_elseif>
 								<do_elseif value="$Phase == 'MOBILIZING'">
@@ -209,14 +249,18 @@
 										<set_value name="$Phase" exact="'ATTACK'" />
 										<!-- declare war on station owning faction -->
 										<set_faction_relation faction="$Faction" otherfaction="$CurrentSectorOwner" value="$CurrentSectorOwner.relation.kill.max" />
-										<!-- give attack order to each ship -->
+										<!-- give attack order to fleet commander and each cap ship -->
+										<create_order object="$FleetCommander" id="'Attack'" immediate="true">
+											<param name="primarytarget" value="$Target" />
+										</create_order>
 										<do_for_each name="$Group" in="$Fleet">
 											<do_for_each name="$Ship" in="$Group">
-												<cancel_all_orders object="$Ship" />
-												<create_order object="$Ship" id="'Attack'" immediate="true">
-													<param name="primarytarget" value="$Target" />
-													<param name="pursuetargets" value="true"/>
-												</create_order>
+												<do_if value="$Ship.iscapitalship">
+													<cancel_all_orders object="$Ship" />											
+													<create_order object="$Ship" id="'Attack'" immediate="true">
+														<param name="primarytarget" value="$Target" />
+													</create_order>
+												</do_if>
 											</do_for_each>
 										</do_for_each>
 										<set_value name="$Phase" exact="'ATTACKING'" />
@@ -241,6 +285,59 @@
 							</actions>
 						</cue>
 
+						<cue name="Request_Job_Ship_For_Tags" instantiate="true">
+							<conditions>
+								<event_cue_signalled/>
+							</conditions>
+							<actions>			
+								<set_value name="this.$Requested_Job_Ship" exact="null" />				
+								<get_suitable_job result="$Jobs" faction="$CurrentSectorOwner" tags="[tag.factionlogic, tag.military, tag.destroyer]" multiple="true" />
+								<debug_text text="'Requested job %1'.[$Jobs.{1}]" chance="$DebugChance"/>
+								<find_ship_by_true_owner name="this.$Requested_Job_Ship" faction="$CurrentSectorOwner" space="player.galaxy" job="$Jobs.{1}" />
+								<debug_text text="'Requested ship %1'.[this.$Requested_Job_Ship.idcode]" chance="$DebugChance"/>
+								<debug_text text="'Commandeerable ship ? %1'.[this.$Requested_Job_Ship.iscommandeerable]" chance="$DebugChance"/>
+								<debug_text text="'is ship Commandeered ? %1'.[this.$Requested_Job_Ship.iscommandeered]" chance="$DebugChance"/>
+								<do_if value="this.$Requested_Job_Ship" negate="true">
+									<debug_text text="'Found suitable jobs: %1'.[$Jobs]" chance="$DebugChance"/>
+									<do_if value="$Jobs.count gt 0">
+										<shuffle_list list="$Jobs" />
+										<request_job_ship name="this.$Requested_Job_Ship" job="$Jobs.{1}" requester="$Target.sector" zone="$Target.zone" />
+										<debug_text text="'Requested ship %1 for job %2'.[this.$Requested_Job_Ship.idcode,$Jobs.{1}]" chance="$DebugChance"/>
+									</do_if>
+									<do_else>
+										<cancel_cue cue="Request_Job_Ship_For_Tags"/>
+									</do_else>
+								</do_if>
+							</actions>
+							<cues>
+								<cue name="Requested_Job_Ship_Operational" checkinterval="2s">
+									<conditions>
+										<check_value value="parent.$Requested_Job_Ship.isoperational" />
+									</conditions>
+									<delay exact="5s"/>
+									<actions>
+										<debug_text text="'%1 Current orders %2'.[parent.$Requested_Job_Ship.idcode, parent.$Requested_Job_Ship.orders]" chance="$DebugChance"/>
+										<do_all exact="parent.$Requested_Job_Ship.orders.count" counter="$orderCounter">
+											<debug_text text="'order %1'.[parent.$Requested_Job_Ship.orders.{$orderCounter}.id]" chance="$DebugChance"/>
+										</do_all>
+										<create_order object="parent.$Requested_Job_Ship" id="'RestockSubordinates'" immediate="true">
+											<param name="debugchance" value="true" />
+										</create_order>
+										<create_order object="parent.$Requested_Job_Ship" id="'Resupply'" />
+										<create_order object="parent.$Requested_Job_Ship" id="'ProtectStation'">
+											<param name="station" value="$Target"/>
+											<param name="radius" value="5km"/>
+											<param name="timeout" value="1h"/>											
+										</create_order>							
+										<debug_text text="'%1 Final orders %2'.[parent.$Requested_Job_Ship.idcode, parent.$Requested_Job_Ship.orders]" chance="$DebugChance"/>
+										<do_all exact="parent.$Requested_Job_Ship.orders.count" counter="$orderCounter">
+											<debug_text text="'order %1'.[parent.$Requested_Job_Ship.orders.{$orderCounter}.id]" chance="$DebugChance"/>
+										</do_all>
+									 </actions>
+								</cue>				
+							</cues>
+						</cue>
+			
 						<cue name="Build_Assault_Fleet">
 							<conditions>
 								<event_cue_signalled />
@@ -275,8 +372,8 @@
 								<debug_text text="'post filter $LargeShipDefinitions: %1'.[$LargeShipDefinitions]" chance="$DebugChance" />
 								<set_value name="$LargeShipDefinition" exact="$LargeShipDefinitions.random" />
 
-								<set_value name="$SmallFighterGroup" exact="[(5*$ShipMultiplier)i, $SmallShipDefinition]" />
-								<set_value name="$LargeAssaultGroup" exact="[(3*$ShipMultiplier)i, $LargeShipDefinition]" />
+								<set_value name="$SmallFighterGroup" exact="[(1*$ShipMultiplier)i, $SmallShipDefinition]" />
+								<set_value name="$LargeAssaultGroup" exact="[(2*$ShipMultiplier)i, $LargeShipDefinition]" />
 
 								<set_value name="$Definition_Amount" exact="1" />
 								<set_value name="$Definition_Macro" exact="2" />
